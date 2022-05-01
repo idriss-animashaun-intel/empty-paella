@@ -1,2 +1,5 @@
 pyinstaller --noconfirm --onedir --console ^
 "main.py"
+
+pyinstaller --noconfirm --onefile --console ^
+"Empty-Paella.py"
