@@ -1,1 +1,5 @@
 #git ignore
+build
+dist
+main.spec
+__pycache__

@@ -87,7 +87,7 @@ def run_tool():
     global just_tests
     global do_not_update_value
 
-    TP_path = r"C:\Users\ianimash\source\repos\Torch\rpl682\Modules"
+    TP_path = r"Modules"
 
     list_of_mtpls = list_of_mod.get().split(",")
 
@@ -109,8 +109,6 @@ def run_tool():
     do_not_update_value = 1
 
     for i in list_of_mtpls:
-        # parse_mtpl(i+'\\'+i+'.mtpl')
-        # print(i+'_new has been generated')
         parse_mtpl(TP_path+'\\'+i+'\\'+i+'.mtpl')
         print(TP_path+'\\'+i+'_new has been generated')
 

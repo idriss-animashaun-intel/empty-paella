@@ -1,0 +1,2 @@
+pyinstaller --noconfirm --onedir --console ^
+"main.py"
