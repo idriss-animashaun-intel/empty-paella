@@ -7,6 +7,8 @@ from tkinter import *
 import webbrowser
 import os
 
+current_directory = os.getcwd()
+print(current_directory)
 
 
 def parse_mtpl(filename):
@@ -87,7 +89,7 @@ def run_tool():
     global just_tests
     global do_not_update_value
 
-    TP_path = r"Modules"
+    TP_path = r"\Modules"
 
     list_of_mtpls = list_of_mod.get().split(",")
 
@@ -109,8 +111,8 @@ def run_tool():
     do_not_update_value = 1
 
     for i in list_of_mtpls:
-        parse_mtpl(TP_path+'\\'+i+'\\'+i+'.mtpl')
-        print(TP_path+'\\'+i+'_new has been generated')
+        parse_mtpl(current_directory + TP_path+'\\'+i+'\\'+i+'.mtpl')
+        print(current_directory + TP_path+'\\'+i+'\\'+i+'.mtpl_new has been generated')
 
 
 ### Main Root
