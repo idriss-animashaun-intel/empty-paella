@@ -1,4 +1,6 @@
 pyinstaller --noconfirm --onedir --console ^
+--icon "logo.ico" ^
+--add-data "logo.ico;." ^
 "main.py"
 
 pyinstaller --noconfirm --onefile --console ^
