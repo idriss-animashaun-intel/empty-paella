@@ -6,9 +6,15 @@ from tkinter.messagebox import showinfo
 from tkinter import *
 import webbrowser
 import os
+from pathlib import Path
 
 current_directory = os.getcwd()
-print(current_directory)
+print('Working Directory:', current_directory)
+
+
+path = Path(current_directory)
+repo_path = str(path.parent.absolute())
+print('path to repo:', repo_path)
 
 
 def parse_mtpl(filename):
@@ -111,8 +117,8 @@ def run_tool():
     do_not_update_value = 1
 
     for i in list_of_mtpls:
-        parse_mtpl(current_directory + TP_path+'\\'+i+'\\'+i+'.mtpl')
-        print(current_directory + TP_path+'\\'+i+'\\'+i+'.mtpl_new has been generated')
+        parse_mtpl(repo_path + TP_path+'\\'+i+'\\'+i+'.mtpl')
+        print(repo_path + TP_path+'\\'+i+'\\'+i+'.mtpl_new has been generated')
 
 
 ### Main Root
