@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ifpm_setup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="GEN_IFPM_tt.xsd">
+	<regex_list>
+		<regex name="pllwu">
+                   
+                    <value>RPL_pre_R9999991_A_*_Mscn_RJ0P_*</value>
+		</regex>
+		
+	</regex_list>
+
+	<pattern_modify_group_definitions>
+	
+		<pattern_modify_group name="saq">
+					
+			<subset name="ddrratio1">
+				<pattern_regex_name type="main">pllwu</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type="label">patmod_ddrratio_Set_HVMWatermalon_EARLYMC__patmod_in__ddrratio_ddr_ratio</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+			<pin_name>TDI</pin_name>
+			</subset>
+			
+			<subset name='ddrratio2'>
+				<pattern_regex_name type='main'>pllwu</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_ddrratio_internal_ReadMcBiosPllStatus__patmod_out__ddrratio</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDO</pin_name>
+			</subset>
+
+			<subset name="ddr_ref_fuse">
+				<pattern_regex_name type="main">pllwu</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type="label">patmod_ddr_ref_fuse_FuseOverrideString__patmod_in__ddr_ref_fuse_PUNIT_PUNIT_FUSES_PLL_REF100_CFG</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+			<pin_name>TDI</pin_name></subset>
+			
+			<subset name="ddrref">
+				<pattern_regex_name type="main">pllwu</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type="label">patmod_ddrref_Set_HVMWatermalon_EARLYMC__patmod_in__ddrref_ddr_ref</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+			<pin_name>TDI</pin_name></subset>
+			
+		    <subset name="SA_MC_PLL3">
+				<pattern_regex_name type="main">pllwu</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type="label">cmi_pll_lock_status_pll_tap_status_pll_ratio</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+			<pin_name>TDO</pin_name></subset>
+
+		</pattern_modify_group>
+		
+		<pattern_modify_group name='psf0ratio'>
+			<subset name='psf0ratio1'>
+				<pattern_regex_name type='main'>pllwu</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_psf0ratio_FuseOverrideString__patmod_in__psf0ratio_SA_PLL_SA_PLL_CCU_FUSE_CCU_PSF0_FREQ_CFGCR_PSF0_RATIO_SEL</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDI</pin_name>
+			</subset>
+		</pattern_modify_group>
+	
+	</pattern_modify_group_definitions>
+
+	<pattern_modify_group_data name="saq">
+		<subset name="ddrratio1">
+		    <setpointdata name="1100MHz">1 1 0 1 0 0 0 0</setpointdata>
+			<setpointdata name="1600MHz">0 0 0 0 1 0 0 0</setpointdata>
+			<setpointdata name="2200MHz">0 1 1 0 1 0 0 0</setpointdata>
+			<setpointdata name="2700MHz">1 1 0 1 1 0 0 0</setpointdata>
+		</subset>
+        <subset name="ddrratio2">
+		    <setpointdata name="1100MHz">H H L H L L L L</setpointdata>
+			<setpointdata name="1600MHz">L L L L H L L L</setpointdata>
+			<setpointdata name="2200MHz">L H H L H L L L</setpointdata>
+			<setpointdata name="2700MHz">H H L H H L L L</setpointdata>
+		</subset>
+		<subset name="ddr_ref_fuse">
+		    <setpointdata name="1100MHz">1 1 1</setpointdata>
+			<setpointdata name="1600MHz">1 1 1</setpointdata>
+			<setpointdata name="2200MHz">1 1 1</setpointdata>
+			<setpointdata name="2700MHz">1 1 1</setpointdata>
+		</subset>		
+		<subset name="ddrref">
+		    <setpointdata name="1100MHz">1</setpointdata>
+			<setpointdata name="1600MHz">1</setpointdata>
+			<setpointdata name="2200MHz">1</setpointdata>
+			<setpointdata name="2700MHz">1</setpointdata>
+		</subset>					
+		<subset name="SA_MC_PLL3">
+		    <setpointdata name="1100MHz">H H L H L L L L</setpointdata>
+			<setpointdata name="1600MHz">L L L L H L L L</setpointdata>
+			<setpointdata name="2200MHz">L H H L H L L L</setpointdata>
+			<setpointdata name="2700MHz">H H L H H L L L</setpointdata>
+		</subset>
+
+	</pattern_modify_group_data>
+	
+	<pattern_modify_group_data name='psf0ratio'>
+		<subset name='psf0ratio1'>
+			<setpointdata name="1067MHz">0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</setpointdata>
+			<setpointdata name="400MHz">0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</setpointdata>
+			<setpointdata name="533MHz">0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</setpointdata>
+			<setpointdata name="800MHz">0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</setpointdata>
+			<setpointdata name="PM_DEFAULT">0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</setpointdata>
+		</subset>
+	</pattern_modify_group_data>
+
+</ifpm_setup>

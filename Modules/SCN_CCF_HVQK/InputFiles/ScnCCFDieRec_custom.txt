@@ -1,0 +1,4 @@
+#DEFINE: SETPOINT: DATA_TYPE:	VARIABLE          : VARIABLE_TYPE :VALUE 				 :	CONDITION
+define : ALL     : STRING : NULL       : LITERAL       :   ""  :   *
+
+

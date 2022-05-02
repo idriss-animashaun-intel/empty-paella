@@ -1,0 +1,22 @@
+#######################PATMOD for waking up DE For DP0/1 and Elmers pars################################
+
+
+####################### Wakeup DE#####################################
++ DE_Wakeup MAIN PAT RPL_pre_R9999991_A_C0216161608xxx10040x0404bad00b20Tm00_Mscn_RJ0P_hdmt2_hvmstf_0:LEG PUNIT_PUNIT_FUSES_IGD 0 DATA TDI 0  # Patmod check: Pass check. No change needed
++ DE_Wakeup MAIN PAT RPL_pre_R9999991_A_C0216161608xxx10040x0404bad00b20Tm00_Mscn_RJ0P_hdmt2_hvmstf_0:LEG DE 0 DATA TDO L  # Patmod check: Pass check. No change needed
+
+####################### Turnoff DE####################################
++ DE_Turnoff MAIN PAT RPL_pre_R9999991_A_C0216161608xxx10040x0404bad00b20Tm00_Mscn_RJ0P_hdmt2_hvmstf_0:LEG PUNIT_PUNIT_FUSES_IGD 0 DATA TDI 1  # Patmod check: Pass check. No change needed
++ DE_Turnoff MAIN PAT RPL_pre_R9999991_A_C0216161608xxx10040x0404bad00b20Tm00_Mscn_RJ0P_hdmt2_hvmstf_0:LEG DE 0 DATA TDO H  # Patmod check: Pass check. No change needed
+
+
+
+#######This Patmod is not relevant for ADL-L0#####
+#######################Kill Dekel_bringup for PHY_FIA SA content #######################################
+
+###################### Disable Dekel to check the pll chains##########
+##+ DISABLE_DEKEL MAIN PAT adl_pre_N9999991A_16161608xxx10040x44bad0_A022m_1w00_Mscn_0_vrevAL0P_hdmt2_hvmstf_hdmt2_CXI_cf1uj_0:LEG configuration_1 0 DATA TCK 0 REPEAT 70189
+
+###################### Enable dekel seq back #########################
+##+ ENABLE_DEKEL MAIN PAT adl_pre_N9999991A_16161608xxx10040x44bad0_A022m_1w00_Mscn_0_vrevAL0P_hdmt2_hvmstf_hdmt2_CXI_cf1uj_0:LEG configuration_1 0 DATA TCK E REPEAT 70189
+

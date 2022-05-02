@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ifpm_setup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="GEN_IFPM_tt.xsd">
+
+<regex_list>
+	<regex name="concurrent_ccfcba_post_seq_IE_pat">
+	  <value>d0579106F3861836A*_post_seq</value>  
+    </regex>
+  </regex_list>
+
+    <pattern_modify_group_definitions>
+    <pattern_modify_group name="CORE9" > <!--CORE9 is for CCF0, 9 refers to bit location-->  
+	<subset name="CORE0"> 
+	   <pattern_regex_name type="main">concurrent_ccfcba_post_seq_IE_pat</pattern_regex_name>
+	   <domain>LEG</domain>
+	   <start_position type="label">CHECK_SCRBD_FOR_CORES_STATUS_DR1</start_position> <!-- can be regex--> 
+	   <offset>47</offset>
+	   <data_type>PIN</data_type>
+	   <pin_name>TDO</pin_name>
+	</subset>
+	</pattern_modify_group>
+	
+	<pattern_modify_group name="CORE8" >
+	<subset name="CORE1"> 
+	   <pattern_regex_name type="main">concurrent_ccfcba_post_seq_IE_pat</pattern_regex_name>
+	   <domain>LEG</domain>
+	   <start_position type="label">CHECK_SCRBD_FOR_CORES_STATUS_DR1</start_position> <!-- can be regex--> 
+	   <offset>48</offset>
+	   <data_type>PIN</data_type>
+	   <pin_name>TDO</pin_name>
+	</subset>
+	</pattern_modify_group>
+	
+	<pattern_modify_group name="CORE7" >
+	<subset name="CORE2"> 
+	   <pattern_regex_name type="main">concurrent_ccfcba_post_seq_IE_pat</pattern_regex_name>
+	   <domain>LEG</domain>
+	   <start_position type="label">CHECK_SCRBD_FOR_CORES_STATUS_DR1</start_position> <!-- can be regex--> 
+	   <offset>49</offset>
+	   <data_type>PIN</data_type>
+	   <pin_name>TDO</pin_name>
+	</subset>
+	</pattern_modify_group>
+	
+	<pattern_modify_group name="CORE6" >
+	<subset name="CORE3"> 
+	   <pattern_regex_name type="main">concurrent_ccfcba_post_seq_IE_pat</pattern_regex_name>
+	   <domain>LEG</domain>
+	   <start_position type="label">CHECK_SCRBD_FOR_CORES_STATUS_DR1</start_position> <!-- can be regex--> 
+	   <offset>50</offset>
+	   <data_type>PIN</data_type>
+	   <pin_name>TDO</pin_name>
+	</subset>
+	</pattern_modify_group>
+	
+	<pattern_modify_group name="CORE5" >
+	<subset name="CORE4"> 
+	   <pattern_regex_name type="main">concurrent_ccfcba_post_seq_IE_pat</pattern_regex_name>
+	   <domain>LEG</domain>
+	   <start_position type="label">CHECK_SCRBD_FOR_CORES_STATUS_DR1</start_position> <!-- can be regex--> 
+	   <offset>51</offset>
+	   <data_type>PIN</data_type>
+	   <pin_name>TDO</pin_name>
+	</subset>
+	</pattern_modify_group>
+	
+	<pattern_modify_group name="CORE4" >
+	<subset name="CORE5"> 
+	   <pattern_regex_name type="main">concurrent_ccfcba_post_seq_IE_pat</pattern_regex_name>
+	   <domain>LEG</domain>
+	   <start_position type="label">CHECK_SCRBD_FOR_CORES_STATUS_DR1</start_position> <!-- can be regex--> 
+	   <offset>52</offset>
+	   <data_type>PIN</data_type>
+	   <pin_name>TDO</pin_name>
+	</subset>
+	</pattern_modify_group>
+	
+	<pattern_modify_group name="CORE3" >
+	<subset name="CORE6"> 
+	   <pattern_regex_name type="main">concurrent_ccfcba_post_seq_IE_pat</pattern_regex_name>
+	   <domain>LEG</domain>
+	   <start_position type="label">CHECK_SCRBD_FOR_CORES_STATUS_DR1</start_position> <!-- can be regex--> 
+	   <offset>53</offset>
+	   <data_type>PIN</data_type>
+	   <pin_name>TDO</pin_name>
+	</subset>
+	</pattern_modify_group>
+	
+	<pattern_modify_group name="CORE2" >
+	<subset name="CORE7"> 
+	   <pattern_regex_name type="main">concurrent_ccfcba_post_seq_IE_pat</pattern_regex_name>
+	   <domain>LEG</domain>
+	   <start_position type="label">CHECK_SCRBD_FOR_CORES_STATUS_DR1</start_position> <!-- can be regex--> 
+	   <offset>54</offset>
+	   <data_type>PIN</data_type>
+	   <pin_name>TDO</pin_name>
+	</subset>
+	</pattern_modify_group>
+	
+	<pattern_modify_group name="CORE1" >
+	<subset name="CORE8"> 
+	   <pattern_regex_name type="main">concurrent_ccfcba_post_seq_IE_pat</pattern_regex_name>
+	   <domain>LEG</domain>
+	   <start_position type="label">CHECK_SCRBD_FOR_CORES_STATUS_DR1</start_position> <!-- can be regex--> 
+	   <offset>55</offset>
+	   <data_type>PIN</data_type>
+	   <pin_name>TDO</pin_name>
+	</subset>
+	</pattern_modify_group>
+		
+	<pattern_modify_group name="CORE0" >
+	<subset name="CORE9"> 
+	   <pattern_regex_name type="main">concurrent_ccfcba_post_seq_IE_pat</pattern_regex_name>
+	   <domain>LEG</domain>
+	   <start_position type="label">CHECK_SCRBD_FOR_CORES_STATUS_DR1</start_position> <!-- can be regex--> 
+	   <offset>56</offset>
+	   <data_type>PIN</data_type>
+	   <pin_name>TDO</pin_name>
+	</subset>
+    </pattern_modify_group>
+	
+	<!-- Resetting Patmod -->
+	<pattern_modify_group name="UNMASK9" > <!-- ModifyGroup name taken from die-recovery xml file as ifmp_group_name-->  
+	<subset name="CORE0"> 
+	   <pattern_regex_name type="main">concurrent_ccfcba_post_seq_IE_pat</pattern_regex_name>
+	   <domain>LEG</domain>
+	   <start_position type="label">CHECK_SCRBD_FOR_CORES_STATUS_DR1</start_position> <!-- can be regex--> 
+	   <offset>47</offset>
+	   <data_type>PIN</data_type>
+	   <pin_name>TDO</pin_name>
+	</subset>
+	</pattern_modify_group>
+	
+	<pattern_modify_group name="UNMASK8" >
+	<subset name="CORE1"> 
+	   <pattern_regex_name type="main">concurrent_ccfcba_post_seq_IE_pat</pattern_regex_name>
+	   <domain>LEG</domain>
+	   <start_position type="label">CHECK_SCRBD_FOR_CORES_STATUS_DR1</start_position> <!-- can be regex--> 
+	   <offset>48</offset>
+	   <data_type>PIN</data_type>
+	   <pin_name>TDO</pin_name>
+	</subset>
+	</pattern_modify_group>
+	
+	<pattern_modify_group name="UNMASK7" >
+	<subset name="CORE2"> 
+	   <pattern_regex_name type="main">concurrent_ccfcba_post_seq_IE_pat</pattern_regex_name>
+	   <domain>LEG</domain>
+	   <start_position type="label">CHECK_SCRBD_FOR_CORES_STATUS_DR1</start_position> <!-- can be regex--> 
+	   <offset>49</offset>
+	   <data_type>PIN</data_type>
+	   <pin_name>TDO</pin_name>
+	</subset>
+	</pattern_modify_group>
+	
+	<pattern_modify_group name="UNMASK6" >
+	<subset name="CORE3"> 
+	   <pattern_regex_name type="main">concurrent_ccfcba_post_seq_IE_pat</pattern_regex_name>
+	   <domain>LEG</domain>
+	   <start_position type="label">CHECK_SCRBD_FOR_CORES_STATUS_DR1</start_position> <!-- can be regex--> 
+	   <offset>50</offset>
+	   <data_type>PIN</data_type>
+	   <pin_name>TDO</pin_name>
+	</subset>
+	</pattern_modify_group>
+	
+	<pattern_modify_group name="UNMASK5" >
+	<subset name="CORE4"> 
+	   <pattern_regex_name type="main">concurrent_ccfcba_post_seq_IE_pat</pattern_regex_name>
+	   <domain>LEG</domain>
+	   <start_position type="label">CHECK_SCRBD_FOR_CORES_STATUS_DR1</start_position> <!-- can be regex--> 
+	   <offset>51</offset>
+	   <data_type>PIN</data_type>
+	   <pin_name>TDO</pin_name>
+	</subset>
+	</pattern_modify_group>
+	
+	<pattern_modify_group name="UNMASK4" >
+	<subset name="CORE5"> 
+	   <pattern_regex_name type="main">concurrent_ccfcba_post_seq_IE_pat</pattern_regex_name>
+	   <domain>LEG</domain>
+	   <start_position type="label">CHECK_SCRBD_FOR_CORES_STATUS_DR1</start_position> <!-- can be regex--> 
+	   <offset>52</offset>
+	   <data_type>PIN</data_type>
+	   <pin_name>TDO</pin_name>
+	</subset>
+	</pattern_modify_group>
+	
+	<pattern_modify_group name="UNMASK3" >
+	<subset name="CORE6"> 
+	   <pattern_regex_name type="main">concurrent_ccfcba_post_seq_IE_pat</pattern_regex_name>
+	   <domain>LEG</domain>
+	   <start_position type="label">CHECK_SCRBD_FOR_CORES_STATUS_DR1</start_position> <!-- can be regex--> 
+	   <offset>53</offset>
+	   <data_type>PIN</data_type>
+	   <pin_name>TDO</pin_name>
+	</subset>
+	</pattern_modify_group>
+	
+	<pattern_modify_group name="UNMASK2" >
+	<subset name="CORE7"> 
+	   <pattern_regex_name type="main">concurrent_ccfcba_post_seq_IE_pat</pattern_regex_name>
+	   <domain>LEG</domain>
+	   <start_position type="label">CHECK_SCRBD_FOR_CORES_STATUS_DR1</start_position> <!-- can be regex--> 
+	   <offset>54</offset>
+	   <data_type>PIN</data_type>
+	   <pin_name>TDO</pin_name>
+	</subset>
+	</pattern_modify_group>
+	
+	<pattern_modify_group name="UNMASK1" >
+	<subset name="CORE8"> 
+	   <pattern_regex_name type="main">concurrent_ccfcba_post_seq_IE_pat</pattern_regex_name>
+	   <domain>LEG</domain>
+	   <start_position type="label">CHECK_SCRBD_FOR_CORES_STATUS_DR1</start_position> <!-- can be regex--> 
+	   <offset>55</offset>
+	   <data_type>PIN</data_type>
+	   <pin_name>TDO</pin_name>
+	</subset>
+	</pattern_modify_group>
+		
+	<pattern_modify_group name="UNMASK0" >
+	<subset name="CORE9"> 
+	   <pattern_regex_name type="main">concurrent_ccfcba_post_seq_IE_pat</pattern_regex_name>
+	   <domain>LEG</domain>
+	   <start_position type="label">CHECK_SCRBD_FOR_CORES_STATUS_DR1</start_position> <!-- can be regex--> 
+	   <offset>56</offset>
+	   <data_type>PIN</data_type>
+	   <pin_name>TDO</pin_name>
+	</subset>
+    </pattern_modify_group>
+  </pattern_modify_group_definitions>
+
+  <!-- <pattern_modify_group_data name="ModifyGroup" allow_different_setpoint_names="true" > --> <!-- pattern_modify_group_data name is the same pattern_modify_group name -->
+  <pattern_modify_group_data name="CORE9">
+	<subset name="CORE0">
+		<setpointdata name="9">X</setpointdata>
+	</subset>
+	</pattern_modify_group_data>
+	
+	<pattern_modify_group_data name="CORE8">
+  	<subset name="CORE1">
+		<setpointdata name="8">X</setpointdata>
+	</subset>
+	</pattern_modify_group_data>
+	
+	<pattern_modify_group_data name="CORE7">
+	<subset name="CORE2">
+		<setpointdata name="7">X</setpointdata>
+	</subset>
+	</pattern_modify_group_data>
+	
+	<pattern_modify_group_data name="CORE6">
+	<subset name="CORE3">
+		<setpointdata name="6">X</setpointdata>
+	</subset>
+	</pattern_modify_group_data>
+	
+	<pattern_modify_group_data name="CORE5">
+	<subset name="CORE4">
+		<setpointdata name="5">X</setpointdata>
+	</subset>
+	</pattern_modify_group_data>
+	
+	<pattern_modify_group_data name="CORE4">
+	<subset name="CORE5">
+		<setpointdata name="4">X</setpointdata>
+	</subset>
+	</pattern_modify_group_data>
+	
+	<pattern_modify_group_data name="CORE3">
+	<subset name="CORE6">
+		<setpointdata name="3">X</setpointdata>
+	</subset>
+	</pattern_modify_group_data>
+	
+	<pattern_modify_group_data name="CORE2">
+	<subset name="CORE7">
+		<setpointdata name="2">X</setpointdata>
+	</subset>
+	</pattern_modify_group_data>
+	
+	<pattern_modify_group_data name="CORE1">
+	<subset name="CORE8">
+		<setpointdata name="1">X</setpointdata>
+	</subset>
+	</pattern_modify_group_data>
+	
+	<pattern_modify_group_data name="CORE0">
+	<subset name="CORE9">
+		<setpointdata name="0">X</setpointdata>
+	</subset>
+  </pattern_modify_group_data>
+  
+  <!-- Resetting Patmod -->
+   <pattern_modify_group_data name="UNMASK9">
+	<subset name="CORE0">
+		<setpointdata name="9">L</setpointdata>
+	</subset>
+	</pattern_modify_group_data>
+	
+	<pattern_modify_group_data name="UNMASK8">
+  	<subset name="CORE1">
+		<setpointdata name="8">H</setpointdata>
+	</subset>
+	</pattern_modify_group_data>
+	
+	<pattern_modify_group_data name="UNMASK7">
+	<subset name="CORE2">
+		<setpointdata name="7">L</setpointdata>
+	</subset>
+	</pattern_modify_group_data>
+	
+	<pattern_modify_group_data name="UNMASK6">
+	<subset name="CORE3">
+		<setpointdata name="6">H</setpointdata>
+	</subset>
+	</pattern_modify_group_data>
+	
+	<pattern_modify_group_data name="UNMASK5">
+	<subset name="CORE4">
+		<setpointdata name="5">L</setpointdata>
+	</subset>
+	</pattern_modify_group_data>
+	
+	<pattern_modify_group_data name="UNMASK4">
+	<subset name="CORE5">
+		<setpointdata name="4">H</setpointdata>
+	</subset>
+	</pattern_modify_group_data>
+	
+	<pattern_modify_group_data name="UNMASK3">
+	<subset name="CORE6">
+		<setpointdata name="3">L</setpointdata>
+	</subset>
+	</pattern_modify_group_data>
+	
+	<pattern_modify_group_data name="UNMASK2">
+	<subset name="CORE7">
+		<setpointdata name="2">H</setpointdata>
+	</subset>
+	</pattern_modify_group_data>
+	
+	<pattern_modify_group_data name="UNMASK1">
+	<subset name="CORE8">
+		<setpointdata name="1">L</setpointdata>
+	</subset>
+	</pattern_modify_group_data>
+	
+	<pattern_modify_group_data name="UNMASK0">
+	<subset name="CORE9">
+		<setpointdata name="0">H</setpointdata>
+	</subset>
+  </pattern_modify_group_data>
+</ifpm_setup>

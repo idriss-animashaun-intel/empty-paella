@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ADTL xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="GEN_ADTL_tt.xsd">
+  <config_set name="ADTLConfig_1">
+	<fit name ="SCN_SOC_ASTROMIDHUB" default_fail_port="2">
+		<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_POST_SCAN_SOC_ASTROMIDHUB</y_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_PRE_SCAN_SOC_ASTROMIDHUB</y_param>
+		<kill_cutline>VMIN_Sigma8</kill_cutline>
+		<cutline name="VMIN_Sigma8">
+			<y_intercept>1.1930303</y_intercept>
+			<slope>-2.79E-05</slope>
+			<fail_operation>greaterThan</fail_operation>
+		</cutline>
+	</fit>
+	<fit name ="SCN_SOC_ASTRONORTHHUB" default_fail_port="3">
+		<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_POST_SCAN_SOC_ASTRONORTHHUB</y_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_PRE_SCAN_SOC_ASTRONORTHHUB</y_param>
+		<kill_cutline>VMIN_Sigma8</kill_cutline>
+		<cutline name="VMIN_Sigma8">
+			<y_intercept>1.18957576</y_intercept>
+			<slope>-0.0000297</slope>
+			<fail_operation>greaterThan</fail_operation>
+		</cutline>
+	</fit>
+	<fit name ="SCN_SOC_CMIMISCHUB" default_fail_port="4">
+		<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_POST_SCAN_SOC_CMIMISCHUB</y_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_PRE_SCAN_SOC_CMIMISCHUB</y_param>
+		<kill_cutline>VMIN_Sigma8</kill_cutline>
+		<cutline name="VMIN_Sigma8">
+			<y_intercept>0.79</y_intercept>
+			<slope>0.0</slope>
+			<fail_operation>greaterThan</fail_operation>
+		</cutline>
+	</fit>
+	<fit name ="SCN_SOC_CORETLTXTLRXHUB" default_fail_port="5">
+		<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_POST_SCAN_SOC_CORETLTXTLRXHUB</y_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_PRE_SCAN_SOC_CORETLTXTLRXHUB</y_param>
+		<kill_cutline>VMIN_Sigma8</kill_cutline>
+		<cutline name="VMIN_Sigma8">
+			<y_intercept>1.21878788</y_intercept>
+			<slope>-2.48E-05</slope>
+			<fail_operation>greaterThan</fail_operation>
+		</cutline>
+	</fit>
+	<fit name ="SCN_SOC_DDRIOHUB" default_fail_port="6">
+		<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_POST_SCAN_SOC_DDRIOHUB</y_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_PRE_SCAN_SOC_DDRIOHUB</y_param>
+		<kill_cutline>VMIN_Sigma8</kill_cutline>
+		<cutline name="VMIN_Sigma8">
+			<y_intercept>1.15954545</y_intercept>
+			<slope>-2.64E-05</slope>
+			<fail_operation>greaterThan</fail_operation>
+		</cutline>
+	</fit>
+	<fit name ="SCN_SOC_DISPHUB" default_fail_port="7">
+		<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_POST_SCAN_SOC_DISPHUB</y_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_PRE_SCAN_SOC_DISPHUB</y_param>
+		<kill_cutline>VMIN_Sigma8</kill_cutline>
+		<cutline name="VMIN_Sigma8">
+			<y_intercept>1.16793939</y_intercept>
+			<slope>-2.42E-05</slope>
+			<fail_operation>greaterThan</fail_operation>
+		</cutline>
+	</fit>
+	<fit name ="SCN_SOC_DISPUHHUB" default_fail_port="8">
+		<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_POST_SCAN_SOC_DISPUHHUB</y_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_PRE_SCAN_SOC_DISPUHHUB</y_param>
+		<kill_cutline>VMIN_Sigma8</kill_cutline>
+		<cutline name="VMIN_Sigma8">
+			<y_intercept>1.23181818</y_intercept>
+			<slope>-3.27E-05</slope>
+			<fail_operation>greaterThan</fail_operation>
+		</cutline>
+	</fit>
+	<fit name ="SCN_SOC_FABRICSACENTRALHUB" default_fail_port="9">
+		<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_POST_SCAN_SOC_FABRICSACENTRALHUB</y_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_PRE_SCAN_SOC_FABRICSACENTRALHUB</y_param>
+		<kill_cutline>VMIN_Sigma8</kill_cutline>
+		<cutline name="VMIN_Sigma8">
+			<y_intercept>1.2330303</y_intercept>
+			<slope>-2.79E-05</slope>
+			<fail_operation>greaterThan</fail_operation>
+		</cutline>
+	</fit>
+	<fit name ="SCN_SOC_FABRICSATCSS1HUB" default_fail_port="10">
+		<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_POST_SCAN_SOC_FABRICSATCSS1HUB</y_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_PRE_SCAN_SOC_FABRICSATCSS1HUB</y_param>
+		<kill_cutline>VMIN_Sigma8</kill_cutline>
+		<cutline name="VMIN_Sigma8">
+			<y_intercept>1.2530303</y_intercept>
+			<slope>-2.79E-05</slope>
+			<fail_operation>greaterThan</fail_operation>
+		</cutline>
+	</fit>
+	<fit name ="SCN_SOC_FABRICSATCSS2HUB" default_fail_port="11">
+		<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_POST_SCAN_SOC_FABRICSATCSS2HUB</y_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_PRE_SCAN_SOC_FABRICSATCSS2HUB</y_param>
+		<kill_cutline>VMIN_Sigma8</kill_cutline>
+		<cutline name="VMIN_Sigma8">
+			<y_intercept>1.17363636</y_intercept>
+			<slope>-2.55E-05</slope>
+			<fail_operation>greaterThan</fail_operation>
+		</cutline>
+	</fit>
+	<fit name ="SCN_SOC_FABRICSOUTHHUB" default_fail_port="12">
+		<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_POST_SCAN_SOC_FABRICSOUTHHUB</y_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_PRE_SCAN_SOC_FABRICSOUTHHUB</y_param>
+		<kill_cutline>VMIN_Sigma8</kill_cutline>
+		<cutline name="VMIN_Sigma8">
+			<y_intercept>0.79</y_intercept>
+			<slope>0</slope>
+			<fail_operation>greaterThan</fail_operation>
+		</cutline>
+	</fit>
+	<fit name ="SCN_SOC_FXBX8HUB" default_fail_port="13">
+		<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_POST_SCAN_SOC_FXBX8HUB</y_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_PRE_SCAN_SOC_FXBX8HUB</y_param>
+		<kill_cutline>VMIN_Sigma8</kill_cutline>
+		<cutline name="VMIN_Sigma8">
+			<y_intercept>1.20793939</y_intercept>
+			<slope>-2.42E-05</slope>
+			<fail_operation>greaterThan</fail_operation>
+		</cutline>
+	</fit>
+	<fit name ="SCN_SOC_HBRHUB" default_fail_port="14">
+		<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_POST_SCAN_SOC_HBRHUB</y_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_PRE_SCAN_SOC_HBRHUB</y_param>
+		<kill_cutline>VMIN_Sigma8</kill_cutline>
+		<cutline name="VMIN_Sigma8">
+			<y_intercept>1.17193939</y_intercept>
+			<slope>-2.42E-05</slope>
+			<fail_operation>greaterThan</fail_operation>
+		</cutline>
+	</fit>
+	<fit name ="SCN_SOC_LINKX8HUB" default_fail_port="15">
+		<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_POST_SCAN_SOC_LINKX8HUB</y_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_PRE_SCAN_SOC_LINKX8HUB</y_param>
+		<kill_cutline>VMIN_Sigma8</kill_cutline>
+		<cutline name="VMIN_Sigma8">
+			<y_intercept>1.10745455</y_intercept>
+			<slope>-1.82E-05</slope>
+			<fail_operation>greaterThan</fail_operation>
+		</cutline>
+	</fit>
+  </config_set>
+  <config_set name="ADTLConfig_2">
+	<fit name ="SCN_SOC_MCHUB" default_fail_port="2">
+		<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_POST_SCAN_SOC_MCHUB</y_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_PRE_SCAN_SOC_MCHUB</y_param>
+		<kill_cutline>VMIN_Sigma8</kill_cutline>
+		<cutline name="VMIN_Sigma8">
+			<y_intercept>1.1930303</y_intercept>
+			<slope>-2.79E-05</slope>
+			<fail_operation>greaterThan</fail_operation>
+		</cutline>
+	</fit>
+	<fit name ="SCN_SOC_OPIODNHUB" default_fail_port="3">
+		<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_POST_SCAN_SOC_OPIODNHUB</y_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_PRE_SCAN_SOC_OPIODNHUB</y_param>
+		<kill_cutline>VMIN_Sigma8</kill_cutline>
+		<cutline name="VMIN_Sigma8">
+			<y_intercept>1.21469697</y_intercept>
+			<slope>-3.12E-05</slope>
+			<fail_operation>greaterThan</fail_operation>
+		</cutline>
+	</fit>
+	<fit name ="SCN_SOC_OPIOHUB" default_fail_port="4">
+		<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_POST_SCAN_SOC_OPIOHUB</y_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_PRE_SCAN_SOC_OPIOHUB</y_param>
+		<kill_cutline>VMIN_Sigma8</kill_cutline>
+		<cutline name="VMIN_Sigma8">
+			<y_intercept>1.17362121</y_intercept>
+			<slope>-2.65E-05</slope>
+			<fail_operation>greaterThan</fail_operation>
+		</cutline>
+	</fit>
+	<fit name ="SCN_SOC_PHYFIAX8HUB" default_fail_port="5">
+		<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_POST_SCAN_SOC_PHYFIAX8HUB</y_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_PRE_SCAN_SOC_PHYFIAX8HUB</y_param>
+		<kill_cutline>VMIN_Sigma8</kill_cutline>
+		<cutline name="VMIN_Sigma8">
+			<y_intercept>1.20793939</y_intercept>
+			<slope>-2.42E-05</slope>
+			<fail_operation>greaterThan</fail_operation>
+		</cutline>
+	</fit>
+	<fit name ="SCN_SOC_PHYTLPLX4HUB" default_fail_port="6">
+		<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_POST_SCAN_SOC_PHYTLPLX4HUB</y_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_PRE_SCAN_SOC_PHYTLPLX4HUB</y_param>
+		<kill_cutline>VMIN_Sigma8</kill_cutline>
+		<cutline name="VMIN_Sigma8">
+			<y_intercept>1.21939394</y_intercept>
+			<slope>-2.24E-05</slope>
+			<fail_operation>greaterThan</fail_operation>
+		</cutline>
+	</fit>
+	<fit name ="SCN_SOC_PHYTLPLX4NO2LMHUB" default_fail_port="7">
+		<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_POST_SCAN_SOC_PHYTLPLX4NO2LMHUB</y_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_PRE_SCAN_SOC_PHYTLPLX4NO2LMHUB</y_param>
+		<kill_cutline>VMIN_Sigma8</kill_cutline>
+		<cutline name="VMIN_Sigma8">
+			<y_intercept>1.20793939</y_intercept>
+			<slope>-2.42E-05</slope>
+			<fail_operation>greaterThan</fail_operation>
+		</cutline>
+	</fit>
+	<fit name ="SCN_SOC_PSF7HUB" default_fail_port="8">
+		<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_POST_SCAN_SOC_PSF7HUB</y_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_PRE_SCAN_SOC_PSF7HUB</y_param>
+		<kill_cutline>VMIN_Sigma8</kill_cutline>
+		<cutline name="VMIN_Sigma8">
+			<y_intercept>1.11939394</y_intercept>
+			<slope>-2.24E-05</slope>
+			<fail_operation>greaterThan</fail_operation>
+		</cutline>
+	</fit>
+	<fit name ="SCN_SOC_PUNITHUB" default_fail_port="9">
+		<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_POST_SCAN_SOC_PUNITHUB</y_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_PRE_SCAN_SOC_PUNITHUB</y_param>
+		<kill_cutline>VMIN_Sigma8</kill_cutline>
+		<cutline name="VMIN_Sigma8">
+			<y_intercept>1.05315152</y_intercept>
+			<slope>-0.0000194</slope>
+			<fail_operation>greaterThan</fail_operation>
+		</cutline>
+	</fit>
+	<fit name ="SCN_SOC_SACENTRAL1HUB" default_fail_port="10">
+		<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_POST_SCAN_SOC_SACENTRAL1HUB</y_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_PRE_SCAN_SOC_SACENTRAL1HUB</y_param>
+		<kill_cutline>VMIN_Sigma8</kill_cutline>
+		<cutline name="VMIN_Sigma8">
+			<y_intercept>1.11939394</y_intercept>
+			<slope>-2.24E-05</slope>
+			<fail_operation>greaterThan</fail_operation>
+		</cutline>
+	</fit>
+	<fit name ="SCN_SOC_SACENTRAL2HUB" default_fail_port="11">
+		<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_POST_SCAN_SOC_SACENTRAL2HUB</y_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_PRE_SCAN_SOC_SACENTRAL2HUB</y_param>
+		<kill_cutline>VMIN_Sigma8</kill_cutline>
+		<cutline name="VMIN_Sigma8">
+			<y_intercept>1.11939394</y_intercept>
+			<slope>-2.24E-05</slope>
+			<fail_operation>greaterThan</fail_operation>
+		</cutline>
+	</fit>
+	<fit name ="SCN_SOC_SAEAST2HUB" default_fail_port="11">
+		<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_POST_SCAN_SOC_SAEAST2HUB</y_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_PRE_SCAN_SOC_SAEAST2HUB</y_param>
+		<kill_cutline>VMIN_Sigma8</kill_cutline>
+		<cutline name="VMIN_Sigma8">
+			<y_intercept>1.16793939</y_intercept>
+			<slope>-2.24E-05</slope>
+			<fail_operation>greaterThan</fail_operation>
+		</cutline>
+	</fit>
+  </config_set>
+  <config_set name="ADTL_CSE">
+	<fit name ="CSE_ASTROMID_LFM" default_fail_port="2">
+		<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.UPSBEGINVMIN_SAQ_SCAN_SOC_ASTROMID_1p1GHz</y_param>
+		<kill_cutline>VMIN_Sigma8</kill_cutline>
+		<cutline name="VMIN_Sigma8">
+			<y_intercept>1.14163636</y_intercept>
+			<slope>-2.55e-05</slope>
+			<fail_operation>greaterThan</fail_operation>
+		</cutline>
+	</fit>
+	<fit name ="CSE_ASTROMID_HFM" default_fail_port="3">
+		<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.UPSBEGINVMIN_SAQ_SCAN_SOC_ASTROMID_2p2GHz</y_param>
+		<kill_cutline>VMIN_Sigma8</kill_cutline>
+		<cutline name="VMIN_Sigma8">
+			<y_intercept>1.24793939</y_intercept>
+			<slope>-2.42e-05</slope>
+			<fail_operation>greaterThan</fail_operation>
+		</cutline>
+	</fit>
+	<fit name ="CSE_ASTROMID_TFM" default_fail_port="4">
+		<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.UPSBEGINVMIN_SAQ_SCAN_SOC_ASTROMID_2p7GHz</y_param>
+		<kill_cutline>VMIN_Sigma8</kill_cutline>
+		<cutline name="VMIN_Sigma8">
+			<y_intercept>1.40042424</y_intercept>
+			<slope>-3.0299999999999998e-05</slope>
+			<fail_operation>greaterThan</fail_operation>
+		</cutline>
+	</fit>
+	<fit name ="CSE_CMIMISC_LFM" default_fail_port="5">
+		<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.UPSBEGINVMIN_SAQ_SCAN_SOC_CMIMISC_1p1GHz</y_param>
+		<kill_cutline>VMIN_Sigma8</kill_cutline>
+		<cutline name="VMIN_Sigma8">
+			<y_intercept>1.05372727</y_intercept>
+			<slope>-1.91e-05</slope>
+			<fail_operation>greaterThan</fail_operation>
+		</cutline>
+	</fit>
+	<fit name ="CSE_CMIMISC_HFM" default_fail_port="6">
+		<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.UPSBEGINVMIN_SAQ_SCAN_SOC_CMIMISC_2p2GHz</y_param>
+		<kill_cutline>VMIN_Sigma8</kill_cutline>
+		<cutline name="VMIN_Sigma8">
+			<y_intercept>1.22793939</y_intercept>
+			<slope>-2.42e-05</slope>
+			<fail_operation>greaterThan</fail_operation>
+		</cutline>
+	</fit>
+	<fit name ="CSE_CMIMISC_TFM" default_fail_port="7">
+		<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.UPSBEGINVMIN_SAQ_SCAN_SOC_CMIMISC_2p7GHz</y_param>
+		<kill_cutline>VMIN_Sigma8</kill_cutline>
+		<cutline name="VMIN_Sigma8">
+			<y_intercept>1.45806061</y_intercept>
+			<slope>-3.5799999999999996e-05</slope>
+			<fail_operation>greaterThan</fail_operation>
+		</cutline>
+	</fit>
+	<fit name ="CSE_MC_LFM" default_fail_port="8">
+		<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.UPSBEGINVMIN_SAQ_SCAN_SOC_MC_1p1GHz</y_param>
+		<kill_cutline>VMIN_Sigma8</kill_cutline>
+		<cutline name="VMIN_Sigma8">
+			<y_intercept>1.19757576</y_intercept>
+			<slope>-2.97e-05</slope>
+			<fail_operation>greaterThan</fail_operation>
+		</cutline>
+	</fit>
+	<fit name ="CSE_MC_HFM" default_fail_port="9">
+		<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.UPSBEGINVMIN_SAQ_SCAN_SOC_MC_2p2GHz</y_param>
+		<kill_cutline>VMIN_Sigma8</kill_cutline>
+		<cutline name="VMIN_Sigma8">
+			<y_intercept>1.33927273</y_intercept>
+			<slope>-3.09e-05</slope>
+			<fail_operation>greaterThan</fail_operation>
+		</cutline>
+	</fit>
+	<fit name ="CSE_MC_TFM" default_fail_port="10">
+		<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+		<y_param lower="-9999.000" upper="1.5">G.U.D.UPSBEGINVMIN_SAQ_SCAN_SOC_MC_2p7GHz</y_param>
+		<kill_cutline>VMIN_Sigma8</kill_cutline>
+		<cutline name="VMIN_Sigma8">
+			<y_intercept>1.5419999999999998</y_intercept>
+			<slope>-4e-05</slope>
+			<fail_operation>greaterThan</fail_operation>
+		</cutline>
+	</fit>
+  </config_set>
+</ADTL>

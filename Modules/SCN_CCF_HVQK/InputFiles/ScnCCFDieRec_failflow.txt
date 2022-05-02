@@ -1,0 +1,95 @@
+START_SCREEN:SCNCCF0ChkFF
+#Run        : Test          :  Data  : Param     	: Param1   					: Oper    : Param  	: Param2	: Tmp	  : On    	: On
+#On         : Name          :  Type  : Type      	:          					:         : Type   	:       	: Store   : True  	: False
+EXEC        : CCF0ChkFF   	: STRING : EXPRESSION	:"G.U.S.SLC_TRK[9:9]==G.U.S.SLC_TRK_TEMP[9:9]"  : -       : -       	: -      	: -       : 1    	: 2
+END_SCREEN
+
+START_SCREEN:SCNCCF1ChkFF
+#Run        : Test          :  Data  : Param     	: Param1   					: Oper    : Param  	: Param2	: Tmp	  : On    	: On
+#On         : Name          :  Type  : Type      	:          					:         : Type   	:       	: Store   : True  	: False
+EXEC        : CCF1ChkFF   	: STRING : EXPRESSION	:"G.U.S.SLC_TRK[8:8]==G.U.S.SLC_TRK_TEMP[8:8]"  : -       : -       	: -      	: -       : 1    	: 2
+END_SCREEN
+
+START_SCREEN:SCNCCF2ChkFF
+#Run        : Test          :  Data  : Param     	: Param1                      			: Oper     : Param  	: Param2	: Tmp     : On     	: On
+#On         : Name          :  Type  : Type      	:                             			:          : Type   	:       	: Store   : True      	: False
+EXEC        : CCF2ChkFF   	: STRING : EXPRESSION	:"G.U.S.SLC_TRK[7:7]==G.U.S.SLC_TRK_TEMP[7:7]"  : -        : -      	: -     	: -       : 1    	: 2
+END_SCREEN
+
+START_SCREEN:SCNCCF3ChkFF
+#Run        : Test          :  Data  : Param     	: Param1                      			: Oper     : Param  	: Param2	: Tmp     : On     	: On
+#On         : Name          :  Type  : Type      	:                             			:          : Type   	:       	: Store   : True      	: False
+EXEC        : CCF3ChkFF   	: STRING : EXPRESSION	:"G.U.S.SLC_TRK[6:6]==G.U.S.SLC_TRK_TEMP[6:6]"  : -        : -      	: -     	: -       : 1    	: 2
+END_SCREEN
+
+START_SCREEN:SCNCCF4ChkFF
+#Run        : Test          :  Data  : Param     	: Param1                      			: Oper     : Param  	: Param2	: Tmp     : On     	: On
+#On         : Name          :  Type  : Type      	:                             			:          : Type   	:       	: Store   : True    	: False
+EXEC        : CCF4ChkFF   	: STRING : EXPRESSION	:"G.U.S.SLC_TRK[5:5]==G.U.S.SLC_TRK_TEMP[5:5]"  : -        : -      	: -     	: -       : 1		: 2
+END_SCREEN
+
+START_SCREEN:SCNCCF5ChkFF
+#Run        : Test          :  Data  : Param     	: Param1                      			: Oper     : Param  	: Param2	: Tmp     : On     	: On
+#On         : Name          :  Type  : Type      	:                             			:          : Type   	:       	: Store   : True    	: False
+EXEC        : CCF5ChkFF   	: STRING : EXPRESSION	:"G.U.S.SLC_TRK[4:4]==G.U.S.SLC_TRK_TEMP[4:4]"  : -        : -      	: -     	: -       : 1		: 2
+END_SCREEN
+
+START_SCREEN:SCNCCF6ChkFF
+#Run        : Test          :  Data  : Param     	: Param1                      			: Oper     : Param  	: Param2	: Tmp     : On     	: On
+#On         : Name          :  Type  : Type      	:                             			:          : Type   	:       	: Store   : True   	: False
+EXEC        : CCF6ChkFF   	: STRING : EXPRESSION	:"G.U.S.SLC_TRK[3:3]==G.U.S.SLC_TRK_TEMP[3:3]"  : -        : -      	: -     	: -       : 1    	: 2
+END_SCREEN
+
+START_SCREEN:SCNCCF7ChkFF
+#Run        : Test          :  Data  : Param     	: Param1                      			: Oper     : Param  	: Param2	: Tmp     : On     	: On
+#On         : Name          :  Type  : Type      	:                             			:          : Type   	:       	: Store   : True   	: False
+EXEC        : CCF7ChkFF   	: STRING : EXPRESSION	:"G.U.S.SLC_TRK[2:2]==G.U.S.SLC_TRK_TEMP[2:2]"  : -        : -      	: -     	: -       : 1    	: 2
+END_SCREEN
+
+#START_SCREEN:SCNCCF8ChkFF
+#Run        : Test          :  Data  : Param     	: Param1                      			: Oper     : Param  	: Param2	: Tmp     : On       	: On
+#On         : Name          :  Type  : Type      	:                             			:          : Type   	:       	: Store   : True     	: False
+#EXEC        : CCF8ChkFF   	: STRING : EXPRESSION	:"G.U.S.SLC_TRK[1:1]==G.U.S.SLC_TRK_TEMP[1:1]"  : -        : -      	: -     	: -       : 1    	: 2
+#END_SCREEN
+
+#START_SCREEN:SCNCCF9ChkFF
+#Run        : Test          :  Data  : Param     	: Param1                      			: Oper     : Param  	: Param2	: Tmp     : On       	: On
+#On         : Name          :  Type  : Type      	:                             			:          : Type   	:       	: Store   : True     	: False
+#EXEC        : CCF9ChkFF   	: STRING : EXPRESSION	:"G.U.S.SLC_TRK[0:0]==G.U.S.SLC_TRK_TEMP[0:0]"  : -        : -      	: -     	: -       : 1    	: 2
+#END_SCREEN
+
+START_SCREEN:SCNCCF01ChkFF
+#Run        : Test          :  Data  : Param     	: Param1   					: Oper    : Param  	: Param2	: Tmp	  : On    	: On
+#On         : Name          :  Type  : Type      	:          					:         : Type   	:       	: Store   : True  	: False
+EXEC        : CCF01ChkFF   	: STRING : EXPRESSION	:"G.U.S.SLC_TRK[8:9]==G.U.S.SLC_TRK_TEMP[8:9]"  : -       : -       	: -      	: -       : 1    	: 2
+END_SCREEN
+
+
+START_SCREEN:SCNCCF23ChkFF
+#Run        : Test          :  Data  : Param     	: Param1                      			: Oper     : Param  	: Param2	: Tmp     : On     	: On
+#On         : Name          :  Type  : Type      	:                             			:          : Type   	:       	: Store   : True      	: False
+EXEC        : CCF23ChkFF   	: STRING : EXPRESSION	:"G.U.S.SLC_TRK[6:7]==G.U.S.SLC_TRK_TEMP[6:7]"  : -        : -      	: -     	: -       : 1    	: 2
+END_SCREEN
+
+
+START_SCREEN:SCNCCF45ChkFF
+#Run        : Test          :  Data  : Param     	: Param1                      			: Oper     : Param  	: Param2	: Tmp     : On     	: On
+#On         : Name          :  Type  : Type      	:                             			:          : Type   	:       	: Store   : True    	: False
+EXEC        : CCF45ChkFF   	: STRING : EXPRESSION	:"G.U.S.SLC_TRK[4:5]==G.U.S.SLC_TRK_TEMP[4:5]"  : -        : -      	: -     	: -       : 1		: 2
+END_SCREEN
+
+
+START_SCREEN:SCNCCF67ChkFF
+#Run        : Test          :  Data  : Param     	: Param1                      			: Oper     : Param  	: Param2	: Tmp     : On     	: On
+#On         : Name          :  Type  : Type      	:                             			:          : Type   	:       	: Store   : True   	: False
+EXEC        : CCF67ChkFF   	: STRING : EXPRESSION	:"G.U.S.SLC_TRK[2:3]==G.U.S.SLC_TRK_TEMP[2:3]"  : -        : -      	: -     	: -       : 1    	: 2
+END_SCREEN
+
+
+#START_SCREEN:SCNCCF89ChkFF
+#Run        : Test          :  Data  : Param     	: Param1                      			: Oper     : Param  	: Param2	: Tmp     : On       	: On
+#On         : Name          :  Type  : Type      	:                             			:          : Type   	:       	: Store   : True     	: False
+#EXEC        : CCF89ChkFF   	: STRING : EXPRESSION	:"G.U.S.SLC_TRK[0:1]==G.U.S.SLC_TRK_TEMP[0:1]"  : -        : -      	: -     	: -       : 1    	: 2
+#END_SCREEN
+
+

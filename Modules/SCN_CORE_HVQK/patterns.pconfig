@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patterns>
+  <PORRoot Path="I:\program\1274\eng\hdmtpats\rpl\MscnCore\" Rev="RevTRJ0.0" Patch="p6">
+    <PlistFiles>
+      <PlistFile>iascan.sort.hvm.core_allplist.plist</PlistFile>
+    </PlistFiles>
+  </PORRoot>
+	<!--<ENGRoot Path = "..\..\Shared\Common\Supersedes\patterns\">
+		<PlistFiles>
+			<PlistFile>iascan.sort.hvm.core_allplist.plist</PlistFile>
+		</PlistFiles>
+	</ENGRoot>-->
+</Patterns>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>				
+<ADTL xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="GEN_ADTL_tt.xsd">				
+	<!-- PREPOST -->
+	<config_set name="SCN_CCF_PREPOST_ALL" > 			
+		<fit name ="VMIN_PRE_GBO" default_fail_port="2" >		
+			<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>	
+			<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_POST_CCF_SCAN_GBO</y_param>			
+            <y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_PRE_CCF_SCAN_GBO</y_param>		
+			<kill_cutline>VMIN_Sigma8</kill_cutline>	
+			<cutline name="VMIN_Sigma8">	
+				<y_intercept>1.04371429</y_intercept>
+				<slope>-0.00002</slope>
+				<fail_operation>greaterThan</fail_operation>
+			</cutline>	
+		</fit>		
+		<fit name ="VMIN_PRE_SBO" default_fail_port="3" > 		
+			<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+		    <y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_POST_CCF_SCAN_SBO</y_param>			
+            <y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_PRE_CCF_SCAN_SBO</y_param>	
+			<kill_cutline>VMIN_Sigma8</kill_cutline>	
+			<cutline name="VMIN_Sigma8">	
+				<y_intercept>0.96479121</y_intercept>
+				<slope>-1.36E-05</slope>
+				<fail_operation>greaterThan</fail_operation>
+			</cutline>	
+		</fit>	
+		<fit name ="VMIN_PRE_CBO01234567" default_fail_port="4" >		
+			<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+			<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_POST_SCAN_CCF_CBO01234567</y_param>
+			<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_PRE_SCAN_CCF_CBO01234567</y_param>	            	
+			<kill_cutline>VMIN_Sigma8</kill_cutline>	
+			<cutline name="VMIN_Sigma8">	
+				<y_intercept>1.04274725</y_intercept>
+				<slope>-1.87E-05</slope>
+				<fail_operation>greaterThan</fail_operation>
+			</cutline>	
+		</fit>
+	</config_set> 			
+</ADTL>				

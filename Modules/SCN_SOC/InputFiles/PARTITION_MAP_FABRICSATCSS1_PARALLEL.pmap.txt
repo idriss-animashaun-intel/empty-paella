@@ -1,0 +1,77 @@
+# External inputs from ScanFI data:
+#   {Pattern name}
+#   {Failing pin}
+#   {Label offset to cycle failure in Scan memory}
+
+# Define content variable
+DEFINE: CONTENT_TYPE: MAIN
+
+# Define optional variables
+DEFINE: VAR: vLatency:    0
+DEFINE: VAR: vGroupCount: 1
+
+# Define mandatory variables
+DEFINE: VAR: kCyclesLabel2Fail: 0
+DEFINE: VAR: kGroup:            0
+DEFINE: VAR: kShift:            0
+DEFINE: VAR: kMainCycle: 0
+DEFINE:	VAR: kHRYStringLength: 3
+
+# GSDS Output HRY_BIT_LIST
+DEFINE:	GSDS:	G.U.S.HRY_SCN_FABRICSATCSS1: 0,1,2
+
+# Define algorithm: keep a stack
+DEFINE: ALG: vOffset: kCyclesLabel2Fail vLatency -
+DEFINE: ALG:  kGroup: vOffset vGroupCount mod
+DEFINE: ALG:  kShift: vOffset vGroupCount / floor
+
+##PATTERN SECTION
+
+PAT: START: RPL_pre|MAIN|DEKEL|RPL_pst|fabric_sa_north_byp|SOC_dekel_tapcfg_ucc_bclk_precat
+0: [0-9a-zA-Z] : *: 0: FABRICSATCSS1 : RESET
+PAT: END: RPL_pre|MAIN|DEKEL|RPL_pst|fabric_sa_north_byp|SOC_dekel_tapcfg_ucc_bclk_precat
+
+PAT: START: fabricsatcss1|FABRICSATCSS1
+0: DDRDQ_IL01_NIL01_D501_LP01_2: *: 1: FABRICSATCSS1 : FABRICSATCSSVCCSA       #stf.10 fabricsatcssvccsa [15:0] 
+0: DDRDQ_IL01_NIL01_D501_LP01_3: *: 1: FABRICSATCSS1 : FABRICSATCSSVCCSA       #stf.11 fabricsatcssvccsa [15:0] 
+0: DDRDQ_IL01_NIL01_D501_LP01_4: *: 1: FABRICSATCSS1 : FABRICSATCSSVCCSA       #stf.12 fabricsatcssvccsa [15:0]  
+0: DDRDQ_IL01_NIL01_D501_LP01_5: *: 1: FABRICSATCSS1 : FABRICSATCSSVCCSA       #stf.13 fabricsatcssvccsa [15:0]  
+0: DDRDQ_IL01_NIL01_D501_LP01_6: *: 1: FABRICSATCSS1 : FABRICSATCSSVCCSA       #stf.14 fabricsatcssvccsa [15:0] 
+0: DDRDQ_IL01_NIL01_D501_LP01_7: *: 1: FABRICSATCSS1 : FABRICSATCSSVCCSA       #stf.15 fabricsatcssvccsa [15:0] 
+0: DDRDQ_IL10_NIL02_D502_LP10_0: *: 1: FABRICSATCSS1 : FABRICSATCSSVCCSA       #stf.16 fabricsatcssvccsa [15:0]  
+0: DDRDQ_IL10_NIL02_D502_LP10_1: *: 1: FABRICSATCSS1 : FABRICSATCSSVCCSA       #stf.17 fabricsatcssvccsa [15:0]  
+0: DDRDQ_IL10_NIL02_D502_LP10_2: *: 1: FABRICSATCSS1 : FABRICSATCSSVCCSA       #stf.18 fabricsatcssvccsa [15:0]  
+0: DDRDQ_IL10_NIL02_D502_LP10_3: *: 1: FABRICSATCSS1 : FABRICSATCSSVCCSA       #stf.19 fabricsatcssvccsa [15:0]  
+0: DDRDQ_IL10_NIL02_D502_LP10_4: *: 1: FABRICSATCSS1 : FABRICSATCSSVCCSA      #stf.20 fabricsatcssvccsa [15:0]  
+0: DDRDQ_IL10_NIL02_D502_LP10_5: *: 1: FABRICSATCSS1 : FABRICSATCSSVCCSA      #stf.21 fabricsatcssvccsa [15:0]  
+0: DDRDQ_IL10_NIL02_D502_LP10_6: *: 1: FABRICSATCSS1 : FABRICSATCSSVCCSA      #stf.22 fabricsatcssvccsa [15:0]  
+0: DDRDQ_IL10_NIL02_D502_LP10_7: *: 1: FABRICSATCSS1 : FABRICSATCSSVCCSA      #stf.23 fabricsatcssvccsa [15:0]  
+0: DDRDQ_IL11_NIL03_D503_LP11_0: *: 1: FABRICSATCSS1 : FABRICSATCSSVCCSA      #stf.24 fabricsatcssvccsa [15:0]  
+0: DDRDQ_IL11_NIL03_D503_LP11_1: *: 1: FABRICSATCSS1 : FABRICSATCSSVCCSA      #stf.25 fabricsatcssvccsa [15:0] 
+0: DDRDQ_IL11_NIL03_D503_LP11_2: *: 2: FABRICSATCSS1 : FABRICSATCSSVCCSAGMEM       #stf.26 fabricsatcssvccsa [31:16]  
+0: DDRDQ_IL11_NIL03_D503_LP11_3: *: 2: FABRICSATCSS1 : FABRICSATCSSVCCSAGMEM       #stf.27 fabricsatcssvccsa [31:16]  
+0: DDRDQ_IL11_NIL03_D503_LP11_4: *: 2: FABRICSATCSS1 : FABRICSATCSSVCCSAGMEM       #stf.28 fabricsatcssvccsa [31:16]  
+0: DDRDQ_IL11_NIL03_D503_LP11_5: *: 2: FABRICSATCSS1 : FABRICSATCSSVCCSAGMEM       #stf.29 fabricsatcssvccsa [31:16]  
+0: DDRDQ_IL11_NIL03_D503_LP11_6: *: 2: FABRICSATCSS1 : FABRICSATCSSVCCSAGMEM       #stf.30 fabricsatcssvccsa [31:16]  
+0: DDRDQ_IL11_NIL03_D503_LP11_7: *: 2: FABRICSATCSS1 : FABRICSATCSSVCCSAGMEM       #stf.31  fabricsatcssvccsa [31:16]  
+0: DDRDQ_IL02_NIL04_D510_LP20_0: *: 2: FABRICSATCSS1 : FABRICSATCSSVCCSAGMEM       #stf.32 fabricsatcssvccsa [31:16]  
+0: DDRDQ_IL02_NIL04_D510_LP20_1: *: 2: FABRICSATCSS1 : FABRICSATCSSVCCSAGMEM       #stf.33 fabricsatcssvccsa [31:16]  
+0: DDRDQ_IL02_NIL04_D510_LP20_2: *: 2: FABRICSATCSS1 : FABRICSATCSSVCCSAGMEM       #stf.34 fabricsatcssvccsa [31:16]  
+0: DDRDQ_IL02_NIL04_D510_LP20_3: *: 2: FABRICSATCSS1 : FABRICSATCSSVCCSAGMEM       #stf.35 fabricsatcssvccsa [31:16]  
+0: DDRDQ_IL02_NIL04_D510_LP20_4: *: 2: FABRICSATCSS1 : FABRICSATCSSVCCSAGMEM       #stf.36 fabricsatcssvccsa [31:16]  
+0: DDRDQ_IL02_NIL04_D510_LP20_5: *: 2: FABRICSATCSS1 : FABRICSATCSSVCCSAGMEM       #stf.37 fabricsatcssvccsa [31:16]  
+0: DDRDQ_IL02_NIL04_D510_LP20_6: *: 2: FABRICSATCSS1 : FABRICSATCSSVCCSAGMEM       #stf.38 fabricsatcssvccsa [31:16]  
+0: DDRDQ_IL02_NIL04_D510_LP20_7: *: 2: FABRICSATCSS1 : FABRICSATCSSVCCSAGMEM       #stf.39 fabricsatcssvccsa [31:16]  
+0: DDRDQ_IL03_NIL05_D511_LP21_0: *: 2: FABRICSATCSS1 : FABRICSATCSSVCCSAGMEM       #stf.40 fabricsatcssvccsa [31:16]  
+0: DDRDQ_IL03_NIL05_D511_LP21_1: *: 2: FABRICSATCSS1 : FABRICSATCSSVCCSAGMEM       #stf.41 fabricsatcssvccsa [31:16]  
+PAT: END: fabricsatcss1|FABRICSATCSS1
+
+# Define recovery config mapping
+# Level0: Level1: Level2: Status      # Status options:  PASS = Must pass, FAIL = Must fail, DONOTCARE = Ignore;  Default if token is not listed is PASS
+CONFIG_SET: START: FABRICSATCSS1
+RESET: FAIL
+FABRICSATCSSVCCSA: DONOTCARE
+FABRICSATCSSVCCSAGMEM: DONOTCARE
+CONFIG_SET: END: FABRICSATCSS1
+
+

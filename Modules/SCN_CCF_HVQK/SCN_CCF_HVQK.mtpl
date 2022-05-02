@@ -1,0 +1,3847 @@
+# Module Revision: hcstewar - 12/20/21 10:28:08 AM
+
+Version 1.0;
+
+ProgramStyle = Modular;
+
+TestPlan SCN_CCF_HVQK;
+
+Import SCN_CCF_HVQK.usrv;
+Import SCN_CCF_HVQK_Specs.usrv;
+
+
+
+Import OASIS_HVQK_tt.xml;
+Import OASIS_Shmoo_tt.xml;
+Import OASIS_FAST_tt.xml;
+Import OASIS_ScanFI_tt.xml;
+Import OASIS_Screen_tt.xml;
+Import OASIS_Auxiliary_tt.xml;
+Import OASIS_SampleRate_tt.xml;
+Import OASIS_UserFunc_tt.xml;
+Import OASIS_PatternModify_tt.xml;
+Import OASIS_Vmin_tt.xml;
+
+
+
+
+#Test Counter Definition
+Counters
+{
+	n90170009_fail_STUCKAT_CBO01_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_0,
+	n90174758_fail_STUCKAT_SBO_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_0,
+	n90174759_fail_STUCKAT_GBO_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_0,
+	n90174761_fail_STUCKAT_CBO23_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_0,
+	n90174762_fail_STUCKAT_CBO45_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_0,
+	n90174763_fail_STUCKAT_CBO67_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_0,
+	n90190079_fail_CHAIN_SBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF_3,
+	n90190080_fail_CHAIN_GBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF_3,
+	n90190710_fail_RESET_CBO_SCANFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_PREAMBLE_3,
+	n90190714_fail_ATSPEED_SBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF_3,
+	n90190715_fail_ATSPEED_SBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF_3,
+	n90190780_fail_ATSPEED_GBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF_3,
+	n90190790_fail_ATSPEED_GBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF_3,
+	n90191355_fail_RESET_CBO_SCANFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_PREAMBLE_0,
+	n90260496_fail_ATSPEED_SBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF_0,
+	n90260644_fail_ATSPEED_GBO_VMIN_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF_0,
+	n90260860_fail_ATSPEED_CBO01234567_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_3,
+	n90261632_fail_ATSPEED_CBO01234567_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_0,
+	n90262254_fail_ATSPEED_CBO01234567_VMIN_E_POSTHVQK_STF_CLR_NOM_LFM_1600_0,
+	n90262270_fail_ATSPEED_GBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF_0,
+	n90262274_fail_ATSPEED_SBO_VMIN_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF_0,
+	n90262295_fail_ATSPEED_GBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF_3,
+	n90262421_fail_ATSPEED_SBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF_3,
+	n90410013_fail_FLOW_CBO_AUX_E_PREHVQK_STF_CLR_NOM_LFM_1600_NONCONCURRENT_ON_0,
+	n90410089_fail_CHAIN_GBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF_3,
+	n90410627_fail_CHAIN_SBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF_3,
+	n90410677_fail_FLOW_CBO_AUX_E_POSTHVQK_STF_CLR_NOM_LFM_1600_NONCONCURRENT_ON_0,
+	n90410704_fail_CHAIN_GBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF_0,
+	n90410728_fail_CHAIN_SBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF_0,
+	n90410806_fail_CHAIN_SBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF_0,
+	n90410853_fail_FLOW_CCF_AUX_E_STRESS_STF_CLR_NOM_LFM_1600_CBO_NONCONCURRENT_ON_0,
+	n90410889_fail_CHAIN_GBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF_0,
+	n90420001_fail_ATSPEED_CBO01234567_SHMOO_E_PREHVQK_STF_CLR_NOM_LFM_1600_VMIN_0,
+	n90420004_fail_CTRL_CBO_AUX_E_PREHVQK_STF_CLR_NOM_LFM_1600_STORE_VMIN_PREDIC1_PAIR_0,
+	n90420235_fail_STUCKAT_CBO23_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF_0,
+	n90420241_fail_RESET_CBO_SCANFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_PREAMBLE_3,
+	n90420294_fail_STUCKAT_CBO45_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF_0,
+	n90420382_fail_ATSPEED_SBO_SHMOO_E_PREHVQK_STF_CLR_NOM_LFM_1600_VMIN_0,
+	n90421475_fail_STUCKAT_SBO_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF_0,
+	n90421476_fail_STUCKAT_GBO_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF_0,
+	n90421477_fail_STUCKAT_CBO67_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF_0,
+	n90421490_fail_STUCKAT_CBO01_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF_0,
+	n90421502_fail_ATSPEED_GBO_SHMOO_E_PREHVQK_STF_CLR_NOM_LFM_1600_VMIN_0,
+	n90421983_fail_CTRL_CBO_AUX_E_PREHVQK_STF_CLR_NOM_LFM_1600_STORE_VMIN_PREDIC1_PAIR_2,
+	n90424056_fail_RESET_CBO_SCANFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_PREAMBLE_0,
+	n90470391_fail_ATSPEED_CBO01234567_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_PAIR_0,
+	n90470424_fail_ATSPEED_CBO01234567_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_PAIR_3,
+	n90470502_fail_ATSPEED_SBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF_0,
+	n90470707_fail_ATSPEED_SBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF_0,
+	n90470708_fail_ATSPEED_SBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF_0,
+	n90470844_fail_ATSPEED_GBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF_3,
+	n90471161_fail_ATSPEED_GBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF_0,
+	n90471340_fail_ATSPEED_CBO01234567_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_0,
+	n90471350_fail_ATSPEED_CBO01234567_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_3,
+	n90471484_fail_ATSPEED_CBO01234567_VMIN_E_PREHVQK_STF_CLR_NOM_LFM_1600_0,
+	n90471485_fail_ATSPEED_CBO01234567_VMIN_E_PREHVQK_STF_CLR_NOM_LFM_1600_DR_0,
+	n90472223_fail_CTRL_CBO01234567_SCANFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_DIE_RECOVERY_ATSPEED_0,
+	n90472224_fail_ATSPEED_CBO01234567_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_0,
+	n90472247_fail_CTRL_CBO01234567_SCANFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_DIE_RECOVERY_ATSPEED_2,
+	n90472273_fail_ATSPEED_SBO_VMIN_K_PREHVQK_STF_CLR_NOM_LFM_1600_FF_0,
+	n90472275_fail_ATSPEED_GBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF_0,
+	n90472276_fail_ATSPEED_GBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF_0,
+	n90472296_fail_ATSPEED_CBO01234567_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_3,
+	n90472298_fail_ATSPEED_SBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF_3,
+	n90472304_fail_ATSPEED_GBO_VMIN_K_PREHVQK_STF_CLR_NOM_LFM_1600_FF_0,
+	n90900682_fail_CTRL_CBO01234567_AUX_E_PREHVQK_STF_CLR_NOM_LFM_1600_STORE_SLTRK_TOKEN_PAIR_0,
+	n90900870_fail_FLOW_CCF_AUX_E_PREHVQK_STF_CLR_NOM_LFM_1600_0,
+	n90900880_fail_CTRL_CBO01234567_AUX_E_PREHVQK_STF_CLR_NOM_LFM_1600_COMPARE_SLTRK_TOKEN_PAIR_0,
+	n90901545_fail_FLOW_CCF_AUX_E_STRESS_STF_CLR_NOM_LFM_1600_0,
+	n90901549_fail_CTRL_CBO0246_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_0,
+	n90902274_fail_CTRL_CBO01234567_AUX_E_POSTHVQK_STF_CLR_NOM_LFM_1600_COMPARE_SLTRK_TOKEN_0,
+	n90902278_fail_CTRL_CBO01234567_AUX_E_POSTHVQK_STF_CLR_NOM_LFM_1600_STORE_SLTRK_TOKEN_0,
+	n90902740_fail_FLOW_CBO0246_AUX_E_POSTHVQK_STF_CLR_NOM_LFM_1600_SPOFI_FABCHECK_0,
+	n90902814_fail_CTRL_GBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_FF_0,
+	n90902816_fail_CTRL_GBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_FF_0,
+	n90902821_fail_FLOW_GBO_AUX_E_PREHVQK_STF_CLR_NOM_LFM_1600_SPOFI_FABCHECK_FF_0,
+	n90902822_fail_FLOW_GBO_AUX_E_POSTHVQK_STF_CLR_NOM_LFM_1600_SPOFI_FABCHECK_FF_0,
+	n90902823_fail_CTRL_SBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_FF_0,
+	n90902824_fail_CTRL_SBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_FF_0,
+	n90902829_fail_FLOW_SBO_AUX_E_PREHVQK_STF_CLR_NOM_LFM_1600_SPOFI_FABCHECK_FF_0,
+	n90902830_fail_FLOW_SBO_AUX_E_POSTHVQK_STF_CLR_NOM_LFM_1600_SPOFI_FABCHECK_FF_0,
+	n90903348_fail_FLOW_CBO01234567_AUX_E_PREHVQK_STF_CLR_NOM_LFM_1600_SPOFI_FABCHECK_PAIR_0,
+	n90903787_fail_CTRL_CBO01234567_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_PAIR_0,
+	n90904444_fail_FLOW_CCF_PATMOD_K_INIT_STF_CLR_NOM_LFM_1600_STUCKAT_HVQK_0,
+	n90980001_fail_FAIL_SYSTEM_SOFTWARE,
+	n90990001_fail_FAIL_DPS_ALARM,
+	p99191356_pass_RESET_CBO_SCANFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_PREAMBLE_1,
+	p99191358_pass_RESET_CBO_SCANFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_PREAMBLE_2,
+	p99260465_pass_ATSPEED_SBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF_1,
+	p99260709_pass_ATSPEED_SBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF_2,
+	p99261594_pass_ATSPEED_CBO01234567_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_1,
+	p99262264_pass_ATSPEED_CBO01234567_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_2,
+	p99262269_pass_ATSPEED_GBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF_2,
+	p99262277_pass_ATSPEED_GBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF_1,
+	p99410019_pass_CHAIN_SBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF_2,
+	p99410660_pass_CHAIN_SBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF_2,
+	p99410686_pass_CHAIN_SBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF_1,
+	p99410719_pass_CHAIN_GBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF_1,
+	p99410746_pass_CHAIN_GBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF_2,
+	p99410767_pass_CHAIN_SBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF_1,
+	p99410831_pass_CHAIN_GBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF_2,
+	p99410907_pass_CHAIN_GBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF_1,
+	p99424057_pass_RESET_CBO_SCANFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_PREAMBLE_1,
+	p99424058_pass_RESET_CBO_SCANFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_PREAMBLE_2,
+	p99470059_pass_ATSPEED_CBO01234567_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_PAIR_2,
+	p99470389_pass_ATSPEED_CBO01234567_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_PAIR_1,
+	p99470462_pass_ATSPEED_SBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF_2,
+	p99470465_pass_ATSPEED_CBO01234567_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_2,
+	p99470495_pass_ATSPEED_SBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF_1,
+	p99470528_pass_ATSPEED_GBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF_2,
+	p99470529_pass_ATSPEED_GBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF_2,
+	p99470709_pass_ATSPEED_CBO01234567_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_1,
+	p99471162_pass_ATSPEED_SBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF_2,
+	p99471163_pass_ATSPEED_SBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF_2,
+	p99471432_pass_ATSPEED_GBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF_1,
+	p99471587_pass_ATSPEED_CBO01234567_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_2,
+	p99472221_pass_ATSPEED_CBO01234567_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_1,
+	p99472271_pass_ATSPEED_GBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF_1,
+	p99472272_pass_ATSPEED_GBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF_2,
+	p99472416_pass_ATSPEED_SBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF_1,
+	p99472418_pass_ATSPEED_SBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF_1,
+	p99472422_pass_ATSPEED_GBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF_1,
+	p99902755_pass_CTRL_CBO0246_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_1,
+	p99902801_pass_CTRL_CBO0246_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_2,
+	p99902817_pass_CTRL_GBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_FF_1,
+	p99902818_pass_CTRL_GBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_FF_1,
+	p99902819_pass_CTRL_GBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_FF_2,
+	p99902820_pass_CTRL_GBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_FF_2,
+	p99902825_pass_CTRL_SBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_FF_1,
+	p99902826_pass_CTRL_SBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_FF_1,
+	p99902827_pass_CTRL_SBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_FF_2,
+	p99902828_pass_CTRL_SBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_FF_2,
+	p99903788_pass_CTRL_CBO01234567_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_PAIR_1,
+	p99903789_pass_CTRL_CBO01234567_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_PAIR_2,
+	n90174758_fail_STUCKAT_SBO_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_3,
+	n90174758_fail_STUCKAT_SBO_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_4,
+	n90170000_fail_STUCKAT_SBO_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_4,
+	n90174759_fail_STUCKAT_GBO_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_4,
+	n90174759_fail_STUCKAT_GBO_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_3,
+	n90174700_fail_STUCKAT_GBO_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_3,
+	n90174701_fail_STUCKAT_GBO_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_4,
+	n90174702_fail_STUCKAT_GBO_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_4,
+	n90174703_fail_STUCKAT_GBO_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_3,
+	n90170001_fail_STUCKAT_CBO01234567_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_3,
+	n90174200_fail_STUCKAT_CBO01234567_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_3,
+	n90174201_fail_STUCKAT_CBO01234567_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_4,
+	n90174202_fail_STUCKAT_SBO_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_3,
+	n90174203_fail_STUCKAT_SBO_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_4,
+	n90174204_fail_STUCKAT_GBO_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_3,
+	n90174205_fail_STUCKAT_GBO_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_4,
+	n90174206_fail_STUCKAT_CBO01_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_0,
+	n90420000_fail_STUCKAT_CBO01234567_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF_0,
+	n90420002_fail_STUCKAT_CBO01234567_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF_0
+} # End of Test Counter Definition
+
+Test iCHVQKTest STUCKAT_CBO01_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC
+{
+	alarm_handle_delay = 25;
+	datalog_mode = "ON";
+	level = "BASE::SBF_HVQK_CCF_HVQK";
+	meta_data_file = "RPL682MB.hvqk.metadata.txt";
+	patlist = "scn_ccf_x_vccia_x_stress_sNs_edt_cbopair0_ca1tf_10sOps_list";
+	postinstance = "DIE_RECOVERY!ExecSequence MaskClearScanAllCore";
+	power_down_level = "BASE::power_dwn_xxx_pwrd_zerzer";
+	power_up_level = "BASE::SBF_pwrup_lvl";
+	preplist = "DIE_RECOVERY!ExecSequence PinMaskingFromSliceCbo01";
+	timings = "BASE::cpu_func_stf_univ_b100_t100_d200";
+	voltage_step_config_file = "./Modules/SCN_CCF_HVQK/InputFiles/vbump_CCFCBO01_scan_logic_stress.hvqk.config.xml";
+	bypass_global = "1";
+}
+Test iCShmooTest STUCKAT_CBO01234567_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF
+{
+	datalog_type = "SHMOO_HUB";
+	level = "BASE::SBF_HVQK_CCF_HVQK";
+	patlist = "scn_ccf_x_vccia_x_stress_sEs_edt_cbopair0123_ph1_ca1tf_10sOps_list";
+	timings = "BASE::cpu_func_stf_univ_b100_t100_d400";
+	xaxis_max = 12.0;
+	xaxis_min = 8.0;
+	xaxis_parameter = "p_bclkper_spec";
+	xaxis_resolution = 0.5;
+	yaxis_max = 1.6;
+	yaxis_min = 0.5;
+	yaxis_parameter = "p_vccr_spec";
+	yaxis_resolution = 0.05;
+##	bypass_global = "1";
+}
+Test iCShmooTest STUCKAT_CBO01_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF
+{
+	datalog_type = "SHMOO_HUB";
+	level = "BASE::SBF_HVQK_CCF_HVQK";
+	patlist = "scn_ccf_x_vccia_x_stress_sNs_edt_cbopair0_ca1tf_10sOps_list";
+	timings = "BASE::cpu_func_stf_univ_b100_t100_d200";
+	xaxis_max = 12.0;
+	xaxis_min = 8.0;
+	xaxis_parameter = "p_bclkper_spec";
+	xaxis_resolution = 0.5;
+	yaxis_max = 1.6;
+	yaxis_min = 0.5;
+	yaxis_parameter = "p_vccr_spec";
+	yaxis_resolution = 0.05;
+	bypass_global = "1";
+}
+Test iCHVQKTest STUCKAT_CBO23_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC
+{
+	alarm_handle_delay = 25;
+	datalog_mode = "ON";
+	level = "BASE::SBF_HVQK_CCF_HVQK";
+	meta_data_file = "RPL682MB.hvqk.metadata.txt";
+	patlist = "scn_ccf_x_vccia_x_stress_sNs_edt_cbopair1_ca1tf_10sOps_list";
+	postinstance = "DIE_RECOVERY!ExecSequence MaskClearScanAllCore";
+	power_down_level = "BASE::power_dwn_xxx_pwrd_zerzer";
+	power_up_level = "BASE::SBF_pwrup_lvl";
+	preplist = "DIE_RECOVERY!ExecSequence PinMaskingFromSliceCbo23";
+	timings = "BASE::cpu_func_stf_univ_b100_t100_d200";
+	voltage_step_config_file = "./Modules/SCN_CCF_HVQK/InputFiles/vbump_CCFCBO23_scan_logic_stress.hvqk.config.xml";
+	bypass_global = "1";
+}
+Test iCShmooTest STUCKAT_CBO23_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF
+{
+	datalog_type = "SHMOO_HUB";
+	level = "BASE::SBF_HVQK_CCF_HVQK";
+	patlist = "scn_ccf_x_vccia_x_stress_sNs_edt_cbopair1_ca1tf_10sOps_list";
+	timings = "BASE::cpu_func_stf_univ_b100_t100_d200";
+	xaxis_max = 12.0;
+	xaxis_min = 8.0;
+	xaxis_parameter = "p_bclkper_spec";
+	xaxis_resolution = 0.5;
+	yaxis_max = 1.6;
+	yaxis_min = 0.5;
+	yaxis_parameter = "p_vccr_spec";
+	yaxis_resolution = 0.05;
+	bypass_global = "1";
+}
+Test iCHVQKTest STUCKAT_CBO45_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC
+{
+	alarm_handle_delay = 25;
+	datalog_mode = "ON";
+	level = "BASE::SBF_HVQK_CCF_HVQK";
+	meta_data_file = "RPL682MB.hvqk.metadata.txt";
+	patlist = "scn_ccf_x_vccia_x_stress_sNs_edt_cbopair2_ca1tf_10sOps_list";
+	postinstance = "DIE_RECOVERY!ExecSequence MaskClearScanAllCore";
+	power_down_level = "BASE::power_dwn_xxx_pwrd_zerzer";
+	power_up_level = "BASE::SBF_pwrup_lvl";
+	preplist = "DIE_RECOVERY!ExecSequence PinMaskingFromSliceCbo45";
+	timings = "BASE::cpu_func_stf_univ_b100_t100_d200";
+	voltage_step_config_file = "./Modules/SCN_CCF_HVQK/InputFiles/vbump_CCFCBO45_scan_logic_stress.hvqk.config.xml";
+	bypass_global = "1";
+}
+Test iCShmooTest STUCKAT_CBO45_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF
+{
+	datalog_type = "SHMOO_HUB";
+	level = "BASE::SBF_HVQK_CCF_HVQK";
+	patlist = "scn_ccf_x_vccia_x_stress_sNs_edt_cbopair2_ca1tf_10sOps_list";
+	timings = "BASE::cpu_func_stf_univ_b100_t100_d200";
+	xaxis_max = 12.0;
+	xaxis_min = 8.0;
+	xaxis_parameter = "p_bclkper_spec";
+	xaxis_resolution = 0.5;
+	yaxis_max = 1.6;
+	yaxis_min = 0.5;
+	yaxis_parameter = "p_vccr_spec";
+	yaxis_resolution = 0.05;
+	bypass_global = "1";
+}
+Test iCHVQKTest STUCKAT_CBO67_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC
+{
+	alarm_handle_delay = 25;
+	datalog_mode = "ON";
+	level = "BASE::SBF_HVQK_CCF_HVQK";
+	meta_data_file = "RPL682MB.hvqk.metadata.txt";
+	patlist = "scn_ccf_x_vccia_x_stress_sNs_edt_cbopair3_ca1tf_10sOps_list";
+	postinstance = "DIE_RECOVERY!ExecSequence MaskClearScanAllCore";
+	power_down_level = "BASE::power_dwn_xxx_pwrd_zerzer";
+	power_up_level = "BASE::SBF_pwrup_lvl";
+	preplist = "DIE_RECOVERY!ExecSequence PinMaskingFromSliceCbo67";
+	timings = "BASE::cpu_func_stf_univ_b100_t100_d200";
+	voltage_step_config_file = "./Modules/SCN_CCF_HVQK/InputFiles/vbump_CCFCBO67_scan_logic_stress.hvqk.config.xml";
+	bypass_global = "1";
+}
+Test iCShmooTest STUCKAT_CBO67_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF
+{
+	datalog_type = "SHMOO_HUB";
+	level = "BASE::SBF_HVQK_CCF_HVQK";
+	patlist = "scn_ccf_x_vccia_x_stress_sNs_edt_cbopair3_ca1tf_10sOps_list";
+	timings = "BASE::cpu_func_stf_univ_b100_t100_d200";
+	xaxis_max = 12.0;
+	xaxis_min = 8.0;
+	xaxis_parameter = "p_bclkper_spec";
+	xaxis_resolution = 0.5;
+	yaxis_max = 1.6;
+	yaxis_min = 0.5;
+	yaxis_parameter = "p_vccr_spec";
+	yaxis_resolution = 0.05;
+	bypass_global = "1";
+}
+Test iCHVQKTest STUCKAT_GBO_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC
+{
+	alarm_handle_delay = 25;
+	datalog_mode = "ON";
+	level = "BASE::SBF_HVQK_CCF_HVQK";
+	meta_data_file = "RPL682MB.hvqk.metadata.txt";
+	patlist = "scn_ccf_x_vccia_x_stress_sNs_edt_gbo_ca1tf_10sOps_list";
+	power_down_level = "BASE::power_dwn_xxx_pwrd_zerzer";
+	power_up_level = "BASE::SBF_pwrup_lvl";
+	timings = "BASE::cpu_func_stf_univ_b100_t100_d200";
+	voltage_step_config_file = "./Modules/SCN_CCF_HVQK/InputFiles/vbump_CCFGBO_scan_logic_stress.hvqk.config.xml";
+###	bypass_global = "1";
+}
+Test iCShmooTest STUCKAT_GBO_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF
+{
+	datalog_type = "SHMOO_HUB";
+	level = "BASE::SBF_HVQK_CCF_HVQK";
+	patlist = "scn_ccf_x_vccia_x_stress_sNs_edt_gbo_ca1tf_10sOps_list";
+	timings = "BASE::cpu_func_stf_univ_b100_t100_d200";
+	xaxis_max = 12.0;
+	xaxis_min = 8.0;
+	xaxis_parameter = "p_bclkper_spec";
+	xaxis_resolution = 0.5;
+	yaxis_max = 1.6;
+	yaxis_min = 0.5;
+	yaxis_parameter = "p_vccr_spec";
+	yaxis_resolution = 0.05;
+###	bypass_global = "1";
+}
+Test iCHVQKTest STUCKAT_SBO_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC
+{
+	alarm_handle_delay = 25;
+	datalog_mode = "ON";
+	level = "BASE::SBF_HVQK_CCF_HVQK";
+	meta_data_file = "RPL682MB.hvqk.metadata.txt";
+	patlist = "scn_ccf_x_vccia_x_stress_sNs_edt_sbo_ca1tf_10sOps_list";
+	power_down_level = "BASE::power_dwn_xxx_pwrd_zerzer";
+	power_up_level = "BASE::SBF_pwrup_lvl";
+	timings = "BASE::cpu_func_stf_univ_b100_t100_d200";
+	voltage_step_config_file = "./Modules/SCN_CCF_HVQK/InputFiles/vbump_CCFSBO_scan_logic_stress.hvqk.config.xml";
+###	bypass_global = "1";
+}
+Test iCShmooTest STUCKAT_SBO_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF
+{
+	datalog_type = "SHMOO_HUB";
+	level = "BASE::SBF_HVQK_CCF_HVQK";
+	patlist = "scn_ccf_x_vccia_x_stress_sNs_edt_sbo_ca1tf_10sOps_list";
+	timings = "BASE::cpu_func_stf_univ_b100_t100_d200";
+	xaxis_max = 12.0;
+	xaxis_min = 8.0;
+	xaxis_parameter = "p_bclkper_spec";
+	xaxis_resolution = 0.5;
+	yaxis_max = 1.6;
+	yaxis_min = 0.5;
+	yaxis_parameter = "p_vccr_spec";
+	yaxis_resolution = 0.05;
+###	bypass_global = "1";
+}
+
+Test iCVminTest ATSPEED_CBO01234567_VMIN_E_POSTHVQK_STF_CLR_NOM_LFM_1600
+{
+	sb_base_number = 3823;
+	execution_mode = "SEARCH";
+	search_high_limit = 1.0;
+	ifpm_input_file = "./Modules/SCN_CCF_HVQK/InputFiles/concurrent_ccf_ifpm.xml";
+	level = "BASE::SBF_SEARCH_CCF_SEARCH";
+	search_low_limit = 0.5;
+	patlist = "scn_ccf_x_vccia_x_x_sEs_edt_CBOPAIRS_ca2tf_20sOps_list";
+	pattern_name_map = "1,2,3,4,5,6,7";
+	search_resolution = 0.02;
+	search_voltage_targets = "VCCR_HC";
+	timings = "BASE::cpu_func_stf_univ_b100_t100_d400";
+	search_predict_low_expression = "G.U.D.HVQK_VMIN_PRE_SCAN_CCF_CBO01234567";
+	search_result_gsds = "G.U.D.HVQK_VMIN_POST_SCAN_CCF_CBO01234567";
+	preplist = "DIE_RECOVERY!ExecSequence SetCaptureSettings";
+	die_recovery_pin_map = "SCAN_CONCURRENT_CCF";
+	die_recovery_rule = "Checkrules_BigCores";
+	die_recovery_tracking = "SliceTracking";
+	mask_incoming = "ENABLED";
+	ifpm_modifygroups = "bt!DUMMY!NONE";
+	search_recovery_repetitions = 0;
+}
+
+Test iCVminTest ATSPEED_CBO01234567_VMIN_E_PREHVQK_STF_CLR_NOM_LFM_1600
+{
+	sb_base_number = 3756;
+	execution_mode = "SEARCH";
+	search_high_limit = 1.0;
+	level = "BASE::SBF_SEARCH_CCF_SEARCH";
+	search_low_limit = 0.5;
+	patlist = "scn_ccf_x_vccia_x_x_sEs_edt_CBOPAIRS_ca2tf_20sOps_list";
+	pattern_name_map = "1,2,3,4,5,6,7";
+	search_resolution = 0.02;
+	search_voltage_targets = "VCCR_HC";
+	timings = "BASE::cpu_func_stf_univ_b100_t100_d400";
+	search_predict_low_expression = "0.54";
+	search_result_gsds = "G.U.D.HVQK_VMIN_PRE_SCAN_CCF_CBO01234567";
+	bypass_global = "1";
+}
+
+Test iCVminTest ATSPEED_CBO01234567_VMIN_E_PREHVQK_STF_CLR_NOM_LFM_1600_DR
+{
+	sb_base_number = 3801;
+	execution_mode = "SEARCH";
+	search_high_limit = 1.0;
+	ifpm_input_file = "./Modules/SCN_CCF_HVQK/InputFiles/concurrent_ccf_ifpm.xml";
+	level = "BASE::SBF_SEARCH_CCF_SEARCH";
+	search_low_limit = 0.5;
+	patlist = "scn_ccf_x_vccia_x_x_sEs_edt_CBOPAIRS_ca2tf_20sOps_list";
+	pattern_name_map = "1,2,3,4,5,6,7";
+	search_resolution = 0.02;
+	search_voltage_targets = "VCCR_HC";
+	timings = "BASE::cpu_func_stf_univ_b100_t100_d400";
+	search_predict_low_expression = "0.54";
+	search_result_gsds = "G.U.D.HVQK_VMIN_PRE_SCAN_CCF_CBO01234567";
+	preplist = "DIE_RECOVERY!ExecSequence SetCaptureSettings";
+	die_recovery_pin_map = "SCAN_CONCURRENT_CCF";
+	die_recovery_rule = "Checkrules_BigCores";
+	die_recovery_tracking = "SliceTracking";
+	mask_incoming = "ENABLED";
+	ifpm_modifygroups = "bt!DUMMY!NONE";
+	search_recovery_repetitions = 1;
+}
+Test iCScanFITest ATSPEED_CBO01234567_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600
+{
+	cat_fail_limit = 10;
+	disable_ScanFI_on_preamble_fail = "OFF";
+	execute_options = "EXECUTE_ALL_PAT_ON_N_MAX_PER_PAT";
+	level = "BASE::SBF_nom_lvl";
+	max_ituff_fail_entries = 1;
+	max_num_fail = 13;
+	min_num_fail = 50000;
+	partition_map_config_set = "CCF_CBO01234567";
+	partition_map_file = "./Modules/SCN_CCF_HVQK/InputFiles/PARTITION_MAP_CCF_PARALLEL_CBO01234567.pmap.txt";
+	patlist = "scn_ccf_x_vccia_x_x_sEs_edt_CBOPAIRS_ca2tf_20sOps_list";
+	postinstance = "DIE_RECOVERY!ExecSequence UpdateSliceTrackScanCCF";
+	preplist = "DIE_RECOVERY!ExecSequence SetCaptureSettings";
+	scanFI_datalog_mode = "PARTITION_MAP_DATA";
+	timings = "BASE::cpu_func_stf_univ_b100_t100_d400";
+	bypass_global = "1";
+}
+Test iCScanFITest ATSPEED_CBO01234567_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600
+{
+	cat_fail_limit = toInteger(SCN_CCF_HVQK_Specs.scn_atpg_spofi_max_fail_num);
+	disable_ScanFI_on_preamble_fail = "OFF";
+	enable_scanFI = "ENABLED";
+	level = "BASE::SBF_nom_lvl";
+	max_num_fail = toInteger(SCN_CCF_HVQK_Specs.scn_atpg_spofi_max_fail_num);
+	min_num_fail = toInteger(SCN_CCF_HVQK_Specs.scn_atpg_spofi_max_fail_num);
+	patlist = "scn_ccf_x_vccia_x_x_sEs_edt_CBOPAIRS_ca2tf_20sOps_list";
+	timings = "BASE::cpu_func_stf_univ_b100_t100_d400";
+	bypass_global = "1";
+}
+Test iCScanFITest ATSPEED_CBO01234567_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_PAIR
+{
+	cat_fail_limit = 10;
+	disable_ScanFI_on_preamble_fail = "OFF";
+	execute_options = "EXECUTE_ALL_PAT_ON_N_MAX_PER_PAT";
+	level = "BASE::SBF_nom_lvl";
+	max_ituff_fail_entries = 1;
+	max_num_fail = 13;
+	min_num_fail = 50000;
+	partition_map_config_set = "CCF_CBO01234567";
+	partition_map_file = "./Modules/SCN_CCF_HVQK/InputFiles/PARTITION_MAP_CCF_PARALLEL_CBO01234567.pmap.txt";
+	patlist = "scn_ccf_x_vccia_x_x_sEs_edt_CBOPAIRS_ca2tf_20sOps_list";
+	## postinstance = "DIE_RECOVERY!ExecSequence UpdateSliceTrackScanCCF";
+	## preplist = "DIE_RECOVERY!ExecSequence SetCaptureSettings";
+	scanFI_datalog_mode = "PARTITION_MAP_DATA";
+	timings = "BASE::cpu_func_stf_univ_b100_t100_d400";
+	bypass_global = "1";
+}
+Test iCScanFITest ATSPEED_CBO01234567_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL
+{
+	cat_fail_limit = toInteger(SCN_CCF_HVQK_Specs.scn_atpg_spofi_max_fail_num);
+	disable_ScanFI_on_preamble_fail = "OFF";
+	enable_scanFI = "ENABLED";
+	level = "BASE::SBF_nom_lvl";
+	max_num_fail = toInteger(SCN_CCF_HVQK_Specs.scn_atpg_spofi_max_fail_num);
+	min_num_fail = toInteger(SCN_CCF_HVQK_Specs.scn_atpg_spofi_max_fail_num);
+	patlist = "scn_ccf_x_vccia_x_x_sEs_edt_CBOPAIRS_ca2tf_20sOps_list";
+	timings = "BASE::cpu_func_stf_univ_b100_t100_d400";
+}
+Test iCShmooTest ATSPEED_CBO01234567_SHMOO_E_PREHVQK_STF_CLR_NOM_LFM_1600_VMIN
+{
+	datalog_type = "SHMOO_HUB";
+	level = "BASE::SBF_SEARCH_CCF_SEARCH";
+	patlist = "scn_ccf_x_vccia_x_x_sEs_edt_CBOPAIRS_ca2tf_80sOps_list";
+	timings = "BASE::cpu_func_stf_univ_b100_t100_d400";
+	xaxis_max = 12.0;
+	xaxis_min = 8.0;
+	xaxis_parameter = "p_bclkper_spec";
+	xaxis_resolution = 0.5;
+	yaxis_max = 0.8;
+	yaxis_min = 0.5;
+	yaxis_parameter = "p_vccr_spec";
+	yaxis_resolution = 0.05;
+	bypass_global = "1";
+}
+Test iCScanFITest ATSPEED_GBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF
+{
+	cat_fail_limit = 10;
+	disable_ScanFI_on_preamble_fail = "OFF";
+	execute_options = "EXECUTE_ALL_PAT_ON_N_MAX_PER_PAT";
+	level = "BASE::SBF_nom_lvl";
+	max_ituff_fail_entries = 1;
+	max_num_fail = 1;
+	min_num_fail = 50000;
+	partition_map_config_set = "CCF_GBO";
+	partition_map_file = "./Modules/SCN_CCF_HVQK/InputFiles/PARTITION_MAP_CCF_PARALLEL_GBO.pmap.txt";
+	patlist = "scn_ccf_x_vccia_x_x_sNs_edt_gbo_ca2tf_20sOps_list";
+	scanFI_datalog_mode = "PARTITION_MAP_DATA";
+	timings = "BASE::cpu_func_stf_univ_b100_t100_d200";
+}
+Test iCScanFITest ATSPEED_GBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF
+{
+	cat_fail_limit = toInteger(SCN_CCF_HVQK_Specs.scn_atpg_spofi_max_fail_num);
+	disable_ScanFI_on_preamble_fail = "OFF";
+	enable_scanFI = "ENABLED";
+	level = "BASE::SBF_nom_lvl";
+	max_num_fail = toInteger(SCN_CCF_HVQK_Specs.scn_atpg_spofi_max_fail_num);
+	min_num_fail = toInteger(SCN_CCF_HVQK_Specs.scn_atpg_spofi_max_fail_num);
+	patlist = "scn_ccf_x_vccia_x_x_sNs_edt_gbo_ca2tf_20sOps_list";
+	timings = "BASE::cpu_func_stf_univ_b100_t100_d200";
+}
+Test iCScanFITest ATSPEED_GBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF
+{
+	cat_fail_limit = 10;
+	disable_ScanFI_on_preamble_fail = "OFF";
+	execute_options = "EXECUTE_ALL_PAT_ON_N_MAX_PER_PAT";
+	level = "BASE::SBF_nom_lvl";
+	max_ituff_fail_entries = 1;
+	max_num_fail = 1;
+	min_num_fail = 50000;
+	partition_map_config_set = "CCF_GBO";
+	partition_map_file = "./Modules/SCN_CCF_HVQK/InputFiles/PARTITION_MAP_CCF_PARALLEL_GBO.pmap.txt";
+	patlist = "scn_ccf_x_vccia_x_x_sNs_edt_gbo_ca2tf_20sOps_list";
+	scanFI_datalog_mode = "PARTITION_MAP_DATA";
+	timings = "BASE::cpu_func_stf_univ_b100_t100_d200";
+}
+Test iCScanFITest ATSPEED_GBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF
+{
+	cat_fail_limit = toInteger(SCN_CCF_HVQK_Specs.scn_atpg_spofi_max_fail_num);
+	disable_ScanFI_on_preamble_fail = "OFF";
+	enable_scanFI = "ENABLED";
+	level = "BASE::SBF_nom_lvl";
+	max_num_fail = toInteger(SCN_CCF_HVQK_Specs.scn_atpg_spofi_max_fail_num);
+	min_num_fail = toInteger(SCN_CCF_HVQK_Specs.scn_atpg_spofi_max_fail_num);
+	patlist = "scn_ccf_x_vccia_x_x_sNs_edt_gbo_ca2tf_20sOps_list";
+	timings = "BASE::cpu_func_stf_univ_b100_t100_d200";
+}
+Test iCShmooTest ATSPEED_GBO_SHMOO_E_PREHVQK_STF_CLR_NOM_LFM_1600_VMIN
+{
+	datalog_type = "SHMOO_HUB";
+	level = "BASE::SBF_SEARCH_CCF_SEARCH";
+	patlist = "scn_ccf_x_vccia_x_x_sNs_edt_gbo_ca2tf_20sOps_list";
+	timings = "BASE::cpu_func_stf_univ_b100_t100_d200";
+	xaxis_max = 12.0;
+	xaxis_min = 8.0;
+	xaxis_parameter = "p_bclkper_spec";
+	xaxis_resolution = 0.5;
+	yaxis_max = 0.8;
+	yaxis_min = 0.5;
+	yaxis_parameter = "p_vccr_spec";
+	yaxis_resolution = 0.05;
+	bypass_global = "1";
+}
+
+Test iCVminTest ATSPEED_GBO_VMIN_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF
+{
+	sb_base_number = 3771;
+		execution_mode = "SEARCH";
+	search_high_limit = 1.00;
+	level = "BASE::SBF_SEARCH_CCF_SEARCH";
+	search_low_limit = 0.5;
+	patlist = "scn_ccf_x_vccia_x_x_sNs_edt_gbo_ca2tf_20sOps_list";
+	pattern_name_map = "1,2,3,4,5,6,7";
+	search_resolution = 0.02;
+	search_voltage_targets = "VCCR_HC";
+	timings = "BASE::cpu_func_stf_univ_b100_t100_d200";
+	search_predict_low_expression = "G.U.D.HVQK_VMIN_PRE_CCF_SCAN_GBO";
+	search_result_gsds = "G.U.D.HVQK_VMIN_POST_CCF_SCAN_GBO";
+}
+
+Test iCVminTest ATSPEED_GBO_VMIN_K_PREHVQK_STF_CLR_NOM_LFM_1600_FF
+{
+	sb_base_number = 3807;
+		execution_mode = "SEARCH";
+	search_high_limit = 1.00;
+	level = "BASE::SBF_SEARCH_CCF_SEARCH";
+	search_low_limit = 0.46;
+	patlist = "scn_ccf_x_vccia_x_x_sNs_edt_gbo_ca2tf_20sOps_list";
+	pattern_name_map = "1,2,3,4,5,6,7";
+	search_resolution = 0.02;
+	search_voltage_targets = "VCCR_HC";
+	timings = "BASE::cpu_func_stf_univ_b100_t100_d200";
+	search_predict_low_expression = "0.54";
+	search_result_gsds = "G.U.D.HVQK_VMIN_PRE_CCF_SCAN_GBO";
+}
+Test iCScanFITest ATSPEED_SBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF
+{
+	cat_fail_limit = 10;
+	disable_ScanFI_on_preamble_fail = "OFF";
+	execute_options = "EXECUTE_ALL_PAT_ON_N_MAX_PER_PAT";
+	level = "BASE::SBF_nom_lvl";
+	max_ituff_fail_entries = 1;
+	max_num_fail = 1;
+	min_num_fail = 50000;
+	partition_map_config_set = "CCF_SBO";
+	partition_map_file = "./Modules/SCN_CCF_HVQK/InputFiles/PARTITION_MAP_CCF_PARALLEL_SBO.pmap.txt";
+	patlist = "scn_ccf_x_vccia_x_x_sNs_edt_sbo_ca2tf_20sOps_list";
+	scanFI_datalog_mode = "PARTITION_MAP_DATA";
+	timings = "BASE::cpu_func_stf_univ_b100_t100_d200";
+}
+Test iCScanFITest ATSPEED_SBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF
+{
+	cat_fail_limit = toInteger(SCN_CCF_HVQK_Specs.scn_atpg_spofi_max_fail_num);
+	disable_ScanFI_on_preamble_fail = "OFF";
+	enable_scanFI = "ENABLED";
+	level = "BASE::SBF_nom_lvl";
+	max_num_fail = toInteger(SCN_CCF_HVQK_Specs.scn_atpg_spofi_max_fail_num);
+	min_num_fail = toInteger(SCN_CCF_HVQK_Specs.scn_atpg_spofi_max_fail_num);
+	patlist = "scn_ccf_x_vccia_x_x_sNs_edt_sbo_ca2tf_20sOps_list";
+	timings = "BASE::cpu_func_stf_univ_b100_t100_d200";
+}
+Test iCScanFITest ATSPEED_SBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF
+{
+	cat_fail_limit = 10;
+	disable_ScanFI_on_preamble_fail = "OFF";
+	execute_options = "EXECUTE_ALL_PAT_ON_N_MAX_PER_PAT";
+	level = "BASE::SBF_nom_lvl";
+	max_ituff_fail_entries = 1;
+	max_num_fail = 1;
+	min_num_fail = 50000;
+	partition_map_config_set = "CCF_SBO";
+	partition_map_file = "./Modules/SCN_CCF_HVQK/InputFiles/PARTITION_MAP_CCF_PARALLEL_SBO.pmap.txt";
+	patlist = "scn_ccf_x_vccia_x_x_sNs_edt_sbo_ca2tf_20sOps_list";
+	scanFI_datalog_mode = "PARTITION_MAP_DATA";
+	timings = "BASE::cpu_func_stf_univ_b100_t100_d200";
+}
+Test iCScanFITest ATSPEED_SBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF
+{
+	cat_fail_limit = toInteger(SCN_CCF_HVQK_Specs.scn_atpg_spofi_max_fail_num);
+	disable_ScanFI_on_preamble_fail = "OFF";
+	enable_scanFI = "ENABLED";
+	level = "BASE::SBF_nom_lvl";
+	max_num_fail = toInteger(SCN_CCF_HVQK_Specs.scn_atpg_spofi_max_fail_num);
+	min_num_fail = toInteger(SCN_CCF_HVQK_Specs.scn_atpg_spofi_max_fail_num);
+	patlist = "scn_ccf_x_vccia_x_x_sNs_edt_sbo_ca2tf_20sOps_list";
+	timings = "BASE::cpu_func_stf_univ_b100_t100_d200";
+}
+Test iCShmooTest ATSPEED_SBO_SHMOO_E_PREHVQK_STF_CLR_NOM_LFM_1600_VMIN
+{
+	datalog_type = "SHMOO_HUB";
+	level = "BASE::SBF_SEARCH_CCF_SEARCH";
+	patlist = "scn_ccf_x_vccia_x_x_sNs_edt_sbo_ca2tf_20sOps_list";
+	timings = "BASE::cpu_func_stf_univ_b100_t100_d200";
+	xaxis_max = 12.0;
+	xaxis_min = 8.0;
+	xaxis_parameter = "p_bclkper_spec";
+	xaxis_resolution = 0.5;
+	yaxis_max = 0.8;
+	yaxis_min = 0.5;
+	yaxis_parameter = "p_vccr_spec";
+	yaxis_resolution = 0.05;
+	bypass_global = "1";
+}
+
+Test iCVminTest ATSPEED_SBO_VMIN_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF
+{
+	sb_base_number = 3770;
+		execution_mode = "SEARCH";
+	search_high_limit = 1.00;
+	level = "BASE::SBF_SEARCH_CCF_SEARCH";
+	search_low_limit = 0.5;
+	patlist = "scn_ccf_x_vccia_x_x_sNs_edt_sbo_ca2tf_20sOps_list";
+	pattern_name_map = "1,2,3,4,5,6,7";
+	search_resolution = 0.02;
+	search_voltage_targets = "VCCR_HC";
+	timings = "BASE::cpu_func_stf_univ_b100_t100_d200";
+	search_predict_low_expression = "G.U.D.HVQK_VMIN_PRE_CCF_SCAN_SBO";
+	search_result_gsds = "G.U.D.HVQK_VMIN_POST_CCF_SCAN_SBO";
+}
+
+Test iCVminTest ATSPEED_SBO_VMIN_K_PREHVQK_STF_CLR_NOM_LFM_1600_FF
+{
+	sb_base_number = 3806;
+		execution_mode = "SEARCH";
+	search_high_limit = 1.00;
+	level = "BASE::SBF_SEARCH_CCF_SEARCH";
+	search_low_limit = 0.46;
+	patlist = "scn_ccf_x_vccia_x_x_sNs_edt_sbo_ca2tf_20sOps_list";
+	pattern_name_map = "1,2,3,4,5,6,7";
+	search_resolution = 0.02;
+	search_voltage_targets = "VCCR_HC";
+	timings = "BASE::cpu_func_stf_univ_b100_t100_d200";
+	search_predict_low_expression = "0.56";
+	search_result_gsds = "G.U.D.HVQK_VMIN_PRE_CCF_SCAN_SBO";
+}
+Test iCScanFITest CHAIN_GBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF
+{
+	cat_fail_limit = 10;
+	disable_ScanFI_on_preamble_fail = "OFF";
+	execute_options = "EXECUTE_ALL_PAT_ON_N_MAX_PER_PAT";
+	level = "BASE::SBF_nom_lvl";
+	max_ituff_fail_entries = 1;
+	max_num_fail = 1;
+	min_num_fail = 50000;
+	partition_map_config_set = "CCF_GBO";
+	partition_map_file = "./Modules/SCN_CCF_HVQK/InputFiles/PARTITION_MAP_CCF_PARALLEL_GBO.pmap.txt";
+	patlist = "scn_ccf_x_vccia_x_x_sNs_edt_gbo_chain_list";
+	scanFI_datalog_mode = "PARTITION_MAP_DATA";
+	timings = "BASE::cpu_func_stf_univ_b100_t100_d200";
+}
+Test iCScanFITest CHAIN_GBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF
+{
+	cat_fail_limit = 10;
+	disable_ScanFI_on_preamble_fail = "OFF";
+	execute_options = "EXECUTE_ALL_PAT_ON_N_MAX_PER_PAT";
+	level = "BASE::SBF_nom_lvl";
+	max_ituff_fail_entries = 1;
+	max_num_fail = 1;
+	min_num_fail = 50000;
+	partition_map_config_set = "CCF_GBO";
+	partition_map_file = "./Modules/SCN_CCF_HVQK/InputFiles/PARTITION_MAP_CCF_PARALLEL_GBO.pmap.txt";
+	patlist = "scn_ccf_x_vccia_x_x_sNs_edt_gbo_chain_list";
+	scanFI_datalog_mode = "PARTITION_MAP_DATA";
+	timings = "BASE::cpu_func_stf_univ_b100_t100_d200";
+}
+Test iCScanFITest CHAIN_SBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF
+{
+	cat_fail_limit = 10;
+	disable_ScanFI_on_preamble_fail = "OFF";
+	execute_options = "EXECUTE_ALL_PAT_ON_N_MAX_PER_PAT";
+	level = "BASE::SBF_nom_lvl";
+	max_ituff_fail_entries = 1;
+	max_num_fail = 1;
+	min_num_fail = 50000;
+	partition_map_config_set = "CCF_SBO";
+	partition_map_file = "./Modules/SCN_CCF_HVQK/InputFiles/PARTITION_MAP_CCF_PARALLEL_SBO.pmap.txt";
+	patlist = "scn_ccf_x_vccia_x_x_sNs_byp_sbo_chain_list";
+	scanFI_datalog_mode = "PARTITION_MAP_DATA";
+	timings = "BASE::cpu_func_stf_univ_b100_t100_d200";
+}
+Test iCScanFITest CHAIN_SBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF
+{
+	cat_fail_limit = 10;
+	disable_ScanFI_on_preamble_fail = "OFF";
+	execute_options = "EXECUTE_ALL_PAT_ON_N_MAX_PER_PAT";
+	level = "BASE::SBF_nom_lvl";
+	max_ituff_fail_entries = 1;
+	max_num_fail = 1;
+	min_num_fail = 50000;
+	partition_map_config_set = "CCF_SBO";
+	partition_map_file = "./Modules/SCN_CCF_HVQK/InputFiles/PARTITION_MAP_CCF_PARALLEL_SBO.pmap.txt";
+	patlist = "scn_ccf_x_vccia_x_x_sNs_byp_sbo_chain_list";
+	scanFI_datalog_mode = "PARTITION_MAP_DATA";
+	timings = "BASE::cpu_func_stf_univ_b100_t100_d200";
+}
+Test iCScreenTest CTRL_CBO_AUX_E_PREHVQK_STF_CLR_NOM_LFM_1600_STORE_VMIN_PREDIC1_PAIR
+{
+	screen_custom_file = "./Modules/SCN_CCF_HVQK/InputFiles/ScnCCFDieRec_custom.txt";
+	screen_custom_setpoint = "ALL";
+	screen_test_set = "SCNCCFVMINSET";
+	screen_tests_file = "./Modules/SCN_CCF_HVQK/InputFiles/SCN_CCF_Rev0_ScnCCFVMIN_SETUP.txt";
+	bypass_global = "1";
+}
+Test iCAuxiliaryTest CTRL_CBO01234567_AUX_E_POSTHVQK_STF_CLR_NOM_LFM_1600_COMPARE_SLTRK_TOKEN
+{
+	data_type = "NUMERIC";
+	expression = "G.U.S.SLC_TRK_TEMP == G.U.S.SLC_TRK";
+	result_port = "[R]=1|1^2";
+}
+Test iCAuxiliaryTest CTRL_CBO01234567_AUX_E_POSTHVQK_STF_CLR_NOM_LFM_1600_STORE_SLTRK_TOKEN
+{
+	data_type = "STRING";
+	datalog_mode = "DISABLED";
+	debug_mode = "VERBOSE";
+	expression = "G.U.S.SLC_TRK";
+	result_var = "G.U.S.SLC_TRK_TEMP";
+}
+Test iCAuxiliaryTest CTRL_CBO01234567_AUX_E_PREHVQK_STF_CLR_NOM_LFM_1600_COMPARE_SLTRK_TOKEN_PAIR
+{
+	data_type = "NUMERIC";
+	expression = "G.U.S.SLC_TRK_TEMP == G.U.S.SLC_TRK";
+	result_port = "[R]=1|1^2";
+	bypass_global = "1";
+}
+Test iCAuxiliaryTest CTRL_CBO01234567_AUX_E_PREHVQK_STF_CLR_NOM_LFM_1600_STORE_SLTRK_TOKEN_PAIR
+{
+	data_type = "STRING";
+	datalog_mode = "DISABLED";
+	debug_mode = "VERBOSE";
+	expression = "G.U.S.SLC_TRK";
+	result_var = "G.U.S.SLC_TRK_TEMP";
+}
+Test iCSampleRateTest CTRL_CBO01234567_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_PAIR
+{
+	global_sample_rate = "DISABLE";
+	sample_rate = "1";
+	skip_port = "2";
+	sort_sample_force = "DISABLE";
+	sort_sample_form = "SAMPLE_LOWEST";
+	sort_sample_lowest = "EDCVars.I.SAMPLE_IA_SPOFI";
+	bypass_global = "1";
+}
+Test iCUserFuncTest CTRL_CBO01234567_SCANFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_DIE_RECOVERY_ATSPEED
+{
+	function_name = "DIE_RECOVERY!ExecSequence";
+	function_parameter = "PinMaskClear";
+	postinstance = "DIE_RECOVERY!ExecSequence FORCEKillModeCore01";
+	bypass_global = "1";
+}
+Test iCSampleRateTest CTRL_CBO0246_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE
+{
+	global_sample_rate = "DISABLE";
+	sample_rate = "1";
+	skip_port = "2";
+	sort_sample_force = "DISABLE";
+	sort_sample_form = "SAMPLE_LOWEST";
+	sort_sample_lowest = "EDCVars.I.SAMPLE_IA_SPOFI";
+	bypass_global = "1";
+}
+Test iCSampleRateTest CTRL_GBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_FF
+{
+	global_sample_rate = "DISABLE";
+	sample_rate = "1";
+	skip_port = "2";
+	sort_sample_force = "DISABLE";
+	sort_sample_form = "SAMPLE_LOWEST";
+	sort_sample_lowest = "EDCVars.I.SAMPLE_IA_SPOFI";
+	bypass_global = "1";
+}
+Test iCSampleRateTest CTRL_GBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_FF
+{
+	global_sample_rate = "DISABLE";
+	sample_rate = "1";
+	skip_port = "2";
+	sort_sample_force = "DISABLE";
+	sort_sample_form = "SAMPLE_LOWEST";
+	sort_sample_lowest = "EDCVars.I.SAMPLE_IA_SPOFI";
+	bypass_global = "1";
+}
+Test iCSampleRateTest CTRL_SBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_FF
+{
+	global_sample_rate = "DISABLE";
+	sample_rate = "1";
+	skip_port = "2";
+	sort_sample_force = "DISABLE";
+	sort_sample_form = "SAMPLE_LOWEST";
+	sort_sample_lowest = "EDCVars.I.SAMPLE_IA_SPOFI";
+	bypass_global = "1";
+}
+Test iCSampleRateTest CTRL_SBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_FF
+{
+	global_sample_rate = "DISABLE";
+	sample_rate = "1";
+	skip_port = "2";
+	sort_sample_force = "DISABLE";
+	sort_sample_form = "SAMPLE_LOWEST";
+	sort_sample_lowest = "EDCVars.I.SAMPLE_IA_SPOFI";
+	bypass_global = "1";
+}
+Test iCPatternModifyTest FLOW_CCF_PATMOD_K_INIT_STF_CLR_NOM_LFM_1600_STUCKAT_HVQK
+{
+	data_format = "WFCS";
+	input_file = "./Modules/SCN_CCF_HVQK/InputFiles/PrecatFix.patmod";
+	modify_pattern_type = "SCAN_PATTERN";
+	modify_token = "PRECAT";
+	bypass_global = "1";
+}
+Test iCAuxiliaryTest FLOW_CBO_AUX_E_POSTHVQK_STF_CLR_NOM_LFM_1600_NONCONCURRENT_ON
+{
+	data_type = "STRING";
+	expression = "SCN_CCF_HVQK.I.SCAN_PREPOST_NONCONCURRENT_ON";
+	result_port = "[R]='1'|1^2";
+}
+Test iCAuxiliaryTest FLOW_CBO0246_AUX_E_POSTHVQK_STF_CLR_NOM_LFM_1600_SPOFI_FABCHECK
+{
+	data_type = "STRING";
+	expression = "SCVars.S.SC_LOTNAME";
+	result_port = "'D' in [R][0:0] | 1^'Z' in [R][0:0] | 1^2  ";
+	bypass_global = "1";
+}
+Test iCAuxiliaryTest FLOW_GBO_AUX_E_POSTHVQK_STF_CLR_NOM_LFM_1600_SPOFI_FABCHECK_FF
+{
+	data_type = "STRING";
+	expression = "SCVars.S.SC_LOTNAME";
+	result_port = "'D' in [R][0:0] | 1^'Z' in [R][0:0] | 1^2  ";
+	bypass_global = "1";
+}
+Test iCAuxiliaryTest FLOW_SBO_AUX_E_POSTHVQK_STF_CLR_NOM_LFM_1600_SPOFI_FABCHECK_FF
+{
+	data_type = "STRING";
+	expression = "SCVars.S.SC_LOTNAME";
+	result_port = "'D' in [R][0:0] | 1^'Z' in [R][0:0] | 1^2  ";
+	bypass_global = "1";
+}
+Test iCAuxiliaryTest FLOW_CBO_AUX_E_PREHVQK_STF_CLR_NOM_LFM_1600_NONCONCURRENT_ON
+{
+	data_type = "STRING";
+	expression = "SCN_CCF_HVQK.I.SCAN_PREPOST_NONCONCURRENT_ON";
+	result_port = "[R]='1'|1^2";
+}
+Test iCAuxiliaryTest FLOW_CBO01234567_AUX_E_PREHVQK_STF_CLR_NOM_LFM_1600_SPOFI_FABCHECK_PAIR
+{
+	data_type = "STRING";
+	expression = "SCVars.S.SC_LOTNAME";
+	result_port = "'D' in [R][0:0] | 1^'Z' in [R][0:0] | 1^2  ";
+	bypass_global = "1";
+}
+Test iCAuxiliaryTest FLOW_CCF_AUX_E_PREHVQK_STF_CLR_NOM_LFM_1600
+{
+	bypass_global = "SCN_CCF_HVQK.Shmoo_Bypass";
+	data_type = "STRING";
+	expression = "'ADLE' in RunTimeLibraryVars.S.iCGL_TpAltName";
+	result_port = "[R]='1'|1^'2'|2^3";
+}
+Test iCAuxiliaryTest FLOW_GBO_AUX_E_PREHVQK_STF_CLR_NOM_LFM_1600_SPOFI_FABCHECK_FF
+{
+	data_type = "STRING";
+	expression = "SCVars.S.SC_LOTNAME";
+	result_port = "'D' in [R][0:0] | 1^'Z' in [R][0:0] | 1^2  ";
+	bypass_global = "1";
+}
+Test iCAuxiliaryTest FLOW_SBO_AUX_E_PREHVQK_STF_CLR_NOM_LFM_1600_SPOFI_FABCHECK_FF
+{
+	data_type = "STRING";
+	expression = "SCVars.S.SC_LOTNAME";
+	result_port = "'D' in [R][0:0] | 1^'Z' in [R][0:0] | 1^2  ";
+	bypass_global = "1";
+}
+Test iCAuxiliaryTest FLOW_CCF_AUX_E_STRESS_STF_CLR_NOM_LFM_1600
+{
+	bypass_global = "SCN_CCF_HVQK.Shmoo_Bypass";
+	data_type = "STRING";
+	expression = "'ADLE' in RunTimeLibraryVars.S.iCGL_TpAltName";
+	result_port = "[R]='1'|1^'2'|2^3";
+}
+Test iCAuxiliaryTest FLOW_CCF_AUX_E_STRESS_STF_CLR_NOM_LFM_1600_CBO_NONCONCURRENT_ON
+{
+	data_type = "STRING";
+	expression = "SCN_CCF_HVQK.I.SCAN_PREPOST_NONCONCURRENT_ON";
+	result_port = "[R]='1'|1^2";
+}
+Test iCScanFITest RESET_CBO_SCANFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_PREAMBLE
+{
+	cat_fail_limit = 10;
+	disable_ScanFI_on_preamble_fail = "OFF";
+	enable_scanFI = "ENABLED";
+	execute_options = "EXECUTE_ALL_PAT_ON_N_MAX_PER_PAT";
+	level = "BASE::SBF_nom_lvl";
+	max_ituff_fail_entries = 1;
+	max_num_fail = 1;
+	min_num_fail = 10;
+	patlist = "scn_ccf_x_vccia_x_preburst_sNs_edt_cbopair0_ca2tf_ph1_list";
+	scanFI_datalog_mode = "SCANFI_DATA";
+	timings = "BASE::cpu_func_stf_univ_b100_t100_d200";
+	bypass_global = "1";
+}
+Test iCScanFITest RESET_CBO_SCANFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_PREAMBLE
+{
+	cat_fail_limit = 10;
+	disable_ScanFI_on_preamble_fail = "OFF";
+	enable_scanFI = "DISABLED";
+	execute_options = "EXECUTE_ALL_PAT_ON_N_MAX_PER_PAT";
+	level = "BASE::SBF_nom_lvl";
+	max_ituff_fail_entries = 1;
+	max_num_fail = 1;
+	min_num_fail = 10;
+	patlist = "scn_ccf_x_vccia_x_preburst_sEs_edt_cbopair0123_ca2tf_ph1_list";
+	scanFI_datalog_mode = "SCANFI_DATA";
+	timings = "BASE::cpu_func_stf_univ_b100_t100_d100";
+} # End of Test Counter Definition
+
+Test iCHVQKTest CA1TF_CBO01_HVQK_K_STRESS_X_X_X_X_SCAN_LOGIC_copy
+{
+	alarm_handle_delay = 25;
+	datalog_mode = "ON";
+	level = "BASE::SBF_HVQK_CCF_HVQK";
+	meta_data_file = "RPL682MB.hvqk.metadata.txt";
+	patlist = "scn_ccf_x_vccia_x_stress_sNs_edt_cbopair0_ca1tf_10sOps_list";
+	postinstance = "DIE_RECOVERY!ExecSequence MaskClearScanAllCore";
+	power_down_level = "BASE::power_dwn_xxx_pwrd_zerzer";
+	power_up_level = "BASE::SBF_pwrup_lvl";
+	preplist = "DIE_RECOVERY!ExecSequence PinMaskingFromSliceCbo01";
+	timings = "BASE::cpu_func_stf_univ_b100_t100_d200";
+	voltage_step_config_file = "./Modules/SCN_CCF_HVQK/InputFiles/vbump_CCFCBO01_scan_logic_stress.hvqk.config.xml";
+	bypass_global = "1";
+} # End of Test Counter Definition
+
+Test iCHVQKTest STUCKAT_CBO01234567_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC
+{
+	alarm_handle_delay = 25;
+	datalog_mode = "ON";
+	level = "BASE::SBF_HVQK_CCF_HVQK";
+	meta_data_file = "RPL682MB.hvqk.metadata.txt";
+	patlist = "scn_ccf_x_vccia_x_stress_sEs_edt_cbopair0123_ph1_ca1tf_10sOps_list";
+	postinstance = "DIE_RECOVERY!ExecSequence UnMaskBadCCFVector";
+	power_down_level = "BASE::power_dwn_xxx_pwrd_zerzer";
+	power_up_level = "BASE::SBF_pwrup_lvl";
+	preplist = "CPD_UF.dll!Call DIE_RECOVERY!ExecSequence [SetCaptureSettings] + DIE_RECOVERY!ExecSequence [MirrorDUTCore] + DIE_RECOVERY!ExecSequence [MaskBadCCFVector]";
+	timings = "BASE::cpu_func_stf_univ_b100_t100_d400";
+	voltage_step_config_file = "./Modules/SCN_CCF_HVQK/InputFiles/vbump_CCFCBO01234567_scan_logic_stress.hvqk.config.xml";
+	ifpm_modifygroups = "bt!DUMMY!NONE";
+	ifpm_input_file = "./Modules/SCN_CCF_HVQK/InputFiles/FAST_concurrent_ccf_ifpm.xml";
+}
+
+
+DUTFlow CBO01234567_POSTHVQK_SPOFI_FLOW_DECISION
+{
+	DUTFlowItem FLOW_CBO0246_AUX_E_POSTHVQK_STF_CLR_NOM_LFM_1600_SPOFI_FABCHECK FLOW_CBO0246_AUX_E_POSTHVQK_STF_CLR_NOM_LFM_1600_SPOFI_FABCHECK @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90902740_fail_FLOW_CBO0246_AUX_E_POSTHVQK_STF_CLR_NOM_LFM_1600_SPOFI_FABCHECK_0;
+			##EDC## SetBin SoftBins.b90909041_fail_SCN_CCF_CTRL_CBO01234567_AUX_X_BEGIN_X_X_X_X_COMPARE_SLTRK_TOKEN_SHARED_BIN;
+			Return 0;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			Return 1;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			GoTo CTRL_CBO0246_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE;
+		}		
+	}	
+	
+	DUTFlowItem CTRL_CBO0246_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE CTRL_CBO0246_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90901549_fail_CTRL_CBO0246_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_0;
+			Return 0;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99902755_pass_CTRL_CBO0246_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_1;
+			Return 1;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99902801_pass_CTRL_CBO0246_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_2;
+			Return 2;
+		}		
+	}	
+}
+
+DUTFlow CBO_PAIR_CONCURRENT_POSTHVQK_CA2TF
+{
+	DUTFlowItem CTRL_CBO01234567_AUX_E_POSTHVQK_STF_CLR_NOM_LFM_1600_STORE_SLTRK_TOKEN CTRL_CBO01234567_AUX_E_POSTHVQK_STF_CLR_NOM_LFM_1600_STORE_SLTRK_TOKEN @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90902278_fail_CTRL_CBO01234567_AUX_E_POSTHVQK_STF_CLR_NOM_LFM_1600_STORE_SLTRK_TOKEN_0;
+			##EDC## SetBin SoftBins.b90909041_fail_SCN_CCF_CTRL_CBO01234567_AUX_X_BEGIN_X_X_X_X_COMPARE_SLTRK_TOKEN_SHARED_BIN;
+			Return 0;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			GoTo ATSPEED_CBO01234567_VMIN_E_POSTHVQK_STF_CLR_NOM_LFM_1600;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			GoTo ATSPEED_CBO01234567_VMIN_E_POSTHVQK_STF_CLR_NOM_LFM_1600;
+		}		
+	}	
+	
+	DUTFlowItem ATSPEED_CBO01234567_VMIN_E_POSTHVQK_STF_CLR_NOM_LFM_1600 ATSPEED_CBO01234567_VMIN_E_POSTHVQK_STF_CLR_NOM_LFM_1600
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90262254_fail_ATSPEED_CBO01234567_VMIN_E_POSTHVQK_STF_CLR_NOM_LFM_1600_0;
+			SetBin SoftBins.b90262647_fail_SCN_CCF_HVQK_ATSPEED_CBO01234567_VMIN_E_POSTHVQK_STF_CLR_NOM_LFM_1600_SHARED_BIN;
+			GoTo CTRL_CBO01234567_SCANFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_DIE_RECOVERY_ATSPEED;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			GoTo CTRL_CBO01234567_AUX_E_POSTHVQK_STF_CLR_NOM_LFM_1600_COMPARE_SLTRK_TOKEN;
+		}		
+	}	
+	DUTFlowItem ATSPEED_CBO01234567_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600 ATSPEED_CBO01234567_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600 @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90261632_fail_ATSPEED_CBO01234567_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_0;
+			GoTo CBO01234567_POSTHVQK_SPOFI_FLOW_DECISION;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99261594_pass_ATSPEED_CBO01234567_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_1;
+			GoTo CBO01234567_POSTHVQK_SPOFI_FLOW_DECISION;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99262264_pass_ATSPEED_CBO01234567_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_2;
+			GoTo CBO01234567_POSTHVQK_SPOFI_FLOW_DECISION;
+		}		
+		Result 3
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90260860_fail_ATSPEED_CBO01234567_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_3;
+			GoTo CBO01234567_POSTHVQK_SPOFI_FLOW_DECISION;
+		}		
+	}	
+	DUTFlowItem ATSPEED_CBO01234567_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600 ATSPEED_CBO01234567_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600 @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90472224_fail_ATSPEED_CBO01234567_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_0;
+			Return 1;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99472221_pass_ATSPEED_CBO01234567_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_1;
+			Return 1;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99471587_pass_ATSPEED_CBO01234567_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_2;
+			Return 1;
+		}		
+		Result 3
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90472296_fail_ATSPEED_CBO01234567_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_3;
+			Return 1;
+		}		
+	}	
+	DUTFlowItem CTRL_CBO01234567_AUX_E_POSTHVQK_STF_CLR_NOM_LFM_1600_COMPARE_SLTRK_TOKEN CTRL_CBO01234567_AUX_E_POSTHVQK_STF_CLR_NOM_LFM_1600_COMPARE_SLTRK_TOKEN @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90902274_fail_CTRL_CBO01234567_AUX_E_POSTHVQK_STF_CLR_NOM_LFM_1600_COMPARE_SLTRK_TOKEN_0;
+			##EDC## SetBin SoftBins.b90909041_fail_SCN_CCF_CTRL_CBO01234567_AUX_X_BEGIN_X_X_X_X_COMPARE_SLTRK_TOKEN_SHARED_BIN;
+			Return 0;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			Return 1;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			GoTo CTRL_CBO01234567_SCANFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_DIE_RECOVERY_ATSPEED;
+		}		
+	}	
+	DUTFlowItem CTRL_CBO01234567_SCANFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_DIE_RECOVERY_ATSPEED CTRL_CBO01234567_SCANFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_DIE_RECOVERY_ATSPEED @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90472223_fail_CTRL_CBO01234567_SCANFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_DIE_RECOVERY_ATSPEED_0;
+			GoTo ATSPEED_CBO01234567_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			GoTo ATSPEED_CBO01234567_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600;
+		}		
+		Result 2
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90472247_fail_CTRL_CBO01234567_SCANFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_DIE_RECOVERY_ATSPEED_2;
+			GoTo ATSPEED_CBO01234567_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600;
+		}		
+	}	
+	DUTFlowItem CBO01234567_POSTHVQK_SPOFI_FLOW_DECISION CBO01234567_POSTHVQK_SPOFI_FLOW_DECISION @EDC
+	{
+		Result -1
+		{
+			Property PassFail = "Fail";
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			GoTo ATSPEED_CBO01234567_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			GoTo ATSPEED_CBO01234567_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			GoTo ATSPEED_CBO01234567_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600;
+		}		
+	}	
+}
+
+DUTFlow GBO_POSTHVQK_SPOFI_FLOW_DECISION_FF
+{
+	DUTFlowItem FLOW_GBO_AUX_E_POSTHVQK_STF_CLR_NOM_LFM_1600_SPOFI_FABCHECK_FF FLOW_GBO_AUX_E_POSTHVQK_STF_CLR_NOM_LFM_1600_SPOFI_FABCHECK_FF @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90902822_fail_FLOW_GBO_AUX_E_POSTHVQK_STF_CLR_NOM_LFM_1600_SPOFI_FABCHECK_FF_0;
+			##EDC## SetBin SoftBins.b90909041_fail_SCN_CCF_CTRL_CBO01234567_AUX_X_BEGIN_X_X_X_X_COMPARE_SLTRK_TOKEN_SHARED_BIN;
+			Return 0;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			Return 1;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			GoTo CTRL_GBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_FF;
+		}		
+	}	
+	
+	DUTFlowItem CTRL_GBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_FF CTRL_GBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_FF @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90902816_fail_CTRL_GBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_FF_0;
+			Return 0;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99902818_pass_CTRL_GBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_FF_1;
+			Return 1;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99902820_pass_CTRL_GBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_FF_2;
+			Return 2;
+		}		
+	}	
+}
+
+DUTFlow GBO_PARALLEL_NCC_POSTHVQK_CA2TF_FF
+{
+	DUTFlowItem ATSPEED_GBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF ATSPEED_GBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90262270_fail_ATSPEED_GBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF_0;
+			GoTo CHAIN_GBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99262277_pass_ATSPEED_GBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF_1;
+			Return 1;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99262269_pass_ATSPEED_GBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF_2;
+			Return 1;
+		}		
+		Result 3
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90262295_fail_ATSPEED_GBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF_3;
+			GoTo CHAIN_GBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF;
+		}		
+	}	
+	
+	DUTFlowItem ATSPEED_GBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF ATSPEED_GBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90471161_fail_ATSPEED_GBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF_0;
+			Return 1;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99472422_pass_ATSPEED_GBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF_1;
+			Return 1;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99470528_pass_ATSPEED_GBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF_2;
+			Return 1;
+		}		
+		Result 3
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90470844_fail_ATSPEED_GBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF_3;
+			Return 1;
+		}		
+	}	
+	DUTFlowItem CHAIN_GBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF CHAIN_GBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90410889_fail_CHAIN_GBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF_0;
+			GoTo GBO_POSTHVQK_SPOFI_FLOW_DECISION_FF;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99410719_pass_CHAIN_GBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF_1;
+			GoTo GBO_POSTHVQK_SPOFI_FLOW_DECISION_FF;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99410746_pass_CHAIN_GBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF_2;
+			GoTo GBO_POSTHVQK_SPOFI_FLOW_DECISION_FF;
+		}		
+		Result 3
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90410089_fail_CHAIN_GBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF_3;
+			GoTo GBO_POSTHVQK_SPOFI_FLOW_DECISION_FF;
+		}		
+	}	
+	DUTFlowItem GBO_POSTHVQK_SPOFI_FLOW_DECISION_FF GBO_POSTHVQK_SPOFI_FLOW_DECISION_FF @EDC
+	{
+		Result -1
+		{
+			Property PassFail = "Fail";
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			GoTo ATSPEED_GBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			GoTo ATSPEED_GBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			Return 1;
+		}		
+	}	
+}
+
+DUTFlow SBO_POSTHVQK_SPOFI_FLOW_DECISION_FF
+{
+	DUTFlowItem FLOW_SBO_AUX_E_POSTHVQK_STF_CLR_NOM_LFM_1600_SPOFI_FABCHECK_FF FLOW_SBO_AUX_E_POSTHVQK_STF_CLR_NOM_LFM_1600_SPOFI_FABCHECK_FF @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90902830_fail_FLOW_SBO_AUX_E_POSTHVQK_STF_CLR_NOM_LFM_1600_SPOFI_FABCHECK_FF_0;
+			##EDC## SetBin SoftBins.b90909041_fail_SCN_CCF_CTRL_CBO01234567_AUX_X_BEGIN_X_X_X_X_COMPARE_SLTRK_TOKEN_SHARED_BIN;
+			Return 0;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			Return 1;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			GoTo CTRL_SBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_FF;
+		}		
+	}	
+	
+	DUTFlowItem CTRL_SBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_FF CTRL_SBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_FF @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90902824_fail_CTRL_SBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_FF_0;
+			Return 0;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99902826_pass_CTRL_SBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_FF_1;
+			Return 1;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99902828_pass_CTRL_SBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_FF_2;
+			Return 2;
+		}		
+	}	
+}
+
+DUTFlow SBO_PARALLEL_NCC_POSTHVQK_CA2TF_FF
+{
+	DUTFlowItem ATSPEED_SBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF ATSPEED_SBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90260496_fail_ATSPEED_SBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF_0;
+			GoTo CHAIN_SBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99260465_pass_ATSPEED_SBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF_1;
+			Return 1;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99260709_pass_ATSPEED_SBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF_2;
+			Return 1;
+		}		
+		Result 3
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90262421_fail_ATSPEED_SBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF_3;
+			GoTo CHAIN_SBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF;
+		}		
+	}	
+	
+	DUTFlowItem ATSPEED_SBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF ATSPEED_SBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90470707_fail_ATSPEED_SBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF_0;
+			Return 1;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99472416_pass_ATSPEED_SBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF_1;
+			Return 1;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99471162_pass_ATSPEED_SBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF_2;
+			Return 1;
+		}		
+		Result 3
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90472298_fail_ATSPEED_SBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF_3;
+			Return 1;
+		}		
+	}	
+	DUTFlowItem CHAIN_SBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF CHAIN_SBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90410728_fail_CHAIN_SBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF_0;
+			GoTo SBO_POSTHVQK_SPOFI_FLOW_DECISION_FF;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99410767_pass_CHAIN_SBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF_1;
+			GoTo SBO_POSTHVQK_SPOFI_FLOW_DECISION_FF;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99410660_pass_CHAIN_SBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF_2;
+			GoTo SBO_POSTHVQK_SPOFI_FLOW_DECISION_FF;
+		}		
+		Result 3
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90410627_fail_CHAIN_SBO_HRY_E_POSTHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF_3;
+			GoTo SBO_POSTHVQK_SPOFI_FLOW_DECISION_FF;
+		}		
+	}	
+	DUTFlowItem SBO_POSTHVQK_SPOFI_FLOW_DECISION_FF SBO_POSTHVQK_SPOFI_FLOW_DECISION_FF @EDC
+	{
+		Result -1
+		{
+			Property PassFail = "Fail";
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			GoTo ATSPEED_SBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			GoTo ATSPEED_SBO_SPOFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			Return 1;
+		}		
+	}	
+}
+
+DUTFlow SBO_GBO_CONCURRENT_POSTHVQK_CA2TF
+{
+	DUTFlowItem ATSPEED_SBO_VMIN_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF ATSPEED_SBO_VMIN_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90262274_fail_ATSPEED_SBO_VMIN_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF_0;
+			SetBin SoftBins.b90262647_fail_SCN_CCF_HVQK_ATSPEED_CBO01234567_VMIN_E_POSTHVQK_STF_CLR_NOM_LFM_1600_SHARED_BIN;
+			GoTo SBO_PARALLEL_NCC_POSTHVQK_CA2TF_FF;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			GoTo ATSPEED_GBO_VMIN_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF;
+		}		
+	}	
+	
+	DUTFlowItem ATSPEED_GBO_VMIN_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF ATSPEED_GBO_VMIN_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90260644_fail_ATSPEED_GBO_VMIN_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF_0;
+			SetBin SoftBins.b90262647_fail_SCN_CCF_HVQK_ATSPEED_CBO01234567_VMIN_E_POSTHVQK_STF_CLR_NOM_LFM_1600_SHARED_BIN;
+			GoTo GBO_PARALLEL_NCC_POSTHVQK_CA2TF_FF;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			Return 1;
+		}		
+	}	
+	DUTFlowItem GBO_PARALLEL_NCC_POSTHVQK_CA2TF_FF GBO_PARALLEL_NCC_POSTHVQK_CA2TF_FF @EDC
+	{
+		Result -1
+		{
+			Property PassFail = "Fail";
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			Return 1;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			Return 1;
+		}		
+	}	
+	DUTFlowItem SBO_PARALLEL_NCC_POSTHVQK_CA2TF_FF SBO_PARALLEL_NCC_POSTHVQK_CA2TF_FF @EDC
+	{
+		Result -1
+		{
+			Property PassFail = "Fail";
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			GoTo ATSPEED_GBO_VMIN_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			GoTo ATSPEED_GBO_VMIN_E_POSTHVQK_STF_CLR_NOM_LFM_1600_FF;
+		}		
+	}	
+}
+
+DUTFlow POSTHVQK_CONCURRENT_CCF
+{
+	DUTFlowItem SBO_GBO_CONCURRENT_POSTHVQK_CA2TF SBO_GBO_CONCURRENT_POSTHVQK_CA2TF @EDC
+	{
+		Result -1
+		{
+			Property PassFail = "Fail";
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			GoTo CBO_PAIR_CONCURRENT_POSTHVQK_CA2TF;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			GoTo CBO_PAIR_CONCURRENT_POSTHVQK_CA2TF;
+		}		
+	}	
+	
+	DUTFlowItem CBO_PAIR_CONCURRENT_POSTHVQK_CA2TF CBO_PAIR_CONCURRENT_POSTHVQK_CA2TF @EDC
+	{
+		Result -1
+		{
+			Property PassFail = "Fail";
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			Return 1;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			Return 1;
+		}		
+	}	
+}
+
+DUTFlow CBO01234567_END_SPOFI_FLOW_DECISION_PAIR
+{
+	DUTFlowItem FLOW_CBO01234567_AUX_E_PREHVQK_STF_CLR_NOM_LFM_1600_SPOFI_FABCHECK_PAIR FLOW_CBO01234567_AUX_E_PREHVQK_STF_CLR_NOM_LFM_1600_SPOFI_FABCHECK_PAIR @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90903348_fail_FLOW_CBO01234567_AUX_E_PREHVQK_STF_CLR_NOM_LFM_1600_SPOFI_FABCHECK_PAIR_0;
+			##EDC## SetBin SoftBins.b90909041_fail_SCN_CCF_CTRL_CBO01234567_AUX_X_BEGIN_X_X_X_X_COMPARE_SLTRK_TOKEN_SHARED_BIN;
+			Return 0;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			Return 1;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			GoTo CTRL_CBO01234567_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_PAIR;
+		}		
+	}	
+	
+	DUTFlowItem CTRL_CBO01234567_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_PAIR CTRL_CBO01234567_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_PAIR @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90903787_fail_CTRL_CBO01234567_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_PAIR_0;
+			Return 0;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99903788_pass_CTRL_CBO01234567_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_PAIR_1;
+			Return 1;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99903789_pass_CTRL_CBO01234567_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_PAIR_2;
+			Return 2;
+		}		
+	}	
+}
+
+DUTFlow CBO_PAIR_CONCURRENT_PREHVQK_CA2TF
+{
+	DUTFlowItem RESET_CBO_SCANFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_PREAMBLE RESET_CBO_SCANFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_PREAMBLE @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90191355_fail_RESET_CBO_SCANFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_PREAMBLE_0;
+			##EDC## SetBin SoftBins.b90191947_fail_SCN_CCF_HVQK_RESET_CBO_SCANFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_PREAMBLE_SHARED_BIN;
+			Return 1;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99191356_pass_RESET_CBO_SCANFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_PREAMBLE_1;
+			GoTo CTRL_CBO01234567_AUX_E_PREHVQK_STF_CLR_NOM_LFM_1600_STORE_SLTRK_TOKEN_PAIR;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99191358_pass_RESET_CBO_SCANFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_PREAMBLE_2;
+			GoTo CTRL_CBO01234567_AUX_E_PREHVQK_STF_CLR_NOM_LFM_1600_STORE_SLTRK_TOKEN_PAIR;
+		}		
+		Result 3
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90190710_fail_RESET_CBO_SCANFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_PREAMBLE_3;
+			##EDC## SetBin SoftBins.b90191947_fail_SCN_CCF_HVQK_RESET_CBO_SCANFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_PREAMBLE_SHARED_BIN;
+			Return 1;
+		}		
+	}	
+	
+	DUTFlowItem ATSPEED_CBO01234567_VMIN_E_PREHVQK_STF_CLR_NOM_LFM_1600 ATSPEED_CBO01234567_VMIN_E_PREHVQK_STF_CLR_NOM_LFM_1600 @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90471484_fail_ATSPEED_CBO01234567_VMIN_E_PREHVQK_STF_CLR_NOM_LFM_1600_0;
+			GoTo ATSPEED_CBO01234567_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_PAIR;
+		}
+		Result 1
+		{
+			Property PassFail = "Pass";
+			GoTo ATSPEED_CBO01234567_VMIN_E_PREHVQK_STF_CLR_NOM_LFM_1600_DR;
+		}		
+	}	
+	DUTFlowItem ATSPEED_CBO01234567_VMIN_E_PREHVQK_STF_CLR_NOM_LFM_1600_DR ATSPEED_CBO01234567_VMIN_E_PREHVQK_STF_CLR_NOM_LFM_1600_DR
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90471485_fail_ATSPEED_CBO01234567_VMIN_E_PREHVQK_STF_CLR_NOM_LFM_1600_DR_0;
+			SetBin SoftBins.b90474790_fail_SCN_CCF_HVQK_ATSPEED_CBO01234567_VMIN_E_PREHVQK_STF_CLR_NOM_LFM_1600_DR_SHARED_BIN;
+			GoTo CBO01234567_END_SPOFI_FLOW_DECISION_PAIR;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			Return 1;
+		}		
+	}	
+	DUTFlowItem ATSPEED_CBO01234567_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_PAIR ATSPEED_CBO01234567_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_PAIR @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90470391_fail_ATSPEED_CBO01234567_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_PAIR_0;
+			##EDC## SetBin SoftBins.b90474763_fail_SCN_CCF_CTRL_CBO01_SCREEN_K_SDTEND_X_X_X_X_DIE_RECOVERY_CA2TF_CF_SHARED_BIN;
+			GoTo CBO01234567_END_SPOFI_FLOW_DECISION_PAIR;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99470389_pass_ATSPEED_CBO01234567_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_PAIR_1;
+			GoTo ATSPEED_CBO01234567_VMIN_E_PREHVQK_STF_CLR_NOM_LFM_1600_DR;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99470059_pass_ATSPEED_CBO01234567_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_PAIR_2;
+			GoTo ATSPEED_CBO01234567_VMIN_E_PREHVQK_STF_CLR_NOM_LFM_1600_DR;
+		}		
+		Result 3
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90470424_fail_ATSPEED_CBO01234567_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_PAIR_3;
+			##EDC## SetBin SoftBins.b90474763_fail_SCN_CCF_CTRL_CBO01_SCREEN_K_SDTEND_X_X_X_X_DIE_RECOVERY_CA2TF_CF_SHARED_BIN;
+			GoTo CBO01234567_END_SPOFI_FLOW_DECISION_PAIR;
+		}		
+	}	
+	DUTFlowItem ATSPEED_CBO01234567_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL ATSPEED_CBO01234567_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90471340_fail_ATSPEED_CBO01234567_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_0;
+			Return 1;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99470709_pass_ATSPEED_CBO01234567_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_1;
+			Return 1;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99470465_pass_ATSPEED_CBO01234567_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_2;
+			Return 1;
+		}		
+		Result 3
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90471350_fail_ATSPEED_CBO01234567_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_3;
+			Return 1;
+		}		
+	}	
+	DUTFlowItem CTRL_CBO01234567_AUX_E_PREHVQK_STF_CLR_NOM_LFM_1600_COMPARE_SLTRK_TOKEN_PAIR CTRL_CBO01234567_AUX_E_PREHVQK_STF_CLR_NOM_LFM_1600_COMPARE_SLTRK_TOKEN_PAIR @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90900880_fail_CTRL_CBO01234567_AUX_E_PREHVQK_STF_CLR_NOM_LFM_1600_COMPARE_SLTRK_TOKEN_PAIR_0;
+			##EDC## SetBin SoftBins.b90909041_fail_SCN_CCF_CTRL_CBO01234567_AUX_X_BEGIN_X_X_X_X_COMPARE_SLTRK_TOKEN_SHARED_BIN;
+			GoTo ATSPEED_CBO01234567_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_PAIR;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			Return 1;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			GoTo ATSPEED_CBO01234567_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_PAIR;
+		}		
+	}	
+	DUTFlowItem CTRL_CBO01234567_AUX_E_PREHVQK_STF_CLR_NOM_LFM_1600_STORE_SLTRK_TOKEN_PAIR CTRL_CBO01234567_AUX_E_PREHVQK_STF_CLR_NOM_LFM_1600_STORE_SLTRK_TOKEN_PAIR @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90900682_fail_CTRL_CBO01234567_AUX_E_PREHVQK_STF_CLR_NOM_LFM_1600_STORE_SLTRK_TOKEN_PAIR_0;
+			##EDC## SetBin SoftBins.b90909041_fail_SCN_CCF_CTRL_CBO01234567_AUX_X_BEGIN_X_X_X_X_COMPARE_SLTRK_TOKEN_SHARED_BIN;
+			GoTo ATSPEED_CBO01234567_VMIN_E_PREHVQK_STF_CLR_NOM_LFM_1600;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			GoTo ATSPEED_CBO01234567_VMIN_E_PREHVQK_STF_CLR_NOM_LFM_1600;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			GoTo ATSPEED_CBO01234567_VMIN_E_PREHVQK_STF_CLR_NOM_LFM_1600;
+		}		
+	}	
+	DUTFlowItem CBO01234567_END_SPOFI_FLOW_DECISION_PAIR CBO01234567_END_SPOFI_FLOW_DECISION_PAIR @EDC
+	{
+		Result -1
+		{
+			Property PassFail = "Fail";
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			GoTo ATSPEED_CBO01234567_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			GoTo ATSPEED_CBO01234567_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			GoTo ATSPEED_CBO01234567_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL;
+		}		
+	}	
+}
+
+DUTFlow GBO_PREHVQK_SPOFI_FLOW_DECISION_FF
+{
+	DUTFlowItem FLOW_GBO_AUX_E_PREHVQK_STF_CLR_NOM_LFM_1600_SPOFI_FABCHECK_FF FLOW_GBO_AUX_E_PREHVQK_STF_CLR_NOM_LFM_1600_SPOFI_FABCHECK_FF @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90902821_fail_FLOW_GBO_AUX_E_PREHVQK_STF_CLR_NOM_LFM_1600_SPOFI_FABCHECK_FF_0;
+			##EDC## SetBin SoftBins.b90909041_fail_SCN_CCF_CTRL_CBO01234567_AUX_X_BEGIN_X_X_X_X_COMPARE_SLTRK_TOKEN_SHARED_BIN;
+			Return 0;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			Return 1;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			GoTo CTRL_GBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_FF;
+		}		
+	}	
+	
+	DUTFlowItem CTRL_GBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_FF CTRL_GBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_FF @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90902814_fail_CTRL_GBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_FF_0;
+			Return 0;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99902817_pass_CTRL_GBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_FF_1;
+			Return 1;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99902819_pass_CTRL_GBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_FF_2;
+			Return 2;
+		}		
+	}	
+}
+
+DUTFlow GBO_PARALLEL_NCC_PREHVQK_CA2TF_FF
+{
+	DUTFlowItem ATSPEED_GBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF ATSPEED_GBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90472276_fail_ATSPEED_GBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF_0;
+			GoTo CHAIN_GBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99472271_pass_ATSPEED_GBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF_1;
+			Return 1;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99472272_pass_ATSPEED_GBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF_2;
+			Return 1;
+		}		
+		Result 3
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90190780_fail_ATSPEED_GBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF_3;
+			GoTo CHAIN_GBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF;
+		}		
+	}	
+	
+	DUTFlowItem ATSPEED_GBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF ATSPEED_GBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90472275_fail_ATSPEED_GBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF_0;
+			Return 1;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99471432_pass_ATSPEED_GBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF_1;
+			Return 1;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99470529_pass_ATSPEED_GBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF_2;
+			Return 1;
+		}		
+		Result 3
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90190790_fail_ATSPEED_GBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF_3;
+			Return 1;
+		}		
+	}	
+	DUTFlowItem CHAIN_GBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF CHAIN_GBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90410704_fail_CHAIN_GBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF_0;
+			GoTo GBO_PREHVQK_SPOFI_FLOW_DECISION_FF;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99410907_pass_CHAIN_GBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF_1;
+			GoTo GBO_PREHVQK_SPOFI_FLOW_DECISION_FF;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99410831_pass_CHAIN_GBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF_2;
+			GoTo GBO_PREHVQK_SPOFI_FLOW_DECISION_FF;
+		}		
+		Result 3
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90190080_fail_CHAIN_GBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF_3;
+			GoTo GBO_PREHVQK_SPOFI_FLOW_DECISION_FF;
+		}		
+	}	
+	DUTFlowItem GBO_PREHVQK_SPOFI_FLOW_DECISION_FF GBO_PREHVQK_SPOFI_FLOW_DECISION_FF @EDC
+	{
+		Result -1
+		{
+			Property PassFail = "Fail";
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			GoTo ATSPEED_GBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			GoTo ATSPEED_GBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			Return 1;
+		}		
+	}	
+}
+
+DUTFlow SBO_PREHVQK_SPOFI_FLOW_DECISION_FF
+{
+	DUTFlowItem FLOW_SBO_AUX_E_PREHVQK_STF_CLR_NOM_LFM_1600_SPOFI_FABCHECK_FF FLOW_SBO_AUX_E_PREHVQK_STF_CLR_NOM_LFM_1600_SPOFI_FABCHECK_FF @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90902829_fail_FLOW_SBO_AUX_E_PREHVQK_STF_CLR_NOM_LFM_1600_SPOFI_FABCHECK_FF_0;
+			##EDC## SetBin SoftBins.b90909041_fail_SCN_CCF_CTRL_CBO01234567_AUX_X_BEGIN_X_X_X_X_COMPARE_SLTRK_TOKEN_SHARED_BIN;
+			Return 0;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			Return 1;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			GoTo CTRL_SBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_FF;
+		}		
+	}	
+	
+	DUTFlowItem CTRL_SBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_FF CTRL_SBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_FF @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90902823_fail_CTRL_SBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_FF_0;
+			Return 0;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99902825_pass_CTRL_SBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_FF_1;
+			Return 1;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99902827_pass_CTRL_SBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_STUCKAT_SAMPLE_FF_2;
+			Return 2;
+		}		
+	}	
+}
+
+DUTFlow SBO_PARALLEL_NCC_PREHVQK_CA2TF_FF
+{
+	DUTFlowItem ATSPEED_SBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF ATSPEED_SBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90470502_fail_ATSPEED_SBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF_0;
+			GoTo CHAIN_SBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99470495_pass_ATSPEED_SBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF_1;
+			Return 1;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99470462_pass_ATSPEED_SBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF_2;
+			Return 1;
+		}		
+		Result 3
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90190714_fail_ATSPEED_SBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF_3;
+			GoTo CHAIN_SBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF;
+		}		
+	}	
+	
+	DUTFlowItem ATSPEED_SBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF ATSPEED_SBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90470708_fail_ATSPEED_SBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF_0;
+			Return 1;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99472418_pass_ATSPEED_SBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF_1;
+			Return 1;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99471163_pass_ATSPEED_SBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF_2;
+			Return 1;
+		}		
+		Result 3
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90190715_fail_ATSPEED_SBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF_3;
+			Return 1;
+		}		
+	}	
+	DUTFlowItem CHAIN_SBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF CHAIN_SBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90410806_fail_CHAIN_SBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF_0;
+			GoTo SBO_PREHVQK_SPOFI_FLOW_DECISION_FF;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99410686_pass_CHAIN_SBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF_1;
+			GoTo SBO_PREHVQK_SPOFI_FLOW_DECISION_FF;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99410019_pass_CHAIN_SBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF_2;
+			GoTo SBO_PREHVQK_SPOFI_FLOW_DECISION_FF;
+		}		
+		Result 3
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90190079_fail_CHAIN_SBO_HRY_E_PREHVQK_STF_CLR_NOM_LFM_1600_MCI_PARALLEL_FF_3;
+			GoTo SBO_PREHVQK_SPOFI_FLOW_DECISION_FF;
+		}		
+	}	
+	DUTFlowItem SBO_PREHVQK_SPOFI_FLOW_DECISION_FF SBO_PREHVQK_SPOFI_FLOW_DECISION_FF @EDC
+	{
+		Result -1
+		{
+			Property PassFail = "Fail";
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			GoTo ATSPEED_SBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			GoTo ATSPEED_SBO_SPOFI_E_PREHVQK_STF_CLR_NOM_LFM_1600_FF;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			Return 1;
+		}		
+	}	
+}
+
+DUTFlow SBO_GBO_CONCURRENT_PREHVQK_CA2TF
+{
+	DUTFlowItem ATSPEED_SBO_VMIN_K_PREHVQK_STF_CLR_NOM_LFM_1600_FF ATSPEED_SBO_VMIN_K_PREHVQK_STF_CLR_NOM_LFM_1600_FF
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90472273_fail_ATSPEED_SBO_VMIN_K_PREHVQK_STF_CLR_NOM_LFM_1600_FF_0;
+			SetBin SoftBins.b90474790_fail_SCN_CCF_HVQK_ATSPEED_CBO01234567_VMIN_E_PREHVQK_STF_CLR_NOM_LFM_1600_DR_SHARED_BIN;
+			GoTo SBO_PARALLEL_NCC_PREHVQK_CA2TF_FF;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			GoTo ATSPEED_GBO_VMIN_K_PREHVQK_STF_CLR_NOM_LFM_1600_FF;
+		}		
+	}	
+	
+	DUTFlowItem ATSPEED_GBO_VMIN_K_PREHVQK_STF_CLR_NOM_LFM_1600_FF ATSPEED_GBO_VMIN_K_PREHVQK_STF_CLR_NOM_LFM_1600_FF
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90472304_fail_ATSPEED_GBO_VMIN_K_PREHVQK_STF_CLR_NOM_LFM_1600_FF_0;
+			SetBin SoftBins.b90474790_fail_SCN_CCF_HVQK_ATSPEED_CBO01234567_VMIN_E_PREHVQK_STF_CLR_NOM_LFM_1600_DR_SHARED_BIN;
+			GoTo GBO_PARALLEL_NCC_PREHVQK_CA2TF_FF;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			Return 1;
+		}		
+	}	
+	DUTFlowItem GBO_PARALLEL_NCC_PREHVQK_CA2TF_FF GBO_PARALLEL_NCC_PREHVQK_CA2TF_FF @EDC
+	{
+		Result -1
+		{
+			Property PassFail = "Fail";
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			Return 1;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			Return 1;
+		}		
+	}	
+	DUTFlowItem SBO_PARALLEL_NCC_PREHVQK_CA2TF_FF SBO_PARALLEL_NCC_PREHVQK_CA2TF_FF @EDC
+	{
+		Result -1
+		{
+			Property PassFail = "Fail";
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			GoTo ATSPEED_GBO_VMIN_K_PREHVQK_STF_CLR_NOM_LFM_1600_FF;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			GoTo ATSPEED_GBO_VMIN_K_PREHVQK_STF_CLR_NOM_LFM_1600_FF;
+		}		
+	}	
+}
+
+DUTFlow PREHVQK_CONCURRENT_CCF
+{
+	DUTFlowItem CTRL_CBO_AUX_E_PREHVQK_STF_CLR_NOM_LFM_1600_STORE_VMIN_PREDIC1_PAIR CTRL_CBO_AUX_E_PREHVQK_STF_CLR_NOM_LFM_1600_STORE_VMIN_PREDIC1_PAIR @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90420004_fail_CTRL_CBO_AUX_E_PREHVQK_STF_CLR_NOM_LFM_1600_STORE_VMIN_PREDIC1_PAIR_0;
+			GoTo SBO_GBO_CONCURRENT_PREHVQK_CA2TF;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			GoTo SBO_GBO_CONCURRENT_PREHVQK_CA2TF;
+		}		
+		Result 2
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90421983_fail_CTRL_CBO_AUX_E_PREHVQK_STF_CLR_NOM_LFM_1600_STORE_VMIN_PREDIC1_PAIR_2;
+			GoTo SBO_GBO_CONCURRENT_PREHVQK_CA2TF;
+		}		
+	}	
+	
+	DUTFlowItem CBO_PAIR_CONCURRENT_PREHVQK_CA2TF CBO_PAIR_CONCURRENT_PREHVQK_CA2TF @EDC
+	{
+		Result -1
+		{
+			Property PassFail = "Fail";
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			Return 1;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			Return 1;
+		}		
+	}	
+	DUTFlowItem SBO_GBO_CONCURRENT_PREHVQK_CA2TF SBO_GBO_CONCURRENT_PREHVQK_CA2TF @EDC
+	{
+		Result -1
+		{
+			Property PassFail = "Fail";
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			GoTo CBO_PAIR_CONCURRENT_PREHVQK_CA2TF;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			GoTo CBO_PAIR_CONCURRENT_PREHVQK_CA2TF;
+		}		
+	}	
+}
+
+DUTFlow PREHVQK_HVM
+{
+	DUTFlowItem FLOW_CBO_AUX_E_PREHVQK_STF_CLR_NOM_LFM_1600_NONCONCURRENT_ON FLOW_CBO_AUX_E_PREHVQK_STF_CLR_NOM_LFM_1600_NONCONCURRENT_ON @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90410013_fail_FLOW_CBO_AUX_E_PREHVQK_STF_CLR_NOM_LFM_1600_NONCONCURRENT_ON_0;
+			Return 0;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			GoTo PREHVQK_CONCURRENT_CCF;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			GoTo PREHVQK_CONCURRENT_CCF;
+		}		
+	}	
+	
+	DUTFlowItem PREHVQK_CONCURRENT_CCF PREHVQK_CONCURRENT_CCF @EDC
+	{
+		Result -1
+		{
+			Property PassFail = "Fail";
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			Return 1;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			Return 1;
+		}		
+	}	
+}
+
+DUTFlow PREHVQK_SHORT_MV
+{
+	DUTFlowItem ATSPEED_SBO_SHMOO_E_PREHVQK_STF_CLR_NOM_LFM_1600_VMIN ATSPEED_SBO_SHMOO_E_PREHVQK_STF_CLR_NOM_LFM_1600_VMIN @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90420382_fail_ATSPEED_SBO_SHMOO_E_PREHVQK_STF_CLR_NOM_LFM_1600_VMIN_0;
+			GoTo ATSPEED_GBO_SHMOO_E_PREHVQK_STF_CLR_NOM_LFM_1600_VMIN;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			GoTo ATSPEED_GBO_SHMOO_E_PREHVQK_STF_CLR_NOM_LFM_1600_VMIN;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			GoTo ATSPEED_GBO_SHMOO_E_PREHVQK_STF_CLR_NOM_LFM_1600_VMIN;
+		}		
+		Result 3
+		{
+			Property PassFail = "Pass";
+			GoTo ATSPEED_GBO_SHMOO_E_PREHVQK_STF_CLR_NOM_LFM_1600_VMIN;
+		}		
+	}	
+	
+	DUTFlowItem ATSPEED_CBO01234567_SHMOO_E_PREHVQK_STF_CLR_NOM_LFM_1600_VMIN ATSPEED_CBO01234567_SHMOO_E_PREHVQK_STF_CLR_NOM_LFM_1600_VMIN @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90420001_fail_ATSPEED_CBO01234567_SHMOO_E_PREHVQK_STF_CLR_NOM_LFM_1600_VMIN_0;
+			Return 1;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			Return 1;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			Return 1;
+		}		
+		Result 3
+		{
+			Property PassFail = "Pass";
+			Return 1;
+		}		
+	}	
+	DUTFlowItem ATSPEED_GBO_SHMOO_E_PREHVQK_STF_CLR_NOM_LFM_1600_VMIN ATSPEED_GBO_SHMOO_E_PREHVQK_STF_CLR_NOM_LFM_1600_VMIN @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90421502_fail_ATSPEED_GBO_SHMOO_E_PREHVQK_STF_CLR_NOM_LFM_1600_VMIN_0;
+			GoTo ATSPEED_CBO01234567_SHMOO_E_PREHVQK_STF_CLR_NOM_LFM_1600_VMIN;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			GoTo ATSPEED_CBO01234567_SHMOO_E_PREHVQK_STF_CLR_NOM_LFM_1600_VMIN;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			GoTo ATSPEED_CBO01234567_SHMOO_E_PREHVQK_STF_CLR_NOM_LFM_1600_VMIN;
+		}		
+		Result 3
+		{
+			Property PassFail = "Pass";
+			GoTo ATSPEED_CBO01234567_SHMOO_E_PREHVQK_STF_CLR_NOM_LFM_1600_VMIN;
+		}		
+	}	
+}
+
+DUTFlow STRESS_HVM
+{
+	DUTFlowItem STUCKAT_SBO_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC STUCKAT_SBO_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90174758_fail_STUCKAT_SBO_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_0;
+			GoTo STUCKAT_GBO_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			GoTo STUCKAT_GBO_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			GoTo STUCKAT_GBO_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC;
+		}
+		Result 3
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90174202_fail_STUCKAT_SBO_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_3;
+			GoTo STUCKAT_GBO_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC;
+		}
+		Result 4
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90174203_fail_STUCKAT_SBO_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_4;
+			GoTo STUCKAT_GBO_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC;
+		}
+	}	
+	
+	DUTFlowItem STUCKAT_CBO01_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC STUCKAT_CBO01_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90174206_fail_STUCKAT_CBO01_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_0;
+			GoTo STUCKAT_CBO23_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			GoTo STUCKAT_CBO23_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			GoTo STUCKAT_CBO23_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC;
+		}		
+	}	
+	DUTFlowItem STUCKAT_CBO23_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC STUCKAT_CBO23_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90174761_fail_STUCKAT_CBO23_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_0;
+			GoTo STUCKAT_CBO45_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			GoTo STUCKAT_CBO45_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			GoTo STUCKAT_CBO45_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC;
+		}		
+	}	
+	DUTFlowItem STUCKAT_CBO45_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC STUCKAT_CBO45_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90174762_fail_STUCKAT_CBO45_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_0;
+			GoTo STUCKAT_CBO67_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			GoTo STUCKAT_CBO67_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			GoTo STUCKAT_CBO67_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC;
+		}		
+	}	
+	DUTFlowItem STUCKAT_CBO67_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC STUCKAT_CBO67_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90174763_fail_STUCKAT_CBO67_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_0;
+			Return 1;
+		}
+		Result 1
+		{
+			Property PassFail = "Pass";
+			Return 1;
+		}
+		Result 2
+		{
+			Property PassFail = "Pass";
+			Return 1;
+		}		
+	}	
+	DUTFlowItem STUCKAT_GBO_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC STUCKAT_GBO_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90174759_fail_STUCKAT_GBO_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_0;
+			GoTo STUCKAT_CBO01234567_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC;
+		}
+		Result 1
+		{
+			Property PassFail = "Pass";
+			GoTo STUCKAT_CBO01234567_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC;
+		}
+		Result 2
+		{
+			Property PassFail = "Pass";
+			GoTo STUCKAT_CBO01234567_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC;
+		}
+		Result 3
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90174204_fail_STUCKAT_GBO_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_3;
+			GoTo STUCKAT_CBO01234567_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC;
+		}
+		Result 4
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90174205_fail_STUCKAT_GBO_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_4;
+			GoTo STUCKAT_CBO01234567_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC;
+		}
+	}	
+	
+	DUTFlowItem STUCKAT_CBO01234567_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC STUCKAT_CBO01234567_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90170009_fail_STUCKAT_CBO01_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_0;
+			Return 1;
+		}
+		Result 1
+		{
+			Property PassFail = "Pass";
+			Return 1;
+		}
+		Result 2
+		{
+			Property PassFail = "Pass";
+			Return 1;
+		}
+		Result 3
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90174200_fail_STUCKAT_CBO01234567_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_3;
+			Return 1;
+		}
+		Result 4
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90174201_fail_STUCKAT_CBO01234567_STRESS_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_4;
+			Return 1;
+		}
+	}			
+}
+
+DUTFlow PREHVQK_STRESS_CONCURRENT_MV
+{
+	DUTFlowItem STUCKAT_SBO_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF STUCKAT_SBO_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90421475_fail_STUCKAT_SBO_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF_0;
+			GoTo STUCKAT_GBO_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			GoTo STUCKAT_GBO_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			GoTo STUCKAT_GBO_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF;
+		}		
+		Result 3
+		{
+			Property PassFail = "Pass";
+			GoTo STUCKAT_GBO_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF;
+		}		
+	}	
+	
+	DUTFlowItem STUCKAT_CBO01_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF STUCKAT_CBO01_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90421490_fail_STUCKAT_CBO01_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF_0;
+			GoTo STUCKAT_CBO23_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			GoTo STUCKAT_CBO23_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			GoTo STUCKAT_CBO23_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF;
+		}		
+		Result 3
+		{
+			Property PassFail = "Pass";
+			GoTo STUCKAT_CBO23_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF;
+		}		
+	}	
+	DUTFlowItem STUCKAT_CBO23_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF STUCKAT_CBO23_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90420235_fail_STUCKAT_CBO23_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF_0;
+			GoTo STUCKAT_CBO45_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			GoTo STUCKAT_CBO45_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			GoTo STUCKAT_CBO45_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF;
+		}		
+		Result 3
+		{
+			Property PassFail = "Pass";
+			GoTo STUCKAT_CBO45_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF;
+		}		
+	}	
+	DUTFlowItem STUCKAT_CBO45_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF STUCKAT_CBO45_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90420294_fail_STUCKAT_CBO45_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF_0;
+			GoTo STUCKAT_CBO67_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			GoTo STUCKAT_CBO67_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			GoTo STUCKAT_CBO67_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF;
+		}		
+		Result 3
+		{
+			Property PassFail = "Pass";
+			GoTo STUCKAT_CBO67_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF;
+		}		
+	}	
+	DUTFlowItem STUCKAT_CBO67_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF STUCKAT_CBO67_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90421477_fail_STUCKAT_CBO67_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF_0;
+			Return 1;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			Return 1;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			Return 1;
+		}		
+		Result 3
+		{
+			Property PassFail = "Pass";
+			Return 1;
+		}		
+	}	
+	DUTFlowItem STUCKAT_GBO_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF STUCKAT_GBO_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90421476_fail_STUCKAT_GBO_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF_0;
+			GoTo STUCKAT_CBO01234567_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF;
+		}
+		Result 1
+		{
+			Property PassFail = "Pass";
+			GoTo STUCKAT_CBO01234567_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF;
+		}
+		Result 2
+		{
+			Property PassFail = "Pass";
+			GoTo STUCKAT_CBO01234567_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF;
+		}
+		Result 3
+		{
+			Property PassFail = "Pass";
+			GoTo STUCKAT_CBO01234567_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF;
+		}		
+	}	
+	
+	DUTFlowItem STUCKAT_CBO01234567_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF STUCKAT_CBO01234567_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90420002_fail_STUCKAT_CBO01234567_SHMOO_E_STRESS_STF_CLR_NOM_LFM_1600_LOGIC_CF_0;
+			Return 1;
+		}
+		Result 1
+		{
+			Property PassFail = "Pass";
+			Return 1;
+		}
+		Result 2
+		{
+			Property PassFail = "Pass";
+			Return 1;
+		}
+		Result 3
+		{
+			Property PassFail = "Pass";
+			Return 1;
+		}		
+	}	
+}
+
+DUTFlow STRESS_SHORT_MV
+{
+	DUTFlowItem FLOW_CCF_AUX_E_STRESS_STF_CLR_NOM_LFM_1600_CBO_NONCONCURRENT_ON FLOW_CCF_AUX_E_STRESS_STF_CLR_NOM_LFM_1600_CBO_NONCONCURRENT_ON @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -1;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90410853_fail_FLOW_CCF_AUX_E_STRESS_STF_CLR_NOM_LFM_1600_CBO_NONCONCURRENT_ON_0;
+			Return 0;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			GoTo PREHVQK_STRESS_CONCURRENT_MV;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			GoTo PREHVQK_STRESS_CONCURRENT_MV;
+		}		
+	}	
+	
+	DUTFlowItem PREHVQK_STRESS_CONCURRENT_MV PREHVQK_STRESS_CONCURRENT_MV @EDC
+	{
+		Result -1
+		{
+			Property PassFail = "Fail";
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			Return 1;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			Return 1;
+		}		
+	}	
+}
+Flow SCN_CCF_HVQK_INIT
+{
+	FlowItem FLOW_CCF_PATMOD_K_INIT_STF_CLR_NOM_LFM_1600_STUCKAT_HVQK FLOW_CCF_PATMOD_K_INIT_STF_CLR_NOM_LFM_1600_STUCKAT_HVQK
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -2;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90904444_fail_FLOW_CCF_PATMOD_K_INIT_STF_CLR_NOM_LFM_1600_STUCKAT_HVQK_0;
+			Return 1;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			Return 1;
+		}		
+	}	
+	
+}
+
+DUTFlow SCN_CCF_HVQK_POSTHVQK
+{
+	DUTFlowItem RESET_CBO_SCANFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_PREAMBLE RESET_CBO_SCANFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_PREAMBLE @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -2;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90424056_fail_RESET_CBO_SCANFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_PREAMBLE_0;
+			GoTo FLOW_CBO_AUX_E_POSTHVQK_STF_CLR_NOM_LFM_1600_NONCONCURRENT_ON;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99424057_pass_RESET_CBO_SCANFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_PREAMBLE_1;
+			GoTo FLOW_CBO_AUX_E_POSTHVQK_STF_CLR_NOM_LFM_1600_NONCONCURRENT_ON;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			IncrementCounters SCN_CCF_HVQK::p99424058_pass_RESET_CBO_SCANFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_PREAMBLE_2;
+			GoTo FLOW_CBO_AUX_E_POSTHVQK_STF_CLR_NOM_LFM_1600_NONCONCURRENT_ON;
+		}		
+		Result 3
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90420241_fail_RESET_CBO_SCANFI_E_POSTHVQK_STF_CLR_NOM_LFM_1600_PREAMBLE_3;
+			GoTo FLOW_CBO_AUX_E_POSTHVQK_STF_CLR_NOM_LFM_1600_NONCONCURRENT_ON;
+		}		
+	}	
+	
+	DUTFlowItem FLOW_CBO_AUX_E_POSTHVQK_STF_CLR_NOM_LFM_1600_NONCONCURRENT_ON FLOW_CBO_AUX_E_POSTHVQK_STF_CLR_NOM_LFM_1600_NONCONCURRENT_ON @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -2;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90410677_fail_FLOW_CBO_AUX_E_POSTHVQK_STF_CLR_NOM_LFM_1600_NONCONCURRENT_ON_0;
+			Return 0;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			GoTo POSTHVQK_CONCURRENT_CCF;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			GoTo POSTHVQK_CONCURRENT_CCF;
+		}		
+	}	
+	DUTFlowItem POSTHVQK_CONCURRENT_CCF POSTHVQK_CONCURRENT_CCF @EDC
+	{
+		Result -1
+		{
+			Property PassFail = "Fail";
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			Return 1;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			Return 1;
+		}		
+	}	
+}
+
+DUTFlow SCN_CCF_HVQK_PREHVQK
+{
+	DUTFlowItem FLOW_CCF_AUX_E_PREHVQK_STF_CLR_NOM_LFM_1600 FLOW_CCF_AUX_E_PREHVQK_STF_CLR_NOM_LFM_1600 @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -2;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90900870_fail_FLOW_CCF_AUX_E_PREHVQK_STF_CLR_NOM_LFM_1600_0;
+			GoTo PREHVQK_HVM;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			GoTo PREHVQK_SHORT_MV;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			GoTo PREHVQK_HVM;
+		}		
+		Result 3
+		{
+			Property PassFail = "Pass";
+			GoTo PREHVQK_HVM;
+		}		
+	}	
+	
+	DUTFlowItem PREHVQK_HVM PREHVQK_HVM @EDC
+	{
+		Result -1
+		{
+			Property PassFail = "Fail";
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			Return 1;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			Return 1;
+		}		
+	}	
+	DUTFlowItem PREHVQK_SHORT_MV PREHVQK_SHORT_MV @EDC
+	{
+		Result -1
+		{
+			Property PassFail = "Fail";
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			GoTo PREHVQK_HVM;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			GoTo PREHVQK_HVM;
+		}		
+	}	
+}
+
+DUTFlow SCN_CCF_HVQK_STRESS
+{
+	DUTFlowItem FLOW_CCF_AUX_E_STRESS_STF_CLR_NOM_LFM_1600 FLOW_CCF_AUX_E_STRESS_STF_CLR_NOM_LFM_1600 @EDC
+	{
+		Result -2
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM;
+			Return -2;
+		}		
+		Result -1
+		{
+			Property PassFail = "Fail";
+			##EDC## SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE;
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			IncrementCounters SCN_CCF_HVQK::n90901545_fail_FLOW_CCF_AUX_E_STRESS_STF_CLR_NOM_LFM_1600_0;
+			GoTo STRESS_HVM;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			GoTo STRESS_SHORT_MV;
+		}		
+		Result 2
+		{
+			Property PassFail = "Pass";
+			GoTo STRESS_HVM;
+		}		
+		Result 3
+		{
+			Property PassFail = "Pass";
+			GoTo STRESS_HVM;
+		}		
+	}	
+	
+	DUTFlowItem STRESS_HVM STRESS_HVM @EDC
+	{
+		Result -1
+		{
+			Property PassFail = "Fail";
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			Return 1;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			Return 1;
+		}		
+	}	
+	DUTFlowItem STRESS_SHORT_MV STRESS_SHORT_MV @EDC
+	{
+		Result -1
+		{
+			Property PassFail = "Fail";
+			Return -1;
+		}		
+		Result 0
+		{
+			Property PassFail = "Fail";
+			GoTo STRESS_HVM;
+		}		
+		Result 1
+		{
+			Property PassFail = "Pass";
+			GoTo STRESS_HVM;
+		}		
+	}	
+}
+

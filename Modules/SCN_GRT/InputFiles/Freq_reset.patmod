@@ -1,0 +1,2 @@
+# Patmod to reset frequency to LFM
++ LFMRESET MAIN PAT RPL_pre_R9999991_A*MAscn*:LEG patmod_atom_mclk_ratio_internal_SetAtomMclkRatio__patmod_in__atom_mclk_ratio 0 DATA TDI 0 0 0 0 1 1 0 0 0

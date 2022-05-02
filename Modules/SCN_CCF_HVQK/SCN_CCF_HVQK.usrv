@@ -1,0 +1,7 @@
+Version 1.0;
+
+UserVars SCN_CCF_HVQK
+{
+	Integer SCAN_PREPOST_NONCONCURRENT_ON = 2;
+	Integer Shmoo_Bypass = 3;
+}

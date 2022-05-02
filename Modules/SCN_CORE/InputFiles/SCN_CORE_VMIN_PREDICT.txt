@@ -1,0 +1,26 @@
+START_SCREEN:SCNCOREVMINSET
+#Run        : Test          :  Data  : Param     	: Param1   					: Oper    : Param  	: Param2	: Tmp	  : On    	: On
+#On         : Name          :  Type  : Type      	:          					:         : Type   	:       	: Store   : True  	: False
+EXEC        : CORE0PRESET    : DOUBLE : GSDS		: U.D.PREDICT_VMIN_PRE_SCAN_CORE0          : SET     : LITERAL    	: 0.84      	: -       : CORE1PRESET  : 2
+EXEC        : CORE1PRESET    : DOUBLE : GSDS		: U.D.PREDICT_VMIN_PRE_SCAN_CORE1          : SET     : LITERAL    	: 0.84    	: -       : CORE2PRESET  : 2
+EXEC        : CORE2PRESET    : DOUBLE : GSDS		: U.D.PREDICT_VMIN_PRE_SCAN_CORE2          : SET     : LITERAL    	: 0.84      	: -       : CORE3PRESET  : 2
+EXEC        : CORE3PRESET    : DOUBLE : GSDS		: U.D.PREDICT_VMIN_PRE_SCAN_CORE3          : SET     : LITERAL    	: 0.84     	: -       : CORE4PRESET  : 2
+EXEC        : CORE4PRESET    : DOUBLE : GSDS		: U.D.PREDICT_VMIN_PRE_SCAN_CORE4          : SET     : LITERAL    	: 0.84     	: -       : CORE5PRESET  : 2
+EXEC        : CORE5PRESET    : DOUBLE : GSDS		: U.D.PREDICT_VMIN_PRE_SCAN_CORE5          : SET     : LITERAL    	: 0.84     	: -       : CORE0POSTSET : 2
+EXEC        : CORE0POSTSET   : DOUBLE : GSDS		: U.D.PREDICT_VMIN_POST_SCAN_CORE0          : SET     : LITERAL   	: 0.84      	: -       : CORE1POSTSET  : 2
+EXEC        : CORE1POSTSET   : DOUBLE : GSDS		: U.D.PREDICT_VMIN_POST_SCAN_CORE1          : SET     : LITERAL   	: 0.84      	: -       : CORE2POSTSET  : 2
+EXEC        : CORE2POSTSET   : DOUBLE : GSDS		: U.D.PREDICT_VMIN_POST_SCAN_CORE2          : SET     : LITERAL   	: 0.84     	: -       : CORE3POSTSET  : 2
+EXEC        : CORE3POSTSET   : DOUBLE : GSDS		: U.D.PREDICT_VMIN_POST_SCAN_CORE3          : SET     : LITERAL   	: 0.84      	: -       : CORE4POSTSET  : 2
+EXEC        : CORE4POSTSET   : DOUBLE : GSDS		: U.D.PREDICT_VMIN_POST_SCAN_CORE4          : SET     : LITERAL   	: 0.84      	: -       : CORE5POSTSET  : 2
+EXEC        : CORE5POSTSET   : DOUBLE : GSDS		: U.D.PREDICT_VMIN_POST_SCAN_CORE5          : SET     : LITERAL   	: 0.84      	: -       : CORE0SDTSET   : 2
+EXEC        : CORE0SDTSET   : DOUBLE : GSDS		: U.D.PREDICT_VMIN_SDT_SCAN_CORE0          : SET     : LITERAL   	: 0.84      	: -       : CORE1SDTSET  : 2
+EXEC        : CORE1SDTSET   : DOUBLE : GSDS		: U.D.PREDICT_VMIN_SDT_SCAN_CORE1          : SET     : LITERAL   	: 0.84      	: -       : CORE2SDTSET  : 2
+EXEC        : CORE2SDTSET   : DOUBLE : GSDS		: U.D.PREDICT_VMIN_SDT_SCAN_CORE2          : SET     : LITERAL   	: 0.84     	: -       : CORE3SDTSET  : 2
+EXEC        : CORE3SDTSET   : DOUBLE : GSDS		: U.D.PREDICT_VMIN_SDT_SCAN_CORE3          : SET     : LITERAL   	: 0.84      	: -       : CORE4SDTSET  : 2
+EXEC        : CORE4SDTSET   : DOUBLE : GSDS		: U.D.PREDICT_VMIN_SDT_SCAN_CORE4          : SET     : LITERAL   	: 0.84      	: -       : CORE5SDTSET  : 2
+EXEC        : CORE5SDTSET   : DOUBLE : GSDS		: U.D.PREDICT_VMIN_SDT_SCAN_CORE5          : SET     : LITERAL   	: 0.84      	: -       : 1  : 2
+
+
+
+END_SCREEN
+

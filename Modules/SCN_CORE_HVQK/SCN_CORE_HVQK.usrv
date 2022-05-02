@@ -1,0 +1,7 @@
+Version 1.0;
+
+UserVars SCN_CORE_HVQK
+{
+	Integer SCAN_PREHVQK_NONCONCURRENT_ON = 0;
+	Integer SCAN_STRESS_NONCONCURRENT_ON = 1;
+}

@@ -1,0 +1,59 @@
+Version 1.0;
+
+SpecificationSet cpu_func_stf_univ_par_b100_t100_d200_SHARED_747E903B9F730A908B019B34037CD4DE906224FFD0056AB0A1E1F599428D2763 (b100_t100_d100,b100_t100_d200,b100_t100_d400,b100_t100_d50,b100_t50_d100,b100_t50_d200,b100_t50_d400,b25_t25_d100,b50_t50_d50) Inherits __main__::cpu_func_stf_univ_par
+{
+	Double p_noa_strb_mul = 2.6;
+	Double p_ddr0_stf_in_drv_mult = 0;
+	Double p_ddr1_stf_out_strb_mult = 1;
+}
+
+SpecificationSet cpu_func_stf_univ_par_b100_t100_d200_SHARED_9812B2F0854797AFA9A4A36F62AC9F4B21B75B40E7F5F0EF6E3B2ABBB56313D3 (b100_t100_d100,b100_t100_d200,b100_t100_d400,b100_t100_d50,b100_t50_d100,b100_t50_d200,b100_t50_d400,b25_t25_d100,b50_t50_d50) Inherits __main__::cpu_func_stf_univ_par
+{
+	Double p_ddr0_stf_in_drv_mult = 0.0;
+	Double p_ddr1_stf_out_strb_mult = 1.0;
+}
+
+SpecificationSet cpu_func_stf_univ_par_b100_t100_d200_SHARED_EC1E1366163DD267E847985B2D50A6AB9FBBBADAFD40CBA94B30CB98EBC59471 (b100_t100_d100,b100_t100_d200,b100_t100_d400,b100_t100_d50,b100_t50_d100,b100_t50_d200,b100_t50_d400,b25_t25_d100,b50_t50_d50) Inherits __main__::cpu_func_stf_univ_par
+{
+	Time p_bclkper_spec = 7nS;
+	Double p_noa_strb_mul = 2.6;
+	Double p_ddr0_stf_in_drv_mult = 0.0;
+	Double p_ddr1_stf_out_strb_mult = 1.0;
+}
+
+TestConditionGroup cpu_func_stf_univ_par_b100_t100_d200_SHARED_747E903B9F730A908B019B34037CD4DE906224FFD0056AB0A1E1F599428D2763_TCG
+{
+	SpecificationSet = cpu_func_stf_univ_par_b100_t100_d200_SHARED_747E903B9F730A908B019B34037CD4DE906224FFD0056AB0A1E1F599428D2763;
+	Timing = __main__::cpu_func_stf_univ;
+}
+
+TestConditionGroup cpu_func_stf_univ_par_b100_t100_d200_SHARED_9812B2F0854797AFA9A4A36F62AC9F4B21B75B40E7F5F0EF6E3B2ABBB56313D3_TCG
+{
+	SpecificationSet = cpu_func_stf_univ_par_b100_t100_d200_SHARED_9812B2F0854797AFA9A4A36F62AC9F4B21B75B40E7F5F0EF6E3B2ABBB56313D3;
+	Timing = __main__::cpu_func_stf_univ;
+}
+
+TestConditionGroup cpu_func_stf_univ_par_b100_t100_d200_SHARED_EC1E1366163DD267E847985B2D50A6AB9FBBBADAFD40CBA94B30CB98EBC59471_TCG
+{
+	SpecificationSet = cpu_func_stf_univ_par_b100_t100_d200_SHARED_EC1E1366163DD267E847985B2D50A6AB9FBBBADAFD40CBA94B30CB98EBC59471;
+	Timing = __main__::cpu_func_stf_univ;
+}
+
+
+TestCondition cpu_func_stf_univ_b100_t100_d200_SHARED_747E903B9F730A908B019B34037CD4DE906224FFD0056AB0A1E1F599428D2763
+{
+	TestConditionGroup  = cpu_func_stf_univ_par_b100_t100_d200_SHARED_747E903B9F730A908B019B34037CD4DE906224FFD0056AB0A1E1F599428D2763_TCG;
+	Selector = b100_t100_d200;
+}
+
+TestCondition cpu_func_stf_univ_b100_t100_d200_SHARED_9812B2F0854797AFA9A4A36F62AC9F4B21B75B40E7F5F0EF6E3B2ABBB56313D3
+{
+	TestConditionGroup  = cpu_func_stf_univ_par_b100_t100_d200_SHARED_9812B2F0854797AFA9A4A36F62AC9F4B21B75B40E7F5F0EF6E3B2ABBB56313D3_TCG;
+	Selector = b100_t100_d200;
+}
+
+TestCondition cpu_func_stf_univ_b100_t100_d200_SHARED_EC1E1366163DD267E847985B2D50A6AB9FBBBADAFD40CBA94B30CB98EBC59471
+{
+	TestConditionGroup  = cpu_func_stf_univ_par_b100_t100_d200_SHARED_EC1E1366163DD267E847985B2D50A6AB9FBBBADAFD40CBA94B30CB98EBC59471_TCG;
+	Selector = b100_t100_d200;
+}

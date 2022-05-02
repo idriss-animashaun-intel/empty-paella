@@ -1,0 +1,13 @@
+START_SCREEN:SCNGRT0Chk
+#Run        : Test          :  Data  : Param     		: Param1   												: Oper     	: Param  	: Param2	: Tmp     	: On            : On
+#On         : Name          :  Type  : Type      		:          												:          	: Type   	:       	: Store   	: True          : False
+EXEC		: Slice			:    - 	 : FUNCTION   		: EXECUSERFUNC(DIE_RECOVERY!ExecSequence,MirrorDUTAtom)	: -			: -			: -			: -			: GRT0Chk		: GRT0Chk
+EXEC        : GRT0Chk   	: STRING : EXPRESSION		:"G.U.S.ATOM_SLC_TRK[1:1]=='0'"						: -        	: -       	: -      	: -       	: 1    			: 2
+END_SCREEN
+
+START_SCREEN:SCNGRT1Chk
+#Run        : Test          :  Data  : Param     		: Param1   												: Oper     	: Param  	: Param2	: Tmp     	: On            : On
+#On         : Name          :  Type  : Type      		:          												:          	: Type   	:       	: Store   	: True          : False
+EXEC		: Slice			:    - 	 : FUNCTION   		: EXECUSERFUNC(DIE_RECOVERY!ExecSequence,MirrorDUTAtom)	: -			: -			: -			: -			: GRT1Chk		: GRT1Chk
+EXEC        : GRT1Chk   	: STRING : EXPRESSION		:"G.U.S.ATOM_SLC_TRK[0:0]=='0'"						: -        	: -       	: -      	: -       	: 1    			: 2
+END_SCREEN

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ADTL xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="GEN_ADTL_tt.xsd">
+	<!-- PREHVQK -->
+	<config_set name="SCN_CORE1_PREHVQK_ALL" > 			
+		<fit name ="TATPG_CORE1_VMIN_PREHVQK_LFM" default_fail_port="2" > 		
+			<x_param upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>	
+			<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_PRE_SCAN_CORE1</y_param>	
+			<!-- VMIN_INDIRECT_KILL -->				
+			<kill_cutline>VMIN_Sigma_8</kill_cutline>
+			<cutline name="VMIN_Sigma_8" fail_port="2">	
+				<y_intercept>1.58132967</y_intercept>
+				<slope>-0.000036154</slope>
+				<fail_operation>greaterThan</fail_operation>
+			</cutline>	
+		</fit>		
+	</config_set> 			
+	<!-- POSTHVQK	-->
+	<config_set name="SCN_CORE1_POSTHVQK_ALL" > 			
+		<fit name ="TATPG_CORE1_VMIN_POSTHVQK_LFM" default_fail_port="2" > 		
+			<x_param upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>	
+			<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_POST_SCAN_CORE1</y_param>
+			<kill_cutline>VMIN_Sigma_8</kill_cutline>	
+			<cutline name="VMIN_Sigma_8" fail_port="2">	
+				<y_intercept>1.58132967</y_intercept>
+				<slope>-0.000036154</slope>
+				<fail_operation>greaterThan</fail_operation>
+			</cutline>	
+		</fit>		
+	</config_set> 			
+</ADTL>

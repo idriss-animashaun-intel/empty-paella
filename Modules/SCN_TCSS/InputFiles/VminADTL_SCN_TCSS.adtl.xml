@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ADTL xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="GEN_ADTL_tt.xsd">
+<config_set name="SCN_TCSS_PREHVQK_ALL" >
+ <fit name ="PHY_END_PREPOST_LFM_SCNTCSS" default_fail_port="2">
+     <x_param upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+     <y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_POST_SCAN_TCSS_PHY</y_param>
+     <y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_PRE_SCAN_TCSS_PHY</y_param>
+     <kill_cutline>VMIN_Sigma8</kill_cutline> 
+     <cutline name="VMIN_Sigma8"> 
+         <y_intercept>1.33677473</y_intercept>
+         <slope>-0.000032582</slope>
+         <fail_operation>greaterThan</fail_operation>
+     </cutline>
+ </fit>
+ <fit name ="TBT_END_PREPOST_LFM_SCNTCSS" default_fail_port="3">
+     <x_param upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+     <y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_POST_SCAN_TCSS_TBT</y_param>
+     <y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_PRE_SCAN_TCSS_TBT</y_param>
+     <kill_cutline>VMIN_Sigma8</kill_cutline> 
+     <cutline name="VMIN_Sigma8"> 
+         <y_intercept>1.29140659</y_intercept>
+         <slope>-0.000029451</slope>
+         <fail_operation>greaterThan</fail_operation>
+     </cutline>
+ </fit>
+ <fit name ="PSFELM_END_PREPOST_LFM_SCNTCSS" default_fail_port="4">
+     <x_param upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+     <y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_POST_SCAN_TCSS_PSFELM</y_param>
+     <y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_PRE_SCAN_TCSS_PSFELM</y_param>
+     <kill_cutline>VMIN_Sigma8</kill_cutline> 
+     <cutline name="VMIN_Sigma8"> 
+         <y_intercept>1.3627033</y_intercept>
+         <slope>-0.000034725</slope>
+         <fail_operation>greaterThan</fail_operation>
+     </cutline>
+ </fit>
+ <fit name ="IOM_END_PREPOST_LFM_SCNTCSS" default_fail_port="5">
+     <x_param upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+     <y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_POST_SCAN_TCSS_IOM</y_param>
+     <y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_PRE_SCAN_TCSS_IOM</y_param>
+     <kill_cutline>VMIN_Sigma8</kill_cutline> 
+     <cutline name="VMIN_Sigma8"> 
+         <y_intercept>1.31347253</y_intercept>
+         <slope>-0.000032527</slope>
+         <fail_operation>greaterThan</fail_operation>
+     </cutline>
+ </fit>
+ <fit name ="USB_END_PREPOST_LFM_SCNTCSS" default_fail_port="6">
+     <x_param upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+     <y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_POST_SCAN_TCSS_USB</y_param>
+     <y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_PRE_SCAN_TCSS_USB</y_param>
+     <kill_cutline>VMIN_Sigma8</kill_cutline> 
+     <cutline name="VMIN_Sigma8"> 
+         <y_intercept>1.27140659</y_intercept>
+         <slope>-0.000029451</slope>
+         <fail_operation>greaterThan</fail_operation>
+     </cutline>
+ </fit>
+ <fit name ="PCIE_END_PREPOST_LFM_SCNTCSS" default_fail_port="7">
+     <x_param upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+     <y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_POST_SCAN_TCSS_PCIE</y_param>
+     <y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_PRE_SCAN_TCSS_PCIE</y_param>
+     <kill_cutline>VMIN_Sigma8</kill_cutline> 
+     <cutline name="VMIN_Sigma8"> 
+         <y_intercept>1.23538462</y_intercept>
+         <slope>-0.000027473</slope>
+         <fail_operation>greaterThan</fail_operation>
+     </cutline>
+ </fit>
+ </config_set>
+<config_set name="SCN_TCSS_CSE_ALL" >
+ <fit name ="PHY_END_CSE_LFM_SCNTCSS" default_fail_port="2">
+     <x_param upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+     <y_param lower="-9999.000" upper="1.5">G.U.D.UPSVMIN_DIGTC_PHY_1p0GHz</y_param>
+     <kill_cutline>VMIN_Sigma8</kill_cutline> 
+     <cutline name="VMIN_Sigma8"> 
+         <y_intercept>1.18164835</y_intercept>
+         <slope>-0.00001978</slope>
+         <fail_operation>greaterThan</fail_operation>
+     </cutline>
+ </fit>
+ <fit name ="TBT_END_CSE_LFM_SCNTCSS" default_fail_port="3">
+     <x_param upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+     <y_param lower="-9999.000" upper="1.5">G.U.D.UPSVMIN_DIGTC_TBT_1p0GHz</y_param>
+     <kill_cutline>VMIN_Sigma8</kill_cutline> 
+     <cutline name="VMIN_Sigma8"> 
+         <y_intercept>1.29140659</y_intercept>
+         <slope>-0.000029451</slope>
+         <fail_operation>greaterThan</fail_operation>
+     </cutline>
+ </fit>
+ <fit name ="PSFELM_END_CSE_LFM_SCNTCSS" default_fail_port="4">
+     <x_param upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+     <y_param lower="-9999.000" upper="1.5">G.U.D.UPSVMIN_DIGTC_PSFELM_1p0GHz</y_param>
+     <kill_cutline>VMIN_Sigma8</kill_cutline> 
+     <cutline name="VMIN_Sigma8"> 
+         <y_intercept>1.36734066</y_intercept>
+         <slope>-0.000034945</slope>
+         <fail_operation>greaterThan</fail_operation>
+     </cutline>
+ </fit>
+ <fit name ="IOM_END_CSE_LFM_SCNTCSS" default_fail_port="5">
+     <x_param upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+     <y_param lower="-9999.000" upper="1.5">G.U.D.UPSVMIN_DIGTC_IOM_1p0GHz</y_param>
+     <kill_cutline>VMIN_Sigma8</kill_cutline> 
+     <cutline name="VMIN_Sigma8"> 
+         <y_intercept>1.31347253</y_intercept>
+         <slope>-0.000032527</slope>
+         <fail_operation>greaterThan</fail_operation>
+     </cutline>
+ </fit>
+ <fit name ="USB_END_CSE_LFM_SCNTCSS" default_fail_port="6">
+     <x_param upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+     <y_param lower="-9999.000" upper="1.5">G.U.D.UPSVMIN_DIGTC_USB_1p0GHz</y_param>
+     <kill_cutline>VMIN_Sigma8</kill_cutline> 
+     <cutline name="VMIN_Sigma8"> 
+         <y_intercept>1.27140659</y_intercept>
+         <slope>-0.000029451</slope>
+         <fail_operation>greaterThan</fail_operation>
+     </cutline>
+ </fit>
+ <fit name ="PCIE_END_CSE_LFM_SCNTCSS" default_fail_port="7">
+     <x_param upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>
+     <y_param lower="-9999.000" upper="1.5">G.U.D.UPSVMIN_DIGTC_PCIE_1p0GHz</y_param>
+     <kill_cutline>VMIN_Sigma8</kill_cutline> 
+     <cutline name="VMIN_Sigma8"> 
+         <y_intercept>1.24002198</y_intercept>
+         <slope>-0.0000277</slope>
+         <fail_operation>greaterThan</fail_operation>
+     </cutline>
+ </fit>
+ </config_set>
+</ADTL>
+

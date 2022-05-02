@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patterns>
+  <PORRoot Path="I:\program\1274\eng\hdmtpats\rpl\MscnTCSS\" Rev="RevTRJ0.0" Patch="p2">
+    <PlistFiles>
+      <PlistFile>iascan.sort.hvm.tcss_allplist.plist</PlistFile>
+    </PlistFiles>
+  </PORRoot>
+	<ENGRoot Path = "..\..\Shared\Common\Supersedes\patterns\">
+		<PlistFiles>
+			<PlistFile>iascan.sort.hvm.tcss_allplist.plist</PlistFile>
+		</PlistFiles>
+	</ENGRoot>
+</Patterns>

@@ -1,0 +1,2445 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ifpm_setup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="GEN_IFPM_tt.xsd">
+	<regex_list>
+		<regex name='module_switch_main'>
+			<value>g0132833R6153620A_6I_J0b0p00_RJ0P0Tf1C1202_0410808016xxxbx04b1a08CaI4x0000_0n2xcLm0e03n00x000207_grt_scn_precat</value>
+
+		</regex>
+		<regex name='atom_reset'>
+			<value>RPL_pre_*_MAscn_*</value>
+
+		</regex>
+
+	</regex_list>
+	
+
+	<pattern_modify_group_definitions>
+		<pattern_modify_group name='atom_mclk_ratio'>
+			<subset name='patmod_atom_mclk_ratio_internal_SetAtomMclkRatio__patmod_in__atom_mclk_ratio'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_atom_mclk_ratio_internal_SetAtomMclkRatio__patmod_in__atom_mclk_ratio</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDI</pin_name>
+			</subset>
+		</pattern_modify_group>
+		<pattern_modify_group name='atom_skip_pll'>
+			<subset name='patmod_atom_skip_pll_internal_AssertCPUReset__patmod_in__atom_skip_pll'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_atom_skip_pll_internal_AssertCPUReset__patmod_in__atom_skip_pll</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDI</pin_name>
+			</subset>
+			<subset name='patmod_atom_skip_pll_internal_DeassertCPUReset__patmod_in__atom_skip_pll'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_atom_skip_pll_internal_DeassertCPUReset__patmod_in__atom_skip_pll</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDI</pin_name>
+			</subset>
+		</pattern_modify_group>
+		<pattern_modify_group name='atomratio'>
+			<subset name='patmod_atomratio_FuseOverrideString__patmod_in__atomratio_PUNIT_PUNIT_FUSES_BOOT_IA_RATIO_CCP8'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_atomratio_FuseOverrideString__patmod_in__atomratio_PUNIT_PUNIT_FUSES_BOOT_IA_RATIO_CCP8</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDI</pin_name>
+			</subset>
+			<subset name='patmod_atomratio_FuseOverrideString__patmod_in__atomratio_PUNIT_PUNIT_FUSES_BOOT_IA_RATIO_CCP9'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_atomratio_FuseOverrideString__patmod_in__atomratio_PUNIT_PUNIT_FUSES_BOOT_IA_RATIO_CCP9</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDI</pin_name>
+			</subset>
+		</pattern_modify_group>
+		<pattern_modify_group name='bclk_epoc_bclk_bypass'>
+			<subset name='patmod_bclk_epoc_bclk_bypass_EpocWrite__patmod_in__bclk_epoc_bclk_bypass_xtal_epoc_bclk_bypass'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_bclk_epoc_bclk_bypass_EpocWrite__patmod_in__bclk_epoc_bclk_bypass_xtal_epoc_bclk_bypass</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDI</pin_name>
+			</subset>
+		</pattern_modify_group>
+		<pattern_modify_group name='bclk_epoc_freq_sel'>
+			<subset name='patmod_bclk_epoc_freq_sel_EpocWrite__patmod_in__bclk_epoc_freq_sel_xtal_epoc_div'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_bclk_epoc_freq_sel_EpocWrite__patmod_in__bclk_epoc_freq_sel_xtal_epoc_div</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDI</pin_name>
+			</subset>
+		</pattern_modify_group>
+		<pattern_modify_group name='bclk_epoc_opio_ref_sel'>
+			<subset name='patmod_bclk_epoc_opio_ref_sel_EpocWrite__patmod_in__bclk_epoc_opio_ref_sel_xtal_epoc_opio_ref_sel'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_bclk_epoc_opio_ref_sel_EpocWrite__patmod_in__bclk_epoc_opio_ref_sel_xtal_epoc_opio_ref_sel</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDI</pin_name>
+			</subset>
+		</pattern_modify_group>
+		<pattern_modify_group name='bclk_xtal_logic_freq_sel'>
+			<subset name='patmod_bclk_xtal_logic_freq_sel_HVMClockIso4Xtal__patmod_in__bclk_xtal_logic_freq_sel_xtal_logic_freq_sel'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_bclk_xtal_logic_freq_sel_HVMClockIso4Xtal__patmod_in__bclk_xtal_logic_freq_sel_xtal_logic_freq_sel</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDI</pin_name>
+			</subset>
+		</pattern_modify_group>
+		<pattern_modify_group name='bclk_xtal_phy_pll_freq_sel'>
+			<subset name='patmod_bclk_xtal_phy_pll_freq_sel_HVMClockIso4Xtal__patmod_in__bclk_xtal_phy_pll_freq_sel_xtal_phypll_freq_sel'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_bclk_xtal_phy_pll_freq_sel_HVMClockIso4Xtal__patmod_in__bclk_xtal_phy_pll_freq_sel_xtal_phypll_freq_sel</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDI</pin_name>
+			</subset>
+		</pattern_modify_group>
+		<pattern_modify_group name='core_ratio'>
+			<subset name='patmod_core_ratio_FuseOverrideString__patmod_in__core_ratio_PUNIT_PUNIT_FUSES_BOOT_IA_RATIO_CCP0'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_core_ratio_FuseOverrideString__patmod_in__core_ratio_PUNIT_PUNIT_FUSES_BOOT_IA_RATIO_CCP0</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDI</pin_name>
+			</subset>
+			<subset name='patmod_core_ratio_FuseOverrideString__patmod_in__core_ratio_PUNIT_PUNIT_FUSES_BOOT_IA_RATIO_CCP1'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_core_ratio_FuseOverrideString__patmod_in__core_ratio_PUNIT_PUNIT_FUSES_BOOT_IA_RATIO_CCP1</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDI</pin_name>
+			</subset>
+			<subset name='patmod_core_ratio_FuseOverrideString__patmod_in__core_ratio_PUNIT_PUNIT_FUSES_BOOT_IA_RATIO_CCP2'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_core_ratio_FuseOverrideString__patmod_in__core_ratio_PUNIT_PUNIT_FUSES_BOOT_IA_RATIO_CCP2</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDI</pin_name>
+			</subset>
+			<subset name='patmod_core_ratio_FuseOverrideString__patmod_in__core_ratio_PUNIT_PUNIT_FUSES_BOOT_IA_RATIO_CCP3'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_core_ratio_FuseOverrideString__patmod_in__core_ratio_PUNIT_PUNIT_FUSES_BOOT_IA_RATIO_CCP3</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDI</pin_name>
+			</subset>
+			<subset name='patmod_core_ratio_FuseOverrideString__patmod_in__core_ratio_PUNIT_PUNIT_FUSES_BOOT_IA_RATIO_CCP4'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_core_ratio_FuseOverrideString__patmod_in__core_ratio_PUNIT_PUNIT_FUSES_BOOT_IA_RATIO_CCP4</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDI</pin_name>
+			</subset>
+			<subset name='patmod_core_ratio_FuseOverrideString__patmod_in__core_ratio_PUNIT_PUNIT_FUSES_BOOT_IA_RATIO_CCP5'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_core_ratio_FuseOverrideString__patmod_in__core_ratio_PUNIT_PUNIT_FUSES_BOOT_IA_RATIO_CCP5</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDI</pin_name>
+			</subset>
+			<subset name='patmod_core_ratio_FuseOverrideString__patmod_in__core_ratio_PUNIT_PUNIT_FUSES_BOOT_IA_RATIO_CCP6'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_core_ratio_FuseOverrideString__patmod_in__core_ratio_PUNIT_PUNIT_FUSES_BOOT_IA_RATIO_CCP6</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDI</pin_name>
+			</subset>
+			<subset name='patmod_core_ratio_FuseOverrideString__patmod_in__core_ratio_PUNIT_PUNIT_FUSES_BOOT_IA_RATIO_CCP7'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_core_ratio_FuseOverrideString__patmod_in__core_ratio_PUNIT_PUNIT_FUSES_BOOT_IA_RATIO_CCP7</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDI</pin_name>
+			</subset>
+			<subset name='patmod_core_ratio_FuseOverrideString__patmod_in__core_ratio_PUNIT_PUNIT_FUSES_IA_MIN_RATIO'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_core_ratio_FuseOverrideString__patmod_in__core_ratio_PUNIT_PUNIT_FUSES_IA_MIN_RATIO</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDI</pin_name>
+			</subset>
+			<subset name='patmod_core_ratio_FuseOverrideString__patmod_in__core_ratio_PUNIT_PUNIT_FUSES_IA_P0_RATIO'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_core_ratio_FuseOverrideString__patmod_in__core_ratio_PUNIT_PUNIT_FUSES_IA_P0_RATIO</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDI</pin_name>
+			</subset>
+			<subset name='patmod_core_ratio_FuseOverrideString__patmod_in__core_ratio_PUNIT_PUNIT_FUSES_IA_P1_RATIO'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_core_ratio_FuseOverrideString__patmod_in__core_ratio_PUNIT_PUNIT_FUSES_IA_P1_RATIO</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDI</pin_name>
+			</subset>
+			<subset name='patmod_core_ratio_FuseOverrideString__patmod_in__core_ratio_PUNIT_PUNIT_FUSES_IA_PN_RATIO'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_core_ratio_FuseOverrideString__patmod_in__core_ratio_PUNIT_PUNIT_FUSES_IA_PN_RATIO</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDI</pin_name>
+			</subset>
+		</pattern_modify_group>
+		<pattern_modify_group name='ddr_ref_fuse'>
+			<subset name='patmod_ddr_ref_fuse_FuseOverrideString__patmod_in__ddr_ref_fuse_PUNIT_PUNIT_FUSES_PLL_REF100_CFG'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_ddr_ref_fuse_FuseOverrideString__patmod_in__ddr_ref_fuse_PUNIT_PUNIT_FUSES_PLL_REF100_CFG</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDI</pin_name>
+			</subset>
+		</pattern_modify_group>
+		<pattern_modify_group name='ddrratio'>
+			<subset name='patmod_ddrratio_Set_HVMWatermalon_EARLYMC__patmod_in__ddrratio_ddr_ratio'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_ddrratio_Set_HVMWatermalon_EARLYMC__patmod_in__ddrratio_ddr_ratio</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDI</pin_name>
+			</subset>
+			<subset name='patmod_ddrratio_internal_ReadMcBiosPllStatus__patmod_out__ddrratio'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_ddrratio_internal_ReadMcBiosPllStatus__patmod_out__ddrratio</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDO</pin_name>
+			</subset>
+		</pattern_modify_group>
+		<pattern_modify_group name='ddrref'>
+			<subset name='patmod_ddrref_Set_HVMWatermalon_EARLYMC__patmod_in__ddrref_ddr_ref'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_ddrref_Set_HVMWatermalon_EARLYMC__patmod_in__ddrref_ddr_ref</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDI</pin_name>
+			</subset>
+		</pattern_modify_group>
+		<pattern_modify_group name='ddrref_read'>
+			<subset name='patmod_ddrref_read_internal_ReadMcBiosPllStatus__patmod_out__ddrref_read'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_ddrref_read_internal_ReadMcBiosPllStatus__patmod_out__ddrref_read</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDO</pin_name>
+			</subset>
+		</pattern_modify_group>
+		<pattern_modify_group name='fivr_sort_mode'>
+			<subset name='patmod_fivr_sort_mode_Sethvmmodecfg__patmod_in__fivr_sort_mode_fivr_sort_mode'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_fivr_sort_mode_Sethvmmodecfg__patmod_in__fivr_sort_mode_fivr_sort_mode</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDI</pin_name>
+			</subset>
+		</pattern_modify_group>
+		<pattern_modify_group name='gtratio'>
+			<subset name='patmod_gtratio_FuseOverrideString__patmod_in__gtratio_PUNIT_PUNIT_FUSES_GT_P0_RATIO'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_gtratio_FuseOverrideString__patmod_in__gtratio_PUNIT_PUNIT_FUSES_GT_P0_RATIO</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDI</pin_name>
+			</subset>
+			<subset name='patmod_gtratio_FuseOverrideString__patmod_in__gtratio_PUNIT_PUNIT_FUSES_GT_P1_RATIO'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_gtratio_FuseOverrideString__patmod_in__gtratio_PUNIT_PUNIT_FUSES_GT_P1_RATIO</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDI</pin_name>
+			</subset>
+			<subset name='patmod_gtratio_FuseOverrideString__patmod_in__gtratio_PUNIT_PUNIT_FUSES_GT_PN_RATIO'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_gtratio_FuseOverrideString__patmod_in__gtratio_PUNIT_PUNIT_FUSES_GT_PN_RATIO</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDI</pin_name>
+			</subset>
+		</pattern_modify_group>
+		<pattern_modify_group name='psf0ratio'>
+			<subset name='patmod_psf0ratio_FuseOverrideString__patmod_in__psf0ratio_SA_PLL_SA_PLL_CCU_FUSE_CCU_PSF0_FREQ_CFGCR_PSF0_RATIO_SEL'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_psf0ratio_FuseOverrideString__patmod_in__psf0ratio_SA_PLL_SA_PLL_CCU_FUSE_CCU_PSF0_FREQ_CFGCR_PSF0_RATIO_SEL</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDI</pin_name>
+			</subset>
+		</pattern_modify_group>
+		<pattern_modify_group name='quad_reads'>
+			<subset name='patmod_quad_reads_internal_ReadAnaFivrQuadPhasesDisable_b__patmod_out__quad_reads'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_quad_reads_internal_ReadAnaFivrQuadPhasesDisable_b__patmod_out__quad_reads</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDO</pin_name>
+			</subset>
+			<subset name='patmod_quad_reads_internal_ReadAtom0FivrQuadPhasesDisable_b__patmod_out__quad_reads'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_quad_reads_internal_ReadAtom0FivrQuadPhasesDisable_b__patmod_out__quad_reads</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDO</pin_name>
+			</subset>
+			<subset name='patmod_quad_reads_internal_ReadAtom1FivrQuadPhasesDisable_b__patmod_out__quad_reads'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_quad_reads_internal_ReadAtom1FivrQuadPhasesDisable_b__patmod_out__quad_reads</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDO</pin_name>
+			</subset>
+			<subset name='patmod_quad_reads_internal_ReadDigFivrQuadPhasesDisable_b__patmod_out__quad_reads'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_quad_reads_internal_ReadDigFivrQuadPhasesDisable_b__patmod_out__quad_reads</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDO</pin_name>
+			</subset>
+			<subset name='patmod_quad_reads_internal_ReadSaFivrQuadPhasesDisable_b__patmod_out__quad_reads'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_quad_reads_internal_ReadSaFivrQuadPhasesDisable_b__patmod_out__quad_reads</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDO</pin_name>
+			</subset>
+			<subset name='patmod_quad_reads_internal_ReadVddqFivrQuadPhasesDisable_b__patmod_out__quad_reads'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_quad_reads_internal_ReadVddqFivrQuadPhasesDisable_b__patmod_out__quad_reads</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDO</pin_name>
+			</subset>
+		</pattern_modify_group>
+		<pattern_modify_group name='ring_ratio'>
+			<subset name='patmod_ring_ratio_FuseOverrideString__patmod_in__ring_ratio_PUNIT_PUNIT_FUSES_RING_CDYN_V_CORRECTION'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_ring_ratio_FuseOverrideString__patmod_in__ring_ratio_PUNIT_PUNIT_FUSES_RING_CDYN_V_CORRECTION</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDI</pin_name>
+			</subset>
+			<subset name='patmod_ring_ratio_FuseOverrideString__patmod_in__ring_ratio_PUNIT_PUNIT_FUSES_RING_MIN_RATIO'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_ring_ratio_FuseOverrideString__patmod_in__ring_ratio_PUNIT_PUNIT_FUSES_RING_MIN_RATIO</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDI</pin_name>
+			</subset>
+			<subset name='patmod_ring_ratio_FuseOverrideString__patmod_in__ring_ratio_PUNIT_PUNIT_FUSES_RING_P0_RATIO'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_ring_ratio_FuseOverrideString__patmod_in__ring_ratio_PUNIT_PUNIT_FUSES_RING_P0_RATIO</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDI</pin_name>
+			</subset>
+			<subset name='patmod_ring_ratio_FuseOverrideString__patmod_in__ring_ratio_PUNIT_PUNIT_FUSES_RING_P1_RATIO'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_ring_ratio_FuseOverrideString__patmod_in__ring_ratio_PUNIT_PUNIT_FUSES_RING_P1_RATIO</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDI</pin_name>
+			</subset>
+			<subset name='patmod_ring_ratio_FuseOverrideString__patmod_in__ring_ratio_PUNIT_PUNIT_FUSES_RING_PN_RATIO'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_ring_ratio_FuseOverrideString__patmod_in__ring_ratio_PUNIT_PUNIT_FUSES_RING_PN_RATIO</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDI</pin_name>
+			</subset>
+			<subset name='patmod_ring_ratio_FuseOverrideString__patmod_in__ring_ratio_PUNIT_PUNIT_FUSES_RING_VF_RATIO_2'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_ring_ratio_FuseOverrideString__patmod_in__ring_ratio_PUNIT_PUNIT_FUSES_RING_VF_RATIO_2</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDI</pin_name>
+			</subset>
+			<subset name='patmod_ring_ratio_FuseOverrideString__patmod_in__ring_ratio_PUNIT_PUNIT_FUSES_RING_VF_RATIO_3'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_ring_ratio_FuseOverrideString__patmod_in__ring_ratio_PUNIT_PUNIT_FUSES_RING_VF_RATIO_3</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDI</pin_name>
+			</subset>
+		</pattern_modify_group>
+		<pattern_modify_group name='target_ways'>
+			<subset name='patmod_target_ways_internal_SetNumWays__patmod_in__target_ways'>
+				<pattern_regex_name type='main'>atom_reset</pattern_regex_name>
+				<domain>LEG</domain>
+				<start_position type='label'>patmod_target_ways_internal_SetNumWays__patmod_in__target_ways</start_position>
+				<offset>0</offset>
+				<data_type>PIN</data_type>
+				<pin_name>TDI</pin_name>
+			</subset>
+		</pattern_modify_group>
+	
+	
+	
+	
+	
+		<pattern_modify_group name="scan_atom_module_switch">
+			<subset name="STFIN_BIT_25_OUTOF_0_41">
+				<pattern_regex_name type="main">module_switch_main</pattern_regex_name>
+				<domain>DDR_STF</domain>
+				<start_position type="label">CCF_STF_INST_GRT0_STF_GID_programming_brk_STF_network_prog_start</start_position>
+				<offset>78</offset>
+				<data_type>PIN</data_type>
+				<pin_name>DDRDQ_IL15_NIL13_D523_LP51_1</pin_name>
+			</subset>
+			<subset name="STFIN_BIT_24_OUTOF_0_41">
+				<pattern_regex_name type="main">module_switch_main</pattern_regex_name>
+				<domain>DDR_STF</domain>
+				<start_position type="label">CCF_STF_INST_GRT0_STF_GID_programming_brk_STF_network_prog_start</start_position>
+				<offset>78</offset>
+				<data_type>PIN</data_type>
+				<pin_name>DDRDQ_IL15_NIL13_D523_LP51_0</pin_name>
+			</subset>
+			<subset name="STFIN_BIT_23_OUTOF_0_41">
+				<pattern_regex_name type="main">module_switch_main</pattern_regex_name>
+				<domain>DDR_STF</domain>
+				<start_position type="label">CCF_STF_INST_GRT0_STF_GID_programming_brk_STF_network_prog_start</start_position>
+				<offset>78</offset>
+				<data_type>PIN</data_type>
+				<pin_name>DDRDQ_IL14_NIL12_D522_LP50_7</pin_name>
+			</subset>
+			<subset name="STFIN_BIT_22_OUTOF_0_41">
+				<pattern_regex_name type="main">module_switch_main</pattern_regex_name>
+				<domain>DDR_STF</domain>
+				<start_position type="label">CCF_STF_INST_GRT0_STF_GID_programming_brk_STF_network_prog_start</start_position>
+				<offset>78</offset>
+				<data_type>PIN</data_type>
+				<pin_name>DDRDQ_IL14_NIL12_D522_LP50_6</pin_name>
+			</subset>
+			<subset name="STFIN_BIT_21_OUTOF_0_41">
+				<pattern_regex_name type="main">module_switch_main</pattern_regex_name>
+				<domain>DDR_STF</domain>
+				<start_position type="label">CCF_STF_INST_GRT0_STF_GID_programming_brk_STF_network_prog_start</start_position>
+				<offset>78</offset>
+				<data_type>PIN</data_type>
+				<pin_name>DDRDQ_IL14_NIL12_D522_LP50_5</pin_name>
+			</subset>
+			<subset name="STFIN_BIT_20_OUTOF_0_41">
+				<pattern_regex_name type="main">module_switch_main</pattern_regex_name>
+				<domain>DDR_STF</domain>
+				<start_position type="label">CCF_STF_INST_GRT0_STF_GID_programming_brk_STF_network_prog_start</start_position>
+				<offset>78</offset>
+				<data_type>PIN</data_type>
+				<pin_name>DDRDQ_IL14_NIL12_D522_LP50_4</pin_name>
+			</subset>
+			<subset name="STFIN_BIT_19_OUTOF_0_41">
+				<pattern_regex_name type="main">module_switch_main</pattern_regex_name>
+				<domain>DDR_STF</domain>
+				<start_position type="label">CCF_STF_INST_GRT0_STF_GID_programming_brk_STF_network_prog_start</start_position>
+				<offset>78</offset>
+				<data_type>PIN</data_type>
+				<pin_name>DDRDQ_IL14_NIL12_D522_LP50_3</pin_name>
+			</subset>
+			<subset name="STFIN_BIT_18_OUTOF_0_41">
+				<pattern_regex_name type="main">module_switch_main</pattern_regex_name>
+				<domain>DDR_STF</domain>
+				<start_position type="label">CCF_STF_INST_GRT0_STF_GID_programming_brk_STF_network_prog_start</start_position>
+				<offset>78</offset>
+				<data_type>PIN</data_type>
+				<pin_name>DDRDQ_IL14_NIL12_D522_LP50_2</pin_name>
+			</subset>
+			<subset name="STFIN_BIT_17_OUTOF_0_41">
+				<pattern_regex_name type="main">module_switch_main</pattern_regex_name>
+				<domain>DDR_STF</domain>
+				<start_position type="label">CCF_STF_INST_GRT0_STF_GID_programming_brk_STF_network_prog_start</start_position>
+				<offset>78</offset>
+				<data_type>PIN</data_type>
+				<pin_name>DDRDQ_IL14_NIL12_D522_LP50_1</pin_name>
+			</subset>
+			<subset name="STFIN_BIT_16_OUTOF_0_41">
+				<pattern_regex_name type="main">module_switch_main</pattern_regex_name>
+				<domain>DDR_STF</domain>
+				<start_position type="label">CCF_STF_INST_GRT0_STF_GID_programming_brk_STF_network_prog_start</start_position>
+				<offset>78</offset>
+				<data_type>PIN</data_type>
+				<pin_name>DDRDQ_IL14_NIL12_D522_LP50_0</pin_name>
+			</subset>
+			<subset name="STFIN_BIT_15_OUTOF_0_41">
+				<pattern_regex_name type="main">module_switch_main</pattern_regex_name>
+				<domain>DDR_STF</domain>
+				<start_position type="label">CCF_STF_INST_GRT0_STF_GID_programming_brk_STF_network_prog_start</start_position>
+				<offset>78</offset>
+				<data_type>PIN</data_type>
+				<pin_name>DDRDQ_IL05_NIL11_D521_LP41_7</pin_name>
+			</subset>
+			<subset name="STFIN_BIT_14_OUTOF_0_41">
+				<pattern_regex_name type="main">module_switch_main</pattern_regex_name>
+				<domain>DDR_STF</domain>
+				<start_position type="label">CCF_STF_INST_GRT0_STF_GID_programming_brk_STF_network_prog_start</start_position>
+				<offset>78</offset>
+				<data_type>PIN</data_type>
+				<pin_name>DDRDQ_IL05_NIL11_D521_LP41_6</pin_name>
+			</subset>
+			<subset name="STFIN_BIT_13_OUTOF_0_41">
+				<pattern_regex_name type="main">module_switch_main</pattern_regex_name>
+				<domain>DDR_STF</domain>
+				<start_position type="label">CCF_STF_INST_GRT0_STF_GID_programming_brk_STF_network_prog_start</start_position>
+				<offset>78</offset>
+				<data_type>PIN</data_type>
+				<pin_name>DDRDQ_IL05_NIL11_D521_LP41_5</pin_name>
+			</subset>
+			<subset name="STFIN_BIT_12_OUTOF_0_41">
+				<pattern_regex_name type="main">module_switch_main</pattern_regex_name>
+				<domain>DDR_STF</domain>
+				<start_position type="label">CCF_STF_INST_GRT0_STF_GID_programming_brk_STF_network_prog_start</start_position>
+				<offset>78</offset>
+				<data_type>PIN</data_type>
+				<pin_name>DDRDQ_IL05_NIL11_D521_LP41_4</pin_name>
+			</subset>
+			<subset name="STFIN_BIT_11_OUTOF_0_41">
+				<pattern_regex_name type="main">module_switch_main</pattern_regex_name>
+				<domain>DDR_STF</domain>
+				<start_position type="label">CCF_STF_INST_GRT0_STF_GID_programming_brk_STF_network_prog_start</start_position>
+				<offset>78</offset>
+				<data_type>PIN</data_type>
+				<pin_name>DDRDQ_IL05_NIL11_D521_LP41_3</pin_name>
+			</subset>
+			<subset name="STFIN_BIT_10_OUTOF_0_41">
+				<pattern_regex_name type="main">module_switch_main</pattern_regex_name>
+				<domain>DDR_STF</domain>
+				<start_position type="label">CCF_STF_INST_GRT0_STF_GID_programming_brk_STF_network_prog_start</start_position>
+				<offset>78</offset>
+				<data_type>PIN</data_type>
+				<pin_name>DDRDQ_IL05_NIL11_D521_LP41_2</pin_name>
+			</subset>
+			<subset name="STFIN_BIT_9_OUTOF_0_41">
+				<pattern_regex_name type="main">module_switch_main</pattern_regex_name>
+				<domain>DDR_STF</domain>
+				<start_position type="label">CCF_STF_INST_GRT0_STF_GID_programming_brk_STF_network_prog_start</start_position>
+				<offset>78</offset>
+				<data_type>PIN</data_type>
+				<pin_name>DDRDQ_IL05_NIL11_D521_LP41_1</pin_name>
+			</subset>
+			<subset name="STFIN_BIT_8_OUTOF_0_41">
+				<pattern_regex_name type="main">module_switch_main</pattern_regex_name>
+				<domain>DDR_STF</domain>
+				<start_position type="label">CCF_STF_INST_GRT0_STF_GID_programming_brk_STF_network_prog_start</start_position>
+				<offset>78</offset>
+				<data_type>PIN</data_type>
+				<pin_name>DDRDQ_IL05_NIL11_D521_LP41_0</pin_name>
+			</subset>
+			<subset name="STFIN_BIT_7_OUTOF_0_41">
+				<pattern_regex_name type="main">module_switch_main</pattern_regex_name>
+				<domain>DDR_STF</domain>
+				<start_position type="label">CCF_STF_INST_GRT0_STF_GID_programming_brk_STF_network_prog_start</start_position>
+				<offset>78</offset>
+				<data_type>PIN</data_type>
+				<pin_name>DDRDQ_IL04_NIL10_D520_LP40_7</pin_name>
+			</subset>
+			<subset name="STFIN_BIT_6_OUTOF_0_41">
+				<pattern_regex_name type="main">module_switch_main</pattern_regex_name>
+				<domain>DDR_STF</domain>
+				<start_position type="label">CCF_STF_INST_GRT0_STF_GID_programming_brk_STF_network_prog_start</start_position>
+				<offset>78</offset>
+				<data_type>PIN</data_type>
+				<pin_name>DDRDQ_IL04_NIL10_D520_LP40_6</pin_name>
+			</subset>
+			<subset name="STFIN_BIT_5_OUTOF_0_41">
+				<pattern_regex_name type="main">module_switch_main</pattern_regex_name>
+				<domain>DDR_STF</domain>
+				<start_position type="label">CCF_STF_INST_GRT0_STF_GID_programming_brk_STF_network_prog_start</start_position>
+				<offset>78</offset>
+				<data_type>PIN</data_type>
+				<pin_name>DDRDQ_IL04_NIL10_D520_LP40_5</pin_name>
+			</subset>
+			<subset name="STFIN_BIT_4_OUTOF_0_41">
+				<pattern_regex_name type="main">module_switch_main</pattern_regex_name>
+				<domain>DDR_STF</domain>
+				<start_position type="label">CCF_STF_INST_GRT0_STF_GID_programming_brk_STF_network_prog_start</start_position>
+				<offset>78</offset>
+				<data_type>PIN</data_type>
+				<pin_name>DDRDQ_IL04_NIL10_D520_LP40_4</pin_name>
+			</subset>
+			<subset name="STFIN_BIT_3_OUTOF_0_41">
+				<pattern_regex_name type="main">module_switch_main</pattern_regex_name>
+				<domain>DDR_STF</domain>
+				<start_position type="label">CCF_STF_INST_GRT0_STF_GID_programming_brk_STF_network_prog_start</start_position>
+				<offset>78</offset>
+				<data_type>PIN</data_type>
+				<pin_name>DDRDQ_IL04_NIL10_D520_LP40_3</pin_name>
+			</subset>
+			<subset name="STFIN_BIT_2_OUTOF_0_41">
+				<pattern_regex_name type="main">module_switch_main</pattern_regex_name>
+				<domain>DDR_STF</domain>
+				<start_position type="label">CCF_STF_INST_GRT0_STF_GID_programming_brk_STF_network_prog_start</start_position>
+				<offset>78</offset>
+				<data_type>PIN</data_type>
+				<pin_name>DDRDQ_IL04_NIL10_D520_LP40_2</pin_name>
+			</subset>
+		</pattern_modify_group>
+
+	</pattern_modify_group_definitions>
+	
+	
+	<pattern_modify_group_data name='atom_mclk_ratio'>
+		<subset name='patmod_atom_mclk_ratio_internal_SetAtomMclkRatio__patmod_in__atom_mclk_ratio'>
+			<setpointdata name="0.400GHz">0 0 0 1 1 0 0 0 0</setpointdata>
+			<setpointdata name="0.417GHz">1 0 0 1 1 0 0 0 0</setpointdata>
+			<setpointdata name="0.433GHz">0 1 0 1 1 0 0 0 0</setpointdata>
+			<setpointdata name="0.450GHz">1 1 0 1 1 0 0 0 0</setpointdata>
+			<setpointdata name="0.467GHz">0 0 1 1 1 0 0 0 0</setpointdata>
+			<setpointdata name="0.483GHz">1 0 1 1 1 0 0 0 0</setpointdata>
+			<setpointdata name="0.500GHz">0 1 1 1 1 0 0 0 0</setpointdata>
+			<setpointdata name="0.517GHz">1 1 1 1 1 0 0 0 0</setpointdata>
+			<setpointdata name="0.533GHz">0 0 0 0 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.550GHz">1 0 0 0 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.567GHz">0 1 0 0 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.583GHz">1 1 0 0 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.600GHz">0 0 1 0 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.617GHz">1 0 1 0 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.633GHz">0 1 1 0 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.650GHz">1 1 1 0 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.667GHz">0 0 0 1 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.683GHz">1 0 0 1 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.700GHz">0 1 0 1 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.717GHz">1 1 0 1 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.733GHz">0 0 1 1 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.750GHz">1 0 1 1 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.767GHz">0 1 1 1 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.783GHz">1 1 1 1 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.8GHz">0 0 0 0 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.817GHz">1 0 0 0 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.833GHz">0 1 0 0 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.850GHz">1 1 0 0 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.867GHz">0 0 1 0 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.883GHz">1 0 1 0 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.900GHz">0 1 1 0 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.917GHz">1 1 1 0 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.933GHz">0 0 0 1 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.950GHz">1 0 0 1 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.967GHz">0 1 0 1 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.983GHz">1 1 0 1 1 1 0 0 0</setpointdata>
+			<setpointdata name="1.000GHz">0 0 1 1 1 1 0 0 0</setpointdata>
+			<setpointdata name="1.017GHz">1 0 1 1 1 1 0 0 0</setpointdata>
+			<setpointdata name="1.033GHz">0 1 1 1 1 1 0 0 0</setpointdata>
+			<setpointdata name="1.050GHz">1 1 1 1 1 1 0 0 0</setpointdata>
+			<setpointdata name="1.067GHz">0 0 0 0 0 0 1 0 0</setpointdata>
+			<setpointdata name="1.083GHz">1 0 0 0 0 0 1 0 0</setpointdata>
+			<setpointdata name="1.100GHz">0 1 0 0 0 0 1 0 0</setpointdata>
+			<setpointdata name="1.117GHz">1 1 0 0 0 0 1 0 0</setpointdata>
+			<setpointdata name="1.133GHz">0 0 1 0 0 0 1 0 0</setpointdata>
+			<setpointdata name="1.150GHz">1 0 1 0 0 0 1 0 0</setpointdata>
+			<setpointdata name="1.167GHz">0 1 1 0 0 0 1 0 0</setpointdata>
+			<setpointdata name="1.183GHz">1 1 1 0 0 0 1 0 0</setpointdata>
+			<setpointdata name="1.200GHz">0 0 0 1 0 0 1 0 0</setpointdata>
+			<setpointdata name="1.217GHz">1 0 0 1 0 0 1 0 0</setpointdata>
+			<setpointdata name="1.233GHz">0 1 0 1 0 0 1 0 0</setpointdata>
+			<setpointdata name="1.250GHz">1 1 0 1 0 0 1 0 0</setpointdata>
+			<setpointdata name="1.267GHz">0 0 1 1 0 0 1 0 0</setpointdata>
+			<setpointdata name="1.283GHz">1 0 1 1 0 0 1 0 0</setpointdata>
+			<setpointdata name="1.300GHz">0 1 1 1 0 0 1 0 0</setpointdata>
+			<setpointdata name="1.317GHz">1 1 1 1 0 0 1 0 0</setpointdata>
+			<setpointdata name="1.333GHz">0 0 0 0 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.350GHz">1 0 0 0 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.367GHz">0 1 0 0 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.383GHz">1 1 0 0 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.400GHz">0 0 1 0 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.417GHz">1 0 1 0 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.433GHz">0 1 1 0 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.450GHz">1 1 1 0 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.467GHz">0 0 0 1 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.483GHz">1 0 0 1 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.500GHz">0 1 0 1 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.517GHz">1 1 0 1 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.533GHz">0 0 1 1 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.550GHz">1 0 1 1 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.567GHz">0 1 1 1 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.583GHz">1 1 1 1 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.600GHz">0 0 0 0 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.617GHz">1 0 0 0 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.633GHz">0 1 0 0 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.650GHz">1 1 0 0 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.667GHz">0 0 1 0 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.683GHz">1 0 1 0 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.700GHz">0 1 1 0 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.717GHz">1 1 1 0 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.733GHz">0 0 0 1 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.750GHz">1 0 0 1 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.767GHz">0 1 0 1 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.783GHz">1 1 0 1 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.800GHz">0 0 1 1 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.817GHz">1 0 1 1 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.833GHz">0 1 1 1 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.850GHz">1 1 1 1 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.867GHz">0 0 0 0 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.883GHz">1 0 0 0 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.900GHz">0 1 0 0 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.917GHz">1 1 0 0 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.933GHz">0 0 1 0 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.950GHz">1 0 1 0 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.967GHz">0 1 1 0 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.983GHz">1 1 1 0 1 1 1 0 0</setpointdata>
+			<setpointdata name="2.000GHz">0 0 0 1 1 1 1 0 0</setpointdata>
+			<setpointdata name="2.017GHz">1 0 0 1 1 1 1 0 0</setpointdata>
+			<setpointdata name="2.033GHz">0 1 0 1 1 1 1 0 0</setpointdata>
+			<setpointdata name="2.050GHz">1 1 0 1 1 1 1 0 0</setpointdata>
+			<setpointdata name="2.067GHz">0 0 1 1 1 1 1 0 0</setpointdata>
+			<setpointdata name="2.083GHz">1 0 1 1 1 1 1 0 0</setpointdata>
+			<setpointdata name="2.100GHz">0 1 1 1 1 1 1 0 0</setpointdata>
+			<setpointdata name="2.117GHz">1 1 1 1 1 1 1 0 0</setpointdata>
+			<setpointdata name="2.133GHz">0 0 0 0 0 0 0 1 0</setpointdata>
+			<setpointdata name="2.150GHz">1 0 0 0 0 0 0 1 0</setpointdata>
+			<setpointdata name="2.167GHz">0 1 0 0 0 0 0 1 0</setpointdata>
+			<setpointdata name="2.183GHz">1 1 0 0 0 0 0 1 0</setpointdata>
+			<setpointdata name="2.200GHz">0 0 1 0 0 0 0 1 0</setpointdata>
+			<setpointdata name="2.217GHz">1 0 1 0 0 0 0 1 0</setpointdata>
+			<setpointdata name="2.233GHz">0 1 1 0 0 0 0 1 0</setpointdata>
+			<setpointdata name="2.250GHz">1 1 1 0 0 0 0 1 0</setpointdata>
+			<setpointdata name="2.267GHz">0 0 0 1 0 0 0 1 0</setpointdata>
+			<setpointdata name="2.283GHz">1 0 0 1 0 0 0 1 0</setpointdata>
+			<setpointdata name="2.300GHz">0 1 0 1 0 0 0 1 0</setpointdata>
+			<setpointdata name="2.317GHz">1 1 0 1 0 0 0 1 0</setpointdata>
+			<setpointdata name="2.333GHz">0 0 1 1 0 0 0 1 0</setpointdata>
+			<setpointdata name="2.350GHz">1 0 1 1 0 0 0 1 0</setpointdata>
+			<setpointdata name="2.367GHz">0 1 1 1 0 0 0 1 0</setpointdata>
+			<setpointdata name="2.383GHz">1 1 1 1 0 0 0 1 0</setpointdata>
+			<setpointdata name="2.400GHz">0 0 0 0 1 0 0 1 0</setpointdata>
+			<setpointdata name="2.417GHz">1 0 0 0 1 0 0 1 0</setpointdata>
+			<setpointdata name="2.433GHz">0 1 0 0 1 0 0 1 0</setpointdata>
+			<setpointdata name="2.450GHz">1 1 0 0 1 0 0 1 0</setpointdata>
+			<setpointdata name="2.467GHz">0 0 1 0 1 0 0 1 0</setpointdata>
+			<setpointdata name="2.483GHz">1 0 1 0 1 0 0 1 0</setpointdata>
+			<setpointdata name="2.500GHz">0 1 1 0 1 0 0 1 0</setpointdata>
+			<setpointdata name="2.517GHz">1 1 1 0 1 0 0 1 0</setpointdata>
+			<setpointdata name="2.533GHz">0 0 0 1 1 0 0 1 0</setpointdata>
+			<setpointdata name="2.550GHz">1 0 0 1 1 0 0 1 0</setpointdata>
+			<setpointdata name="2.567GHz">0 1 0 1 1 0 0 1 0</setpointdata>
+			<setpointdata name="2.583GHz">1 1 0 1 1 0 0 1 0</setpointdata>
+			<setpointdata name="2.600GHz">0 0 1 1 1 0 0 1 0</setpointdata>
+			<setpointdata name="2.617GHz">1 0 1 1 1 0 0 1 0</setpointdata>
+			<setpointdata name="2.633GHz">0 1 1 1 1 0 0 1 0</setpointdata>
+			<setpointdata name="2.650GHz">1 1 1 1 1 0 0 1 0</setpointdata>
+			<setpointdata name="2.667GHz">0 0 0 0 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.683GHz">1 0 0 0 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.700GHz">0 1 0 0 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.717GHz">1 1 0 0 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.733GHz">0 0 1 0 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.750GHz">1 0 1 0 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.767GHz">0 1 1 0 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.783GHz">1 1 1 0 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.800GHz">0 0 0 1 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.817GHz">1 0 0 1 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.833GHz">0 1 0 1 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.850GHz">1 1 0 1 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.867GHz">0 0 1 1 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.883GHz">1 0 1 1 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.900GHz">0 1 1 1 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.917GHz">1 1 1 1 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.933GHz">0 0 0 0 1 1 0 1 0</setpointdata>
+			<setpointdata name="2.950GHz">1 0 0 0 1 1 0 1 0</setpointdata>
+			<setpointdata name="2.967GHz">0 1 0 0 1 1 0 1 0</setpointdata>
+			<setpointdata name="2.983GHz">1 1 0 0 1 1 0 1 0</setpointdata>
+			<setpointdata name="3.000GHz">0 0 1 0 1 1 0 1 0</setpointdata>
+			<setpointdata name="3.017GHz">1 0 1 0 1 1 0 1 0</setpointdata>
+			<setpointdata name="3.033GHz">0 1 1 0 1 1 0 1 0</setpointdata>
+			<setpointdata name="3.050GHz">1 1 1 0 1 1 0 1 0</setpointdata>
+			<setpointdata name="3.067GHz">0 0 0 1 1 1 0 1 0</setpointdata>
+			<setpointdata name="3.083GHz">1 0 0 1 1 1 0 1 0</setpointdata>
+			<setpointdata name="3.100GHz">0 1 0 1 1 1 0 1 0</setpointdata>
+			<setpointdata name="3.117GHz">1 1 0 1 1 1 0 1 0</setpointdata>
+			<setpointdata name="3.133GHz">0 0 1 1 1 1 0 1 0</setpointdata>
+			<setpointdata name="3.150GHz">1 0 1 1 1 1 0 1 0</setpointdata>
+			<setpointdata name="3.167GHz">0 1 1 1 1 1 0 1 0</setpointdata>
+			<setpointdata name="3.183GHz">1 1 1 1 1 1 0 1 0</setpointdata>
+			<setpointdata name="3.200GHz">0 0 0 0 0 0 1 1 0</setpointdata>
+			<setpointdata name="3.217GHz">1 0 0 0 0 0 1 1 0</setpointdata>
+			<setpointdata name="3.233GHz">0 1 0 0 0 0 1 1 0</setpointdata>
+			<setpointdata name="3.250GHz">1 1 0 0 0 0 1 1 0</setpointdata>
+			<setpointdata name="3.267GHz">0 0 1 0 0 0 1 1 0</setpointdata>
+			<setpointdata name="3.283GHz">1 0 1 0 0 0 1 1 0</setpointdata>
+			<setpointdata name="3.300GHz">0 1 1 0 0 0 1 1 0</setpointdata>
+			<setpointdata name="3.317GHz">1 1 1 0 0 0 1 1 0</setpointdata>
+			<setpointdata name="3.333GHz">0 0 0 1 0 0 1 1 0</setpointdata>
+			<setpointdata name="3.350GHz">1 0 0 1 0 0 1 1 0</setpointdata>
+			<setpointdata name="3.367GHz">0 1 0 1 0 0 1 1 0</setpointdata>
+			<setpointdata name="3.383GHz">1 1 0 1 0 0 1 1 0</setpointdata>
+			<setpointdata name="3.400GHz">0 0 1 1 0 0 1 1 0</setpointdata>
+			<setpointdata name="3.417GHz">1 0 1 1 0 0 1 1 0</setpointdata>
+			<setpointdata name="3.433GHz">0 1 1 1 0 0 1 1 0</setpointdata>
+			<setpointdata name="3.450GHz">1 1 1 1 0 0 1 1 0</setpointdata>
+			<setpointdata name="3.467GHz">0 0 0 0 1 0 1 1 0</setpointdata>
+			<setpointdata name="3.483GHz">1 0 0 0 1 0 1 1 0</setpointdata>
+			<setpointdata name="3.500GHz">0 1 0 0 1 0 1 1 0</setpointdata>
+			<setpointdata name="3.517GHz">1 1 0 0 1 0 1 1 0</setpointdata>
+			<setpointdata name="3.533GHz">0 0 1 0 1 0 1 1 0</setpointdata>
+			<setpointdata name="3.550GHz">1 0 1 0 1 0 1 1 0</setpointdata>
+			<setpointdata name="3.567GHz">0 1 1 0 1 0 1 1 0</setpointdata>
+			<setpointdata name="3.583GHz">1 1 1 0 1 0 1 1 0</setpointdata>
+			<setpointdata name="3.600GHz">0 0 0 1 1 0 1 1 0</setpointdata>
+			<setpointdata name="3.617GHz">1 0 0 1 1 0 1 1 0</setpointdata>
+			<setpointdata name="3.633GHz">0 1 0 1 1 0 1 1 0</setpointdata>
+			<setpointdata name="3.650GHz">1 1 0 1 1 0 1 1 0</setpointdata>
+			<setpointdata name="3.667GHz">0 0 1 1 1 0 1 1 0</setpointdata>
+			<setpointdata name="3.683GHz">1 0 1 1 1 0 1 1 0</setpointdata>
+			<setpointdata name="3.700GHz">0 1 1 1 1 0 1 1 0</setpointdata>
+			<setpointdata name="3.717GHz">1 1 1 1 1 0 1 1 0</setpointdata>
+			<setpointdata name="3.733GHz">0 0 0 0 0 1 1 1 0</setpointdata>
+			<setpointdata name="3.750GHz">1 0 0 0 0 1 1 1 0</setpointdata>
+			<setpointdata name="3.767GHz">0 1 0 0 0 1 1 1 0</setpointdata>
+			<setpointdata name="3.783GHz">1 1 0 0 0 1 1 1 0</setpointdata>
+			<setpointdata name="3.800GHz">0 0 1 0 0 1 1 1 0</setpointdata>
+			<setpointdata name="3.817GHz">1 0 1 0 0 1 1 1 0</setpointdata>
+			<setpointdata name="3.833GHz">0 1 1 0 0 1 1 1 0</setpointdata>
+			<setpointdata name="3.850GHz">1 1 1 0 0 1 1 1 0</setpointdata>
+			<setpointdata name="3.867GHz">0 0 0 1 0 1 1 1 0</setpointdata>
+			<setpointdata name="3.883GHz">1 0 0 1 0 1 1 1 0</setpointdata>
+			<setpointdata name="3.900GHz">0 1 0 1 0 1 1 1 0</setpointdata>
+			<setpointdata name="3.917GHz">1 1 0 1 0 1 1 1 0</setpointdata>
+			<setpointdata name="3.933GHz">0 0 1 1 0 1 1 1 0</setpointdata>
+			<setpointdata name="3.950GHz">1 0 1 1 0 1 1 1 0</setpointdata>
+			<setpointdata name="3.967GHz">0 1 1 1 0 1 1 1 0</setpointdata>
+			<setpointdata name="3.983GHz">1 1 1 1 0 1 1 1 0</setpointdata>
+			<setpointdata name="4.000GHz">0 0 0 0 1 1 1 1 0</setpointdata>
+			<setpointdata name="4.017GHz">1 0 0 0 1 1 1 1 0</setpointdata>
+			<setpointdata name="4.033GHz">0 1 0 0 1 1 1 1 0</setpointdata>
+			<setpointdata name="4.050GHz">1 1 0 0 1 1 1 1 0</setpointdata>
+			<setpointdata name="4.067GHz">0 0 1 0 1 1 1 1 0</setpointdata>
+			<setpointdata name="4.083GHz">1 0 1 0 1 1 1 1 0</setpointdata>
+			<setpointdata name="4.100GHz">0 1 1 0 1 1 1 1 0</setpointdata>
+			<setpointdata name="4.117GHz">1 1 1 0 1 1 1 1 0</setpointdata>
+			<setpointdata name="4.133GHz">0 0 0 1 1 1 1 1 0</setpointdata>
+			<setpointdata name="4.150GHz">1 0 0 1 1 1 1 1 0</setpointdata>
+			<setpointdata name="4.167GHz">0 1 0 1 1 1 1 1 0</setpointdata>
+			<setpointdata name="4.183GHz">1 1 0 1 1 1 1 1 0</setpointdata>
+			<setpointdata name="4.200GHz">0 0 1 1 1 1 1 1 0</setpointdata>
+			<setpointdata name="4.217GHz">1 0 1 1 1 1 1 1 0</setpointdata>
+			<setpointdata name="4.233GHz">0 1 1 1 1 1 1 1 0</setpointdata>
+			<setpointdata name="4.250GHz">1 1 1 1 1 1 1 1 0</setpointdata>
+			<setpointdata name="4.267GHz">0 0 0 0 0 0 0 0 1</setpointdata>
+			<setpointdata name="4.283GHz">1 0 0 0 0 0 0 0 1</setpointdata>
+			<setpointdata name="4.300GHz">0 1 0 0 0 0 0 0 1</setpointdata>
+			<setpointdata name="4.317GHz">1 1 0 0 0 0 0 0 1</setpointdata>
+			<setpointdata name="4.333GHz">0 0 1 0 0 0 0 0 1</setpointdata>
+			<setpointdata name="4.350GHz">1 0 1 0 0 0 0 0 1</setpointdata>
+			<setpointdata name="4.367GHz">0 1 1 0 0 0 0 0 1</setpointdata>
+			<setpointdata name="4.383GHz">1 1 1 0 0 0 0 0 1</setpointdata>
+			<setpointdata name="4.400GHz">0 0 0 1 0 0 0 0 1</setpointdata>
+			<setpointdata name="4.417GHz">1 0 0 1 0 0 0 0 1</setpointdata>
+			<setpointdata name="4.433GHz">0 1 0 1 0 0 0 0 1</setpointdata>
+			<setpointdata name="4.450GHz">1 1 0 1 0 0 0 0 1</setpointdata>
+			<setpointdata name="4.467GHz">0 0 1 1 0 0 0 0 1</setpointdata>
+			<setpointdata name="4.483GHz">1 0 1 1 0 0 0 0 1</setpointdata>
+			<setpointdata name="4.500GHz">0 1 1 1 0 0 0 0 1</setpointdata>
+			<setpointdata name="4.517GHz">1 1 1 1 0 0 0 0 1</setpointdata>
+			<setpointdata name="4.533GHz">0 0 0 0 1 0 0 0 1</setpointdata>
+			<setpointdata name="4.550GHz">1 0 0 0 1 0 0 0 1</setpointdata>
+			<setpointdata name="4.567GHz">0 1 0 0 1 0 0 0 1</setpointdata>
+			<setpointdata name="4.583GHz">1 1 0 0 1 0 0 0 1</setpointdata>
+			<setpointdata name="4.600GHz">0 0 1 0 1 0 0 0 1</setpointdata>
+			<setpointdata name="4.617GHz">1 0 1 0 1 0 0 0 1</setpointdata>
+			<setpointdata name="4.633GHz">0 1 1 0 1 0 0 0 1</setpointdata>
+			<setpointdata name="4.650GHz">1 1 1 0 1 0 0 0 1</setpointdata>
+			<setpointdata name="4.667GHz">0 0 0 1 1 0 0 0 1</setpointdata>
+			<setpointdata name="4.683GHz">1 0 0 1 1 0 0 0 1</setpointdata>
+			<setpointdata name="4.700GHz">0 1 0 1 1 0 0 0 1</setpointdata>
+			<setpointdata name="4.717GHz">1 1 0 1 1 0 0 0 1</setpointdata>
+			<setpointdata name="4.733GHz">0 0 1 1 1 0 0 0 1</setpointdata>
+			<setpointdata name="4.750GHz">1 0 1 1 1 0 0 0 1</setpointdata>
+			<setpointdata name="4.767GHz">0 1 1 1 1 0 0 0 1</setpointdata>
+			<setpointdata name="4.783GHz">1 1 1 1 1 0 0 0 1</setpointdata>
+			<setpointdata name="4.800GHz">0 0 0 0 0 1 0 0 1</setpointdata>
+			<setpointdata name="4.817GHz">1 0 0 0 0 1 0 0 1</setpointdata>
+			<setpointdata name="4.833GHz">0 1 0 0 0 1 0 0 1</setpointdata>
+			<setpointdata name="4.850GHz">1 1 0 0 0 1 0 0 1</setpointdata>
+			<setpointdata name="4.867GHz">0 0 1 0 0 1 0 0 1</setpointdata>
+			<setpointdata name="4.883GHz">1 0 1 0 0 1 0 0 1</setpointdata>
+			<setpointdata name="4.900GHz">0 1 1 0 0 1 0 0 1</setpointdata>
+			<setpointdata name="4.917GHz">1 1 1 0 0 1 0 0 1</setpointdata>
+			<setpointdata name="4.933GHz">0 0 0 1 0 1 0 0 1</setpointdata>
+			<setpointdata name="4.950GHz">1 0 0 1 0 1 0 0 1</setpointdata>
+			<setpointdata name="4.967GHz">0 1 0 1 0 1 0 0 1</setpointdata>
+			<setpointdata name="4.983GHz">1 1 0 1 0 1 0 0 1</setpointdata>
+			<setpointdata name="5.000GHz">0 0 1 1 0 1 0 0 1</setpointdata>
+			<setpointdata name="PM_DEFAULT">0 0 0 0 1 1 0 0 0</setpointdata>
+		</subset>
+	</pattern_modify_group_data>
+
+	<pattern_modify_group_data name='atom_skip_pll'>
+		<subset name='patmod_atom_skip_pll_internal_AssertCPUReset__patmod_in__atom_skip_pll'>
+			<setpointdata name="PM_DEFAULT">0</setpointdata>
+			<setpointdata name="disable">0</setpointdata>
+			<setpointdata name="enable">1</setpointdata>
+		</subset>
+		<subset name='patmod_atom_skip_pll_internal_DeassertCPUReset__patmod_in__atom_skip_pll'>
+			<setpointdata name="PM_DEFAULT">0</setpointdata>
+			<setpointdata name="disable">0</setpointdata>
+			<setpointdata name="enable">1</setpointdata>
+		</subset>
+	</pattern_modify_group_data>
+
+	<pattern_modify_group_data name='atomratio'>
+		<subset name='patmod_atomratio_FuseOverrideString__patmod_in__atomratio_PUNIT_PUNIT_FUSES_BOOT_IA_RATIO_CCP8'>
+			<setpointdata name="PM_DEFAULT">0 0 0 1 0 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range10">0 1 0 1 0 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range11">1 1 0 1 0 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range12">0 0 1 1 0 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range13">1 0 1 1 0 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range14">0 1 1 1 0 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range15">1 1 1 1 0 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range16">0 0 0 0 1 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range17">1 0 0 0 1 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range18">0 1 0 0 1 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range19">1 1 0 0 1 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range20">0 0 1 0 1 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range21">1 0 1 0 1 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range22">0 1 1 0 1 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range23">1 1 1 0 1 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range24">0 0 0 1 1 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range25">1 0 0 1 1 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range26">0 1 0 1 1 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range27">1 1 0 1 1 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range28">0 0 1 1 1 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range29">1 0 1 1 1 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range30">0 1 1 1 1 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range31">1 1 1 1 1 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range32">0 0 0 0 0 1 0</setpointdata>
+			<setpointdata name="atom_ratio_range33">1 0 0 0 0 1 0</setpointdata>
+			<setpointdata name="atom_ratio_range34">0 1 0 0 0 1 0</setpointdata>
+			<setpointdata name="atom_ratio_range35">1 1 0 0 0 1 0</setpointdata>
+			<setpointdata name="atom_ratio_range36">0 0 1 0 0 1 0</setpointdata>
+			<setpointdata name="atom_ratio_range37">1 0 1 0 0 1 0</setpointdata>
+			<setpointdata name="atom_ratio_range38">0 1 1 0 0 1 0</setpointdata>
+			<setpointdata name="atom_ratio_range4">0 0 1 0 0 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range5">1 0 1 0 0 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range6">0 1 1 0 0 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range7">1 1 1 0 0 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range8">0 0 0 1 0 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range9">1 0 0 1 0 0 0</setpointdata>
+		</subset>
+		<subset name='patmod_atomratio_FuseOverrideString__patmod_in__atomratio_PUNIT_PUNIT_FUSES_BOOT_IA_RATIO_CCP9'>
+			<setpointdata name="PM_DEFAULT">0 0 0 1 0 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range10">0 1 0 1 0 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range11">1 1 0 1 0 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range12">0 0 1 1 0 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range13">1 0 1 1 0 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range14">0 1 1 1 0 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range15">1 1 1 1 0 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range16">0 0 0 0 1 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range17">1 0 0 0 1 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range18">0 1 0 0 1 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range19">1 1 0 0 1 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range20">0 0 1 0 1 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range21">1 0 1 0 1 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range22">0 1 1 0 1 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range23">1 1 1 0 1 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range24">0 0 0 1 1 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range25">1 0 0 1 1 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range26">0 1 0 1 1 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range27">1 1 0 1 1 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range28">0 0 1 1 1 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range29">1 0 1 1 1 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range30">0 1 1 1 1 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range31">1 1 1 1 1 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range32">0 0 0 0 0 1 0</setpointdata>
+			<setpointdata name="atom_ratio_range33">1 0 0 0 0 1 0</setpointdata>
+			<setpointdata name="atom_ratio_range34">0 1 0 0 0 1 0</setpointdata>
+			<setpointdata name="atom_ratio_range35">1 1 0 0 0 1 0</setpointdata>
+			<setpointdata name="atom_ratio_range36">0 0 1 0 0 1 0</setpointdata>
+			<setpointdata name="atom_ratio_range37">1 0 1 0 0 1 0</setpointdata>
+			<setpointdata name="atom_ratio_range38">0 1 1 0 0 1 0</setpointdata>
+			<setpointdata name="atom_ratio_range4">0 0 1 0 0 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range5">1 0 1 0 0 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range6">0 1 1 0 0 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range7">1 1 1 0 0 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range8">0 0 0 1 0 0 0</setpointdata>
+			<setpointdata name="atom_ratio_range9">1 0 0 1 0 0 0</setpointdata>
+		</subset>
+	</pattern_modify_group_data>
+
+	<pattern_modify_group_data name='bclk_epoc_bclk_bypass'>
+		<subset name='patmod_bclk_epoc_bclk_bypass_EpocWrite__patmod_in__bclk_epoc_bclk_bypass_xtal_epoc_bclk_bypass'>
+			<setpointdata name="PM_DEFAULT">0 0</setpointdata>
+			<setpointdata name="bclk_en">1 0</setpointdata>
+			<setpointdata name="bclk_en_xtal">0 1</setpointdata>
+			<setpointdata name="bypass">0 0</setpointdata>
+		</subset>
+	</pattern_modify_group_data>
+
+	<pattern_modify_group_data name='bclk_epoc_freq_sel'>
+		<subset name='patmod_bclk_epoc_freq_sel_EpocWrite__patmod_in__bclk_epoc_freq_sel_xtal_epoc_div'>
+			<setpointdata name="25Mhz">0 0</setpointdata>
+			<setpointdata name="40Mhz">1 0</setpointdata>
+			<setpointdata name="PM_DEFAULT">0 0</setpointdata>
+		</subset>
+	</pattern_modify_group_data>
+
+	<pattern_modify_group_data name='bclk_epoc_opio_ref_sel'>
+		<subset name='patmod_bclk_epoc_opio_ref_sel_EpocWrite__patmod_in__bclk_epoc_opio_ref_sel_xtal_epoc_opio_ref_sel'>
+			<setpointdata name="PM_DEFAULT">0</setpointdata>
+			<setpointdata name="bclk">0</setpointdata>
+			<setpointdata name="xtal">1</setpointdata>
+		</subset>
+	</pattern_modify_group_data>
+
+	<pattern_modify_group_data name='bclk_xtal_logic_freq_sel'>
+		<subset name='patmod_bclk_xtal_logic_freq_sel_HVMClockIso4Xtal__patmod_in__bclk_xtal_logic_freq_sel_xtal_logic_freq_sel'>
+			<setpointdata name="25Mhz">0 0</setpointdata>
+			<setpointdata name="40Mhz">0 1</setpointdata>
+			<setpointdata name="PM_DEFAULT">0 0</setpointdata>
+		</subset>
+	</pattern_modify_group_data>
+
+	<pattern_modify_group_data name='bclk_xtal_phy_pll_freq_sel'>
+		<subset name='patmod_bclk_xtal_phy_pll_freq_sel_HVMClockIso4Xtal__patmod_in__bclk_xtal_phy_pll_freq_sel_xtal_phypll_freq_sel'>
+			<setpointdata name="25Mhz">0 0</setpointdata>
+			<setpointdata name="40Mhz">0 1</setpointdata>
+			<setpointdata name="PM_DEFAULT">0 0</setpointdata>
+		</subset>
+	</pattern_modify_group_data>
+
+	<pattern_modify_group_data name='core_ratio'>
+		<subset name='patmod_core_ratio_FuseOverrideString__patmod_in__core_ratio_PUNIT_PUNIT_FUSES_BOOT_IA_RATIO_CCP0'>
+			<setpointdata name="0.4GHz">0 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.5GHz">1 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.6GHz">0 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.7GHz">1 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.8GHz">0 0 0 1 0 0</setpointdata>
+			<setpointdata name="0.9GHz">1 0 0 1 0 0</setpointdata>
+			<setpointdata name="1GHz">0 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.1GHz">1 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.2GHz">0 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.3GHz">1 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.4GHz">0 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.5GHz">1 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.6GHz">0 0 0 0 1 0</setpointdata>
+			<setpointdata name="1.7GHz">1 0 0 0 1 0</setpointdata>
+			<setpointdata name="1.8GHz">0 1 0 0 1 0</setpointdata>
+			<setpointdata name="1.9GHz">1 1 0 0 1 0</setpointdata>
+			<setpointdata name="2GHz">0 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.1GHz">1 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.2GHz">0 1 1 0 1 0</setpointdata>
+			<setpointdata name="2.3GHz">1 1 1 0 1 0</setpointdata>
+			<setpointdata name="2.4GHz">0 0 0 1 1 0</setpointdata>
+			<setpointdata name="2.5GHz">1 0 0 1 1 0</setpointdata>
+			<setpointdata name="2.6GHz">0 1 0 1 1 0</setpointdata>
+			<setpointdata name="2.7GHz">1 1 0 1 1 0</setpointdata>
+			<setpointdata name="2.8GHz">0 0 1 1 1 0</setpointdata>
+			<setpointdata name="2.9GHz">1 0 1 1 1 0</setpointdata>
+			<setpointdata name="3GHz">0 1 1 1 1 0</setpointdata>
+			<setpointdata name="3.1GHz">1 1 1 1 1 0</setpointdata>
+			<setpointdata name="3.2GHz">0 0 0 0 0 1</setpointdata>
+			<setpointdata name="3.3GHz">1 0 0 0 0 1</setpointdata>
+			<setpointdata name="3.4GHz">0 1 0 0 0 1</setpointdata>
+			<setpointdata name="3.5GHz">1 1 0 0 0 1</setpointdata>
+			<setpointdata name="3.6GHz">0 0 1 0 0 1</setpointdata>
+			<setpointdata name="3.7GHz">1 0 1 0 0 1</setpointdata>
+			<setpointdata name="3.8GHz">0 1 1 0 0 1</setpointdata>
+			<setpointdata name="3.9GHz">1 1 1 0 0 1</setpointdata>
+			<setpointdata name="4GHz">0 0 0 1 0 1</setpointdata>
+			<setpointdata name="4.1GHz">1 0 0 1 0 1</setpointdata>
+			<setpointdata name="4.2GHz">0 1 0 1 0 1</setpointdata>
+			<setpointdata name="4.3GHz">1 1 0 1 0 1</setpointdata>
+			<setpointdata name="4.4GHz">0 0 1 1 0 1</setpointdata>
+			<setpointdata name="4.5GHz">1 0 1 1 0 1</setpointdata>
+			<setpointdata name="4.6GHz">0 1 1 1 0 1</setpointdata>
+			<setpointdata name="4.7GHz">1 1 1 1 0 1</setpointdata>
+			<setpointdata name="4.8GHz">0 0 0 0 1 1</setpointdata>
+			<setpointdata name="4.9GHz">1 0 0 0 1 1</setpointdata>
+			<setpointdata name="5GHz">0 1 0 0 1 1</setpointdata>
+			<setpointdata name="5.1GHz">1 1 0 0 1 1</setpointdata>
+			<setpointdata name="5.2GHz">0 0 1 0 1 1</setpointdata>
+			<setpointdata name="5.3GHz">1 0 1 0 1 1</setpointdata>
+			<setpointdata name="PM_DEFAULT">0 0 0 1 0 0</setpointdata>
+		</subset>
+		<subset name='patmod_core_ratio_FuseOverrideString__patmod_in__core_ratio_PUNIT_PUNIT_FUSES_BOOT_IA_RATIO_CCP1'>
+			<setpointdata name="0.4GHz">0 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.5GHz">1 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.6GHz">0 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.7GHz">1 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.8GHz">0 0 0 1 0 0</setpointdata>
+			<setpointdata name="0.9GHz">1 0 0 1 0 0</setpointdata>
+			<setpointdata name="1GHz">0 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.1GHz">1 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.2GHz">0 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.3GHz">1 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.4GHz">0 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.5GHz">1 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.6GHz">0 0 0 0 1 0</setpointdata>
+			<setpointdata name="1.7GHz">1 0 0 0 1 0</setpointdata>
+			<setpointdata name="1.8GHz">0 1 0 0 1 0</setpointdata>
+			<setpointdata name="1.9GHz">1 1 0 0 1 0</setpointdata>
+			<setpointdata name="2GHz">0 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.1GHz">1 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.2GHz">0 1 1 0 1 0</setpointdata>
+			<setpointdata name="2.3GHz">1 1 1 0 1 0</setpointdata>
+			<setpointdata name="2.4GHz">0 0 0 1 1 0</setpointdata>
+			<setpointdata name="2.5GHz">1 0 0 1 1 0</setpointdata>
+			<setpointdata name="2.6GHz">0 1 0 1 1 0</setpointdata>
+			<setpointdata name="2.7GHz">1 1 0 1 1 0</setpointdata>
+			<setpointdata name="2.8GHz">0 0 1 1 1 0</setpointdata>
+			<setpointdata name="2.9GHz">1 0 1 1 1 0</setpointdata>
+			<setpointdata name="3GHz">0 1 1 1 1 0</setpointdata>
+			<setpointdata name="3.1GHz">1 1 1 1 1 0</setpointdata>
+			<setpointdata name="3.2GHz">0 0 0 0 0 1</setpointdata>
+			<setpointdata name="3.3GHz">1 0 0 0 0 1</setpointdata>
+			<setpointdata name="3.4GHz">0 1 0 0 0 1</setpointdata>
+			<setpointdata name="3.5GHz">1 1 0 0 0 1</setpointdata>
+			<setpointdata name="3.6GHz">0 0 1 0 0 1</setpointdata>
+			<setpointdata name="3.7GHz">1 0 1 0 0 1</setpointdata>
+			<setpointdata name="3.8GHz">0 1 1 0 0 1</setpointdata>
+			<setpointdata name="3.9GHz">1 1 1 0 0 1</setpointdata>
+			<setpointdata name="4GHz">0 0 0 1 0 1</setpointdata>
+			<setpointdata name="4.1GHz">1 0 0 1 0 1</setpointdata>
+			<setpointdata name="4.2GHz">0 1 0 1 0 1</setpointdata>
+			<setpointdata name="4.3GHz">1 1 0 1 0 1</setpointdata>
+			<setpointdata name="4.4GHz">0 0 1 1 0 1</setpointdata>
+			<setpointdata name="4.5GHz">1 0 1 1 0 1</setpointdata>
+			<setpointdata name="4.6GHz">0 1 1 1 0 1</setpointdata>
+			<setpointdata name="4.7GHz">1 1 1 1 0 1</setpointdata>
+			<setpointdata name="4.8GHz">0 0 0 0 1 1</setpointdata>
+			<setpointdata name="4.9GHz">1 0 0 0 1 1</setpointdata>
+			<setpointdata name="5GHz">0 1 0 0 1 1</setpointdata>
+			<setpointdata name="5.1GHz">1 1 0 0 1 1</setpointdata>
+			<setpointdata name="5.2GHz">0 0 1 0 1 1</setpointdata>
+			<setpointdata name="5.3GHz">1 0 1 0 1 1</setpointdata>
+			<setpointdata name="PM_DEFAULT">0 0 0 1 0 0</setpointdata>
+		</subset>
+		<subset name='patmod_core_ratio_FuseOverrideString__patmod_in__core_ratio_PUNIT_PUNIT_FUSES_BOOT_IA_RATIO_CCP2'>
+			<setpointdata name="0.4GHz">0 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.5GHz">1 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.6GHz">0 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.7GHz">1 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.8GHz">0 0 0 1 0 0</setpointdata>
+			<setpointdata name="0.9GHz">1 0 0 1 0 0</setpointdata>
+			<setpointdata name="1GHz">0 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.1GHz">1 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.2GHz">0 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.3GHz">1 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.4GHz">0 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.5GHz">1 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.6GHz">0 0 0 0 1 0</setpointdata>
+			<setpointdata name="1.7GHz">1 0 0 0 1 0</setpointdata>
+			<setpointdata name="1.8GHz">0 1 0 0 1 0</setpointdata>
+			<setpointdata name="1.9GHz">1 1 0 0 1 0</setpointdata>
+			<setpointdata name="2GHz">0 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.1GHz">1 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.2GHz">0 1 1 0 1 0</setpointdata>
+			<setpointdata name="2.3GHz">1 1 1 0 1 0</setpointdata>
+			<setpointdata name="2.4GHz">0 0 0 1 1 0</setpointdata>
+			<setpointdata name="2.5GHz">1 0 0 1 1 0</setpointdata>
+			<setpointdata name="2.6GHz">0 1 0 1 1 0</setpointdata>
+			<setpointdata name="2.7GHz">1 1 0 1 1 0</setpointdata>
+			<setpointdata name="2.8GHz">0 0 1 1 1 0</setpointdata>
+			<setpointdata name="2.9GHz">1 0 1 1 1 0</setpointdata>
+			<setpointdata name="3GHz">0 1 1 1 1 0</setpointdata>
+			<setpointdata name="3.1GHz">1 1 1 1 1 0</setpointdata>
+			<setpointdata name="3.2GHz">0 0 0 0 0 1</setpointdata>
+			<setpointdata name="3.3GHz">1 0 0 0 0 1</setpointdata>
+			<setpointdata name="3.4GHz">0 1 0 0 0 1</setpointdata>
+			<setpointdata name="3.5GHz">1 1 0 0 0 1</setpointdata>
+			<setpointdata name="3.6GHz">0 0 1 0 0 1</setpointdata>
+			<setpointdata name="3.7GHz">1 0 1 0 0 1</setpointdata>
+			<setpointdata name="3.8GHz">0 1 1 0 0 1</setpointdata>
+			<setpointdata name="3.9GHz">1 1 1 0 0 1</setpointdata>
+			<setpointdata name="4GHz">0 0 0 1 0 1</setpointdata>
+			<setpointdata name="4.1GHz">1 0 0 1 0 1</setpointdata>
+			<setpointdata name="4.2GHz">0 1 0 1 0 1</setpointdata>
+			<setpointdata name="4.3GHz">1 1 0 1 0 1</setpointdata>
+			<setpointdata name="4.4GHz">0 0 1 1 0 1</setpointdata>
+			<setpointdata name="4.5GHz">1 0 1 1 0 1</setpointdata>
+			<setpointdata name="4.6GHz">0 1 1 1 0 1</setpointdata>
+			<setpointdata name="4.7GHz">1 1 1 1 0 1</setpointdata>
+			<setpointdata name="4.8GHz">0 0 0 0 1 1</setpointdata>
+			<setpointdata name="4.9GHz">1 0 0 0 1 1</setpointdata>
+			<setpointdata name="5GHz">0 1 0 0 1 1</setpointdata>
+			<setpointdata name="5.1GHz">1 1 0 0 1 1</setpointdata>
+			<setpointdata name="5.2GHz">0 0 1 0 1 1</setpointdata>
+			<setpointdata name="5.3GHz">1 0 1 0 1 1</setpointdata>
+			<setpointdata name="PM_DEFAULT">0 0 0 1 0 0</setpointdata>
+		</subset>
+		<subset name='patmod_core_ratio_FuseOverrideString__patmod_in__core_ratio_PUNIT_PUNIT_FUSES_BOOT_IA_RATIO_CCP3'>
+			<setpointdata name="0.4GHz">0 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.5GHz">1 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.6GHz">0 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.7GHz">1 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.8GHz">0 0 0 1 0 0</setpointdata>
+			<setpointdata name="0.9GHz">1 0 0 1 0 0</setpointdata>
+			<setpointdata name="1GHz">0 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.1GHz">1 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.2GHz">0 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.3GHz">1 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.4GHz">0 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.5GHz">1 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.6GHz">0 0 0 0 1 0</setpointdata>
+			<setpointdata name="1.7GHz">1 0 0 0 1 0</setpointdata>
+			<setpointdata name="1.8GHz">0 1 0 0 1 0</setpointdata>
+			<setpointdata name="1.9GHz">1 1 0 0 1 0</setpointdata>
+			<setpointdata name="2GHz">0 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.1GHz">1 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.2GHz">0 1 1 0 1 0</setpointdata>
+			<setpointdata name="2.3GHz">1 1 1 0 1 0</setpointdata>
+			<setpointdata name="2.4GHz">0 0 0 1 1 0</setpointdata>
+			<setpointdata name="2.5GHz">1 0 0 1 1 0</setpointdata>
+			<setpointdata name="2.6GHz">0 1 0 1 1 0</setpointdata>
+			<setpointdata name="2.7GHz">1 1 0 1 1 0</setpointdata>
+			<setpointdata name="2.8GHz">0 0 1 1 1 0</setpointdata>
+			<setpointdata name="2.9GHz">1 0 1 1 1 0</setpointdata>
+			<setpointdata name="3GHz">0 1 1 1 1 0</setpointdata>
+			<setpointdata name="3.1GHz">1 1 1 1 1 0</setpointdata>
+			<setpointdata name="3.2GHz">0 0 0 0 0 1</setpointdata>
+			<setpointdata name="3.3GHz">1 0 0 0 0 1</setpointdata>
+			<setpointdata name="3.4GHz">0 1 0 0 0 1</setpointdata>
+			<setpointdata name="3.5GHz">1 1 0 0 0 1</setpointdata>
+			<setpointdata name="3.6GHz">0 0 1 0 0 1</setpointdata>
+			<setpointdata name="3.7GHz">1 0 1 0 0 1</setpointdata>
+			<setpointdata name="3.8GHz">0 1 1 0 0 1</setpointdata>
+			<setpointdata name="3.9GHz">1 1 1 0 0 1</setpointdata>
+			<setpointdata name="4GHz">0 0 0 1 0 1</setpointdata>
+			<setpointdata name="4.1GHz">1 0 0 1 0 1</setpointdata>
+			<setpointdata name="4.2GHz">0 1 0 1 0 1</setpointdata>
+			<setpointdata name="4.3GHz">1 1 0 1 0 1</setpointdata>
+			<setpointdata name="4.4GHz">0 0 1 1 0 1</setpointdata>
+			<setpointdata name="4.5GHz">1 0 1 1 0 1</setpointdata>
+			<setpointdata name="4.6GHz">0 1 1 1 0 1</setpointdata>
+			<setpointdata name="4.7GHz">1 1 1 1 0 1</setpointdata>
+			<setpointdata name="4.8GHz">0 0 0 0 1 1</setpointdata>
+			<setpointdata name="4.9GHz">1 0 0 0 1 1</setpointdata>
+			<setpointdata name="5GHz">0 1 0 0 1 1</setpointdata>
+			<setpointdata name="5.1GHz">1 1 0 0 1 1</setpointdata>
+			<setpointdata name="5.2GHz">0 0 1 0 1 1</setpointdata>
+			<setpointdata name="5.3GHz">1 0 1 0 1 1</setpointdata>
+			<setpointdata name="PM_DEFAULT">0 0 0 1 0 0</setpointdata>
+		</subset>
+		<subset name='patmod_core_ratio_FuseOverrideString__patmod_in__core_ratio_PUNIT_PUNIT_FUSES_BOOT_IA_RATIO_CCP4'>
+			<setpointdata name="0.4GHz">0 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.5GHz">1 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.6GHz">0 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.7GHz">1 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.8GHz">0 0 0 1 0 0</setpointdata>
+			<setpointdata name="0.9GHz">1 0 0 1 0 0</setpointdata>
+			<setpointdata name="1GHz">0 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.1GHz">1 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.2GHz">0 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.3GHz">1 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.4GHz">0 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.5GHz">1 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.6GHz">0 0 0 0 1 0</setpointdata>
+			<setpointdata name="1.7GHz">1 0 0 0 1 0</setpointdata>
+			<setpointdata name="1.8GHz">0 1 0 0 1 0</setpointdata>
+			<setpointdata name="1.9GHz">1 1 0 0 1 0</setpointdata>
+			<setpointdata name="2GHz">0 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.1GHz">1 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.2GHz">0 1 1 0 1 0</setpointdata>
+			<setpointdata name="2.3GHz">1 1 1 0 1 0</setpointdata>
+			<setpointdata name="2.4GHz">0 0 0 1 1 0</setpointdata>
+			<setpointdata name="2.5GHz">1 0 0 1 1 0</setpointdata>
+			<setpointdata name="2.6GHz">0 1 0 1 1 0</setpointdata>
+			<setpointdata name="2.7GHz">1 1 0 1 1 0</setpointdata>
+			<setpointdata name="2.8GHz">0 0 1 1 1 0</setpointdata>
+			<setpointdata name="2.9GHz">1 0 1 1 1 0</setpointdata>
+			<setpointdata name="3GHz">0 1 1 1 1 0</setpointdata>
+			<setpointdata name="3.1GHz">1 1 1 1 1 0</setpointdata>
+			<setpointdata name="3.2GHz">0 0 0 0 0 1</setpointdata>
+			<setpointdata name="3.3GHz">1 0 0 0 0 1</setpointdata>
+			<setpointdata name="3.4GHz">0 1 0 0 0 1</setpointdata>
+			<setpointdata name="3.5GHz">1 1 0 0 0 1</setpointdata>
+			<setpointdata name="3.6GHz">0 0 1 0 0 1</setpointdata>
+			<setpointdata name="3.7GHz">1 0 1 0 0 1</setpointdata>
+			<setpointdata name="3.8GHz">0 1 1 0 0 1</setpointdata>
+			<setpointdata name="3.9GHz">1 1 1 0 0 1</setpointdata>
+			<setpointdata name="4GHz">0 0 0 1 0 1</setpointdata>
+			<setpointdata name="4.1GHz">1 0 0 1 0 1</setpointdata>
+			<setpointdata name="4.2GHz">0 1 0 1 0 1</setpointdata>
+			<setpointdata name="4.3GHz">1 1 0 1 0 1</setpointdata>
+			<setpointdata name="4.4GHz">0 0 1 1 0 1</setpointdata>
+			<setpointdata name="4.5GHz">1 0 1 1 0 1</setpointdata>
+			<setpointdata name="4.6GHz">0 1 1 1 0 1</setpointdata>
+			<setpointdata name="4.7GHz">1 1 1 1 0 1</setpointdata>
+			<setpointdata name="4.8GHz">0 0 0 0 1 1</setpointdata>
+			<setpointdata name="4.9GHz">1 0 0 0 1 1</setpointdata>
+			<setpointdata name="5GHz">0 1 0 0 1 1</setpointdata>
+			<setpointdata name="5.1GHz">1 1 0 0 1 1</setpointdata>
+			<setpointdata name="5.2GHz">0 0 1 0 1 1</setpointdata>
+			<setpointdata name="5.3GHz">1 0 1 0 1 1</setpointdata>
+			<setpointdata name="PM_DEFAULT">0 0 0 1 0 0</setpointdata>
+		</subset>
+		<subset name='patmod_core_ratio_FuseOverrideString__patmod_in__core_ratio_PUNIT_PUNIT_FUSES_BOOT_IA_RATIO_CCP5'>
+			<setpointdata name="0.4GHz">0 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.5GHz">1 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.6GHz">0 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.7GHz">1 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.8GHz">0 0 0 1 0 0</setpointdata>
+			<setpointdata name="0.9GHz">1 0 0 1 0 0</setpointdata>
+			<setpointdata name="1GHz">0 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.1GHz">1 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.2GHz">0 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.3GHz">1 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.4GHz">0 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.5GHz">1 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.6GHz">0 0 0 0 1 0</setpointdata>
+			<setpointdata name="1.7GHz">1 0 0 0 1 0</setpointdata>
+			<setpointdata name="1.8GHz">0 1 0 0 1 0</setpointdata>
+			<setpointdata name="1.9GHz">1 1 0 0 1 0</setpointdata>
+			<setpointdata name="2GHz">0 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.1GHz">1 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.2GHz">0 1 1 0 1 0</setpointdata>
+			<setpointdata name="2.3GHz">1 1 1 0 1 0</setpointdata>
+			<setpointdata name="2.4GHz">0 0 0 1 1 0</setpointdata>
+			<setpointdata name="2.5GHz">1 0 0 1 1 0</setpointdata>
+			<setpointdata name="2.6GHz">0 1 0 1 1 0</setpointdata>
+			<setpointdata name="2.7GHz">1 1 0 1 1 0</setpointdata>
+			<setpointdata name="2.8GHz">0 0 1 1 1 0</setpointdata>
+			<setpointdata name="2.9GHz">1 0 1 1 1 0</setpointdata>
+			<setpointdata name="3GHz">0 1 1 1 1 0</setpointdata>
+			<setpointdata name="3.1GHz">1 1 1 1 1 0</setpointdata>
+			<setpointdata name="3.2GHz">0 0 0 0 0 1</setpointdata>
+			<setpointdata name="3.3GHz">1 0 0 0 0 1</setpointdata>
+			<setpointdata name="3.4GHz">0 1 0 0 0 1</setpointdata>
+			<setpointdata name="3.5GHz">1 1 0 0 0 1</setpointdata>
+			<setpointdata name="3.6GHz">0 0 1 0 0 1</setpointdata>
+			<setpointdata name="3.7GHz">1 0 1 0 0 1</setpointdata>
+			<setpointdata name="3.8GHz">0 1 1 0 0 1</setpointdata>
+			<setpointdata name="3.9GHz">1 1 1 0 0 1</setpointdata>
+			<setpointdata name="4GHz">0 0 0 1 0 1</setpointdata>
+			<setpointdata name="4.1GHz">1 0 0 1 0 1</setpointdata>
+			<setpointdata name="4.2GHz">0 1 0 1 0 1</setpointdata>
+			<setpointdata name="4.3GHz">1 1 0 1 0 1</setpointdata>
+			<setpointdata name="4.4GHz">0 0 1 1 0 1</setpointdata>
+			<setpointdata name="4.5GHz">1 0 1 1 0 1</setpointdata>
+			<setpointdata name="4.6GHz">0 1 1 1 0 1</setpointdata>
+			<setpointdata name="4.7GHz">1 1 1 1 0 1</setpointdata>
+			<setpointdata name="4.8GHz">0 0 0 0 1 1</setpointdata>
+			<setpointdata name="4.9GHz">1 0 0 0 1 1</setpointdata>
+			<setpointdata name="5GHz">0 1 0 0 1 1</setpointdata>
+			<setpointdata name="5.1GHz">1 1 0 0 1 1</setpointdata>
+			<setpointdata name="5.2GHz">0 0 1 0 1 1</setpointdata>
+			<setpointdata name="5.3GHz">1 0 1 0 1 1</setpointdata>
+			<setpointdata name="PM_DEFAULT">0 0 0 1 0 0</setpointdata>
+		</subset>
+		<subset name='patmod_core_ratio_FuseOverrideString__patmod_in__core_ratio_PUNIT_PUNIT_FUSES_BOOT_IA_RATIO_CCP6'>
+			<setpointdata name="0.4GHz">0 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.5GHz">1 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.6GHz">0 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.7GHz">1 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.8GHz">0 0 0 1 0 0</setpointdata>
+			<setpointdata name="0.9GHz">1 0 0 1 0 0</setpointdata>
+			<setpointdata name="1GHz">0 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.1GHz">1 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.2GHz">0 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.3GHz">1 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.4GHz">0 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.5GHz">1 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.6GHz">0 0 0 0 1 0</setpointdata>
+			<setpointdata name="1.7GHz">1 0 0 0 1 0</setpointdata>
+			<setpointdata name="1.8GHz">0 1 0 0 1 0</setpointdata>
+			<setpointdata name="1.9GHz">1 1 0 0 1 0</setpointdata>
+			<setpointdata name="2GHz">0 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.1GHz">1 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.2GHz">0 1 1 0 1 0</setpointdata>
+			<setpointdata name="2.3GHz">1 1 1 0 1 0</setpointdata>
+			<setpointdata name="2.4GHz">0 0 0 1 1 0</setpointdata>
+			<setpointdata name="2.5GHz">1 0 0 1 1 0</setpointdata>
+			<setpointdata name="2.6GHz">0 1 0 1 1 0</setpointdata>
+			<setpointdata name="2.7GHz">1 1 0 1 1 0</setpointdata>
+			<setpointdata name="2.8GHz">0 0 1 1 1 0</setpointdata>
+			<setpointdata name="2.9GHz">1 0 1 1 1 0</setpointdata>
+			<setpointdata name="3GHz">0 1 1 1 1 0</setpointdata>
+			<setpointdata name="3.1GHz">1 1 1 1 1 0</setpointdata>
+			<setpointdata name="3.2GHz">0 0 0 0 0 1</setpointdata>
+			<setpointdata name="3.3GHz">1 0 0 0 0 1</setpointdata>
+			<setpointdata name="3.4GHz">0 1 0 0 0 1</setpointdata>
+			<setpointdata name="3.5GHz">1 1 0 0 0 1</setpointdata>
+			<setpointdata name="3.6GHz">0 0 1 0 0 1</setpointdata>
+			<setpointdata name="3.7GHz">1 0 1 0 0 1</setpointdata>
+			<setpointdata name="3.8GHz">0 1 1 0 0 1</setpointdata>
+			<setpointdata name="3.9GHz">1 1 1 0 0 1</setpointdata>
+			<setpointdata name="4GHz">0 0 0 1 0 1</setpointdata>
+			<setpointdata name="4.1GHz">1 0 0 1 0 1</setpointdata>
+			<setpointdata name="4.2GHz">0 1 0 1 0 1</setpointdata>
+			<setpointdata name="4.3GHz">1 1 0 1 0 1</setpointdata>
+			<setpointdata name="4.4GHz">0 0 1 1 0 1</setpointdata>
+			<setpointdata name="4.5GHz">1 0 1 1 0 1</setpointdata>
+			<setpointdata name="4.6GHz">0 1 1 1 0 1</setpointdata>
+			<setpointdata name="4.7GHz">1 1 1 1 0 1</setpointdata>
+			<setpointdata name="4.8GHz">0 0 0 0 1 1</setpointdata>
+			<setpointdata name="4.9GHz">1 0 0 0 1 1</setpointdata>
+			<setpointdata name="5GHz">0 1 0 0 1 1</setpointdata>
+			<setpointdata name="5.1GHz">1 1 0 0 1 1</setpointdata>
+			<setpointdata name="5.2GHz">0 0 1 0 1 1</setpointdata>
+			<setpointdata name="5.3GHz">1 0 1 0 1 1</setpointdata>
+			<setpointdata name="PM_DEFAULT">0 0 0 1 0 0</setpointdata>
+		</subset>
+		<subset name='patmod_core_ratio_FuseOverrideString__patmod_in__core_ratio_PUNIT_PUNIT_FUSES_BOOT_IA_RATIO_CCP7'>
+			<setpointdata name="0.4GHz">0 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.5GHz">1 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.6GHz">0 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.7GHz">1 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.8GHz">0 0 0 1 0 0</setpointdata>
+			<setpointdata name="0.9GHz">1 0 0 1 0 0</setpointdata>
+			<setpointdata name="1GHz">0 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.1GHz">1 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.2GHz">0 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.3GHz">1 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.4GHz">0 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.5GHz">1 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.6GHz">0 0 0 0 1 0</setpointdata>
+			<setpointdata name="1.7GHz">1 0 0 0 1 0</setpointdata>
+			<setpointdata name="1.8GHz">0 1 0 0 1 0</setpointdata>
+			<setpointdata name="1.9GHz">1 1 0 0 1 0</setpointdata>
+			<setpointdata name="2GHz">0 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.1GHz">1 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.2GHz">0 1 1 0 1 0</setpointdata>
+			<setpointdata name="2.3GHz">1 1 1 0 1 0</setpointdata>
+			<setpointdata name="2.4GHz">0 0 0 1 1 0</setpointdata>
+			<setpointdata name="2.5GHz">1 0 0 1 1 0</setpointdata>
+			<setpointdata name="2.6GHz">0 1 0 1 1 0</setpointdata>
+			<setpointdata name="2.7GHz">1 1 0 1 1 0</setpointdata>
+			<setpointdata name="2.8GHz">0 0 1 1 1 0</setpointdata>
+			<setpointdata name="2.9GHz">1 0 1 1 1 0</setpointdata>
+			<setpointdata name="3GHz">0 1 1 1 1 0</setpointdata>
+			<setpointdata name="3.1GHz">1 1 1 1 1 0</setpointdata>
+			<setpointdata name="3.2GHz">0 0 0 0 0 1</setpointdata>
+			<setpointdata name="3.3GHz">1 0 0 0 0 1</setpointdata>
+			<setpointdata name="3.4GHz">0 1 0 0 0 1</setpointdata>
+			<setpointdata name="3.5GHz">1 1 0 0 0 1</setpointdata>
+			<setpointdata name="3.6GHz">0 0 1 0 0 1</setpointdata>
+			<setpointdata name="3.7GHz">1 0 1 0 0 1</setpointdata>
+			<setpointdata name="3.8GHz">0 1 1 0 0 1</setpointdata>
+			<setpointdata name="3.9GHz">1 1 1 0 0 1</setpointdata>
+			<setpointdata name="4GHz">0 0 0 1 0 1</setpointdata>
+			<setpointdata name="4.1GHz">1 0 0 1 0 1</setpointdata>
+			<setpointdata name="4.2GHz">0 1 0 1 0 1</setpointdata>
+			<setpointdata name="4.3GHz">1 1 0 1 0 1</setpointdata>
+			<setpointdata name="4.4GHz">0 0 1 1 0 1</setpointdata>
+			<setpointdata name="4.5GHz">1 0 1 1 0 1</setpointdata>
+			<setpointdata name="4.6GHz">0 1 1 1 0 1</setpointdata>
+			<setpointdata name="4.7GHz">1 1 1 1 0 1</setpointdata>
+			<setpointdata name="4.8GHz">0 0 0 0 1 1</setpointdata>
+			<setpointdata name="4.9GHz">1 0 0 0 1 1</setpointdata>
+			<setpointdata name="5GHz">0 1 0 0 1 1</setpointdata>
+			<setpointdata name="5.1GHz">1 1 0 0 1 1</setpointdata>
+			<setpointdata name="5.2GHz">0 0 1 0 1 1</setpointdata>
+			<setpointdata name="5.3GHz">1 0 1 0 1 1</setpointdata>
+			<setpointdata name="PM_DEFAULT">0 0 0 1 0 0</setpointdata>
+		</subset>
+		<subset name='patmod_core_ratio_FuseOverrideString__patmod_in__core_ratio_PUNIT_PUNIT_FUSES_IA_MIN_RATIO'>
+			<setpointdata name="0.4GHz">0 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.5GHz">1 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.6GHz">0 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.7GHz">1 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.8GHz">0 0 0 1 0 0</setpointdata>
+			<setpointdata name="0.9GHz">1 0 0 1 0 0</setpointdata>
+			<setpointdata name="1GHz">0 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.1GHz">1 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.2GHz">0 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.3GHz">1 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.4GHz">0 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.5GHz">1 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.6GHz">0 0 0 0 1 0</setpointdata>
+			<setpointdata name="1.7GHz">1 0 0 0 1 0</setpointdata>
+			<setpointdata name="1.8GHz">0 1 0 0 1 0</setpointdata>
+			<setpointdata name="1.9GHz">1 1 0 0 1 0</setpointdata>
+			<setpointdata name="2GHz">0 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.1GHz">1 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.2GHz">0 1 1 0 1 0</setpointdata>
+			<setpointdata name="2.3GHz">1 1 1 0 1 0</setpointdata>
+			<setpointdata name="2.4GHz">0 0 0 1 1 0</setpointdata>
+			<setpointdata name="2.5GHz">1 0 0 1 1 0</setpointdata>
+			<setpointdata name="2.6GHz">0 1 0 1 1 0</setpointdata>
+			<setpointdata name="2.7GHz">1 1 0 1 1 0</setpointdata>
+			<setpointdata name="2.8GHz">0 0 1 1 1 0</setpointdata>
+			<setpointdata name="2.9GHz">1 0 1 1 1 0</setpointdata>
+			<setpointdata name="3GHz">0 1 1 1 1 0</setpointdata>
+			<setpointdata name="3.1GHz">1 1 1 1 1 0</setpointdata>
+			<setpointdata name="3.2GHz">0 0 0 0 0 1</setpointdata>
+			<setpointdata name="3.3GHz">1 0 0 0 0 1</setpointdata>
+			<setpointdata name="3.4GHz">0 1 0 0 0 1</setpointdata>
+			<setpointdata name="3.5GHz">1 1 0 0 0 1</setpointdata>
+			<setpointdata name="3.6GHz">0 0 1 0 0 1</setpointdata>
+			<setpointdata name="3.7GHz">1 0 1 0 0 1</setpointdata>
+			<setpointdata name="3.8GHz">0 1 1 0 0 1</setpointdata>
+			<setpointdata name="3.9GHz">1 1 1 0 0 1</setpointdata>
+			<setpointdata name="4GHz">0 0 0 1 0 1</setpointdata>
+			<setpointdata name="4.1GHz">1 0 0 1 0 1</setpointdata>
+			<setpointdata name="4.2GHz">0 1 0 1 0 1</setpointdata>
+			<setpointdata name="4.3GHz">1 1 0 1 0 1</setpointdata>
+			<setpointdata name="4.4GHz">0 0 1 1 0 1</setpointdata>
+			<setpointdata name="4.5GHz">1 0 1 1 0 1</setpointdata>
+			<setpointdata name="4.6GHz">0 1 1 1 0 1</setpointdata>
+			<setpointdata name="4.7GHz">1 1 1 1 0 1</setpointdata>
+			<setpointdata name="4.8GHz">0 0 0 0 1 1</setpointdata>
+			<setpointdata name="4.9GHz">1 0 0 0 1 1</setpointdata>
+			<setpointdata name="5GHz">0 1 0 0 1 1</setpointdata>
+			<setpointdata name="5.1GHz">1 1 0 0 1 1</setpointdata>
+			<setpointdata name="5.2GHz">0 0 1 0 1 1</setpointdata>
+			<setpointdata name="5.3GHz">1 0 1 0 1 1</setpointdata>
+			<setpointdata name="PM_DEFAULT">0 0 0 1 0 0</setpointdata>
+		</subset>
+		<subset name='patmod_core_ratio_FuseOverrideString__patmod_in__core_ratio_PUNIT_PUNIT_FUSES_IA_P0_RATIO'>
+			<setpointdata name="0.4GHz">0 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.5GHz">1 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.6GHz">0 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.7GHz">1 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.8GHz">0 0 0 1 0 0</setpointdata>
+			<setpointdata name="0.9GHz">1 0 0 1 0 0</setpointdata>
+			<setpointdata name="1GHz">0 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.1GHz">1 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.2GHz">0 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.3GHz">1 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.4GHz">0 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.5GHz">1 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.6GHz">0 0 0 0 1 0</setpointdata>
+			<setpointdata name="1.7GHz">1 0 0 0 1 0</setpointdata>
+			<setpointdata name="1.8GHz">0 1 0 0 1 0</setpointdata>
+			<setpointdata name="1.9GHz">1 1 0 0 1 0</setpointdata>
+			<setpointdata name="2GHz">0 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.1GHz">1 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.2GHz">0 1 1 0 1 0</setpointdata>
+			<setpointdata name="2.3GHz">1 1 1 0 1 0</setpointdata>
+			<setpointdata name="2.4GHz">0 0 0 1 1 0</setpointdata>
+			<setpointdata name="2.5GHz">1 0 0 1 1 0</setpointdata>
+			<setpointdata name="2.6GHz">0 1 0 1 1 0</setpointdata>
+			<setpointdata name="2.7GHz">1 1 0 1 1 0</setpointdata>
+			<setpointdata name="2.8GHz">0 0 1 1 1 0</setpointdata>
+			<setpointdata name="2.9GHz">1 0 1 1 1 0</setpointdata>
+			<setpointdata name="3GHz">0 1 1 1 1 0</setpointdata>
+			<setpointdata name="3.1GHz">1 1 1 1 1 0</setpointdata>
+			<setpointdata name="3.2GHz">0 0 0 0 0 1</setpointdata>
+			<setpointdata name="3.3GHz">1 0 0 0 0 1</setpointdata>
+			<setpointdata name="3.4GHz">0 1 0 0 0 1</setpointdata>
+			<setpointdata name="3.5GHz">1 1 0 0 0 1</setpointdata>
+			<setpointdata name="3.6GHz">0 0 1 0 0 1</setpointdata>
+			<setpointdata name="3.7GHz">1 0 1 0 0 1</setpointdata>
+			<setpointdata name="3.8GHz">0 1 1 0 0 1</setpointdata>
+			<setpointdata name="3.9GHz">1 1 1 0 0 1</setpointdata>
+			<setpointdata name="4GHz">0 0 0 1 0 1</setpointdata>
+			<setpointdata name="4.1GHz">1 0 0 1 0 1</setpointdata>
+			<setpointdata name="4.2GHz">0 1 0 1 0 1</setpointdata>
+			<setpointdata name="4.3GHz">1 1 0 1 0 1</setpointdata>
+			<setpointdata name="4.4GHz">0 0 1 1 0 1</setpointdata>
+			<setpointdata name="4.5GHz">1 0 1 1 0 1</setpointdata>
+			<setpointdata name="4.6GHz">0 1 1 1 0 1</setpointdata>
+			<setpointdata name="4.7GHz">1 1 1 1 0 1</setpointdata>
+			<setpointdata name="4.8GHz">0 0 0 0 1 1</setpointdata>
+			<setpointdata name="4.9GHz">1 0 0 0 1 1</setpointdata>
+			<setpointdata name="5GHz">0 1 0 0 1 1</setpointdata>
+			<setpointdata name="5.1GHz">1 1 0 0 1 1</setpointdata>
+			<setpointdata name="5.2GHz">0 0 1 0 1 1</setpointdata>
+			<setpointdata name="5.3GHz">1 0 1 0 1 1</setpointdata>
+			<setpointdata name="PM_DEFAULT">0 0 0 1 0 0</setpointdata>
+		</subset>
+		<subset name='patmod_core_ratio_FuseOverrideString__patmod_in__core_ratio_PUNIT_PUNIT_FUSES_IA_P1_RATIO'>
+			<setpointdata name="0.4GHz">0 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.5GHz">1 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.6GHz">0 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.7GHz">1 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.8GHz">0 0 0 1 0 0</setpointdata>
+			<setpointdata name="0.9GHz">1 0 0 1 0 0</setpointdata>
+			<setpointdata name="1GHz">0 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.1GHz">1 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.2GHz">0 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.3GHz">1 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.4GHz">0 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.5GHz">1 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.6GHz">0 0 0 0 1 0</setpointdata>
+			<setpointdata name="1.7GHz">1 0 0 0 1 0</setpointdata>
+			<setpointdata name="1.8GHz">0 1 0 0 1 0</setpointdata>
+			<setpointdata name="1.9GHz">1 1 0 0 1 0</setpointdata>
+			<setpointdata name="2GHz">0 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.1GHz">1 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.2GHz">0 1 1 0 1 0</setpointdata>
+			<setpointdata name="2.3GHz">1 1 1 0 1 0</setpointdata>
+			<setpointdata name="2.4GHz">0 0 0 1 1 0</setpointdata>
+			<setpointdata name="2.5GHz">1 0 0 1 1 0</setpointdata>
+			<setpointdata name="2.6GHz">0 1 0 1 1 0</setpointdata>
+			<setpointdata name="2.7GHz">1 1 0 1 1 0</setpointdata>
+			<setpointdata name="2.8GHz">0 0 1 1 1 0</setpointdata>
+			<setpointdata name="2.9GHz">1 0 1 1 1 0</setpointdata>
+			<setpointdata name="3GHz">0 1 1 1 1 0</setpointdata>
+			<setpointdata name="3.1GHz">1 1 1 1 1 0</setpointdata>
+			<setpointdata name="3.2GHz">0 0 0 0 0 1</setpointdata>
+			<setpointdata name="3.3GHz">1 0 0 0 0 1</setpointdata>
+			<setpointdata name="3.4GHz">0 1 0 0 0 1</setpointdata>
+			<setpointdata name="3.5GHz">1 1 0 0 0 1</setpointdata>
+			<setpointdata name="3.6GHz">0 0 1 0 0 1</setpointdata>
+			<setpointdata name="3.7GHz">1 0 1 0 0 1</setpointdata>
+			<setpointdata name="3.8GHz">0 1 1 0 0 1</setpointdata>
+			<setpointdata name="3.9GHz">1 1 1 0 0 1</setpointdata>
+			<setpointdata name="4GHz">0 0 0 1 0 1</setpointdata>
+			<setpointdata name="4.1GHz">1 0 0 1 0 1</setpointdata>
+			<setpointdata name="4.2GHz">0 1 0 1 0 1</setpointdata>
+			<setpointdata name="4.3GHz">1 1 0 1 0 1</setpointdata>
+			<setpointdata name="4.4GHz">0 0 1 1 0 1</setpointdata>
+			<setpointdata name="4.5GHz">1 0 1 1 0 1</setpointdata>
+			<setpointdata name="4.6GHz">0 1 1 1 0 1</setpointdata>
+			<setpointdata name="4.7GHz">1 1 1 1 0 1</setpointdata>
+			<setpointdata name="4.8GHz">0 0 0 0 1 1</setpointdata>
+			<setpointdata name="4.9GHz">1 0 0 0 1 1</setpointdata>
+			<setpointdata name="5GHz">0 1 0 0 1 1</setpointdata>
+			<setpointdata name="5.1GHz">1 1 0 0 1 1</setpointdata>
+			<setpointdata name="5.2GHz">0 0 1 0 1 1</setpointdata>
+			<setpointdata name="5.3GHz">1 0 1 0 1 1</setpointdata>
+			<setpointdata name="PM_DEFAULT">0 0 0 1 0 0</setpointdata>
+		</subset>
+		<subset name='patmod_core_ratio_FuseOverrideString__patmod_in__core_ratio_PUNIT_PUNIT_FUSES_IA_PN_RATIO'>
+			<setpointdata name="0.4GHz">0 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.5GHz">1 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.6GHz">0 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.7GHz">1 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.8GHz">0 0 0 1 0 0</setpointdata>
+			<setpointdata name="0.9GHz">1 0 0 1 0 0</setpointdata>
+			<setpointdata name="1GHz">0 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.1GHz">1 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.2GHz">0 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.3GHz">1 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.4GHz">0 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.5GHz">1 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.6GHz">0 0 0 0 1 0</setpointdata>
+			<setpointdata name="1.7GHz">1 0 0 0 1 0</setpointdata>
+			<setpointdata name="1.8GHz">0 1 0 0 1 0</setpointdata>
+			<setpointdata name="1.9GHz">1 1 0 0 1 0</setpointdata>
+			<setpointdata name="2GHz">0 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.1GHz">1 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.2GHz">0 1 1 0 1 0</setpointdata>
+			<setpointdata name="2.3GHz">1 1 1 0 1 0</setpointdata>
+			<setpointdata name="2.4GHz">0 0 0 1 1 0</setpointdata>
+			<setpointdata name="2.5GHz">1 0 0 1 1 0</setpointdata>
+			<setpointdata name="2.6GHz">0 1 0 1 1 0</setpointdata>
+			<setpointdata name="2.7GHz">1 1 0 1 1 0</setpointdata>
+			<setpointdata name="2.8GHz">0 0 1 1 1 0</setpointdata>
+			<setpointdata name="2.9GHz">1 0 1 1 1 0</setpointdata>
+			<setpointdata name="3GHz">0 1 1 1 1 0</setpointdata>
+			<setpointdata name="3.1GHz">1 1 1 1 1 0</setpointdata>
+			<setpointdata name="3.2GHz">0 0 0 0 0 1</setpointdata>
+			<setpointdata name="3.3GHz">1 0 0 0 0 1</setpointdata>
+			<setpointdata name="3.4GHz">0 1 0 0 0 1</setpointdata>
+			<setpointdata name="3.5GHz">1 1 0 0 0 1</setpointdata>
+			<setpointdata name="3.6GHz">0 0 1 0 0 1</setpointdata>
+			<setpointdata name="3.7GHz">1 0 1 0 0 1</setpointdata>
+			<setpointdata name="3.8GHz">0 1 1 0 0 1</setpointdata>
+			<setpointdata name="3.9GHz">1 1 1 0 0 1</setpointdata>
+			<setpointdata name="4GHz">0 0 0 1 0 1</setpointdata>
+			<setpointdata name="4.1GHz">1 0 0 1 0 1</setpointdata>
+			<setpointdata name="4.2GHz">0 1 0 1 0 1</setpointdata>
+			<setpointdata name="4.3GHz">1 1 0 1 0 1</setpointdata>
+			<setpointdata name="4.4GHz">0 0 1 1 0 1</setpointdata>
+			<setpointdata name="4.5GHz">1 0 1 1 0 1</setpointdata>
+			<setpointdata name="4.6GHz">0 1 1 1 0 1</setpointdata>
+			<setpointdata name="4.7GHz">1 1 1 1 0 1</setpointdata>
+			<setpointdata name="4.8GHz">0 0 0 0 1 1</setpointdata>
+			<setpointdata name="4.9GHz">1 0 0 0 1 1</setpointdata>
+			<setpointdata name="5GHz">0 1 0 0 1 1</setpointdata>
+			<setpointdata name="5.1GHz">1 1 0 0 1 1</setpointdata>
+			<setpointdata name="5.2GHz">0 0 1 0 1 1</setpointdata>
+			<setpointdata name="5.3GHz">1 0 1 0 1 1</setpointdata>
+			<setpointdata name="PM_DEFAULT">0 0 0 1 0 0</setpointdata>
+		</subset>
+	</pattern_modify_group_data>
+
+	<pattern_modify_group_data name='ddr_ref_fuse'>
+		<subset name='patmod_ddr_ref_fuse_FuseOverrideString__patmod_in__ddr_ref_fuse_PUNIT_PUNIT_FUSES_PLL_REF100_CFG'>
+			<setpointdata name="PM_DEFAULT">1 1 1</setpointdata>
+			<setpointdata name="ddrref_fuse_100">1 1 1</setpointdata>
+			<setpointdata name="ddrref_fuse_133">0 0 0</setpointdata>
+		</subset>
+	</pattern_modify_group_data>
+
+	<pattern_modify_group_data name='ddrratio'>
+		<subset name='patmod_ddrratio_Set_HVMWatermalon_EARLYMC__patmod_in__ddrratio_ddr_ratio'>
+			<setpointdata name="PM_DEFAULT">0 0 0 0 1 0 0 0</setpointdata>
+			<setpointdata name="ddrratio_10">0 1 0 1 0 0 0 0</setpointdata>
+			<setpointdata name="ddrratio_11">1 1 0 1 0 0 0 0</setpointdata>
+			<setpointdata name="ddrratio_12">0 0 1 1 0 0 0 0</setpointdata>
+			<setpointdata name="ddrratio_13">1 0 1 1 0 0 0 0</setpointdata>
+			<setpointdata name="ddrratio_14">0 1 1 1 0 0 0 0</setpointdata>
+			<setpointdata name="ddrratio_15">1 1 1 1 0 0 0 0</setpointdata>
+			<setpointdata name="ddrratio_16">0 0 0 0 1 0 0 0</setpointdata>
+			<setpointdata name="ddrratio_17">1 0 0 0 1 0 0 0</setpointdata>
+			<setpointdata name="ddrratio_18">0 1 0 0 1 0 0 0</setpointdata>
+			<setpointdata name="ddrratio_19">1 1 0 0 1 0 0 0</setpointdata>
+			<setpointdata name="ddrratio_20">0 0 1 0 1 0 0 0</setpointdata>
+			<setpointdata name="ddrratio_21">1 0 1 0 1 0 0 0</setpointdata>
+			<setpointdata name="ddrratio_22">0 1 1 0 1 0 0 0</setpointdata>
+			<setpointdata name="ddrratio_23">1 1 1 0 1 0 0 0</setpointdata>
+			<setpointdata name="ddrratio_24">0 0 0 1 1 0 0 0</setpointdata>
+			<setpointdata name="ddrratio_25">1 0 0 1 1 0 0 0</setpointdata>
+			<setpointdata name="ddrratio_26">0 1 0 1 1 0 0 0</setpointdata>
+			<setpointdata name="ddrratio_27">1 1 0 1 1 0 0 0</setpointdata>
+			<setpointdata name="ddrratio_28">0 0 1 1 1 0 0 0</setpointdata>
+			<setpointdata name="ddrratio_29">1 0 1 1 1 0 0 0</setpointdata>
+			<setpointdata name="ddrratio_30">0 1 1 1 1 0 0 0</setpointdata>
+			<setpointdata name="ddrratio_31">1 1 1 1 1 0 0 0</setpointdata>
+			<setpointdata name="ddrratio_32">0 0 0 0 0 1 0 0</setpointdata>
+			<setpointdata name="ddrratio_5">1 0 1 0 0 0 0 0</setpointdata>
+			<setpointdata name="ddrratio_6">0 1 1 0 0 0 0 0</setpointdata>
+			<setpointdata name="ddrratio_7">1 1 1 0 0 0 0 0</setpointdata>
+			<setpointdata name="ddrratio_8">0 0 0 1 0 0 0 0</setpointdata>
+			<setpointdata name="ddrratio_9">1 0 0 1 0 0 0 0</setpointdata>
+		</subset>
+		<subset name='patmod_ddrratio_internal_ReadMcBiosPllStatus__patmod_out__ddrratio'>
+			<setpointdata name="PM_DEFAULT">L L L L H L L L</setpointdata>
+			<setpointdata name="ddrratio_10">L H L H L L L L</setpointdata>
+			<setpointdata name="ddrratio_11">H H L H L L L L</setpointdata>
+			<setpointdata name="ddrratio_12">L L H H L L L L</setpointdata>
+			<setpointdata name="ddrratio_13">H L H H L L L L</setpointdata>
+			<setpointdata name="ddrratio_14">L H H H L L L L</setpointdata>
+			<setpointdata name="ddrratio_15">H H H H L L L L</setpointdata>
+			<setpointdata name="ddrratio_16">L L L L H L L L</setpointdata>
+			<setpointdata name="ddrratio_17">H L L L H L L L</setpointdata>
+			<setpointdata name="ddrratio_18">L H L L H L L L</setpointdata>
+			<setpointdata name="ddrratio_19">H H L L H L L L</setpointdata>
+			<setpointdata name="ddrratio_20">L L H L H L L L</setpointdata>
+			<setpointdata name="ddrratio_21">H L H L H L L L</setpointdata>
+			<setpointdata name="ddrratio_22">L H H L H L L L</setpointdata>
+			<setpointdata name="ddrratio_23">H H H L H L L L</setpointdata>
+			<setpointdata name="ddrratio_24">L L L H H L L L</setpointdata>
+			<setpointdata name="ddrratio_25">H L L H H L L L</setpointdata>
+			<setpointdata name="ddrratio_26">L H L H H L L L</setpointdata>
+			<setpointdata name="ddrratio_27">H H L H H L L L</setpointdata>
+			<setpointdata name="ddrratio_28">L L H H H L L L</setpointdata>
+			<setpointdata name="ddrratio_29">H L H H H L L L</setpointdata>
+			<setpointdata name="ddrratio_30">L H H H H L L L</setpointdata>
+			<setpointdata name="ddrratio_31">H H H H H L L L</setpointdata>
+			<setpointdata name="ddrratio_32">L L L L L H L L</setpointdata>
+			<setpointdata name="ddrratio_5">H L H L L L L L</setpointdata>
+			<setpointdata name="ddrratio_6">L H H L L L L L</setpointdata>
+			<setpointdata name="ddrratio_7">H H H L L L L L</setpointdata>
+			<setpointdata name="ddrratio_8">L L L H L L L L</setpointdata>
+			<setpointdata name="ddrratio_9">H L L H L L L L</setpointdata>
+		</subset>
+	</pattern_modify_group_data>
+
+	<pattern_modify_group_data name='ddrref'>
+		<subset name='patmod_ddrref_Set_HVMWatermalon_EARLYMC__patmod_in__ddrref_ddr_ref'>
+			<setpointdata name="PM_DEFAULT">1</setpointdata>
+			<setpointdata name="ddrref_100">1</setpointdata>
+			<setpointdata name="ddrref_133">0</setpointdata>
+		</subset>
+	</pattern_modify_group_data>
+
+	<pattern_modify_group_data name='ddrref_read'>
+		<subset name='patmod_ddrref_read_internal_ReadMcBiosPllStatus__patmod_out__ddrref_read'>
+			<setpointdata name="PM_DEFAULT">H L L L</setpointdata>
+			<setpointdata name="ddrref_read_100">H L L L</setpointdata>
+			<setpointdata name="ddrref_read_133">L L L L</setpointdata>
+		</subset>
+	</pattern_modify_group_data>
+
+	<pattern_modify_group_data name='fivr_sort_mode'>
+		<subset name='patmod_fivr_sort_mode_Sethvmmodecfg__patmod_in__fivr_sort_mode_fivr_sort_mode'>
+			<setpointdata name="PM_DEFAULT">1</setpointdata>
+			<setpointdata name="fivr_sort_mode_disabled">0</setpointdata>
+			<setpointdata name="fivr_sort_mode_enabled">1</setpointdata>
+		</subset>
+	</pattern_modify_group_data>
+
+	<pattern_modify_group_data name='gtratio'>
+		<subset name='patmod_gtratio_FuseOverrideString__patmod_in__gtratio_PUNIT_PUNIT_FUSES_GT_P0_RATIO'>
+			<setpointdata name="0.1GHz">0 1 0 0 0 0</setpointdata>
+			<setpointdata name="0.2GHz">0 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.3GHz">0 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.4GHz">0 0 0 1 0 0</setpointdata>
+			<setpointdata name="0.45GHz">1 0 0 1 0 0</setpointdata>
+			<setpointdata name="0.5GHz">0 1 0 1 0 0</setpointdata>
+			<setpointdata name="0.55GHz">1 1 0 1 0 0</setpointdata>
+			<setpointdata name="0.6GHz">0 0 1 1 0 0</setpointdata>
+			<setpointdata name="0.65GHz">1 0 1 1 0 0</setpointdata>
+			<setpointdata name="0.7GHz">0 1 1 1 0 0</setpointdata>
+			<setpointdata name="0.75GHz">1 1 1 1 0 0</setpointdata>
+			<setpointdata name="0.8GHz">0 0 0 0 1 0</setpointdata>
+			<setpointdata name="0.85GHz">1 0 0 0 1 0</setpointdata>
+			<setpointdata name="0.9GHz">0 1 0 0 1 0</setpointdata>
+			<setpointdata name="0.95GHz">1 1 0 0 1 0</setpointdata>
+			<setpointdata name="1GHz">0 0 1 0 1 0</setpointdata>
+			<setpointdata name="1.05GHz">1 0 1 0 1 0</setpointdata>
+			<setpointdata name="1.1GHz">0 1 1 0 1 0</setpointdata>
+			<setpointdata name="1.15GHz">1 1 1 0 1 0</setpointdata>
+			<setpointdata name="1.2GHz">0 0 0 1 1 0</setpointdata>
+			<setpointdata name="1.25GHz">1 0 0 1 1 0</setpointdata>
+			<setpointdata name="1.3GHz">0 1 0 1 1 0</setpointdata>
+			<setpointdata name="1.35GHz">1 1 0 1 1 0</setpointdata>
+			<setpointdata name="1.4GHz">0 0 1 1 1 0</setpointdata>
+			<setpointdata name="1.45GHz">1 0 1 1 1 0</setpointdata>
+			<setpointdata name="1.5GHz">0 1 1 1 1 0</setpointdata>
+			<setpointdata name="1.55GHz">1 1 1 1 1 0</setpointdata>
+			<setpointdata name="1.6GHz">0 0 0 0 0 1</setpointdata>
+			<setpointdata name="1.65GHz">1 0 0 0 0 1</setpointdata>
+			<setpointdata name="PM_DEFAULT">0 0 1 0 0 0</setpointdata>
+		</subset>
+		<subset name='patmod_gtratio_FuseOverrideString__patmod_in__gtratio_PUNIT_PUNIT_FUSES_GT_P1_RATIO'>
+			<setpointdata name="0.1GHz">0 1 0 0 0 0</setpointdata>
+			<setpointdata name="0.2GHz">0 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.3GHz">0 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.4GHz">0 0 0 1 0 0</setpointdata>
+			<setpointdata name="0.45GHz">1 0 0 1 0 0</setpointdata>
+			<setpointdata name="0.5GHz">0 1 0 1 0 0</setpointdata>
+			<setpointdata name="0.55GHz">1 1 0 1 0 0</setpointdata>
+			<setpointdata name="0.6GHz">0 0 1 1 0 0</setpointdata>
+			<setpointdata name="0.65GHz">1 0 1 1 0 0</setpointdata>
+			<setpointdata name="0.7GHz">0 1 1 1 0 0</setpointdata>
+			<setpointdata name="0.75GHz">1 1 1 1 0 0</setpointdata>
+			<setpointdata name="0.8GHz">0 0 0 0 1 0</setpointdata>
+			<setpointdata name="0.85GHz">1 0 0 0 1 0</setpointdata>
+			<setpointdata name="0.9GHz">0 1 0 0 1 0</setpointdata>
+			<setpointdata name="0.95GHz">1 1 0 0 1 0</setpointdata>
+			<setpointdata name="1GHz">0 0 1 0 1 0</setpointdata>
+			<setpointdata name="1.05GHz">1 0 1 0 1 0</setpointdata>
+			<setpointdata name="1.1GHz">0 1 1 0 1 0</setpointdata>
+			<setpointdata name="1.15GHz">1 1 1 0 1 0</setpointdata>
+			<setpointdata name="1.2GHz">0 0 0 1 1 0</setpointdata>
+			<setpointdata name="1.25GHz">1 0 0 1 1 0</setpointdata>
+			<setpointdata name="1.3GHz">0 1 0 1 1 0</setpointdata>
+			<setpointdata name="1.35GHz">1 1 0 1 1 0</setpointdata>
+			<setpointdata name="1.4GHz">0 0 1 1 1 0</setpointdata>
+			<setpointdata name="1.45GHz">1 0 1 1 1 0</setpointdata>
+			<setpointdata name="1.5GHz">0 1 1 1 1 0</setpointdata>
+			<setpointdata name="1.55GHz">1 1 1 1 1 0</setpointdata>
+			<setpointdata name="1.6GHz">0 0 0 0 0 1</setpointdata>
+			<setpointdata name="1.65GHz">1 0 0 0 0 1</setpointdata>
+			<setpointdata name="PM_DEFAULT">0 0 1 0 0 0</setpointdata>
+		</subset>
+		<subset name='patmod_gtratio_FuseOverrideString__patmod_in__gtratio_PUNIT_PUNIT_FUSES_GT_PN_RATIO'>
+			<setpointdata name="0.1GHz">0 1 0 0 0 0</setpointdata>
+			<setpointdata name="0.2GHz">0 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.3GHz">0 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.4GHz">0 0 0 1 0 0</setpointdata>
+			<setpointdata name="0.45GHz">1 0 0 1 0 0</setpointdata>
+			<setpointdata name="0.5GHz">0 1 0 1 0 0</setpointdata>
+			<setpointdata name="0.55GHz">1 1 0 1 0 0</setpointdata>
+			<setpointdata name="0.6GHz">0 0 1 1 0 0</setpointdata>
+			<setpointdata name="0.65GHz">1 0 1 1 0 0</setpointdata>
+			<setpointdata name="0.7GHz">0 1 1 1 0 0</setpointdata>
+			<setpointdata name="0.75GHz">1 1 1 1 0 0</setpointdata>
+			<setpointdata name="0.8GHz">0 0 0 0 1 0</setpointdata>
+			<setpointdata name="0.85GHz">1 0 0 0 1 0</setpointdata>
+			<setpointdata name="0.9GHz">0 1 0 0 1 0</setpointdata>
+			<setpointdata name="0.95GHz">1 1 0 0 1 0</setpointdata>
+			<setpointdata name="1GHz">0 0 1 0 1 0</setpointdata>
+			<setpointdata name="1.05GHz">1 0 1 0 1 0</setpointdata>
+			<setpointdata name="1.1GHz">0 1 1 0 1 0</setpointdata>
+			<setpointdata name="1.15GHz">1 1 1 0 1 0</setpointdata>
+			<setpointdata name="1.2GHz">0 0 0 1 1 0</setpointdata>
+			<setpointdata name="1.25GHz">1 0 0 1 1 0</setpointdata>
+			<setpointdata name="1.3GHz">0 1 0 1 1 0</setpointdata>
+			<setpointdata name="1.35GHz">1 1 0 1 1 0</setpointdata>
+			<setpointdata name="1.4GHz">0 0 1 1 1 0</setpointdata>
+			<setpointdata name="1.45GHz">1 0 1 1 1 0</setpointdata>
+			<setpointdata name="1.5GHz">0 1 1 1 1 0</setpointdata>
+			<setpointdata name="1.55GHz">1 1 1 1 1 0</setpointdata>
+			<setpointdata name="1.6GHz">0 0 0 0 0 1</setpointdata>
+			<setpointdata name="1.65GHz">1 0 0 0 0 1</setpointdata>
+			<setpointdata name="PM_DEFAULT">0 0 1 0 0 0</setpointdata>
+		</subset>
+	</pattern_modify_group_data>
+
+	<pattern_modify_group_data name='psf0ratio'>
+		<subset name='patmod_psf0ratio_FuseOverrideString__patmod_in__psf0ratio_SA_PLL_SA_PLL_CCU_FUSE_CCU_PSF0_FREQ_CFGCR_PSF0_RATIO_SEL'>
+			<setpointdata name="400MHz">0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</setpointdata>
+			<setpointdata name="533MHz">0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</setpointdata>
+			<setpointdata name="800MHz">0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</setpointdata>
+			<setpointdata name="1067MHz">0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</setpointdata>
+			<setpointdata name="PM_DEFAULT">0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</setpointdata>
+		</subset>
+	</pattern_modify_group_data>
+
+	<pattern_modify_group_data name='quad_reads'>
+		<subset name='patmod_quad_reads_internal_ReadAnaFivrQuadPhasesDisable_b__patmod_out__quad_reads'>
+			<setpointdata name="PM_DEFAULT">L</setpointdata>
+			<setpointdata name="disable_quad_sort">L</setpointdata>
+			<setpointdata name="enable_quad_class">H</setpointdata>
+		</subset>
+		<subset name='patmod_quad_reads_internal_ReadAtom0FivrQuadPhasesDisable_b__patmod_out__quad_reads'>
+			<setpointdata name="PM_DEFAULT">L</setpointdata>
+			<setpointdata name="disable_quad_sort">L</setpointdata>
+			<setpointdata name="enable_quad_class">H</setpointdata>
+		</subset>
+		<subset name='patmod_quad_reads_internal_ReadAtom1FivrQuadPhasesDisable_b__patmod_out__quad_reads'>
+			<setpointdata name="PM_DEFAULT">L</setpointdata>
+			<setpointdata name="disable_quad_sort">L</setpointdata>
+			<setpointdata name="enable_quad_class">H</setpointdata>
+		</subset>
+		<subset name='patmod_quad_reads_internal_ReadDigFivrQuadPhasesDisable_b__patmod_out__quad_reads'>
+			<setpointdata name="PM_DEFAULT">L</setpointdata>
+			<setpointdata name="disable_quad_sort">L</setpointdata>
+			<setpointdata name="enable_quad_class">H</setpointdata>
+		</subset>
+		<subset name='patmod_quad_reads_internal_ReadSaFivrQuadPhasesDisable_b__patmod_out__quad_reads'>
+			<setpointdata name="PM_DEFAULT">L</setpointdata>
+			<setpointdata name="disable_quad_sort">L</setpointdata>
+			<setpointdata name="enable_quad_class">H</setpointdata>
+		</subset>
+		<subset name='patmod_quad_reads_internal_ReadVddqFivrQuadPhasesDisable_b__patmod_out__quad_reads'>
+			<setpointdata name="PM_DEFAULT">L</setpointdata>
+			<setpointdata name="disable_quad_sort">L</setpointdata>
+			<setpointdata name="enable_quad_class">H</setpointdata>
+		</subset>
+	</pattern_modify_group_data>
+
+	<pattern_modify_group_data name='ring_ratio'>
+		<subset name='patmod_ring_ratio_FuseOverrideString__patmod_in__ring_ratio_PUNIT_PUNIT_FUSES_RING_CDYN_V_CORRECTION'>
+			<setpointdata name="0.4GHz">0 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.5GHz">1 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.6GHz">0 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.7GHz">1 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.8GHz">0 0 0 1 0 0</setpointdata>
+			<setpointdata name="0.9GHz">1 0 0 1 0 0</setpointdata>
+			<setpointdata name="1GHz">0 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.1GHz">1 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.2GHz">0 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.3GHz">1 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.4GHz">0 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.5GHz">1 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.6GHz">0 0 0 0 1 0</setpointdata>
+			<setpointdata name="1.7GHz">1 0 0 0 1 0</setpointdata>
+			<setpointdata name="1.8GHz">0 1 0 0 1 0</setpointdata>
+			<setpointdata name="1.9GHz">1 1 0 0 1 0</setpointdata>
+			<setpointdata name="2GHz">0 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.1GHz">1 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.2GHz">0 1 1 0 1 0</setpointdata>
+			<setpointdata name="2.3GHz">1 1 1 0 1 0</setpointdata>
+			<setpointdata name="2.4GHz">0 0 0 1 1 0</setpointdata>
+			<setpointdata name="2.5GHz">1 0 0 1 1 0</setpointdata>
+			<setpointdata name="2.6GHz">0 1 0 1 1 0</setpointdata>
+			<setpointdata name="2.7GHz">1 1 0 1 1 0</setpointdata>
+			<setpointdata name="2.8GHz">0 0 1 1 1 0</setpointdata>
+			<setpointdata name="2.9GHz">1 0 1 1 1 0</setpointdata>
+			<setpointdata name="3GHz">0 1 1 1 1 0</setpointdata>
+			<setpointdata name="3.1GHz">1 1 1 1 1 0</setpointdata>
+			<setpointdata name="3.2GHz">0 0 0 0 0 1</setpointdata>
+			<setpointdata name="3.3GHz">1 0 0 0 0 1</setpointdata>
+			<setpointdata name="3.4GHz">0 1 0 0 0 1</setpointdata>
+			<setpointdata name="3.5GHz">1 1 0 0 0 1</setpointdata>
+			<setpointdata name="3.6GHz">0 0 1 0 0 1</setpointdata>
+			<setpointdata name="3.7GHz">1 0 1 0 0 1</setpointdata>
+			<setpointdata name="3.8GHz">0 1 1 0 0 1</setpointdata>
+			<setpointdata name="3.9GHz">1 1 1 0 0 1</setpointdata>
+			<setpointdata name="4GHz">0 0 0 1 0 1</setpointdata>
+			<setpointdata name="4.1GHz">1 0 0 1 0 1</setpointdata>
+			<setpointdata name="4.2GHz">0 1 0 1 0 1</setpointdata>
+			<setpointdata name="4.3GHz">1 1 0 1 0 1</setpointdata>
+			<setpointdata name="4.4GHz">0 0 1 1 0 1</setpointdata>
+			<setpointdata name="4.5GHz">1 0 1 1 0 1</setpointdata>
+			<setpointdata name="4.6GHz">0 1 1 1 0 1</setpointdata>
+			<setpointdata name="4.7GHz">1 1 1 1 0 1</setpointdata>
+			<setpointdata name="4.8GHz">0 0 0 0 1 1</setpointdata>
+			<setpointdata name="4.9GHz">1 0 0 0 1 1</setpointdata>
+			<setpointdata name="5GHz">0 1 0 0 1 1</setpointdata>
+			<setpointdata name="5.1GHz">1 1 0 0 1 1</setpointdata>
+			<setpointdata name="5.2GHz">0 0 1 0 1 1</setpointdata>
+			<setpointdata name="5.3GHz">1 0 1 0 1 1</setpointdata>
+			<setpointdata name="PM_DEFAULT">0 0 0 1 0 0</setpointdata>
+		</subset>
+		<subset name='patmod_ring_ratio_FuseOverrideString__patmod_in__ring_ratio_PUNIT_PUNIT_FUSES_RING_MIN_RATIO'>
+			<setpointdata name="0.4GHz">0 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.5GHz">1 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.6GHz">0 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.7GHz">1 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.8GHz">0 0 0 1 0 0</setpointdata>
+			<setpointdata name="0.9GHz">1 0 0 1 0 0</setpointdata>
+			<setpointdata name="1GHz">0 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.1GHz">1 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.2GHz">0 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.3GHz">1 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.4GHz">0 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.5GHz">1 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.6GHz">0 0 0 0 1 0</setpointdata>
+			<setpointdata name="1.7GHz">1 0 0 0 1 0</setpointdata>
+			<setpointdata name="1.8GHz">0 1 0 0 1 0</setpointdata>
+			<setpointdata name="1.9GHz">1 1 0 0 1 0</setpointdata>
+			<setpointdata name="2GHz">0 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.1GHz">1 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.2GHz">0 1 1 0 1 0</setpointdata>
+			<setpointdata name="2.3GHz">1 1 1 0 1 0</setpointdata>
+			<setpointdata name="2.4GHz">0 0 0 1 1 0</setpointdata>
+			<setpointdata name="2.5GHz">1 0 0 1 1 0</setpointdata>
+			<setpointdata name="2.6GHz">0 1 0 1 1 0</setpointdata>
+			<setpointdata name="2.7GHz">1 1 0 1 1 0</setpointdata>
+			<setpointdata name="2.8GHz">0 0 1 1 1 0</setpointdata>
+			<setpointdata name="2.9GHz">1 0 1 1 1 0</setpointdata>
+			<setpointdata name="3GHz">0 1 1 1 1 0</setpointdata>
+			<setpointdata name="3.1GHz">1 1 1 1 1 0</setpointdata>
+			<setpointdata name="3.2GHz">0 0 0 0 0 1</setpointdata>
+			<setpointdata name="3.3GHz">1 0 0 0 0 1</setpointdata>
+			<setpointdata name="3.4GHz">0 1 0 0 0 1</setpointdata>
+			<setpointdata name="3.5GHz">1 1 0 0 0 1</setpointdata>
+			<setpointdata name="3.6GHz">0 0 1 0 0 1</setpointdata>
+			<setpointdata name="3.7GHz">1 0 1 0 0 1</setpointdata>
+			<setpointdata name="3.8GHz">0 1 1 0 0 1</setpointdata>
+			<setpointdata name="3.9GHz">1 1 1 0 0 1</setpointdata>
+			<setpointdata name="4GHz">0 0 0 1 0 1</setpointdata>
+			<setpointdata name="4.1GHz">1 0 0 1 0 1</setpointdata>
+			<setpointdata name="4.2GHz">0 1 0 1 0 1</setpointdata>
+			<setpointdata name="4.3GHz">1 1 0 1 0 1</setpointdata>
+			<setpointdata name="4.4GHz">0 0 1 1 0 1</setpointdata>
+			<setpointdata name="4.5GHz">1 0 1 1 0 1</setpointdata>
+			<setpointdata name="4.6GHz">0 1 1 1 0 1</setpointdata>
+			<setpointdata name="4.7GHz">1 1 1 1 0 1</setpointdata>
+			<setpointdata name="4.8GHz">0 0 0 0 1 1</setpointdata>
+			<setpointdata name="4.9GHz">1 0 0 0 1 1</setpointdata>
+			<setpointdata name="5GHz">0 1 0 0 1 1</setpointdata>
+			<setpointdata name="5.1GHz">1 1 0 0 1 1</setpointdata>
+			<setpointdata name="5.2GHz">0 0 1 0 1 1</setpointdata>
+			<setpointdata name="5.3GHz">1 0 1 0 1 1</setpointdata>
+			<setpointdata name="PM_DEFAULT">0 0 0 1 0 0</setpointdata>
+		</subset>
+		<subset name='patmod_ring_ratio_FuseOverrideString__patmod_in__ring_ratio_PUNIT_PUNIT_FUSES_RING_P0_RATIO'>
+			<setpointdata name="0.4GHz">0 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.5GHz">1 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.6GHz">0 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.7GHz">1 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.8GHz">0 0 0 1 0 0</setpointdata>
+			<setpointdata name="0.9GHz">1 0 0 1 0 0</setpointdata>
+			<setpointdata name="1GHz">0 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.1GHz">1 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.2GHz">0 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.3GHz">1 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.4GHz">0 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.5GHz">1 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.6GHz">0 0 0 0 1 0</setpointdata>
+			<setpointdata name="1.7GHz">1 0 0 0 1 0</setpointdata>
+			<setpointdata name="1.8GHz">0 1 0 0 1 0</setpointdata>
+			<setpointdata name="1.9GHz">1 1 0 0 1 0</setpointdata>
+			<setpointdata name="2GHz">0 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.1GHz">1 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.2GHz">0 1 1 0 1 0</setpointdata>
+			<setpointdata name="2.3GHz">1 1 1 0 1 0</setpointdata>
+			<setpointdata name="2.4GHz">0 0 0 1 1 0</setpointdata>
+			<setpointdata name="2.5GHz">1 0 0 1 1 0</setpointdata>
+			<setpointdata name="2.6GHz">0 1 0 1 1 0</setpointdata>
+			<setpointdata name="2.7GHz">1 1 0 1 1 0</setpointdata>
+			<setpointdata name="2.8GHz">0 0 1 1 1 0</setpointdata>
+			<setpointdata name="2.9GHz">1 0 1 1 1 0</setpointdata>
+			<setpointdata name="3GHz">0 1 1 1 1 0</setpointdata>
+			<setpointdata name="3.1GHz">1 1 1 1 1 0</setpointdata>
+			<setpointdata name="3.2GHz">0 0 0 0 0 1</setpointdata>
+			<setpointdata name="3.3GHz">1 0 0 0 0 1</setpointdata>
+			<setpointdata name="3.4GHz">0 1 0 0 0 1</setpointdata>
+			<setpointdata name="3.5GHz">1 1 0 0 0 1</setpointdata>
+			<setpointdata name="3.6GHz">0 0 1 0 0 1</setpointdata>
+			<setpointdata name="3.7GHz">1 0 1 0 0 1</setpointdata>
+			<setpointdata name="3.8GHz">0 1 1 0 0 1</setpointdata>
+			<setpointdata name="3.9GHz">1 1 1 0 0 1</setpointdata>
+			<setpointdata name="4GHz">0 0 0 1 0 1</setpointdata>
+			<setpointdata name="4.1GHz">1 0 0 1 0 1</setpointdata>
+			<setpointdata name="4.2GHz">0 1 0 1 0 1</setpointdata>
+			<setpointdata name="4.3GHz">1 1 0 1 0 1</setpointdata>
+			<setpointdata name="4.4GHz">0 0 1 1 0 1</setpointdata>
+			<setpointdata name="4.5GHz">1 0 1 1 0 1</setpointdata>
+			<setpointdata name="4.6GHz">0 1 1 1 0 1</setpointdata>
+			<setpointdata name="4.7GHz">1 1 1 1 0 1</setpointdata>
+			<setpointdata name="4.8GHz">0 0 0 0 1 1</setpointdata>
+			<setpointdata name="4.9GHz">1 0 0 0 1 1</setpointdata>
+			<setpointdata name="5GHz">0 1 0 0 1 1</setpointdata>
+			<setpointdata name="5.1GHz">1 1 0 0 1 1</setpointdata>
+			<setpointdata name="5.2GHz">0 0 1 0 1 1</setpointdata>
+			<setpointdata name="5.3GHz">1 0 1 0 1 1</setpointdata>
+			<setpointdata name="PM_DEFAULT">0 0 0 1 0 0</setpointdata>
+		</subset>
+		<subset name='patmod_ring_ratio_FuseOverrideString__patmod_in__ring_ratio_PUNIT_PUNIT_FUSES_RING_P1_RATIO'>
+			<setpointdata name="0.4GHz">0 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.5GHz">1 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.6GHz">0 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.7GHz">1 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.8GHz">0 0 0 1 0 0</setpointdata>
+			<setpointdata name="0.9GHz">1 0 0 1 0 0</setpointdata>
+			<setpointdata name="1GHz">0 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.1GHz">1 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.2GHz">0 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.3GHz">1 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.4GHz">0 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.5GHz">1 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.6GHz">0 0 0 0 1 0</setpointdata>
+			<setpointdata name="1.7GHz">1 0 0 0 1 0</setpointdata>
+			<setpointdata name="1.8GHz">0 1 0 0 1 0</setpointdata>
+			<setpointdata name="1.9GHz">1 1 0 0 1 0</setpointdata>
+			<setpointdata name="2GHz">0 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.1GHz">1 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.2GHz">0 1 1 0 1 0</setpointdata>
+			<setpointdata name="2.3GHz">1 1 1 0 1 0</setpointdata>
+			<setpointdata name="2.4GHz">0 0 0 1 1 0</setpointdata>
+			<setpointdata name="2.5GHz">1 0 0 1 1 0</setpointdata>
+			<setpointdata name="2.6GHz">0 1 0 1 1 0</setpointdata>
+			<setpointdata name="2.7GHz">1 1 0 1 1 0</setpointdata>
+			<setpointdata name="2.8GHz">0 0 1 1 1 0</setpointdata>
+			<setpointdata name="2.9GHz">1 0 1 1 1 0</setpointdata>
+			<setpointdata name="3GHz">0 1 1 1 1 0</setpointdata>
+			<setpointdata name="3.1GHz">1 1 1 1 1 0</setpointdata>
+			<setpointdata name="3.2GHz">0 0 0 0 0 1</setpointdata>
+			<setpointdata name="3.3GHz">1 0 0 0 0 1</setpointdata>
+			<setpointdata name="3.4GHz">0 1 0 0 0 1</setpointdata>
+			<setpointdata name="3.5GHz">1 1 0 0 0 1</setpointdata>
+			<setpointdata name="3.6GHz">0 0 1 0 0 1</setpointdata>
+			<setpointdata name="3.7GHz">1 0 1 0 0 1</setpointdata>
+			<setpointdata name="3.8GHz">0 1 1 0 0 1</setpointdata>
+			<setpointdata name="3.9GHz">1 1 1 0 0 1</setpointdata>
+			<setpointdata name="4GHz">0 0 0 1 0 1</setpointdata>
+			<setpointdata name="4.1GHz">1 0 0 1 0 1</setpointdata>
+			<setpointdata name="4.2GHz">0 1 0 1 0 1</setpointdata>
+			<setpointdata name="4.3GHz">1 1 0 1 0 1</setpointdata>
+			<setpointdata name="4.4GHz">0 0 1 1 0 1</setpointdata>
+			<setpointdata name="4.5GHz">1 0 1 1 0 1</setpointdata>
+			<setpointdata name="4.6GHz">0 1 1 1 0 1</setpointdata>
+			<setpointdata name="4.7GHz">1 1 1 1 0 1</setpointdata>
+			<setpointdata name="4.8GHz">0 0 0 0 1 1</setpointdata>
+			<setpointdata name="4.9GHz">1 0 0 0 1 1</setpointdata>
+			<setpointdata name="5GHz">0 1 0 0 1 1</setpointdata>
+			<setpointdata name="5.1GHz">1 1 0 0 1 1</setpointdata>
+			<setpointdata name="5.2GHz">0 0 1 0 1 1</setpointdata>
+			<setpointdata name="5.3GHz">1 0 1 0 1 1</setpointdata>
+			<setpointdata name="PM_DEFAULT">0 0 0 1 0 0</setpointdata>
+		</subset>
+		<subset name='patmod_ring_ratio_FuseOverrideString__patmod_in__ring_ratio_PUNIT_PUNIT_FUSES_RING_PN_RATIO'>
+			<setpointdata name="0.4GHz">0 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.5GHz">1 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.6GHz">0 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.7GHz">1 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.8GHz">0 0 0 1 0 0</setpointdata>
+			<setpointdata name="0.9GHz">1 0 0 1 0 0</setpointdata>
+			<setpointdata name="1GHz">0 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.1GHz">1 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.2GHz">0 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.3GHz">1 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.4GHz">0 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.5GHz">1 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.6GHz">0 0 0 0 1 0</setpointdata>
+			<setpointdata name="1.7GHz">1 0 0 0 1 0</setpointdata>
+			<setpointdata name="1.8GHz">0 1 0 0 1 0</setpointdata>
+			<setpointdata name="1.9GHz">1 1 0 0 1 0</setpointdata>
+			<setpointdata name="2GHz">0 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.1GHz">1 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.2GHz">0 1 1 0 1 0</setpointdata>
+			<setpointdata name="2.3GHz">1 1 1 0 1 0</setpointdata>
+			<setpointdata name="2.4GHz">0 0 0 1 1 0</setpointdata>
+			<setpointdata name="2.5GHz">1 0 0 1 1 0</setpointdata>
+			<setpointdata name="2.6GHz">0 1 0 1 1 0</setpointdata>
+			<setpointdata name="2.7GHz">1 1 0 1 1 0</setpointdata>
+			<setpointdata name="2.8GHz">0 0 1 1 1 0</setpointdata>
+			<setpointdata name="2.9GHz">1 0 1 1 1 0</setpointdata>
+			<setpointdata name="3GHz">0 1 1 1 1 0</setpointdata>
+			<setpointdata name="3.1GHz">1 1 1 1 1 0</setpointdata>
+			<setpointdata name="3.2GHz">0 0 0 0 0 1</setpointdata>
+			<setpointdata name="3.3GHz">1 0 0 0 0 1</setpointdata>
+			<setpointdata name="3.4GHz">0 1 0 0 0 1</setpointdata>
+			<setpointdata name="3.5GHz">1 1 0 0 0 1</setpointdata>
+			<setpointdata name="3.6GHz">0 0 1 0 0 1</setpointdata>
+			<setpointdata name="3.7GHz">1 0 1 0 0 1</setpointdata>
+			<setpointdata name="3.8GHz">0 1 1 0 0 1</setpointdata>
+			<setpointdata name="3.9GHz">1 1 1 0 0 1</setpointdata>
+			<setpointdata name="4GHz">0 0 0 1 0 1</setpointdata>
+			<setpointdata name="4.1GHz">1 0 0 1 0 1</setpointdata>
+			<setpointdata name="4.2GHz">0 1 0 1 0 1</setpointdata>
+			<setpointdata name="4.3GHz">1 1 0 1 0 1</setpointdata>
+			<setpointdata name="4.4GHz">0 0 1 1 0 1</setpointdata>
+			<setpointdata name="4.5GHz">1 0 1 1 0 1</setpointdata>
+			<setpointdata name="4.6GHz">0 1 1 1 0 1</setpointdata>
+			<setpointdata name="4.7GHz">1 1 1 1 0 1</setpointdata>
+			<setpointdata name="4.8GHz">0 0 0 0 1 1</setpointdata>
+			<setpointdata name="4.9GHz">1 0 0 0 1 1</setpointdata>
+			<setpointdata name="5GHz">0 1 0 0 1 1</setpointdata>
+			<setpointdata name="5.1GHz">1 1 0 0 1 1</setpointdata>
+			<setpointdata name="5.2GHz">0 0 1 0 1 1</setpointdata>
+			<setpointdata name="5.3GHz">1 0 1 0 1 1</setpointdata>
+			<setpointdata name="PM_DEFAULT">0 0 0 1 0 0</setpointdata>
+		</subset>
+		<subset name='patmod_ring_ratio_FuseOverrideString__patmod_in__ring_ratio_PUNIT_PUNIT_FUSES_RING_VF_RATIO_2'>
+			<setpointdata name="0.4GHz">0 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.5GHz">1 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.6GHz">0 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.7GHz">1 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.8GHz">0 0 0 1 0 0</setpointdata>
+			<setpointdata name="0.9GHz">1 0 0 1 0 0</setpointdata>
+			<setpointdata name="1GHz">0 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.1GHz">1 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.2GHz">0 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.3GHz">1 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.4GHz">0 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.5GHz">1 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.6GHz">0 0 0 0 1 0</setpointdata>
+			<setpointdata name="1.7GHz">1 0 0 0 1 0</setpointdata>
+			<setpointdata name="1.8GHz">0 1 0 0 1 0</setpointdata>
+			<setpointdata name="1.9GHz">1 1 0 0 1 0</setpointdata>
+			<setpointdata name="2GHz">0 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.1GHz">1 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.2GHz">0 1 1 0 1 0</setpointdata>
+			<setpointdata name="2.3GHz">1 1 1 0 1 0</setpointdata>
+			<setpointdata name="2.4GHz">0 0 0 1 1 0</setpointdata>
+			<setpointdata name="2.5GHz">1 0 0 1 1 0</setpointdata>
+			<setpointdata name="2.6GHz">0 1 0 1 1 0</setpointdata>
+			<setpointdata name="2.7GHz">1 1 0 1 1 0</setpointdata>
+			<setpointdata name="2.8GHz">0 0 1 1 1 0</setpointdata>
+			<setpointdata name="2.9GHz">1 0 1 1 1 0</setpointdata>
+			<setpointdata name="3GHz">0 1 1 1 1 0</setpointdata>
+			<setpointdata name="3.1GHz">1 1 1 1 1 0</setpointdata>
+			<setpointdata name="3.2GHz">0 0 0 0 0 1</setpointdata>
+			<setpointdata name="3.3GHz">1 0 0 0 0 1</setpointdata>
+			<setpointdata name="3.4GHz">0 1 0 0 0 1</setpointdata>
+			<setpointdata name="3.5GHz">1 1 0 0 0 1</setpointdata>
+			<setpointdata name="3.6GHz">0 0 1 0 0 1</setpointdata>
+			<setpointdata name="3.7GHz">1 0 1 0 0 1</setpointdata>
+			<setpointdata name="3.8GHz">0 1 1 0 0 1</setpointdata>
+			<setpointdata name="3.9GHz">1 1 1 0 0 1</setpointdata>
+			<setpointdata name="4GHz">0 0 0 1 0 1</setpointdata>
+			<setpointdata name="4.1GHz">1 0 0 1 0 1</setpointdata>
+			<setpointdata name="4.2GHz">0 1 0 1 0 1</setpointdata>
+			<setpointdata name="4.3GHz">1 1 0 1 0 1</setpointdata>
+			<setpointdata name="4.4GHz">0 0 1 1 0 1</setpointdata>
+			<setpointdata name="4.5GHz">1 0 1 1 0 1</setpointdata>
+			<setpointdata name="4.6GHz">0 1 1 1 0 1</setpointdata>
+			<setpointdata name="4.7GHz">1 1 1 1 0 1</setpointdata>
+			<setpointdata name="4.8GHz">0 0 0 0 1 1</setpointdata>
+			<setpointdata name="4.9GHz">1 0 0 0 1 1</setpointdata>
+			<setpointdata name="5GHz">0 1 0 0 1 1</setpointdata>
+			<setpointdata name="5.1GHz">1 1 0 0 1 1</setpointdata>
+			<setpointdata name="5.2GHz">0 0 1 0 1 1</setpointdata>
+			<setpointdata name="5.3GHz">1 0 1 0 1 1</setpointdata>
+			<setpointdata name="PM_DEFAULT">0 0 0 1 0 0</setpointdata>
+		</subset>
+		<subset name='patmod_ring_ratio_FuseOverrideString__patmod_in__ring_ratio_PUNIT_PUNIT_FUSES_RING_VF_RATIO_3'>
+			<setpointdata name="0.4GHz">0 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.5GHz">1 0 1 0 0 0</setpointdata>
+			<setpointdata name="0.6GHz">0 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.7GHz">1 1 1 0 0 0</setpointdata>
+			<setpointdata name="0.8GHz">0 0 0 1 0 0</setpointdata>
+			<setpointdata name="0.9GHz">1 0 0 1 0 0</setpointdata>
+			<setpointdata name="1GHz">0 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.1GHz">1 1 0 1 0 0</setpointdata>
+			<setpointdata name="1.2GHz">0 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.3GHz">1 0 1 1 0 0</setpointdata>
+			<setpointdata name="1.4GHz">0 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.5GHz">1 1 1 1 0 0</setpointdata>
+			<setpointdata name="1.6GHz">0 0 0 0 1 0</setpointdata>
+			<setpointdata name="1.7GHz">1 0 0 0 1 0</setpointdata>
+			<setpointdata name="1.8GHz">0 1 0 0 1 0</setpointdata>
+			<setpointdata name="1.9GHz">1 1 0 0 1 0</setpointdata>
+			<setpointdata name="2GHz">0 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.1GHz">1 0 1 0 1 0</setpointdata>
+			<setpointdata name="2.2GHz">0 1 1 0 1 0</setpointdata>
+			<setpointdata name="2.3GHz">1 1 1 0 1 0</setpointdata>
+			<setpointdata name="2.4GHz">0 0 0 1 1 0</setpointdata>
+			<setpointdata name="2.5GHz">1 0 0 1 1 0</setpointdata>
+			<setpointdata name="2.6GHz">0 1 0 1 1 0</setpointdata>
+			<setpointdata name="2.7GHz">1 1 0 1 1 0</setpointdata>
+			<setpointdata name="2.8GHz">0 0 1 1 1 0</setpointdata>
+			<setpointdata name="2.9GHz">1 0 1 1 1 0</setpointdata>
+			<setpointdata name="3GHz">0 1 1 1 1 0</setpointdata>
+			<setpointdata name="3.1GHz">1 1 1 1 1 0</setpointdata>
+			<setpointdata name="3.2GHz">0 0 0 0 0 1</setpointdata>
+			<setpointdata name="3.3GHz">1 0 0 0 0 1</setpointdata>
+			<setpointdata name="3.4GHz">0 1 0 0 0 1</setpointdata>
+			<setpointdata name="3.5GHz">1 1 0 0 0 1</setpointdata>
+			<setpointdata name="3.6GHz">0 0 1 0 0 1</setpointdata>
+			<setpointdata name="3.7GHz">1 0 1 0 0 1</setpointdata>
+			<setpointdata name="3.8GHz">0 1 1 0 0 1</setpointdata>
+			<setpointdata name="3.9GHz">1 1 1 0 0 1</setpointdata>
+			<setpointdata name="4GHz">0 0 0 1 0 1</setpointdata>
+			<setpointdata name="4.1GHz">1 0 0 1 0 1</setpointdata>
+			<setpointdata name="4.2GHz">0 1 0 1 0 1</setpointdata>
+			<setpointdata name="4.3GHz">1 1 0 1 0 1</setpointdata>
+			<setpointdata name="4.4GHz">0 0 1 1 0 1</setpointdata>
+			<setpointdata name="4.5GHz">1 0 1 1 0 1</setpointdata>
+			<setpointdata name="4.6GHz">0 1 1 1 0 1</setpointdata>
+			<setpointdata name="4.7GHz">1 1 1 1 0 1</setpointdata>
+			<setpointdata name="4.8GHz">0 0 0 0 1 1</setpointdata>
+			<setpointdata name="4.9GHz">1 0 0 0 1 1</setpointdata>
+			<setpointdata name="5GHz">0 1 0 0 1 1</setpointdata>
+			<setpointdata name="5.1GHz">1 1 0 0 1 1</setpointdata>
+			<setpointdata name="5.2GHz">0 0 1 0 1 1</setpointdata>
+			<setpointdata name="5.3GHz">1 0 1 0 1 1</setpointdata>
+			<setpointdata name="PM_DEFAULT">0 0 0 1 0 0</setpointdata>
+		</subset>
+	</pattern_modify_group_data>
+
+	<pattern_modify_group_data name='target_ways'>
+		<subset name='patmod_target_ways_internal_SetNumWays__patmod_in__target_ways'>
+			<setpointdata name="PM_DEFAULT">0 0 0 0 1</setpointdata>
+			<setpointdata name="num_ways_0">0 0 0 0 0</setpointdata>
+			<setpointdata name="num_ways_1">1 0 0 0 0</setpointdata>
+			<setpointdata name="num_ways_10">0 1 0 1 0</setpointdata>
+			<setpointdata name="num_ways_11">1 1 0 1 0</setpointdata>
+			<setpointdata name="num_ways_12">0 0 1 1 0</setpointdata>
+			<setpointdata name="num_ways_13">1 0 1 1 0</setpointdata>
+			<setpointdata name="num_ways_14">0 1 1 1 0</setpointdata>
+			<setpointdata name="num_ways_15">1 1 1 1 0</setpointdata>
+			<setpointdata name="num_ways_16">0 0 0 0 1</setpointdata>
+			<setpointdata name="num_ways_2">0 1 0 0 0</setpointdata>
+			<setpointdata name="num_ways_3">1 1 0 0 0</setpointdata>
+			<setpointdata name="num_ways_4">0 0 1 0 0</setpointdata>
+			<setpointdata name="num_ways_5">1 0 1 0 0</setpointdata>
+			<setpointdata name="num_ways_6">0 1 1 0 0</setpointdata>
+			<setpointdata name="num_ways_7">1 1 1 0 0</setpointdata>
+			<setpointdata name="num_ways_8">0 0 0 1 0</setpointdata>
+			<setpointdata name="num_ways_9">1 0 0 1 0</setpointdata>
+		</subset>
+	</pattern_modify_group_data>
+	
+	
+	
+	
+	
+
+	<pattern_modify_group_data name="scan_atom_module_switch">
+		<subset name="STFIN_BIT_25_OUTOF_0_41">
+			<setpointdata name="Module0">0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1</setpointdata>
+			<setpointdata name="Module1">0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0</setpointdata>
+		</subset>
+		
+		<subset name="STFIN_BIT_24_OUTOF_0_41">
+			<setpointdata name="Module0">0 1 1 1 0 0 1 1 1 0 0 1 1 0 0 1</setpointdata>
+			<setpointdata name="Module1">0 1 1 0 0 1 1 0 0 1 1 1 0 0 1 1</setpointdata>
+		</subset>
+		
+		<subset name="STFIN_BIT_23_OUTOF_0_41">
+			<setpointdata name="Module0">0 1 1 1 0 0 1 1 1 0 0 1 1 0 0 1</setpointdata>
+			<setpointdata name="Module1">0 1 1 0 0 1 1 0 0 1 1 1 0 0 1 1</setpointdata>
+		</subset>
+		
+		<subset name="STFIN_BIT_22_OUTOF_0_41">
+			<setpointdata name="Module0">0 1 1 1 0 0 1 1 1 0 0 1 0 0 0 0</setpointdata>
+			<setpointdata name="Module1">0 1 0 0 0 0 1 0 0 1 1 1 0 0 1 1</setpointdata>
+		</subset>
+		
+		<subset name="STFIN_BIT_21_OUTOF_0_41">
+			<setpointdata name="Module0">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</setpointdata>
+			<setpointdata name="Module1">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</setpointdata>
+		</subset>
+
+		<subset name="STFIN_BIT_20_OUTOF_0_41">
+			<setpointdata name="Module0">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</setpointdata>
+			<setpointdata name="Module1">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</setpointdata>
+		</subset>
+
+		<subset name="STFIN_BIT_19_OUTOF_0_41">
+			<setpointdata name="Module0">0 1 1 1 0 0 1 1 1 0 0 1 0 0 0 0</setpointdata>
+			<setpointdata name="Module1">0 1 0 0 0 0 1 0 0 1 1 1 0 0 1 1</setpointdata>
+		</subset>
+		
+		<subset name="STFIN_BIT_18_OUTOF_0_41">
+			<setpointdata name="Module0">0 1 1 1 0 0 1 1 1 0 0 1 0 0 0 0</setpointdata>
+			<setpointdata name="Module1">0 1 1 0 0 1 1 0 0 1 1 1 0 0 1 1</setpointdata>
+		</subset>
+		
+		<subset name="STFIN_BIT_17_OUTOF_0_41">
+			<setpointdata name="Module0">0 1 1 1 0 0 1 1 0 0 0 0 1 0 0 1</setpointdata>
+			<setpointdata name="Module1">0 1 1 0 0 1 1 0 0 1 1 0 0 0 0 0</setpointdata>
+		</subset>
+		
+		<subset name="STFIN_BIT_16_OUTOF_0_41">
+			<setpointdata name="Module0">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</setpointdata>
+			<setpointdata name="Module1">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</setpointdata>
+		</subset>
+		
+		<subset name="STFIN_BIT_15_OUTOF_0_41">
+			<setpointdata name="Module0">0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1</setpointdata>
+			<setpointdata name="Module1">0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0</setpointdata>
+		</subset>
+		
+		<subset name="STFIN_BIT_14_OUTOF_0_41">
+			<setpointdata name="Module0">0 1 1 1 1 0 1 1 1 1 0 1 0 0 0 0</setpointdata>
+			<setpointdata name="Module1">0 1 0 0 0 0 1 1 0 1 1 1 1 0 1 1</setpointdata>
+		</subset>
+		
+		<subset name="STFIN_BIT_13_OUTOF_0_41">
+			<setpointdata name="Module0">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</setpointdata>
+			<setpointdata name="Module1">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</setpointdata>
+		</subset>
+		
+		<subset name="STFIN_BIT_12_OUTOF_0_41">
+			<setpointdata name="Module0">0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0</setpointdata>
+			<setpointdata name="Module1">0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0</setpointdata>
+		</subset>
+		
+		<subset name="STFIN_BIT_11_OUTOF_0_41">
+			<setpointdata name="Module0">1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0</setpointdata>
+			<setpointdata name="Module1">0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0</setpointdata>
+		</subset>
+		
+		<subset name="STFIN_BIT_10_OUTOF_0_41">
+			<setpointdata name="Module0">0 0 0 1 0 0 1 1 0 0 1 0 0 0 1 0</setpointdata>
+			<setpointdata name="Module1">1 0 1 0 1 1 1 0 0 1 1 0 0 0 0 0</setpointdata>
+		</subset>
+		
+		<subset name="STFIN_BIT_9_OUTOF_0_41">
+			<setpointdata name="Module0">1 0 1 1 1 1 0 1 1 1 1 0 1 1 1 1</setpointdata>
+			<setpointdata name="Module1">1 0 1 1 1 1 1 1 1 0 1 1 1 1 0 1</setpointdata>
+		</subset>
+		
+		<subset name="STFIN_BIT_8_OUTOF_0_41">
+			<setpointdata name="Module0">1 0 0 1 1 1 0 0 1 1 1 0 1 1 1 0</setpointdata>
+			<setpointdata name="Module1">1 0 1 1 1 0 1 1 1 0 0 1 1 1 0 0</setpointdata>
+		</subset>
+		
+		<subset name="STFIN_BIT_7_OUTOF_0_41">
+			<setpointdata name="Module0">1 0 0 1 1 1 0 0 1 1 1 0 1 1 1 0</setpointdata>
+			<setpointdata name="Module1">1 0 1 1 1 0 1 1 1 0 0 1 1 1 0 0</setpointdata>
+		</subset>
+		
+		<subset name="STFIN_BIT_6_OUTOF_0_41">
+			<setpointdata name="Module0">0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0</setpointdata>
+			<setpointdata name="Module1">0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1</setpointdata>
+		</subset>
+		
+		<subset name="STFIN_BIT_5_OUTOF_0_41">
+			<setpointdata name="Module0">1 0 0 0 1 1 0 0 0 1 1 0 0 1 1 0</setpointdata>
+			<setpointdata name="Module1">1 0 0 1 1 0 0 1 1 0 0 0 1 1 0 0</setpointdata>
+		</subset>
+		
+		<subset name="STFIN_BIT_4_OUTOF_0_41">
+			<setpointdata name="Module0">0 1 1 1 0 0 1 1 1 0 0 1 1 0 0 1</setpointdata>
+			<setpointdata name="Module1">0 1 1 0 0 1 1 0 0 1 1 1 0 0 1 1</setpointdata>
+		</subset>
+
+		<subset name="STFIN_BIT_3_OUTOF_0_41">
+			<setpointdata name="Module0">1 0 0 0 1 1 0 0 0 1 1 0 0 1 1 0</setpointdata>
+			<setpointdata name="Module1">1 0 0 1 1 0 0 1 1 0 0 0 1 1 0 0</setpointdata>
+		</subset>
+		
+		<subset name="STFIN_BIT_2_OUTOF_0_41">
+			<setpointdata name="Module0">1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0</setpointdata>
+			<setpointdata name="Module1">1 0 0 0 1 0 0 0 1 0 0 0 0 1 0 0</setpointdata>
+		</subset>
+
+	</pattern_modify_group_data>
+
+</ifpm_setup>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ADTL xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="GEN_ADTL_tt.xsd">
+	<config_set name="SCN_GRT_CSE_LFM_GRT0" > 
+		<fit name ="GRT0_END_CSE_LFM_SCNGRT" default_fail_port="2" >
+			<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>	
+			<y_param lower="-9999.000" upper="1.5">G.U.D.UPSVMIN_ATOM_SCNGRT0_0p8GHz</y_param>
+			<!-- VMIN_INDIRECT_KILL, ADTL_INDIRECT_KILL -->
+			<kill_cutline>VMIN_Sigma8</kill_cutline>	
+			<cutline name="VMIN_Sigma8">	
+				<y_intercept>0.9596044</y_intercept>
+				<slope>-0.000015824</slope>
+				<fail_operation>greaterThan</fail_operation>
+			</cutline>	
+		</fit>	
+	</config_set> 
+	<config_set name="SCN_GRT_CSE_LFM_GRT1" >
+		<fit name ="GRT1_END_CSE_LFM_SCNGRT" default_fail_port="2" >		
+			<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>	
+			<y_param lower="-9999.000" upper="1.5">G.U.D.UPSVMIN_ATOM_SCNGRT1_0p8GHz</y_param>
+			<!-- VMIN_INDIRECT_KILL, ADTL_INDIRECT_KILL -->			
+			<kill_cutline>VMIN_Sigma8</kill_cutline>	
+			<cutline name="VMIN_Sigma8">
+				<y_intercept>1.08547253</y_intercept>
+				<slope>-0.000023956</slope>
+				<fail_operation>greaterThan</fail_operation>
+			</cutline>	
+		</fit>
+	</config_set>
+	<config_set name="SCN_GRT_CSE_HFM_GRT0" >
+		<fit name ="GRT0_END_CSE_HFM_SCNGRT" default_fail_port="2" >		
+			<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>	
+			<y_param lower="-9999.000" upper="1.5">G.U.D.UPSVMIN_ATOM_SCNGRT0_2p0GHz</y_param>
+			<!-- VMIN_INDIRECT_KILL, ADTL_INDIRECT_KILL -->			
+			<kill_cutline>VMIN_Sigma8</kill_cutline>	
+			<cutline name="VMIN_Sigma8">	
+				<y_intercept>1.28716484</y_intercept>
+				<slope>-0.0000277</slope>
+				<fail_operation>greaterThan</fail_operation>
+			</cutline>	
+		</fit>	
+	</config_set>
+	<config_set name="SCN_GRT_CSE_HFM_GRT1" >
+		<fit name ="GRT1_END_CSE_HFM_SCNGRT" default_fail_port="2" >		
+			<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>	
+			<y_param lower="-9999.000" upper="1.5">G.U.D.UPSVMIN_ATOM_SCNGRT1_2p0GHz</y_param>
+			<!-- VMIN_INDIRECT_KILL, ADTL_INDIRECT_KILL -->
+			<kill_cutline>VMIN_Sigma8</kill_cutline>	
+			<cutline name="VMIN_Sigma8">	
+				<y_intercept>1.38487912</y_intercept>
+				<slope>-0.0000334</slope>
+				<fail_operation>greaterThan</fail_operation>
+			</cutline>	
+		</fit>
+	</config_set>
+	<config_set name="SCN_GRT_CSE_TFM_GRT0" >
+		<fit name ="GRT0_END_CSE_TFM_SCNGRT" default_fail_port="2" >		
+			<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>	
+			<y_param lower="-9999.000" upper="1.5">G.U.D.UPSVMIN_ATOM_SCNGRT0_3p0GHz</y_param>
+			<!-- VMIN_INDIRECT_KILL -->
+			<kill_cutline>VMIN_NULL</kill_cutline>	
+			<cutline name="VMIN_NULL">	
+				<y_intercept>1.6</y_intercept>
+				<slope>0</slope>
+				<fail_operation>greaterThan</fail_operation>
+			</cutline>	
+		</fit>	
+	</config_set>		
+	<config_set name="SCN_GRT_CSE_TFM_GRT1" >
+		<fit name ="GRT1_END_CSE_TFM_SCNGRT" default_fail_port="2" >		
+			<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>	
+			<y_param lower="-9999.000" upper="1.5">G.U.D.UPSVMIN_ATOM_SCNGRT1_3p0GHz</y_param>
+			<!-- VMIN_INDIRECT_KILL -->
+			<kill_cutline>VMIN_NULL</kill_cutline>	
+			<cutline name="VMIN_NULL">	
+				<y_intercept>1.6</y_intercept>
+				<slope>0</slope>
+				<fail_operation>greaterThan</fail_operation>
+			</cutline>	
+		</fit>
+	</config_set>	
+	<!-- PREPOST -->
+	<config_set name="SCN_GRT_PREPOST_GRT0" > 			
+		<fit name ="GRT0_END_PREPOST_LFM_SCNGRT" default_fail_port="2" >		
+			<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>	
+			<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_POST_SCN_GRT0</y_param>
+			<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_PRE_SCN_GRT0</y_param>	
+			<!-- VMIN_INDIRECT_KILL, ADTL_INDIRECT_KILL -->
+			<kill_cutline>VMIN_Sigma8</kill_cutline>	
+			<cutline name="VMIN_Sigma8">	
+				<y_intercept>0.9596044</y_intercept>
+				<slope>-0.000015824</slope>
+				<fail_operation>greaterThan</fail_operation>
+			</cutline>	
+		</fit>
+	</config_set> 
+	<config_set name="SCN_GRT_PREPOST_GRT1" > 
+		<fit name ="GRT1_END_PREPOST_LFM_SCNGRT" default_fail_port="2" >		
+			<x_param lower="0.0" upper="20000.0">TPI_IDV.D.FMAX_IDV_NESTED_950</x_param>	
+			<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_POST_SCN_GRT1</y_param>
+			<y_param lower="-9999.000" upper="1.5">G.U.D.HVQK_VMIN_PRE_SCN_GRT1</y_param>	
+			<!-- VMIN_INDIRECT_KILL, ADTL_INDIRECT_KILL -->
+			<kill_cutline>VMIN_Sigma8</kill_cutline>	
+			<cutline name="VMIN_Sigma8">	
+				<y_intercept>1.00007692</y_intercept>
+				<slope>-0.000018352</slope>
+				<fail_operation>greaterThan</fail_operation>
+			</cutline>	
+		</fit>		
+	</config_set> 			
+</ADTL>

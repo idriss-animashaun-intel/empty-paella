@@ -1,0 +1,6 @@
+START_SCREEN:InitBin17GSDS
+#Run: Test :  Data   : Param : Param1                       : Oper  : Param   : Param2   : Tmp  : On       : On
+#On : Name :  Type   : Type  :                              :       : Type    :          : Store: True     : False
+EXEC: Test1:  INTEGER: GSDS  : U.I.CA1TF_GRT0_VCCIA_BIN17	    :  SET  : LITERAL : 0        : -    :   Test2  : 2
+EXEC: Test2:  INTEGER: GSDS  : U.I.CA1TF_GRT1_VCCIA_BIN17	    :  SET  : LITERAL : 0        : -    :   1  : 2
+END_SCREEN

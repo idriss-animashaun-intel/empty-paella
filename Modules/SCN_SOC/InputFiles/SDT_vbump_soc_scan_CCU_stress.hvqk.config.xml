@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hvqk_setup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="GEN_HVQK_tt.xsd">
+  <domain name="SDTSOC"/>
+  <instance name="SDTSCAN_CCU"/>
+  <voltage_start name="HVQKVars.S.SDTSTRESS_start_voltage"/>
+  <plist_exec_fail action="CONTINUE"/>
+  <voltage_step name="1.5" alarm_action="CONTINUE" plist_exe_failure_action="CONTINUE">
+    <vforce>      
+        <pin>VCCSA_HC</pin>
+        <force_value>1.5</force_value>      
+    </vforce>
+  </voltage_step>
+  <voltage_step name="1.4" alarm_action="CONTINUE" plist_exe_failure_action="CONTINUE">
+    <vforce>      
+        <pin>VCCSA_HC</pin>
+        <force_value>1.4</force_value>      
+    </vforce>
+  </voltage_step>
+  <voltage_step name="1.3" alarm_action="CONTINUE" plist_exe_failure_action="CONTINUE">
+  <pre_step_uf>GSDS_UF!SetGSDS G.U.S.HVQK_FAIL=FAIL</pre_step_uf>
+    <vforce>     
+        <pin>VCCSA_HC</pin>
+        <force_value>1.3</force_value>     
+    </vforce>
+  </voltage_step>
+  <voltage_step name="1.2" alarm_action="CONTINUE" plist_exe_failure_action="CONTINUE">
+  <pre_step_uf>GSDS_UF!SetGSDS G.U.S.HVQK_FAIL=FAIL</pre_step_uf>
+    <vforce>
+        <pin>VCCSA_HC</pin>
+        <force_value>1.2</force_value>     
+    </vforce>
+  </voltage_step>
+  <voltage_step name="1.0" alarm_action="CONTINUE" plist_exe_failure_action="CONTINUE">
+  <pre_step_uf>GSDS_UF!SetGSDS G.U.S.HVQK_FAIL=FAIL</pre_step_uf>
+    <vforce>      
+        <pin>VCCSA_HC</pin>
+        <force_value>1.04</force_value>     
+    </vforce>
+  </voltage_step>
+</hvqk_setup>

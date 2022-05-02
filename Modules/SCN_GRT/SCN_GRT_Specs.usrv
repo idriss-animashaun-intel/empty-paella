@@ -1,0 +1,8 @@
+Version 1.0;
+
+UserVars SCN_GRT_Specs
+{
+	Const String scn_atpg_spofi_max_fail_num = "500";
+	Const String scn_chain_spofi_max_fail_num = "1000";
+	Const String scn_dport_spofi_max_fail_num = "1000";
+}

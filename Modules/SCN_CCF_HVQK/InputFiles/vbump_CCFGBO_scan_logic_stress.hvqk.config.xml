@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hvqk_setup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="GEN_HVQK_tt.xsd">
+  <domain name="CCF"/>
+  <instance name="SCAN_GBO"/>
+  <voltage_start name="HVQKVars.S.STRESS_HIGHV"/>
+  <plist_exec_fail action="CONTINUE"/>
+  <voltage_step name="1.6" alarm_action="CONTINUE" plist_exe_failure_action="CONTINUE">
+    <vforce>
+        <pin>VCCR_HC</pin>
+		<force_value>1.6</force_value>
+    </vforce>
+  </voltage_step>
+  <voltage_step name="1.5" alarm_action="CONTINUE" plist_exe_failure_action="CONTINUE">
+    <vforce>
+        <pin>VCCR_HC</pin>
+		<force_value>1.5</force_value>
+    </vforce>
+  </voltage_step>
+  <voltage_step name="1.4" alarm_action="CONTINUE" plist_exe_failure_action="CONTINUE">
+    <vforce>
+        <pin>VCCR_HC</pin>
+		<force_value>1.4</force_value>
+    </vforce>
+  </voltage_step>
+  <voltage_step name="1.3" alarm_action="CONTINUE" plist_exe_failure_action="CONTINUE">
+    <vforce>
+        <pin>VCCR_HC</pin>
+		<force_value>1.3</force_value>
+    </vforce>
+  </voltage_step>
+  <voltage_step name="1.0" alarm_action="EXIT">
+    <vforce>
+      <levels_block_direct>SBF_max_lvl</levels_block_direct>
+    </vforce>
+  </voltage_step>
+</hvqk_setup>

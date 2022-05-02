@@ -1,0 +1,80 @@
+# External inputs from ScanFI data:
+#   {Pattern name}
+#   {Failing pin}
+#   {Label offset to cycle failure in Scan memory}
+
+# Define content variable
+DEFINE: CONTENT_TYPE: MAIN
+
+# Define optional variables
+DEFINE: VAR: vLatency:    0
+DEFINE: VAR: vGroupCount: 1
+
+# Define mandatory variables
+DEFINE: VAR: kCyclesLabel2Fail: 0
+DEFINE: VAR: kGroup:            0
+DEFINE: VAR: kShift:            0
+DEFINE: VAR: kMainCycle: 0
+DEFINE:	VAR: kHRYStringLength: 4
+
+# GSDS Output HRY_BIT_LIST
+DEFINE:	GSDS:	G.U.S.HRY_SCN_OPIODN: 0,1,2,3
+
+# Define algorithm: keep a stack
+DEFINE: ALG: vOffset: kCyclesLabel2Fail vLatency -
+DEFINE: ALG:  kGroup: vOffset vGroupCount mod
+DEFINE: ALG:  kShift: vOffset vGroupCount / floor
+
+##PATTERN SECTION
+
+PAT: START: RPL_pre|RPL_pst
+0: [0-9a-zA-Z] : *: 0: OPIODN : RESET
+PAT: END: RPL_pre|RPL_pst
+
+PAT: START: opiodn|OPIODN
+#FIRST_LINE                  
+#0: DDRDQ_IL01_NIL01_D501_LP01_2: *: X: OPIODN : XXXX       #stf.10 inactive - will be at constant 0  [9:0] 
+#0: DDRDQ_IL01_NIL01_D501_LP01_3: *: X: OPIODN : XXXX       #stf.11 inactive - will be at constant 0  [9:0] 
+#0: DDRDQ_IL01_NIL01_D501_LP01_4: *: X: OPIODN : XXXX       #stf.12 inactive - will be at constant 0  [9:0] 
+#0: DDRDQ_IL01_NIL01_D501_LP01_5: *: X: OPIODN : XXXX       #stf.13 inactive - will be at constant 0  [9:0] 
+#0: DDRDQ_IL01_NIL01_D501_LP01_6: *: X: OPIODN : XXXX       #stf.14 inactive - will be at constant 0  [9:0] 
+#0: DDRDQ_IL01_NIL01_D501_LP01_7: *: X: OPIODN : XXXX       #stf.15 inactive - will be at constant 0  [9:0] 
+#0: DDRDQ_IL10_NIL02_D502_LP10_0: *: X: OPIODN : XXXX       #stf.16 inactive - will be at constant 0  [9:0] 
+#0: DDRDQ_IL10_NIL02_D502_LP10_1: *: X: OPIODN : XXXX       #stf.17 inactive - will be at constant 0  [9:0] 
+#0: DDRDQ_IL10_NIL02_D502_LP10_2: *: X: OPIODN : XXXX       #stf.18 inactive - will be at constant 0  [9:0]  
+#0: DDRDQ_IL10_NIL02_D502_LP10_3: *: X: OPIODN : XXXX       #stf.19 inactive - will be at constant 0  [9:0] 
+0: DDRDQ_IL10_NIL02_D502_LP10_4: *: 1: OPIODN : PSFOPI      #stf.20 psfopi [13:10] 
+0: DDRDQ_IL10_NIL02_D502_LP10_5: *: 1: OPIODN : PSFOPI      #stf.21 psfopi [13:10]  
+0: DDRDQ_IL10_NIL02_D502_LP10_6: *: 1: OPIODN : PSFOPI      #stf.22 psfopi [13:10] 
+0: DDRDQ_IL10_NIL02_D502_LP10_7: *: 1: OPIODN : PSFOPI      #stf.23 psfopi [13:10] 
+0: DDRDQ_IL11_NIL03_D503_LP11_0: *: 2: OPIODN : FABRICOPIODNVCCSA      #stf.24 fabricopiodnvccsa [22:14]  
+0: DDRDQ_IL11_NIL03_D503_LP11_1: *: 2: OPIODN : FABRICOPIODNVCCSA      #stf.25 fabricopiodnvccsa [22:14]
+0: DDRDQ_IL11_NIL03_D503_LP11_2: *: 2: OPIODN : FABRICOPIODNVCCSA      #stf.26 fabricopiodnvccsa [22:14]
+0: DDRDQ_IL11_NIL03_D503_LP11_3: *: 2: OPIODN : FABRICOPIODNVCCSA      #stf.27 fabricopiodnvccsa [22:14 ]
+0: DDRDQ_IL11_NIL03_D503_LP11_4: *: 2: OPIODN : FABRICOPIODNVCCSA      #stf.28 fabricopiodnvccsa [22:14]
+0: DDRDQ_IL11_NIL03_D503_LP11_5: *: 2: OPIODN : FABRICOPIODNVCCSA      #stf.29 fabricopiodnvccsa [22:14]
+0: DDRDQ_IL11_NIL03_D503_LP11_6: *: 2: OPIODN : FABRICOPIODNVCCSA      #stf.30  fabricopiodnvccsa [22:14] 
+0: DDRDQ_IL11_NIL03_D503_LP11_7: *: 2: OPIODN : FABRICOPIODNVCCSA      #stf.31  fabricopiodnvccsa [22:14] 
+0: DDRDQ_IL02_NIL04_D510_LP20_0: *: 2: OPIODN : FABRICOPIODNVCCSA      #stf.32 fabricopiodnvccsa [22:14] 
+0: DDRDQ_IL02_NIL04_D510_LP20_1: *: 3: OPIODN : FABRICOPIODNVCCSAGMEM      #stf.33 fabricopiodnvccsagmem  [23:31]  
+0: DDRDQ_IL02_NIL04_D510_LP20_2: *: 3: OPIODN : FABRICOPIODNVCCSAGMEM      #stf.34  fabricopiodnvccsagmem [23:31]  
+0: DDRDQ_IL02_NIL04_D510_LP20_3: *: 3: OPIODN : FABRICOPIODNVCCSAGMEM      #stf.35  fabricopiodnvccsagmem [23:31]   
+0: DDRDQ_IL02_NIL04_D510_LP20_4: *: 3: OPIODN : FABRICOPIODNVCCSAGMEM      #stf.36  fabricopiodnvccsagmem [23:31]   
+0: DDRDQ_IL02_NIL04_D510_LP20_5: *: 3: OPIODN : FABRICOPIODNVCCSAGMEM      #stf.37  fabricopiodnvccsagmem [23:31]  
+0: DDRDQ_IL02_NIL04_D510_LP20_6: *: 3: OPIODN : FABRICOPIODNVCCSAGMEM      #stf.38  fabricopiodnvccsagmem [23:31]  
+0: DDRDQ_IL02_NIL04_D510_LP20_7: *: 3: OPIODN : FABRICOPIODNVCCSAGMEM      #stf.39  fabricopiodnvccsagmem [23:31]  
+0: DDRDQ_IL03_NIL05_D511_LP21_0: *: 3: OPIODN : FABRICOPIODNVCCSAGMEM      #stf.40  fabricopiodnvccsagmem [23:31]  
+0: DDRDQ_IL03_NIL05_D511_LP21_1: *: 3: OPIODN : FABRICOPIODNVCCSAGMEM      #stf.41  fabricopiodnvccsagmem [23:31]  
+PAT: END: opiodn|OPIODN
+
+# Define recovery config mapping
+# Level0: Level1: Level2: Status      # Status options:  PASS = Must pass, FAIL = Must fail, DONOTCARE = Ignore;  Default if token is not listed is PASS
+CONFIG_SET: START:  OPIODN
+RESET: FAIL
+####OPIO: DONOTCARE   ## Now split out on its own
+PSFOPI: DONOTCARE
+FABRICOPIODNVCCSA: DONOTCARE
+FABRICOPIODNVCCSAGMEM: DONOTCARE
+CONFIG_SET: END: OPIODN
+
+

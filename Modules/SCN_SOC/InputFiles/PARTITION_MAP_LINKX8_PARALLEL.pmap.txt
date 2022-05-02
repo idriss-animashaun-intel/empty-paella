@@ -1,0 +1,77 @@
+# External inputs from ScanFI data:
+#   {Pattern name}
+#   {Failing pin}
+#   {Label offset to cycle failure in Scan memory}
+
+# Define content variable
+DEFINE: CONTENT_TYPE: MAIN
+
+# Define optional variables
+DEFINE: VAR: vLatency:    0
+DEFINE: VAR: vGroupCount: 1
+
+# Define mandatory variables
+DEFINE: VAR: kCyclesLabel2Fail: 0
+DEFINE: VAR: kGroup:            0
+DEFINE: VAR: kShift:            0
+DEFINE: VAR: kMainCycle: 0
+DEFINE:	VAR: kHRYStringLength: 2
+
+# GSDS Output HRY_BIT_LIST
+DEFINE:	GSDS:	G.U.S.HRY_SCN_LINKX8: 0,1
+
+# Define algorithm: keep a stack
+DEFINE: ALG: vOffset: kCyclesLabel2Fail vLatency -
+DEFINE: ALG:  kGroup: vOffset vGroupCount mod
+DEFINE: ALG:  kShift: vOffset vGroupCount / floor
+
+##PATTERN SECTION
+
+PAT: START: RPL_pre|RPL_pst
+0: [0-9a-zA-Z] : *: 0: LINKX8 : RESET
+PAT: END: RPL_pre|RPL_pst
+
+PAT: START: linkx8|LINKX8
+#FIRST_LINE 
+0: DDRDQ_IL01_NIL01_D501_LP01_2: *: 1: LINKX8 : LINKX8       #stf.10 core_tltx_tlrx [3:0] 
+0: DDRDQ_IL01_NIL01_D501_LP01_3: *: 1: LINKX8 : LINKX8       #stf.11  core_tltx_tlrx [3:0] 
+0: DDRDQ_IL01_NIL01_D501_LP01_4: *: 1: LINKX8 : LINKX8       #stf.12 core_tltx_tlrx [3:0] 
+0: DDRDQ_IL01_NIL01_D501_LP01_5: *: 1: LINKX8 : LINKX8       #stf.13 core_tltx_tlrx [3:0] 
+#0: DDRDQ_IL01_NIL01_D501_LP01_6: *: X: LINKX8 : XXXX      #stf.14  inactive - will be at constant 0 [31:4] 
+#0: DDRDQ_IL01_NIL01_D501_LP01_7: *: X: LINKX8 : XXXX      #stf.15  inactive - will be at constant 0 [31:4] 
+#0: DDRDQ_IL10_NIL02_D502_LP10_0: *: X: LINKX8 : XXXX      #stf.16 inactive - will be at constant 0 [31:4] 
+#0: DDRDQ_IL10_NIL02_D502_LP10_1: *: X: LINKX8 : XXXX      #stf.17 inactive - will be at constant 0 [31:4] 
+#0: DDRDQ_IL10_NIL02_D502_LP10_2: *: X: LINKX8 : XXXX      #stf.18 inactive - will be at constant 0 [31:4] 
+#0: DDRDQ_IL10_NIL02_D502_LP10_3: *: X: LINKX8 :XXXX       #stf.19 inactive - will be at constant 0 [31:4] 
+#0: DDRDQ_IL10_NIL02_D502_LP10_4: *: X: LINKX8 : XXXX      #stf.20 inactive - will be at constant 0 [31:4] 
+#0: DDRDQ_IL10_NIL02_D502_LP10_5: *: X: LINKX8 : XXXX      #stf.21 inactive - will be at constant 0 [31:4] 
+#0: DDRDQ_IL10_NIL02_D502_LP10_6: *: X: LINKX8 : XXXX      #stf.22 inactive - will be at constant 0 [31:4] 
+#0: DDRDQ_IL10_NIL02_D502_LP10_7: *: X: LINKX8 : XXXX      #stf.23 inactive - will be at constant 0 [31:4] 
+#0: DDRDQ_IL11_NIL03_D503_LP11_0: *: X: LINKX8 : XXXX      #stf.24 inactive - will be at constant 0 [31:4] 
+#0: DDRDQ_IL11_NIL03_D503_LP11_1: *: X: LINKX8 : XXXX      #stf.25 inactive - will be at constant 0 [31:4] 
+#0: DDRDQ_IL11_NIL03_D503_LP11_2: *: X: LINKX8 : XXXX      #stf.26 inactive - will be at constant 0 [31:4] 
+#0: DDRDQ_IL11_NIL03_D503_LP11_3: *: X: LINKX8 : XXXX      #stf.27 inactive - will be at constant 0 [31:4] 
+#0: DDRDQ_IL11_NIL03_D503_LP11_4: *: X: LINKX8 : XXXX      #stf.28 inactive - will be at constant 0 [31:4] 
+#0: DDRDQ_IL11_NIL03_D503_LP11_5: *: X: LINKX8 : XXXX      #stf.29 inactive - will be at constant 0 [31:4] 
+#0: DDRDQ_IL11_NIL03_D503_LP11_6: *: X: LINKX8 : XXXX      #stf.30 inactive - will be at constant 0 [31:4] 
+#0: DDRDQ_IL11_NIL03_D503_LP11_7: *: X: LINKX8 : XXXX      #stf.31  inactive - will be at constant 0 [31:4] 
+#0: DDRDQ_IL02_NIL04_D510_LP20_0: *: X: LINKX8 : XXXX      #stf.32 inactive - will be at constant 0 [31:4] 
+#0: DDRDQ_IL02_NIL04_D510_LP20_1: *: X: LINKX8 : XXXX      #stf.33 inactive - will be at constant 0 [31:4] 
+#0: DDRDQ_IL02_NIL04_D510_LP20_2: *: X: LINKX8 : XXXX      #stf.34 inactive - will be at constant 0 [31:4] 
+#0: DDRDQ_IL02_NIL04_D510_LP20_3: *: X: LINKX8 : XXXX      #stf.35 inactive - will be at constant 0 [31:4] 
+#0: DDRDQ_IL02_NIL04_D510_LP20_4: *: X: LINKX8 : XXXX      #stf.36 inactive - will be at constant 0 [31:4] 
+#0: DDRDQ_IL02_NIL04_D510_LP20_5: *: X: LINKX8 : XXXX      #stf.37 inactive - will be at constant 0 [31:4] 
+#0: DDRDQ_IL02_NIL04_D510_LP20_6: *: X: LINKX8 : XXXX      #stf.38 inactive - will be at constant 0 [31:4] 
+#0: DDRDQ_IL02_NIL04_D510_LP20_7: *: X: LINKX8 : XXXX      #stf.39 inactive - will be at constant 0 [31:4] 
+#0: DDRDQ_IL03_NIL05_D511_LP21_0: *: X: LINKX8 : XXXX      #stf.40 inactive - will be at constant 0 [31:4] 
+#0: DDRDQ_IL03_NIL05_D511_LP21_1: *: X: LINKX8 : XXXX      #stf.41 inactive - will be at constant 0 [31:4] 
+PAT: END: linkx8|LINKX8
+
+# Define recovery config mapping
+# Level0: Level1: Level2: Status      # Status options:  PASS = Must pass, FAIL = Must fail, DONOTCARE = Ignore;  Default if token is not listed is PASS
+CONFIG_SET: START: LINKX8
+RESET: FAIL
+LINKX8: DONOTCARE
+CONFIG_SET: END: LINKX8
+
+
