@@ -8,6 +8,7 @@ import webbrowser
 import os
 from pathlib import Path
 import inspect
+import pandas as pd
 
 current_directory = os.getcwd()
 print('Working Directory:', current_directory)
@@ -121,6 +122,62 @@ def e_k(filename):
         for line in mtpl_lines:
             print(line, end="", file=file)
    
+def bulk_fnr(filename):
+    # Open mtpl to search
+    with open(filename, 'r') as fh:
+        mtpl_lines = [str(line) for line in fh]
+
+
+    mtpl_length = len(mtpl_lines)
+    # loop for individual search
+    for i in range(0,len(test_to_search)):
+        for line_i in range(mtpl_length):
+            # Grabbing current line as string
+            current_line = mtpl_lines[line_i]
+            if test_to_search[i] in current_line:
+                mtpl_lines[line_i] = current_line.replace(test_to_search[i], test_to_replace[i])
+
+    with open(filename + '_new', 'w') as file:
+        for line in mtpl_lines:
+            print(line, end="", file=file)
+
+def get_test_list(filename):
+    # Open mtpl to search
+    with open(filename, 'r') as fh:
+        mtpl_lines = [str(line) for line in fh]
+
+    test_to_search = ['Test iC']
+
+    list_tests = ['Old Name\n']
+    mtpl_length = len(mtpl_lines)
+    # loop for individual search
+    for line_i in range(mtpl_length):
+        # Grabbing current line as string
+        current_line = mtpl_lines[line_i]
+        if test_to_search[0] in current_line:
+            t_inst = current_line.split(" ")
+            list_tests.append(t_inst[2])
+
+    with open(filename.replace(".mtpl","") + '_test_names.csv', 'w') as file:
+        for line in list_tests:
+            print(line, end="", file=file)
+
+def test_list():
+    global TP_path
+    global list_of_mtpls
+
+    TP_path = r"\Modules"
+
+    list_of_mtpls = list_of_mod_t5.get().split(",")
+
+    print(list_of_mtpls)
+
+    #if parameter value already taken then do not update
+
+    for i in list_of_mtpls:
+        get_test_list(repo_path + TP_path+'\\'+i+'\\'+i+'.mtpl')
+        print(repo_path + TP_path+'\\'+i+'\\'+i+'_test_names.csv has been generated')
+
 def update_params():
 
     global TP_path
@@ -171,8 +228,75 @@ def edc_to_kill():
         e_k(repo_path + TP_path+'\\'+i+'\\'+i+'.mtpl')
         print(repo_path + TP_path+'\\'+i+'\\'+i+'.mtpl_new has been generated')
 
+def bypass():
+    global TP_path
+    global list_of_mtpls
+    global test_to_search
+    global removal
+    global param_to_update
+    global param_val
+
+    TP_path = r"\Modules"
+
+    list_of_mtpls = list_of_mod_t3.get().split(",")
+    test_to_search = test_inst_t3.get().split(",")
+    param_to_update = ['bypass_global']
+    param_val = ['"1"']
+
+    if bypass_var.get() == "Un-Bypass":
+        removal = 1
+    else:
+        removal =0
+
+    print(list_of_mtpls,test_to_search)
+
+    #if parameter value already taken then do not update
+
+    for i in list_of_mtpls:
+        parse_mtpl(repo_path + TP_path+'\\'+i+'\\'+i+'.mtpl')
+        print(repo_path + TP_path+'\\'+i+'\\'+i+'.mtpl_new has been generated')
+
+def bulk_replace():
+    global TP_path
+    global list_of_mtpls
+    global test_to_search
+    global removal
+    global test_to_replace
+
+    TP_path = r"\Modules"
+
+    test_instance_to_update = pd.read_csv(filename)
+    test_to_search = test_instance_to_update['Old Name']
+    test_to_replace = test_instance_to_update['New Name']
+
+    list_of_mtpls = list_of_mod_t4.get().split(",")
+
+    #if parameter value already taken then do not update
+
+    for i in list_of_mtpls:
+        print('Please be patient')
+        bulk_fnr(repo_path + TP_path+'\\'+i+'\\'+i+'.mtpl')
+        print(repo_path + TP_path+'\\'+i+'\\'+i+'.mtpl_new has been generated')
+
 def callback(url):
     webbrowser.open_new(url)
+
+def select_file():
+    global filename
+    filetypes = (
+        ('text files', '*.csv'),
+        ('All files', '*.*')
+    )
+
+    filename = fd.askopenfilename(
+        title='Open a file',
+        initialdir='/',
+        filetypes=filetypes)
+
+    showinfo(
+        title='Selected File',
+        message=filename
+    )
 
 # def gui():
 ### Main Root
@@ -194,13 +318,13 @@ tab7 = ttk.Frame(tab_parent, padding="60 50 60 50")
 tab_parent.add(tab1, text='Update Test Parameters')
 tab_parent.add(tab2, text='EDC to KILL/KILL to EDC')
 tab_parent.add(tab3, text='Bypass/Unbypass')
-tab_parent.add(tab4, text='Find & Replace')
+tab_parent.add(tab4, text='Bulk Find & Replace')
 tab_parent.add(tab5, text='Test Instance Rename')
-tab_parent.add(tab6, text='TP Audit')
+tab_parent.add(tab6, text='TP Audit (in progress)')
 tab_parent.add(tab7, text='Additional Tools')
 tab_parent.grid(sticky=('news'))
 
-#### Tab 1
+#### update params
 link1 = Label(tab1, text="Wiki: https://goto/emptypaella", fg="blue", cursor="hand2")
 link1.grid(row = 0,column = 0, sticky=W, columnspan = 2)
 link1.bind("<Button-1>", lambda e: callback("https://gitlab.devtools.intel.com/ianimash/Empty-Paella/-/wikis/Empty-Paella"))
@@ -243,7 +367,7 @@ button_0 = Button(tab1, text="Update MTPL's", height = 1, width = 20, command = 
 button_0.grid(row = 7, column = 0, sticky=E )
 
 
-#### Tab 2
+#### EDC to KILL
 link1 = Label(tab2, text="Wiki: https://goto/emptypaella", fg="blue", cursor="hand2")
 link1.grid(row = 0,column = 0, sticky=W, columnspan = 2)
 link1.bind("<Button-1>", lambda e: callback("https://gitlab.devtools.intel.com/ianimash/Empty-Paella/-/wikis/Empty-Paella"))
@@ -273,13 +397,127 @@ button_0.grid(row = 4, column = 0, sticky=E )
 E_to_C_var = StringVar(tab2)
 E_to_C_var.set("EDC to KILL") # default value
 
-sel_prod = OptionMenu(tab2, E_to_C_var, "EDC to KILL", "KILL to EDC")
-sel_prod.grid(row = 4, column = 1, sticky=W)
+sel_op = OptionMenu(tab2, E_to_C_var, "EDC to KILL", "KILL to EDC")
+sel_op.grid(row = 4, column = 1, sticky=W)
 
+#### Bypass
+link1 = Label(tab3, text="Wiki: https://goto/emptypaella", fg="blue", cursor="hand2")
+link1.grid(row = 0,column = 0, sticky=W, columnspan = 2)
+link1.bind("<Button-1>", lambda e: callback("https://gitlab.devtools.intel.com/ianimash/Empty-Paella/-/wikis/Empty-Paella"))
 
+link2 = Label(tab3, text="IT support contact: idriss.animashaun@intel.com", fg="blue", cursor="hand2")
+link2.grid(row = 1,column = 0, sticky=W, columnspan = 2)
+link2.bind("<Button-1>", lambda e: callback("https://outlook.com"))
 
+label_0 = Label(tab3, text = 'Enter Modules to Modify: ', bg  ='black', fg = 'white')
+label_0.grid(row = 2, sticky=E)
+list_of_mod_t3 = Entry(tab3, width=50, relief = FLAT)
+list_of_mod_t3.insert(2,"SCN_CCF,SCN_SOC")
+list_of_mod_t3.grid(row = 2, column = 1)
 
-# #### Tab 7
+label_1 = Label(tab3, text = 'Enter Test Instance/Test Template to Modify: ', bg  ='black', fg = 'white')
+label_1.grid(row = 3, sticky=E)
+test_inst_t3 = Entry(tab3, width=50, relief = FLAT)
+test_inst_t3.insert(4,'iCVminTest,iCAuxiliaryTest')
+test_inst_t3.grid(row = 3, column = 1)
+
+button_0 = Button(tab3, text="Update MTPL's", height = 1, width = 20, command = bypass, bg = 'green', fg = 'white', font = '-family "SF Espresso Shack" -size 12')
+button_0.grid(row = 4, column = 0, sticky=E )
+
+bypass_var = StringVar(tab3)
+bypass_var.set("Bypass") # default value
+
+sel_op = OptionMenu(tab3, bypass_var, "Bypass", "Un-Bypass")
+sel_op.grid(row = 4, column = 1, sticky=W)
+
+#### Find & Replace
+link1 = Label(tab4, text="Wiki: https://goto/emptypaella", fg="blue", cursor="hand2")
+link1.grid(row = 0,column = 0, sticky=W, columnspan = 2)
+link1.bind("<Button-1>", lambda e: callback("https://gitlab.devtools.intel.com/ianimash/Empty-Paella/-/wikis/Empty-Paella"))
+
+link2 = Label(tab4, text="IT support contact: idriss.animashaun@intel.com", fg="blue", cursor="hand2")
+link2.grid(row = 1,column = 0, sticky=W, columnspan = 2)
+link2.bind("<Button-1>", lambda e: callback("https://outlook.com"))
+
+label_0 = Label(tab4, text = 'Enter Modules to Modify: ', bg  ='black', fg = 'white')
+label_0.grid(row = 2, sticky=E)
+list_of_mod_t4 = Entry(tab4, width=50, relief = FLAT)
+list_of_mod_t4.insert(2,"SCN_SOC")
+list_of_mod_t4.grid(row = 2, column = 1)
+
+open_button_1 = Button(
+    tab4,
+    text='Select Renamed csv',
+    command=select_file,
+    bg = 'blue', fg = 'white', font = '-family "SF Espresso Shack" -size 12'
+)
+
+open_button_1.grid(row = 3, column = 0)
+
+button_0 = Button(tab4, text="Update MTPL's", height = 1, width = 20, command = bulk_replace, bg = 'green', fg = 'white', font = '-family "SF Espresso Shack" -size 12')
+button_0.grid(row = 3, column = 1, sticky=E )
+
+#### Test Rename
+link1 = Label(tab5, text="Wiki: https://goto/emptypaella", fg="blue", cursor="hand2")
+link1.grid(row = 0,column = 0, sticky=W, columnspan = 2)
+link1.bind("<Button-1>", lambda e: callback("https://gitlab.devtools.intel.com/ianimash/Empty-Paella/-/wikis/Empty-Paella"))
+
+link2 = Label(tab5, text="IT support contact: idriss.animashaun@intel.com", fg="blue", cursor="hand2")
+link2.grid(row = 1,column = 0, sticky=W, columnspan = 2)
+link2.bind("<Button-1>", lambda e: callback("https://outlook.com"))
+
+label_0 = Label(tab5, text = 'Enter Modules to Modify: ', bg  ='black', fg = 'white')
+label_0.grid(row = 2, sticky=E)
+list_of_mod_t5 = Entry(tab5, width=50, relief = FLAT)
+list_of_mod_t5.insert(2,"SCN_SOC")
+list_of_mod_t5.grid(row = 2, column = 1)
+
+button_0 = Button(tab5, text="Get Current Test Names", height = 1, width = 20, command = test_list, bg = 'green', fg = 'white', font = '-family "SF Espresso Shack" -size 12')
+button_0.grid(row = 3, column = 0, sticky=E )
+
+open_button_1 = Button(
+    tab5,
+    text='Select Renamed Tests csv',
+    command=select_file,
+    bg = 'blue', fg = 'white', font = '-family "SF Espresso Shack" -size 12'
+)
+
+open_button_1.grid(row = 3, column = 1)
+
+button_2 = Button(tab5, text="Update MTPL's", height = 1, width = 20, command = bulk_replace, bg = 'green', fg = 'white', font = '-family "SF Espresso Shack" -size 12')
+button_2.grid(row = 3, column = 2, sticky=E )
+
+#### Audit
+link1 = Label(tab6, text="Wiki: https://goto/emptypaella", fg="blue", cursor="hand2")
+link1.grid(row = 0,column = 0, sticky=W, columnspan = 2)
+link1.bind("<Button-1>", lambda e: callback("https://gitlab.devtools.intel.com/ianimash/Empty-Paella/-/wikis/Empty-Paella"))
+
+link2 = Label(tab6, text="IT support contact: idriss.animashaun@intel.com", fg="blue", cursor="hand2")
+link2.grid(row = 1,column = 0, sticky=W, columnspan = 2)
+link2.bind("<Button-1>", lambda e: callback("https://outlook.com"))
+
+label_0 = Label(tab6, text = 'Enter Modules to Audit: ', bg  ='black', fg = 'white')
+label_0.grid(row = 2, sticky=E)
+list_of_mod_t6 = Entry(tab6, width=50, relief = FLAT)
+list_of_mod_t6.insert(2,"SCN_CCF,SCN_SOC")
+list_of_mod_t6.grid(row = 2, column = 1)
+
+# label_1 = Label(tab6, text = 'Enter Test Instance/Test Template to Audit: ', bg  ='black', fg = 'white')
+# label_1.grid(row = 3, sticky=E)
+# test_inst = Entry(tab6, width=50, relief = FLAT)
+# test_inst.insert(4,'iCVminTest,iCAuxiliaryTest')
+# test_inst.grid(row = 3, column = 1)
+
+label_2 = Label(tab6, text = 'Enter Parameter to Audit: ', bg  ='black', fg = 'white')
+label_2.grid(row = 4, sticky=E)
+test_param_t6 = Entry(tab6, width=50, relief = FLAT)
+test_param_t6.insert(4,"preplist,postinstance")
+test_param_t6.grid(row = 4, column = 1)
+
+button_0 = Button(tab6, text="Audit MTPL's", height = 1, width = 20, command = update_params, bg = 'green', fg = 'white', font = '-family "SF Espresso Shack" -size 12')
+button_0.grid(row = 7, column = 0, sticky=E )
+
+# #### Additional Tools
 link7 = Label(tab7, text="MTPL updater", fg="blue", cursor="hand2")
 link7.grid(row = 0,column = 0, sticky=W, columnspan = 2)
 link7.bind("<Button-1>", lambda e: callback("https://gitlab.devtools.intel.com/tcathcar/mtplupdater"))
