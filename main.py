@@ -121,7 +121,41 @@ def e_k(filename):
     with open(filename + '_new', 'w') as file:
         for line in mtpl_lines:
             print(line, end="", file=file)
-   
+
+def audit_mtpl(filename):
+    # Open mtpl to search
+    with open(filename, 'r') as fh:
+        mtpl_lines = [str(line) for line in fh]
+
+    mtpl_length = len(mtpl_lines)
+    
+    test_to_search = ['Test iC']
+    instances = ['Test Instance Name']
+    
+    audit_param = [param_to_update[0] +'\n']
+
+    # loop for individual search
+    for test_instance in test_to_search:
+        for line_i in range(mtpl_length):
+            # Grabbing current line as string
+            current_line = mtpl_lines[line_i]
+
+            if (test_instance in current_line) and ('DUTFlowItem' not in current_line) and ('{' in mtpl_lines[line_i+1]):
+                on_line = line_i+2
+                parameter = mtpl_lines[on_line]
+                for j in range(0,len(param_to_update)):
+                    while '}' not in parameter:
+                        if param_to_update[j] in parameter:
+                            t_inst = current_line.split(" ")
+                            instances.append(t_inst[2])
+                            audit_param.append(parameter)
+                        on_line += 1
+                        parameter = mtpl_lines[on_line]
+
+    with open(filename.replace(".mtpl","") + '_audit.csv', 'w') as file:
+        for line_no in range(0,len(instances)):
+            print(instances[line_no].strip('\n') + ',' + audit_param[line_no], end="", file=file)
+    
 def bulk_fnr(filename):
     # Open mtpl to search
     with open(filename, 'r') as fh:
@@ -208,6 +242,24 @@ def update_params():
 
     for i in list_of_mtpls:
         parse_mtpl(repo_path + TP_path+'\\'+i+'\\'+i+'.mtpl')
+        print(repo_path + TP_path+'\\'+i+'\\'+i+'.mtpl_new has been generated')
+
+def audit_params():
+
+    global TP_path
+    global list_of_mtpls
+    global param_to_update
+    global param_val
+
+    TP_path = r"\Modules"
+
+    list_of_mtpls = list_of_mod_t6.get().split(",")
+    param_to_update = test_param_t6.get().split(",")
+
+    print(list_of_mtpls,param_to_update)
+
+    for i in list_of_mtpls:
+        audit_mtpl(repo_path + TP_path+'\\'+i+'\\'+i+'.mtpl')
         print(repo_path + TP_path+'\\'+i+'\\'+i+'.mtpl_new has been generated')
 
 def edc_to_kill():
@@ -320,7 +372,7 @@ tab_parent.add(tab2, text='EDC to KILL/KILL to EDC')
 tab_parent.add(tab3, text='Bypass/Unbypass')
 tab_parent.add(tab4, text='Bulk Find & Replace')
 tab_parent.add(tab5, text='Test Instance Rename')
-tab_parent.add(tab6, text='TP Audit (in progress)')
+tab_parent.add(tab6, text='TP Audit')
 tab_parent.add(tab7, text='Additional Tools')
 tab_parent.grid(sticky=('news'))
 
@@ -499,7 +551,7 @@ link2.bind("<Button-1>", lambda e: callback("https://outlook.com"))
 label_0 = Label(tab6, text = 'Enter Modules to Audit: ', bg  ='black', fg = 'white')
 label_0.grid(row = 2, sticky=E)
 list_of_mod_t6 = Entry(tab6, width=50, relief = FLAT)
-list_of_mod_t6.insert(2,"SCN_CCF,SCN_SOC")
+list_of_mod_t6.insert(2,"SCN_SOC")
 list_of_mod_t6.grid(row = 2, column = 1)
 
 # label_1 = Label(tab6, text = 'Enter Test Instance/Test Template to Audit: ', bg  ='black', fg = 'white')
@@ -511,10 +563,10 @@ list_of_mod_t6.grid(row = 2, column = 1)
 label_2 = Label(tab6, text = 'Enter Parameter to Audit: ', bg  ='black', fg = 'white')
 label_2.grid(row = 4, sticky=E)
 test_param_t6 = Entry(tab6, width=50, relief = FLAT)
-test_param_t6.insert(4,"preplist,postinstance")
+test_param_t6.insert(4,"postinstance")
 test_param_t6.grid(row = 4, column = 1)
 
-button_0 = Button(tab6, text="Audit MTPL's", height = 1, width = 20, command = update_params, bg = 'green', fg = 'white', font = '-family "SF Espresso Shack" -size 12')
+button_0 = Button(tab6, text="Audit MTPL's", height = 1, width = 20, command = audit_params, bg = 'green', fg = 'white', font = '-family "SF Espresso Shack" -size 12')
 button_0.grid(row = 7, column = 0, sticky=E )
 
 # #### Additional Tools
