@@ -9,6 +9,7 @@ import os
 from pathlib import Path
 import inspect
 import pandas as pd
+# import os.path
 
 current_directory = os.getcwd()
 print('Working Directory:', current_directory)
@@ -160,7 +161,23 @@ def audit_mtpl(filename):
     with open(filename.replace(".mtpl","") + '_audit.csv', 'w') as file:
         for line_no in range(0,len(instances)):
             print(instances[line_no].strip('\n') + ',' + audit_param[line_no], end="", file=file)
+
+def conflicts():
     
+    searchstring = '<<<<<<< HEAD'
+
+    for dirpath, dirnames, filenames in os.walk(repo_path + '//Modules'):
+        for filename in filenames:
+            try:
+                # Full path
+                f = open(os.path.join(dirpath, filename))
+
+                if searchstring in f.read():
+                    print('found conflict in file %s' % filename)
+                f.close()
+            except:
+                print('skipping: ' + filename)
+
 def bulk_fnr(filename):
     # Open mtpl to search
     with open(filename, 'r') as fh:
@@ -370,7 +387,8 @@ tab3 = ttk.Frame(tab_parent, padding="20 30 20 50")
 tab4 = ttk.Frame(tab_parent, padding="20 30 20 50")
 tab5 = ttk.Frame(tab_parent, padding="20 30 20 50")
 tab6 = ttk.Frame(tab_parent, padding="20 30 20 50")
-tab7 = ttk.Frame(tab_parent, padding="60 50 60 50")
+tab7 = ttk.Frame(tab_parent, padding="20 30 20 50")
+tab8 = ttk.Frame(tab_parent, padding="60 50 60 50")
 
 tab_parent.add(tab1, text='Update Test Parameters')
 tab_parent.add(tab2, text='EDC to KILL/KILL to EDC')
@@ -378,7 +396,8 @@ tab_parent.add(tab3, text='Bypass/Unbypass')
 tab_parent.add(tab4, text='Bulk Find & Replace')
 tab_parent.add(tab5, text='Test Instance Rename')
 tab_parent.add(tab6, text='TP Audit')
-tab_parent.add(tab7, text='Additional Tools')
+tab_parent.add(tab7, text='Check unresolved Conflicts')
+tab_parent.add(tab8, text='Additional Tools')
 tab_parent.grid(sticky=('news'))
 
 #### update params
@@ -574,8 +593,20 @@ test_param_t6.grid(row = 4, column = 1)
 button_0 = Button(tab6, text="Audit MTPL's", height = 1, width = 20, command = audit_params, bg = 'green', fg = 'white', font = '-family "SF Espresso Shack" -size 12')
 button_0.grid(row = 7, column = 0, sticky=E )
 
-# #### Additional Tools
-link7 = Label(tab7, text="MTPL updater", fg="blue", cursor="hand2")
+#### Merge Conflicts
+link1 = Label(tab7, text="Wiki: https://goto/emptypaella", fg="blue", cursor="hand2")
+link1.grid(row = 0,column = 0, sticky=W, columnspan = 2)
+link1.bind("<Button-1>", lambda e: callback("https://gitlab.devtools.intel.com/ianimash/Empty-Paella/-/wikis/Empty-Paella"))
+
+link2 = Label(tab7, text="IT support contact: idriss.animashaun@intel.com", fg="blue", cursor="hand2")
+link2.grid(row = 1,column = 0, sticky=W, columnspan = 2)
+link2.bind("<Button-1>", lambda e: callback("https://outlook.com"))
+
+button_0 = Button(tab7, text="Check for Conflicts", height = 1, width = 20, command = conflicts, bg = 'green', fg = 'white', font = '-family "SF Espresso Shack" -size 12')
+button_0.grid(row = 2, column = 0, sticky=E )
+
+#### Additional Tools
+link7 = Label(tab8, text="MTPL updater", fg="blue", cursor="hand2")
 link7.grid(row = 0,column = 0, sticky=W, columnspan = 2)
 link7.bind("<Button-1>", lambda e: callback("https://gitlab.devtools.intel.com/tcathcar/mtplupdater"))
 
