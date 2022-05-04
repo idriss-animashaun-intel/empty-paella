@@ -104,17 +104,22 @@ def e_k(filename):
                 on_line = line_i+2
                 parameter = mtpl_lines[on_line]
                 if E_to_C_var.get() == "EDC to KILL":
-                    while '}' not in parameter and '}' not in mtpl_lines[on_line+1]:
-                        if param_to_update[1] in parameter:
+                    mtpl_lines[line_i] = mtpl_lines[line_i].replace(' @EDC', '')
+                    while 'DUTFlowItem' not in parameter:
+                        if ('##EDC##' in parameter):
                             print('Moved to KILL', parameter)
                             mtpl_lines[on_line] = parameter.replace('##EDC## ', '')
                         on_line += 1
                         parameter = mtpl_lines[on_line]
-                else:
-                    while '}' not in parameter and '}' not in mtpl_lines[on_line+1]:
-                        if 'SetBin SoftBins' in parameter:
+            elif (test_instance in current_line)and ('{' in mtpl_lines[line_i+1]):
+                on_line = line_i+2
+                parameter = mtpl_lines[on_line]
+                if E_to_C_var.get() == "KILL to EDC":
+                    mtpl_lines[line_i] = mtpl_lines[line_i].replace('\n',' @EDC\n')
+                    while 'DUTFlowItem' not in parameter:
+                        if ('SetBin SoftBins' in parameter) and ('SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM' not in parameter) and ('SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE' not in parameter):
                             # print('updating test instance values', parameter)
-                            mtpl_lines[on_line] = param_to_update[1] + mtpl_lines[on_line] + '\n'
+                            mtpl_lines[on_line] = '\t\t\t' + param_to_update[1] + ' ' + mtpl_lines[on_line].replace('\t\t\t','') + '\n'
                         on_line += 1
                         parameter = mtpl_lines[on_line]
 
@@ -440,7 +445,7 @@ list_of_mod_t2.grid(row = 2, column = 1)
 label_1 = Label(tab2, text = 'Enter Test Instances: ', bg  ='black', fg = 'white')
 label_1.grid(row = 3, sticky=E)
 test_inst_t2 = Entry(tab2, width=50, relief = FLAT)
-test_inst_t2.insert(4,'ATSPEED_SOC_VMIN_E_SDTEND_STF_SAPF_NOM_LFM_1100_SACENTRAL1,ATSPEED_SOC_VMIN_E_SDTEND_STF_SAQ_NOM_LFM_1100_ASTROMID')
+test_inst_t2.insert(4,'ATSPEED_SOC_VMIN_E_SDTEND_STF_SAQ_NOM_LFM_1100_FXBX8 ATSPEED_SOC_VMIN_E_SDTEND_STF_SAQ_NOM_LFM_1100_FXBX8,ATSPEED_SOC_VMIN_E_SDTEND_STF_SAQ_NOM_LFM_1100_PHYTLPLX4NO2LM ATSPEED_SOC_VMIN_E_SDTEND_STF_SAQ_NOM_LFM_1100_PHYTLPLX4NO2LM')
 test_inst_t2.grid(row = 3, column = 1)
 
 button_0 = Button(tab2, text="Update MTPL's", height = 1, width = 20, command = edc_to_kill, bg = 'green', fg = 'white', font = '-family "SF Espresso Shack" -size 12')
@@ -563,7 +568,7 @@ list_of_mod_t6.grid(row = 2, column = 1)
 label_2 = Label(tab6, text = 'Enter Parameter to Audit: ', bg  ='black', fg = 'white')
 label_2.grid(row = 4, sticky=E)
 test_param_t6 = Entry(tab6, width=50, relief = FLAT)
-test_param_t6.insert(4,"postinstance")
+test_param_t6.insert(4,"preplist")
 test_param_t6.grid(row = 4, column = 1)
 
 button_0 = Button(tab6, text="Audit MTPL's", height = 1, width = 20, command = audit_params, bg = 'green', fg = 'white', font = '-family "SF Espresso Shack" -size 12')
