@@ -260,7 +260,7 @@ def audit_params():
 
     for i in list_of_mtpls:
         audit_mtpl(repo_path + TP_path+'\\'+i+'\\'+i+'.mtpl')
-        print(repo_path + TP_path+'\\'+i+'\\'+i+'.mtpl_new has been generated')
+        print(repo_path + TP_path+'\\'+i+'\\'+i+'_audit.csv has been generated')
 
 def edc_to_kill():
     global TP_path
@@ -406,13 +406,13 @@ test_inst.grid(row = 3, column = 1)
 label_2 = Label(tab1, text = 'Enter Parameter to Add/Update Modify: ', bg  ='black', fg = 'white')
 label_2.grid(row = 4, sticky=E)
 test_param = Entry(tab1, width=50, relief = FLAT)
-test_param.insert(4,"preplist,postinstance")
+test_param.insert(4,"preplist,bypass_global")
 test_param.grid(row = 4, column = 1)
 
 label_3 = Label(tab1, text = 'Enter Parameter value: ', bg  ='black', fg = 'white')
 label_3.grid(row = 5, sticky=E)
 param_value = Entry(tab1, width=50, relief = FLAT)
-param_value.insert(4,'"CPD_DEBUG!EnableDMEMCapture TDO","CPD_DEBUG!ProcessDTS TDO,9"')
+param_value.insert(4,'"CPD_DEBUG!EnableDMEMCapture TDO","1"')
 param_value.grid(row = 5, column = 1)
 
 button_0 = Button(tab1, text="Update MTPL's", height = 1, width = 20, command = update_params, bg = 'green', fg = 'white', font = '-family "SF Espresso Shack" -size 12')
@@ -428,8 +428,8 @@ link2 = Label(tab2, text="IT support contact: idriss.animashaun@intel.com", fg="
 link2.grid(row = 1,column = 0, sticky=W, columnspan = 2)
 link2.bind("<Button-1>", lambda e: callback("https://outlook.com"))
 
-var2 = IntVar(value=0)
-Checkbutton(tab2, text="Match exactly", variable=var2).grid(row=3, column = 2, sticky=W)
+# var2 = IntVar(value=0)
+# Checkbutton(tab2, text="Match exactly", variable=var2).grid(row=3, column = 2, sticky=W)
 
 label_0 = Label(tab2, text = 'Enter Modules to Modify: ', bg  ='black', fg = 'white')
 label_0.grid(row = 2, sticky=E)
