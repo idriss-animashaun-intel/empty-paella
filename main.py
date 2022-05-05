@@ -128,6 +128,34 @@ def e_k(filename):
         for line in mtpl_lines:
             print(line, end="", file=file)
 
+def status(filename):
+    # Open mtpl to search
+    with open(filename, 'r') as fh:
+        mtpl_lines = [str(line) for line in fh]
+
+    mtpl_length = len(mtpl_lines)
+
+    kill_stat = ['Test Instance,Status']
+    
+    #to remove do this
+
+    # loop for individual search
+    for line_i in range(mtpl_length):
+        # Grabbing current line as string
+        current_line = mtpl_lines[line_i]
+
+        if ('DUTFlowItem' in current_line) and ('@EDC' in current_line) and ('{' in mtpl_lines[line_i+1]):
+            temp = current_line.split(' ')
+            kill_stat.append(temp[2] + ', E')
+        elif ('DUTFlowItem' in current_line) and ('{' in mtpl_lines[line_i+1]):
+            temp = current_line.split(' ')
+            kill_stat.append(temp[1] + ', K')
+
+
+    with open(filename.replace(".mtpl","") + '_status_audit.csv', 'w') as file:
+        for line in kill_stat:
+            print(line + '\n', end="", file=file)
+
 def audit_mtpl(filename):
     # Open mtpl to search
     with open(filename, 'r') as fh:
@@ -284,6 +312,23 @@ def audit_params():
         audit_mtpl(repo_path + TP_path+'\\'+i+'\\'+i+'.mtpl')
         print(repo_path + TP_path+'\\'+i+'\\'+i+'_audit.csv has been generated')
 
+def Kill_status():
+
+    global TP_path
+    global list_of_mtpls
+    global param_to_update
+    global param_val
+
+    TP_path = r"\Modules"
+
+    list_of_mtpls = list_of_mod_t8.get().split(",")
+
+    print(list_of_mtpls)
+
+    for i in list_of_mtpls:
+        status(repo_path + TP_path+'\\'+i+'\\'+i+'.mtpl')
+        print(repo_path + TP_path+'\\'+i+'\\'+i+'_status_audit.csv has been generated')
+
 def edc_to_kill():
     global TP_path
     global list_of_mtpls
@@ -388,7 +433,8 @@ tab4 = ttk.Frame(tab_parent, padding="20 30 20 50")
 tab5 = ttk.Frame(tab_parent, padding="20 30 20 50")
 tab6 = ttk.Frame(tab_parent, padding="20 30 20 50")
 tab7 = ttk.Frame(tab_parent, padding="20 30 20 50")
-tab8 = ttk.Frame(tab_parent, padding="60 50 60 50")
+tab8 = ttk.Frame(tab_parent, padding="20 30 20 50")
+tab12 = ttk.Frame(tab_parent, padding="60 50 60 50")
 
 tab_parent.add(tab1, text='Update Test Parameters')
 tab_parent.add(tab2, text='EDC to KILL/KILL to EDC')
@@ -397,7 +443,8 @@ tab_parent.add(tab4, text='Bulk Find & Replace')
 tab_parent.add(tab5, text='Test Instance Rename')
 tab_parent.add(tab6, text='TP Audit')
 tab_parent.add(tab7, text='Check unresolved Conflicts')
-tab_parent.add(tab8, text='Additional Tools')
+tab_parent.add(tab8, text='Kill Status')
+tab_parent.add(tab12, text='Additional Tools')
 tab_parent.grid(sticky=('news'))
 
 #### update params
@@ -427,7 +474,7 @@ test_inst = Entry(tab1, width=50, relief = FLAT)
 test_inst.insert(4,'iCVminTest,iCAuxiliaryTest')
 test_inst.grid(row = 3, column = 1)
 
-label_2 = Label(tab1, text = 'Enter Parameter to Add/Update Modify: ', bg  ='black', fg = 'white')
+label_2 = Label(tab1, text = 'Enter Parameter to Add/Update: ', bg  ='black', fg = 'white')
 label_2.grid(row = 4, sticky=E)
 test_param = Entry(tab1, width=50, relief = FLAT)
 test_param.insert(4,"preplist,bypass_global")
@@ -602,11 +649,29 @@ link2 = Label(tab7, text="IT support contact: idriss.animashaun@intel.com", fg="
 link2.grid(row = 1,column = 0, sticky=W, columnspan = 2)
 link2.bind("<Button-1>", lambda e: callback("https://outlook.com"))
 
-button_0 = Button(tab7, text="Check for Conflicts", height = 1, width = 20, command = conflicts, bg = 'green', fg = 'white', font = '-family "SF Espresso Shack" -size 12')
+button_0 = Button(tab7, text="Check For Conflicts", height = 1, width = 20, command = conflicts, bg = 'green', fg = 'white', font = '-family "SF Espresso Shack" -size 12')
 button_0.grid(row = 2, column = 0, sticky=E )
 
+#### KILL Status
+link1 = Label(tab8, text="Wiki: https://goto/emptypaella", fg="blue", cursor="hand2")
+link1.grid(row = 0,column = 0, sticky=W, columnspan = 2)
+link1.bind("<Button-1>", lambda e: callback("https://gitlab.devtools.intel.com/ianimash/Empty-Paella/-/wikis/Empty-Paella"))
+
+link2 = Label(tab8, text="IT support contact: idriss.animashaun@intel.com", fg="blue", cursor="hand2")
+link2.grid(row = 1,column = 0, sticky=W, columnspan = 2)
+link2.bind("<Button-1>", lambda e: callback("https://outlook.com"))
+
+label_0 = Label(tab8, text = 'Enter Modules to Audit: ', bg  ='black', fg = 'white')
+label_0.grid(row = 2, sticky=E)
+list_of_mod_t8 = Entry(tab8, width=50, relief = FLAT)
+list_of_mod_t8.insert(2,"SCN_SOC")
+list_of_mod_t8.grid(row = 2, column = 1)
+
+button_0 = Button(tab8, text="Pull Kill Status", height = 1, width = 20, command = Kill_status, bg = 'green', fg = 'white', font = '-family "SF Espresso Shack" -size 12')
+button_0.grid(row = 4, column = 0, sticky=E )
+
 #### Additional Tools
-link7 = Label(tab8, text="MTPL updater", fg="blue", cursor="hand2")
+link7 = Label(tab12, text="MTPL updater", fg="blue", cursor="hand2")
 link7.grid(row = 0,column = 0, sticky=W, columnspan = 2)
 link7.bind("<Button-1>", lambda e: callback("https://gitlab.devtools.intel.com/tcathcar/mtplupdater"))
 
