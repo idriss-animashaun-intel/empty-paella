@@ -193,6 +193,8 @@ def audit_mtpl(filename):
 def conflicts():
     
     searchstring = '<<<<<<< HEAD'
+    tp_conflicts = []
+    skipped_files = []
 
     for dirpath, dirnames, filenames in os.walk(repo_path + '//Modules'):
         for filename in filenames:
@@ -201,10 +203,19 @@ def conflicts():
                 f = open(os.path.join(dirpath, filename))
 
                 if searchstring in f.read():
-                    print('found conflict in file %s' % filename)
+                    tp_conflicts.append(filename)
                 f.close()
             except:
-                print('skipping: ' + filename)
+                skipped_files.append(filename)
+                f.close()
+
+    # print('Skipped files as I can not parse these:')
+    # print(skipped_files)
+    if tp_conflicts == []:
+        print('No Unresolved conflicts found')
+    else:
+        print('Unresolved conflict found in:')
+        print(tp_conflicts)
 
 def bulk_fnr(filename):
     # Open mtpl to search
