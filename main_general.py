@@ -9,15 +9,16 @@ import os
 from pathlib import Path
 import inspect
 import pandas as pd
-import fnmatch
+# import os.path
 
 current_directory = os.getcwd()
 print('Working Directory:', current_directory)
 
 
 path = Path(current_directory)
-repo_path = str(path.parent.absolute())
+repo_path = r'C:\Users\ianimash\OneDrive - Intel Corporation\Documents\Products\RPL682\Britta xml\From Gal\Latest\RPL682_SCN_BRITA_files_Except_GT'
 print('path to repo:', repo_path)
+
 
 def resource_path(relative_path):
     """ Get absolute path to resource, works for dev and for PyInstaller """
@@ -45,42 +46,40 @@ def parse_mtpl(filename):
             # Grabbing current line as string
             current_line = mtpl_lines[line_i]
 
-            regex_line = fnmatch.filter([current_line], '*' + test_instance + '*')
-            if len(regex_line) == 1:
-                if (regex_line[0] == current_line) and ('DUTFlowItem' not in current_line) and ('{' in mtpl_lines[line_i+1]):
-                    # block = [[current_line]]
-                    on_line = line_i+2
-                    parameter = mtpl_lines[on_line]
-                    flag = 0
-                    if removal == 1:
-                        for j in range(0,len(param_to_update)):
-                            while '}' not in parameter:
-                                if param_to_update[j] in parameter:
+            if (test_instance in current_line) and ('DUTFlowItem' not in current_line) and ('{' in mtpl_lines[line_i+1]):
+                # block = [[current_line]]
+                on_line = line_i+2
+                parameter = mtpl_lines[on_line]
+                flag = 0
+                if removal == 1:
+                    for j in range(0,len(param_to_update)):
+                        while '}' not in parameter:
+                            if param_to_update[j] in parameter:
+                                flag = 1
+                                print('update this', parameter)
+                                mtpl_lines[on_line] = '\t' + removal_update
+                            on_line += 1
+                            parameter = mtpl_lines[on_line]
+                        if flag == 0:
+                            mtpl_lines[on_line - 1] = mtpl_lines[on_line - 1] + '\t' + removal_update
+                else:
+                    for j in range(0,len(param_to_update)):
+                        while '}' not in parameter:
+                            if update[j] in parameter:
+                                flag = 1
+                            elif param_to_update[j] in parameter:
+                                if do_not_update_value == 1:
                                     flag = 1
-                                    print('update this', parameter)
-                                    mtpl_lines[on_line] = '\t' + removal_update
-                                on_line += 1
-                                parameter = mtpl_lines[on_line]
-                            if flag == 0:
-                                mtpl_lines[on_line - 1] = mtpl_lines[on_line - 1] + '\t' + removal_update
-                    else:
-                        for j in range(0,len(param_to_update)):
-                            while '}' not in parameter:
-                                if update[j] in parameter:
+                                    print('parameter already populated please review manually', parameter)
+                                else:
                                     flag = 1
-                                elif param_to_update[j] in parameter:
-                                    if do_not_update_value == 1:
-                                        flag = 1
-                                        print('parameter already populated please review manually', parameter)
-                                    else:
-                                        flag = 1
-                                        # print('updating test instance values', parameter)
-                                        mtpl_lines[on_line] = '\t' + update[j] + ';\n'
-                                on_line += 1
-                                parameter = mtpl_lines[on_line]
-                            if flag == 0:
-                                # print('adding test instance values', parameter)
-                                mtpl_lines[on_line - 1] = mtpl_lines[on_line - 1] + '\t' + update[j] + ';\n'
+                                    # print('updating test instance values', parameter)
+                                    mtpl_lines[on_line] = '\t' + update[j] + ';\n'
+                            on_line += 1
+                            parameter = mtpl_lines[on_line]
+                        if flag == 0:
+                            # print('adding test instance values', parameter)
+                            mtpl_lines[on_line - 1] = mtpl_lines[on_line - 1] + '\t' + update[j] + ';\n'
 
     with open(filename + '_new', 'w') as file:
         for line in mtpl_lines:
@@ -103,30 +102,28 @@ def e_k(filename):
             # Grabbing current line as string
             current_line = mtpl_lines[line_i]
 
-            regex_line = fnmatch.filter([current_line], '*' + test_instance + '*')
-            if len(regex_line) == 1:
-                if (regex_line[0] == current_line) and ('@EDC' in current_line) and ('{' in mtpl_lines[line_i+1]):
-                    on_line = line_i+2
-                    parameter = mtpl_lines[on_line]
-                    if E_to_C_var.get() == "EDC to KILL":
-                        mtpl_lines[line_i] = mtpl_lines[line_i].replace(' @EDC', '')
-                        while 'DUTFlowItem' not in parameter:
-                            if ('##EDC##' in parameter):
-                                print('Moved to KILL', parameter)
-                                mtpl_lines[on_line] = parameter.replace('##EDC## ', '')
-                            on_line += 1
-                            parameter = mtpl_lines[on_line]
-                elif (regex_line[0] == current_line)and ('{' in mtpl_lines[line_i+1]):
-                    on_line = line_i+2
-                    parameter = mtpl_lines[on_line]
-                    if E_to_C_var.get() == "KILL to EDC":
-                        mtpl_lines[line_i] = mtpl_lines[line_i].replace('\n',' @EDC\n')
-                        while 'DUTFlowItem' not in parameter:
-                            if ('SetBin SoftBins' in parameter) and ('SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM' not in parameter) and ('SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE' not in parameter):
-                                # print('updating test instance values', parameter)
-                                mtpl_lines[on_line] = '\t\t\t' + param_to_update[1] + ' ' + mtpl_lines[on_line].replace('\t\t\t','') + '\n'
-                            on_line += 1
-                            parameter = mtpl_lines[on_line]
+            if (test_instance in current_line) and ('@EDC' in current_line) and ('{' in mtpl_lines[line_i+1]):
+                on_line = line_i+2
+                parameter = mtpl_lines[on_line]
+                if E_to_C_var.get() == "EDC to KILL":
+                    mtpl_lines[line_i] = mtpl_lines[line_i].replace(' @EDC', '')
+                    while 'DUTFlowItem' not in parameter:
+                        if ('##EDC##' in parameter):
+                            print('Moved to KILL', parameter)
+                            mtpl_lines[on_line] = parameter.replace('##EDC## ', '')
+                        on_line += 1
+                        parameter = mtpl_lines[on_line]
+            elif (test_instance in current_line)and ('{' in mtpl_lines[line_i+1]):
+                on_line = line_i+2
+                parameter = mtpl_lines[on_line]
+                if E_to_C_var.get() == "KILL to EDC":
+                    mtpl_lines[line_i] = mtpl_lines[line_i].replace('\n',' @EDC\n')
+                    while 'DUTFlowItem' not in parameter:
+                        if ('SetBin SoftBins' in parameter) and ('SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM' not in parameter) and ('SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE' not in parameter):
+                            # print('updating test instance values', parameter)
+                            mtpl_lines[on_line] = '\t\t\t' + param_to_update[1] + ' ' + mtpl_lines[on_line].replace('\t\t\t','') + '\n'
+                        on_line += 1
+                        parameter = mtpl_lines[on_line]
 
     with open(filename + '_new', 'w') as file:
         for line in mtpl_lines:
@@ -178,20 +175,17 @@ def audit_mtpl(filename):
             # Grabbing current line as string
             current_line = mtpl_lines[line_i]
 
-
-            regex_line = fnmatch.filter([current_line], '*' + test_instance + '*')
-            if len(regex_line) == 1:
-                if (regex_line[0] == current_line) and ('DUTFlowItem' not in current_line) and ('{' in mtpl_lines[line_i+1]):
-                    on_line = line_i+2
-                    parameter = mtpl_lines[on_line]
-                    for j in range(0,len(param_to_update)):
-                        while '}' not in parameter:
-                            if param_to_update[j] in parameter:
-                                t_inst = current_line.split(" ")
-                                instances.append(t_inst[2])
-                                audit_param.append(parameter)
-                            on_line += 1
-                            parameter = mtpl_lines[on_line]
+            if (test_instance in current_line) and ('DUTFlowItem' not in current_line) and ('{' in mtpl_lines[line_i+1]):
+                on_line = line_i+2
+                parameter = mtpl_lines[on_line]
+                for j in range(0,len(param_to_update)):
+                    while '}' not in parameter:
+                        if param_to_update[j] in parameter:
+                            t_inst = current_line.split(" ")
+                            instances.append(t_inst[2])
+                            audit_param.append(parameter)
+                        on_line += 1
+                        parameter = mtpl_lines[on_line]
 
     with open(filename.replace(".mtpl","") + '_audit.csv', 'w') as file:
         for line_no in range(0,len(instances)):
@@ -400,7 +394,7 @@ def bulk_replace():
     global removal
     global test_to_replace
 
-    TP_path = r"\Modules"
+    # TP_path = r"\Modules"
 
     test_instance_to_update = pd.read_csv(filename)
     test_to_search = test_instance_to_update['Old Name']
@@ -412,8 +406,8 @@ def bulk_replace():
 
     for i in list_of_mtpls:
         print('Please be patient')
-        bulk_fnr(repo_path + TP_path+'\\'+i+'\\'+i+'.mtpl')
-        print(repo_path + TP_path+'\\'+i+'\\'+i+'.mtpl_new has been generated')
+        bulk_fnr(repo_path+'\\'+i+'\\CSVConfig_'+i+'.csv')
+        print(repo_path+'\\'+i+'\\'+i+'.mtpl_new has been generated')
 
 def callback(url):
     webbrowser.open_new(url)
@@ -486,7 +480,7 @@ list_of_mod = Entry(tab1, width=50, relief = FLAT)
 list_of_mod.insert(2,"SCN_CCF,SCN_SOC")
 list_of_mod.grid(row = 2, column = 1)
 
-label_1 = Label(tab1, text = 'Enter Test Instance/Test Template to Modify (Wildcard *): ', bg  ='black', fg = 'white')
+label_1 = Label(tab1, text = 'Enter Test Instance/Test Template to Modify: ', bg  ='black', fg = 'white')
 label_1.grid(row = 3, sticky=E)
 test_inst = Entry(tab1, width=50, relief = FLAT)
 test_inst.insert(4,'iCVminTest,iCAuxiliaryTest')
@@ -526,10 +520,10 @@ list_of_mod_t2 = Entry(tab2, width=50, relief = FLAT)
 list_of_mod_t2.insert(2,"SCN_SOC")
 list_of_mod_t2.grid(row = 2, column = 1)
 
-label_1 = Label(tab2, text = 'Enter Test Instances (Wildcard *): ', bg  ='black', fg = 'white')
+label_1 = Label(tab2, text = 'Enter Test Instances: ', bg  ='black', fg = 'white')
 label_1.grid(row = 3, sticky=E)
 test_inst_t2 = Entry(tab2, width=50, relief = FLAT)
-test_inst_t2.insert(4,'STUCKAT_SOC_SCANFI_E_*_STF_SAQ_NOM_LFM_1100_SHMOO_MC')
+test_inst_t2.insert(4,'ATSPEED_SOC_VMIN_E_SDTEND_STF_SAQ_NOM_LFM_1100_FXBX8 ATSPEED_SOC_VMIN_E_SDTEND_STF_SAQ_NOM_LFM_1100_FXBX8,ATSPEED_SOC_VMIN_E_SDTEND_STF_SAQ_NOM_LFM_1100_PHYTLPLX4NO2LM ATSPEED_SOC_VMIN_E_SDTEND_STF_SAQ_NOM_LFM_1100_PHYTLPLX4NO2LM')
 test_inst_t2.grid(row = 3, column = 1)
 
 button_0 = Button(tab2, text="Update MTPL's", height = 1, width = 20, command = edc_to_kill, bg = 'green', fg = 'white', font = '-family "SF Espresso Shack" -size 12')
@@ -556,7 +550,7 @@ list_of_mod_t3 = Entry(tab3, width=50, relief = FLAT)
 list_of_mod_t3.insert(2,"SCN_CCF,SCN_SOC")
 list_of_mod_t3.grid(row = 2, column = 1)
 
-label_1 = Label(tab3, text = 'Enter Test Instance/Test Template to Modify (Wildcard *): ', bg  ='black', fg = 'white')
+label_1 = Label(tab3, text = 'Enter Test Instance/Test Template to Modify: ', bg  ='black', fg = 'white')
 label_1.grid(row = 3, sticky=E)
 test_inst_t3 = Entry(tab3, width=50, relief = FLAT)
 test_inst_t3.insert(4,'iCVminTest,iCAuxiliaryTest')
