@@ -394,6 +394,7 @@ def bypass():
         print(repo_path + TP_path+'\\'+i+'\\'+i+'.mtpl_new has been generated')
 
 def bulk_replace():
+    global bindef_flag
     global TP_path
     global list_of_mtpls
     global test_to_search
@@ -407,6 +408,10 @@ def bulk_replace():
     test_to_replace = test_instance_to_update['New Name']
 
     list_of_mtpls = list_of_mod_t4.get().split(",")
+    # bindef_flag = 1
+    if bindef_flag == 1:
+        bulk_fnr(repo_path + "\Shared\Common\BinDefinitions.bdefs")
+        print(repo_path + "\Shared\Common\BinDefinitions.bdefs_new has been generated")
 
     #if parameter value already taken then do not update
 
@@ -414,6 +419,12 @@ def bulk_replace():
         print('Please be patient')
         bulk_fnr(repo_path + TP_path+'\\'+i+'\\'+i+'.mtpl')
         print(repo_path + TP_path+'\\'+i+'\\'+i+'.mtpl_new has been generated')
+    bindef_flag = 0
+
+def bindef():
+    global bindef_flag
+    bindef_flag = 1
+    bulk_replace()
 
 def callback(url):
     webbrowser.open_new(url)
@@ -625,7 +636,7 @@ open_button_1 = Button(
 
 open_button_1.grid(row = 3, column = 1)
 
-button_2 = Button(tab5, text="Update MTPL's", height = 1, width = 20, command = bulk_replace, bg = 'green', fg = 'white', font = '-family "SF Espresso Shack" -size 12')
+button_2 = Button(tab5, text="Update MTPL's", height = 1, width = 20, command = bindef, bg = 'green', fg = 'white', font = '-family "SF Espresso Shack" -size 12')
 button_2.grid(row = 3, column = 2, sticky=E )
 
 #### Audit
