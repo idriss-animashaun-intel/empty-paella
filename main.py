@@ -407,11 +407,13 @@ def bulk_replace():
     test_to_search = test_instance_to_update['Old Name']
     test_to_replace = test_instance_to_update['New Name']
 
-    list_of_mtpls = list_of_mod_t4.get().split(",")
-    # bindef_flag = 1
     if bindef_flag == 1:
+        print('Updating bindef')
         bulk_fnr(repo_path + "\Shared\Common\BinDefinitions.bdefs")
         print(repo_path + "\Shared\Common\BinDefinitions.bdefs_new has been generated")
+        list_of_mtpls = list_of_mod_t5.get().split(",")
+    else:
+        list_of_mtpls = list_of_mod_t4.get().split(",")
 
     #if parameter value already taken then do not update
 
@@ -419,6 +421,8 @@ def bulk_replace():
         print('Please be patient')
         bulk_fnr(repo_path + TP_path+'\\'+i+'\\'+i+'.mtpl')
         print(repo_path + TP_path+'\\'+i+'\\'+i+'.mtpl_new has been generated')
+        bulk_fnr(repo_path + TP_path+'\\'+i+'\\'+i+'.flw')
+        print(repo_path + TP_path+'\\'+i+'\\'+i+'.flw_new has been generated')
     bindef_flag = 0
 
 def bindef():
@@ -653,12 +657,6 @@ label_0.grid(row = 2, sticky=E)
 list_of_mod_t6 = Entry(tab6, width=50, relief = FLAT)
 list_of_mod_t6.insert(2,"SCN_SOC")
 list_of_mod_t6.grid(row = 2, column = 1)
-
-# label_1 = Label(tab6, text = 'Enter Test Instance/Test Template to Audit: ', bg  ='black', fg = 'white')
-# label_1.grid(row = 3, sticky=E)
-# test_inst = Entry(tab6, width=50, relief = FLAT)
-# test_inst.insert(4,'iCVminTest,iCAuxiliaryTest')
-# test_inst.grid(row = 3, column = 1)
 
 label_2 = Label(tab6, text = 'Enter Parameter to Audit: ', bg  ='black', fg = 'white')
 label_2.grid(row = 4, sticky=E)
