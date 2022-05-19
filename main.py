@@ -59,8 +59,11 @@ def parse_mtpl(filename):
                                     flag = 1
                                     print('update this', parameter)
                                     mtpl_lines[on_line] = '\t' + removal_update
-                                on_line += 1
-                                parameter = mtpl_lines[on_line]
+                                try:
+                                    on_line += 1
+                                    parameter = mtpl_lines[on_line]
+                                except:
+                                    parameter = '}'
                             if flag == 0:
                                 mtpl_lines[on_line - 1] = mtpl_lines[on_line - 1] + '\t' + removal_update
                     else:
@@ -76,8 +79,11 @@ def parse_mtpl(filename):
                                         flag = 1
                                         # print('updating test instance values', parameter)
                                         mtpl_lines[on_line] = '\t' + update[j] + ';\n'
-                                on_line += 1
-                                parameter = mtpl_lines[on_line]
+                                try:
+                                    on_line += 1
+                                    parameter = mtpl_lines[on_line]
+                                except:
+                                    parameter = '}'
                             if flag == 0:
                                 # print('adding test instance values', parameter)
                                 mtpl_lines[on_line - 1] = mtpl_lines[on_line - 1] + '\t' + update[j] + ';\n'
@@ -96,16 +102,17 @@ def e_k(filename):
     mtpl_length = len(mtpl_lines)
     
     #to remove do this
-
+    count = 0
     # loop for individual search
     for test_instance in test_to_search:
+        count += 1
         for line_i in range(mtpl_length):
             # Grabbing current line as string
             current_line = mtpl_lines[line_i]
 
             regex_line = fnmatch.filter([current_line], '*' + test_instance + '*')
             if len(regex_line) == 1:
-                if (regex_line[0] == current_line) and ('@EDC' in current_line) and ('{' in mtpl_lines[line_i+1]):
+                if (regex_line[0] == current_line) and ('@EDC' in current_line) and ('{' in mtpl_lines[line_i+1]) and ('DUTFlowItem' in current_line):
                     on_line = line_i+2
                     parameter = mtpl_lines[on_line]
                     if E_to_C_var.get() == "EDC to KILL":
@@ -114,9 +121,12 @@ def e_k(filename):
                             if ('##EDC##' in parameter):
                                 print('Moved to KILL', parameter)
                                 mtpl_lines[on_line] = parameter.replace('##EDC## ', '')
-                            on_line += 1
-                            parameter = mtpl_lines[on_line]
-                elif (regex_line[0] == current_line)and ('{' in mtpl_lines[line_i+1]):
+                            try:
+                                on_line += 1
+                                parameter = mtpl_lines[on_line]
+                            except:
+                                parameter = 'DUTFlowItem'
+                elif (regex_line[0] == current_line) and ('{' in mtpl_lines[line_i+1]) and ('DUTFlowItem' in current_line):
                     on_line = line_i+2
                     parameter = mtpl_lines[on_line]
                     if E_to_C_var.get() == "KILL to EDC":
@@ -125,8 +135,13 @@ def e_k(filename):
                             if ('SetBin SoftBins' in parameter) and ('SetBin SoftBins.b90999901_fail_FAIL_DPS_ALARM' not in parameter) and ('SetBin SoftBins.b90989801_fail_FAIL_SYSTEM_SOFTWARE' not in parameter):
                                 # print('updating test instance values', parameter)
                                 mtpl_lines[on_line] = '\t\t\t' + param_to_update[1] + ' ' + mtpl_lines[on_line].replace('\t\t\t','') + '\n'
-                            on_line += 1
-                            parameter = mtpl_lines[on_line]
+                            try:
+                                on_line += 1
+                                parameter = mtpl_lines[on_line]
+                            except:
+                                parameter = 'DUTFlowItem'
+                                # print('last good was' + test_instance)
+                                # continue
 
     with open(filename + '_new', 'w') as file:
         for line in mtpl_lines:
@@ -190,9 +205,11 @@ def audit_mtpl(filename):
                                 t_inst = current_line.split(" ")
                                 instances.append(t_inst[2])
                                 audit_param.append(parameter)
-                            on_line += 1
-                            parameter = mtpl_lines[on_line]
-
+                            try:
+                                on_line += 1
+                                parameter = mtpl_lines[on_line]
+                            except:
+                                parameter = '}'
     with open(filename.replace(".mtpl","") + '_audit.csv', 'w') as file:
         for line_no in range(0,len(instances)):
             print(instances[line_no].strip('\n') + ',' + audit_param[line_no], end="", file=file)
