@@ -1,5 +1,0 @@
-#Turn on CTVs for concurrent capture
-
-# modify_token	modify_pattern_type		modification_type	modification_name 					modify_location						Offset		Opecode_Operand		Value
-+ RESET 		MAIN 					PAT 				*R6152492A*_CBOPAIRS_sEs_post_seq:LEG 		CHECK_SCRBD_FOR_CBoS_STATUS_DR1 	43  		CTV 				1 1 1 1 1 1 1 1
-#g0137812R6152492A_8O_J0S1000_RJ0P0Th5C1202_0411616016xxxdx04d1a08DaA4x0000_0n2xuLm0H0Rn00x000204_CBOPAIRS_sEs_post_seq

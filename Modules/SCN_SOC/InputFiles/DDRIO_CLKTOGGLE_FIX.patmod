@@ -1,6 +1,0 @@
-# To fix The problem was that the STF_CLK is toggling during DDRIO configurations.
-# We need to patmod the precat patterns to override the STF_CLK with “0” so it will not toggle.
-
-##### PatMod for DDRIO toggle override pattern ######
-+ DDRIO_STFCLK MAIN PAT g2477236*:DDR_STF 0 0 DATA STF_CLK_IN 0 REPEAT 768
-+ DDRIO_STFCLK MAIN PAT g2477242*:DDR_STF 0 0 DATA STF_CLK_IN 0 REPEAT 768

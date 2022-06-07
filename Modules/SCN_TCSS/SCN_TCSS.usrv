@@ -1,7 +1,0 @@
-Version 1.0;
-
-UserVars SCN_TCSS
-{
-	Integer SCAN_END_NONCONCURRENT_ON = 1;
-	String SCAN_SDTEND_NONCONCURRENT_ON = "1";
-}

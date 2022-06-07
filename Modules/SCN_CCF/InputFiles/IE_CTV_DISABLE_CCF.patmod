@@ -1,2 +1,0 @@
-# CCF CBO CTV Disabling for DTS to work correctly in IE tests:
-+ F_EN MAIN PAT *CBOPAIRS*post_seq:LEG CHECK_SCRBD_FOR_CBoS_STATUS_DR1 47 CTV 0 REPEAT 12

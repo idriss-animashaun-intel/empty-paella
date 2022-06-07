@@ -1,3 +1,0 @@
-# Patmod to enable DTS reads in postamble
-+ FN_MLC MAIN PAT RPL_pst_*:LEG start_dts_flow_jmp  1 OPCODE_OPERAND RPT 1
-+ FN_MLC MAIN PAT RPL_pst_*:DDR_STF start_dts_flow_jmp 2 OPCODE_OPERAND RPT 1
