@@ -11,10 +11,13 @@ Empty_Paella_directory = Empty_Paella_master_directory+"\\Empty-Paella-updates"
 Empty_Paella_file = Empty_Paella_directory+"\\main\\main.exe"
 Empty_Paella_rev = Empty_Paella_directory+"\\Rev.txt"
 
+proxy_handler = urllib.request.ProxyHandler({'https': 'http://proxy-dmz.intel.com:912'})
+opener = urllib.request.build_opener(proxy_handler)
+urllib.request.install_opener(opener)
 
 def installation():
     print("*** Downloading new version ***")
-    urllib.request.urlretrieve("https://gitlab.devtools.intel.com/ianimash/Empty-Paella/-/archive/updates/Empty-Paella-updates.zip", Empty_Paella_master_directory+"\\Empty-Paella_new.zip")
+    urllib.request.urlretrieve("https://github.com/idriss-animashaun-intel/empty-paella/archive/refs/heads/updates.zip", Empty_Paella_master_directory+"\\Empty-Paella_new.zip")
     print("*** Extracting new version ***")
     zip_ref = zipfile.ZipFile(Empty_Paella_master_directory+"\\Empty-Paella_new.zip", 'r')
     zip_ref.extractall(Empty_Paella_master_directory)
@@ -35,7 +38,7 @@ def main(autoinstall=0):
         local_file_size = int(os.path.getsize(Empty_Paella_rev))
         # print(local_file_size)
         ### Check if update needed:
-        f = urllib.request.urlopen("https://gitlab.devtools.intel.com/ianimash/Empty-Paella/-/raw/updates/Rev.txt") # points to the exe file for size
+        f = urllib.request.urlopen("https://github.com/idriss-animashaun-intel/empty-paella/raw/updates/Rev.txt") # points to the exe file for size
         i = f.info()
         web_file_size = int(i["Content-Length"])
         # print(web_file_size)
